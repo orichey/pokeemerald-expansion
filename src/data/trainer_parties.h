@@ -11771,61 +11771,61 @@ static const struct TrainerMon sParty_Alvaro[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Carson[] = {
+static const struct TrainerMon sParty_Carson[] = {
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 5,
     .species = SPECIES_MAGNEMITE,
     },
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 5,
     .species = SPECIES_BRONZOR,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Mortimer[] = {
+static const struct TrainerMon sParty_Mortimer[] = {
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 5,
     .species = SPECIES_MAGBY,
     },
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 5,
     .species = SPECIES_SLUGMA,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Barbara[] = {
+static const struct TrainerMon sParty_Barbara[] = {
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 6,
     .species = SPECIES_HOPPIP,
     },
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 6,
     .species = SPECIES_BUDEW,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BugCatcher_Tim[] = {
+static const struct TrainerMon sParty_BugCatcher_Tim[] = {
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 6,
     .species = SPECIES_WURMPLE,
     },
     {
-    .iv = 20,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 6,
     .species = SPECIES_BURMY_TRASH_CLOAK,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Youngster_Joey[] = {
+static const struct TrainerMon sParty_Youngster_Joey[] = {
     {
-    .iv = 186,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 50,
     .species = SPECIES_RATTATA,
     }
