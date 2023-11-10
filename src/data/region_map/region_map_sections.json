@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "map_section": "MAPSEC_LITTLEROOT_TOWN",
-      "name": "LITTLEROOT TOWN",
+      "name": "ANTHROH TOWN",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "map_section": "MAPSEC_OLDALE_TOWN",
-      "name": "OLDALE TOWN",
+      "name": "DESOLA TOWN",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -474,7 +474,7 @@
     },
     {
       "map_section": "MAPSEC_PETALBURG_WOODS",
-      "name": "PETALBURG WOODS",
+      "name": "TREEFALL FOREST",
       "x": 0,
       "y": 8,
       "width": 1,

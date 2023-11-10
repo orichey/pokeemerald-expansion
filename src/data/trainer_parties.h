@@ -370,8 +370,8 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Archie[] = {
     },
     {
     .iv = 150,
-    .lvl = 43,
-    .species = SPECIES_SHARPEDO,
+    .lvl = 50,
+    .species = SPECIES_KYOGRE,
     }
 };
 
@@ -12395,42 +12395,62 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Alvaro[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Everett[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Carson[] = {
     {
-    .iv = 0,
-    .lvl = 41,
-    .species = SPECIES_WOBBUFFET,
+    .iv = 20,
+    .lvl = 5,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = 20,
+    .lvl = 5,
+    .species = SPECIES_BRONZOR,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Mortimer[] = {
     {
-    .iv = 0,
+    .iv = 20,
     .lvl = 5,
-    .species = SPECIES_CHARMANDER,
+    .species = SPECIES_MAGBY,
+    },
+    {
+    .iv = 20,
+    .lvl = 5,
+    .species = SPECIES_SLUGMA,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Leaf[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Barbara[] = {
     {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_BULBASAUR,
+    .iv = 20,
+    .lvl = 6,
+    .species = SPECIES_HOPPIP,
+    },
+    {
+    .iv = 20,
+    .lvl = 6,
+    .species = SPECIES_BUDEW,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLinkPlaceholder[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BugCatcher_Tim[] = {
     {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_GROUDON,
+    .iv = 20,
+    .lvl = 6,
+    .species = SPECIES_WURMPLE,
+    },
+    {
+    .iv = 20,
+    .lvl = 6,
+    .species = SPECIES_BURMY_TRASH_CLOAK,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Youngster_Joey[] = {
     {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_KYOGRE,
+    .iv = 186,
+    .lvl = 50,
+    .species = SPECIES_RATTATA,
     }
 };

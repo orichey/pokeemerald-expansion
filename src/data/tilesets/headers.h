@@ -825,3 +825,36 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_gTileset_General_Dead =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_gTileset_General_Dead,
+    .palettes = gTilesetPalettes_gTileset_General_Dead,
+    .metatiles = gMetatiles_gTileset_General_Dead,
+    .metatileAttributes = gMetatileAttributes_gTileset_General_Dead,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_gTileset_TreefallGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_gTileset_TreefallGym,
+    .palettes = gTilesetPalettes_gTileset_TreefallGym,
+    .metatiles = gMetatiles_gTileset_TreefallGym,
+    .metatileAttributes = gMetatileAttributes_gTileset_TreefallGym,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_gTileset_Gym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_gTileset_Gym,
+    .palettes = gTilesetPalettes_gTileset_Gym,
+    .metatiles = gMetatiles_gTileset_Gym,
+    .metatileAttributes = gMetatileAttributes_gTileset_Gym,
+    .callback = NULL,
+};

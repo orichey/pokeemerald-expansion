@@ -1634,3 +1634,60 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_gTileset_General_Dead[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general_dead/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_gTileset_General_Dead[] = INCBIN_U32("data/tilesets/primary/general_dead/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_gTileset_TreefallGym[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/treefall_gym/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_gTileset_TreefallGym[] = INCBIN_U32("data/tilesets/secondary/treefall_gym/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_gTileset_Gym[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/gym/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/gym/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_gTileset_Gym[] = INCBIN_U32("data/tilesets/primary/gym/tiles.4bpp.lz");

@@ -1,0 +1,60 @@
+raw `OldaleTown_House1_MapScripts::
+	.byte 0
+
+OldaleTown_House1_EventScript_Woman::
+	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC
+	end
+
+OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
+	.string "When a POKéMON battle starts, the one\n"
+	.string "at the left of the list goes out first.\p"
+	.string "So, when you get more POKéMON in your\n"
+	.string "party, try switching around the order\l"
+	.string "of your POKéMON.\p"
+	.string "It could give you an advantage.$"
+
+`
+
+script OldaleTown_House1_Text_Woman {
+	lock
+	faceplayer
+	msgbox("This library holds many records of\n"
+	"events in ECODIA.\p"
+    "People journey from far and wide to read\n"
+    "about our history.")
+	release
+}
+
+script OldaleTown_House1_Text_Man {
+	lock
+	faceplayer
+	msgbox("You're looking at some of the last few\n"
+	"books around.\p"
+    "Feast your eyes!")
+	release
+}
+
+script OldaleTown_House1_Text_Scientist {
+	lock
+	faceplayer
+	msgbox("This soil core can tell us about the\n"
+	"composition of the atmosphere decades\l"
+    "ago.\p"
+    "We are lucky the library preserved\n"
+    "such a valuable artifact.")
+	release
+}
+
+script OldaleTown_House1_Text_Girl {
+	lock
+	faceplayer
+	msgbox("I found treasure in the shelves!")
+	release
+}
+
+script OldaleTown_House1_EventScript_SoilSign {
+    lockall
+    msgbox("It's a cylinder of dirt with unreadable\n"
+    "labels. What does it mean?$")
+    releaseall
+}

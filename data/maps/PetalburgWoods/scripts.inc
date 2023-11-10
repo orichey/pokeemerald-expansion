@@ -474,3 +474,109 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "If a POKéMON runs out of PP, it must be\n"
 	.string "taken to a POKéMON CENTER.$"
 
+PetalburgWoods_EventScript_Camper::
+	lock
+	faceplayer
+	msgbox PetalburgWoods_EventScript_Camper_Text_0
+	release
+	return
+
+
+PetalburgWoods_EventScript_Youngster::
+	lock
+	faceplayer
+	msgbox PetalburgWoods_EventScript_Youngster_Text_0
+	release
+	return
+
+
+PetalburgWoods_EventScript_BugCatcherBattle::
+	trainerbattle_single TRAINER_BUGCATCHER_TIM, Tim_Intro, Tim_Outro
+	msgbox PostBattle_Tim, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+PetalburgWoods_EventScript_ExpertBattle::
+	trainerbattle_single TRAINER_EXPERT_BARBARA, Barbara_Intro, Barbara_Outro
+	msgbox PostBattle_Barbara, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+PetalburgWoods_EventScript_KindlerBattle::
+	trainerbattle_single TRAINER_KINDLER_MORTIMER, Mortimer_Intro, Mortimer_Outro
+	msgbox PostBattle_Mortimer, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+PetalburgWoods_EventScript_ScientistBattle::
+	trainerbattle_single TRAINER_SCIENTIST_CARSON, Carson_Intro, Carson_Outro
+	msgbox PostBattle_Carson, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+PetalburgWoods_Text_WarningSign::
+	lockall
+	msgbox PetalburgWoods_Text_WarningSign_Text_0
+	releaseall
+	return
+
+
+PetalburgWoods_EventScript_Camper_Text_0:
+	.string "I was hoping to set up a tent and camp\n"
+	.string "for the night.\p"
+	.string "Good thing there's so much clear space!$"
+
+PetalburgWoods_EventScript_Youngster_Text_0:
+	.string "So many trees have been chopped down\n"
+	.string "here. Just look at all these stumps!$"
+
+PetalburgWoods_Text_WarningSign_Text_0:
+	.string "Watch out for abandoned machinery!$"
+
+Tim_Intro::
+	.string "When people cut down trees, the bugs go\n"
+	.string "away. I still have a few though!$"
+
+Tim_Outro::
+	.string "Think of the bugs!$"
+
+PostBattle_Tim::
+	.string "Turns out, we all need trees to survive!$"
+
+Barbara_Intro::
+	.string "I used to play here as a child. Where\n"
+	.string "have all of the trees gone?$"
+
+Barbara_Outro::
+	.string "So it wasn't you who cut them down?$"
+
+PostBattle_Barbara::
+	.string "When I find who defiled my beloved\n"
+	.string "forest, they'll suffer!$"
+
+Mortimer_Intro::
+	.string "My fire POKéMON will help me scorch\n"
+	.string "the remnants of this forest!$"
+
+Mortimer_Outro::
+	.string "You have only slowed my burn!$"
+
+PostBattle_Mortimer::
+	.string "I guess there isn't much left to burn,\n"
+	.string "huh?$"
+
+Carson_Intro::
+	.string "With these tools I have collected, I\n"
+	.string "can maximize my economic production!$"
+
+Carson_Outro::
+	.string "You can defeat my POKéMON, but not\n"
+	.string "my machines!$"
+
+PostBattle_Carson::
+	.string "How much do you think this lumber is\n"
+	.string "worth?$"

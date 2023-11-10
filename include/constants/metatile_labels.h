@@ -215,7 +215,7 @@
 #define METATILE_General_Door_Gym              0x1CD
 #define METATILE_General_Door_PokeCenter       0x061
 #define METATILE_General_Door_PokeMart         0x041
-#define METATILE_General_Grass                 0x001
+#define METATILE_General_Grass                 0x000
 #define METATILE_General_Grass_TreeLeft        0x1CE
 #define METATILE_General_Grass_TreeRight       0x1CF
 #define METATILE_General_Grass_TreeUp          0x00E
@@ -271,6 +271,8 @@
 #define METATILE_Lavaridge_LavaField            0x271
 #define METATILE_Lavaridge_NormalGrass          0x206
 #define METATILE_Lavaridge_RockWall             0x274
+#define METATILE_Lavaridge_TallGrass_TreeLeft   0x367
+#define METATILE_Lavaridge_TallGrass_TreeRight  0x36F
 
 // gTileset_LilycoveMuseum
 #define METATILE_LilycoveMuseum_Painting0_Left   0x25A

@@ -107,3 +107,38 @@ Route102_Text_RouteSignOldale:
 Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+Route102_EventScript_Youngster::
+	lock
+	faceplayer
+	msgbox Route102_EventScript_Youngster_Text_0
+	release
+	return
+
+
+Route102_Text_UpDownSign::
+	lockall
+	msgbox Route102_Text_UpDownSign_Text_0
+	releaseall
+	return
+
+
+Route102_Text_LeftRightSign::
+	lockall
+	msgbox Route102_Text_LeftRightSign_Text_0
+	releaseall
+	return
+
+
+Route102_EventScript_Youngster_Text_0:
+	.string "I've heard TREEFALL WOODS has\n"
+	.string "experienced deforestation.\p"
+	.string "Are the rumors true?$"
+
+Route102_Text_UpDownSign_Text_0:
+	.string "DESOLA TOWN {UP_ARROW}\n"
+	.string "TREEFALL WOODS {DOWN_ARROW}$"
+
+Route102_Text_LeftRightSign_Text_0:
+	.string "TREEFALL WOODS {LEFT_ARROW}\n"
+	.string "TREEFALL CITY {RIGHT_ARROW}$"

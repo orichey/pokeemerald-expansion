@@ -43,7 +43,6 @@ LittlerootTown_OnTransition:
 	setflag FLAG_VISITED_LITTLEROOT_TOWN
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
-	call_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_SetTwinPos
 	call_if_eq VAR_LITTLEROOT_TOWN_STATE, 3, LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos
 	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
 	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
@@ -51,6 +50,7 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
+	call_if_unset FLAG_UNUSED_0x024, LittlerootTown_EventScript_SetupArchieBattle
 	end
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
@@ -77,17 +77,6 @@ LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 
 LittlerootTown_EventScript_MoveMomToMaysDoor::
 	setobjectxyperm LOCALID_MOM, 14, 8
-	return
-
-LittlerootTown_EventScript_SetTwinPos::
-	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
-	setobjectxyperm LOCALID_TWIN, 10, 1
-	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_UP
-	return
-
-LittlerootTown_EventScript_SetTwinGuardingRoutePos::
-	setobjectxyperm LOCALID_TWIN, 7, 2
-	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
@@ -164,7 +153,6 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
@@ -247,20 +235,19 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale::
 	end
 
 LittlerootTown_EventScript_FatMan::
-	msgbox LittlerootTown_Text_CanUsePCToStoreItems, MSGBOX_NPC
+	msgbox LittlerootTown_Text_TechnologyIsAmazing, MSGBOX_NPC
 	end
 
 LittlerootTown_EventScript_Boy::
-	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
+	msgbox LittlerootTown_Text_SpruceSpendsDaysInLab, MSGBOX_NPC
 	end
 
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
 	goto_if_set FLAG_ADVENTURE_STARTED, LittlerootTown_EventScript_GoodLuck
-	goto_if_set FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_YouSavedBirch
-	goto_if_ne VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_GoSaveBirch
-	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
+	goto_if_set FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_GoodLuck
+	goto_if_ne VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_GoodLuck
 	release
 	end
 
@@ -396,8 +383,8 @@ LittlerootTown_EventScript_TownSign::
 	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
 	end
 
-LittlerootTown_EventScript_BirchsLabSign::
-	msgbox LittlerootTown_Text_ProfBirchsLab, MSGBOX_SIGN
+LittlerootTown_EventScript_SprucesLabSign::
+	msgbox LittlerootTown_Text_ProfSprucesLab, MSGBOX_SIGN
 	end
 
 LittlerootTown_EventScript_BrendansHouseSign::
@@ -413,7 +400,7 @@ LittlerootTown_EventScript_PlayersHouseSignMale::
 	return
 
 LittlerootTown_EventScript_BirchsHouseSignFemale::
-	msgbox LittlerootTown_Text_ProfBirchsHouse, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_ProfSprucesHouse, MSGBOX_DEFAULT
 	return
 
 LittlerootTown_EventScript_MaysHouseSign::
@@ -425,7 +412,7 @@ LittlerootTown_EventScript_MaysHouseSign::
 	end
 
 LittlerootTown_EventScript_BirchsHouseSignMale::
-	msgbox LittlerootTown_Text_ProfBirchsHouse, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_ProfSprucesHouse, MSGBOX_DEFAULT
 	return
 
 LittlerootTown_EventScript_PlayersHouseSignFemale::
@@ -957,16 +944,16 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "If anything happens, you can come home.\p"
 	.string "Go on, go get them, honey!$"
 
-LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "If you use a PC, you can store items\n"
-	.string "and POKéMON.\p"
-	.string "The power of science is staggering!$"
+LittlerootTown_Text_TechnologyIsAmazing:
+	.string "Human activity has caused irreversible\n"
+	.string "damage throughout ECODIA.\p"
+	.string "The power of technology is amazing!$"
 
-LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
+LittlerootTown_Text_SpruceSpendsDaysInLab:
+	.string "PROF. SPRUCE spends days in his LAB\n"
 	.string "studying, then he'll suddenly go out in\l"
 	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
+	.string "When does PROF. SPRUCE spend time\n"
 	.string "at home?$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
@@ -996,17 +983,17 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+	.string "ANTHROH TOWN\n"
+	.string "“Where the journey begins anew.”$"
 
-LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+LittlerootTown_Text_ProfSprucesLab:
+	.string "PROF. SPRUCE'S POKéMON LAB$"
 
 LittlerootTown_Text_PlayersHouse:
 	.string "{PLAYER}'s HOUSE$"
 
-LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+LittlerootTown_Text_ProfSprucesHouse:
+	.string "PROF. SPRUCE'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
@@ -1019,3 +1006,82 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_EventScript_PlayerHouseSign::
+	lockall
+	msgbox LittlerootTown_EventScript_PlayerHouseSign_Text_0
+	releaseall
+	return
+
+
+LittlerootTown_EventScript_OldWoman::
+	lock
+	faceplayer
+	msgbox LittlerootTown_EventScript_OldWoman_Text_0
+	release
+	return
+
+
+LittlerootTown_EventScript_ShouldGetPokemon::
+	goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_EventScript_ShouldGetPokemon_2
+LittlerootTown_EventScript_ShouldGetPokemon_1:
+	release
+	return
+
+LittlerootTown_EventScript_ShouldGetPokemon_2:
+	lockall
+	msgbox LittlerootTown_EventScript_ShouldGetPokemon_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, NoPokemon
+	waitmovement 0
+	goto LittlerootTown_EventScript_ShouldGetPokemon_1
+
+
+NoPokemon:
+	walk_right
+	step_end
+
+LittlerootTown_EventScript_SetupArchieBattle::
+	goto_if_unset FLAG_UNUSED_0x020, LittlerootTown_EventScript_SetupArchieBattle_3
+LittlerootTown_EventScript_SetupArchieBattle_2:
+	clearflag FLAG_UNUSED_0x023
+	return
+
+LittlerootTown_EventScript_SetupArchieBattle_1:
+	setflag FLAG_UNUSED_0x023
+	return
+
+LittlerootTown_EventScript_SetupArchieBattle_3:
+	goto_if_unset FLAG_UNUSED_0x021, LittlerootTown_EventScript_SetupArchieBattle_5
+	goto LittlerootTown_EventScript_SetupArchieBattle_2
+
+LittlerootTown_EventScript_SetupArchieBattle_5:
+	goto_if_unset FLAG_UNUSED_0x022, LittlerootTown_EventScript_SetupArchieBattle_1
+	goto LittlerootTown_EventScript_SetupArchieBattle_2
+
+
+LittlerootTown_EventScript_ArchieTestBattle::
+	trainerbattle_single TRAINER_ARCHIE, Archie_Intro, Archie_Outro
+	msgbox PostBattle_Archie, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+LittlerootTown_EventScript_PlayerHouseSign_Text_0:
+	.string "{PLAYER}'s HOUSE$"
+
+LittlerootTown_EventScript_OldWoman_Text_0:
+	.string "This pond is the only water source for\n"
+	.string "ANTHROH TOWN.\p"
+	.string "We are luckier than most in ECODIA.$"
+
+LittlerootTown_EventScript_ShouldGetPokemon_Text_0:
+	.string "Better get a POKéMON first!$"
+
+Archie_Intro::
+	.string "You have a POKéMON?\n"
+	.string "Let's fight!$"
+
+Archie_Outro::
+	.string "I need a stronger KYOGRE$"
+
+PostBattle_Archie::
+	.string "Hmm, what will you code next?$"

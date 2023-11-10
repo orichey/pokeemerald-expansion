@@ -20,13 +20,9 @@ OldaleTown_EventScript_SetOldaleState::
 	return
 
 OldaleTown_EventScript_BlockWestEntrance::
-	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 1, 11
-	setobjectmovementtype LOCALID_FOOTPRINTS_MAN, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 OldaleTown_EventScript_MoveMartEmployee::
-	setobjectxyperm LOCALID_MART_EMPLOYEE, 13, 14
-	setobjectmovementtype LOCALID_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 OldaleTown_EventScript_TownSign::
@@ -399,3 +395,122 @@ OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_EventScript_NewSign::
+	lockall
+	msgbox OldaleTown_EventScript_NewSign_Text_0
+	releaseall
+	return
+
+
+OldaleTown_EventScript_LibrarySign::
+	lockall
+	msgbox OldaleTown_EventScript_LibrarySign_Text_0
+	releaseall
+	return
+
+
+OldaleTown_EventScript_JoeySign::
+	lockall
+	msgbox OldaleTown_EventScript_JoeySign_Text_0
+	releaseall
+	return
+
+
+OldaleTown_EventScript_OldWoman::
+	lock
+	faceplayer
+	msgbox OldaleTown_EventScript_OldWoman_Text_0
+	release
+	return
+
+
+OldaleTown_EventScript_LittleBoy::
+	lock
+	faceplayer
+	msgbox OldaleTown_EventScript_LittleBoy_Text_0
+	release
+	return
+
+
+OldaleTown_EventScript_ScholarBoy::
+	lock
+	faceplayer
+	msgbox OldaleTown_EventScript_ScholarBoy_Text_0
+	release
+	return
+
+
+OldaleTown_EventScript_Hiker::
+	lock
+	faceplayer
+	msgbox OldaleTown_EventScript_Hiker_Text_0
+	release
+	return
+
+
+OldaleTown_EventScript_CantPass::
+	goto_if_unset FLAG_UNUSED_0x027, OldaleTown_EventScript_CantPass_2
+OldaleTown_EventScript_CantPass_1:
+	release
+	return
+
+OldaleTown_EventScript_CantPass_2:
+	lockall
+	applymovement 1, HikerDown
+	waitmovement 0
+	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerUp
+	waitmovement 0
+	msgbox OldaleTown_EventScript_CantPass_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, GoBack
+	waitmovement 0
+	goto OldaleTown_EventScript_CantPass_1
+
+
+HikerDown:
+	face_down
+	step_end
+
+GoBack:
+	walk_right
+	step_end
+
+PlayerUp:
+	face_up
+	step_end
+
+OldaleTown_EventScript_NewSign_Text_0:
+	.string "DESOLA TOWN\n"
+	.string "“A sign of what's to come.”$"
+
+OldaleTown_EventScript_LibrarySign_Text_0:
+	.string "DESOLA TOWN Library: Where the past,\n"
+	.string "present, and future of ECODIA is\l"
+	.string "studied.$"
+
+OldaleTown_EventScript_JoeySign_Text_0:
+	.string "Joey's Sanctuary.\n"
+	.string "Have you found a Rattata?$"
+
+OldaleTown_EventScript_OldWoman_Text_0:
+	.string "I used to live here, now my house is\n"
+	.string "nothing but a pile of rubble.$"
+
+OldaleTown_EventScript_LittleBoy_Text_0:
+	.string "Mommy says DESOLA TOWN is one of the\n"
+	.string "last safe places in ECODIA.\p"
+	.string "Even TREEFALL FOREST is scary!$"
+
+OldaleTown_EventScript_ScholarBoy_Text_0:
+	.string "I learned so much about ECODIA at the\n"
+	.string "LIBRARY!$"
+
+OldaleTown_EventScript_Hiker_Text_0:
+	.string "I don't know what is going on at the\n"
+	.string "pass, but I got turned away.$"
+
+OldaleTown_EventScript_CantPass_Text_0:
+	.string "Watch out! The mountain pass is closed\n"
+	.string "to travelers.\p"
+	.string "Come back after the work crews disperse.$"

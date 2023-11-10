@@ -310,7 +310,7 @@ Route110_TrickHousePuzzle7_EventScript_Alvaro::
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Everett::
-	trainerbattle_single TRAINER_EVERETT, Route110_TrickHousePuzzle7_Text_EverettIntro, Route110_TrickHousePuzzle7_Text_EverettDefeat
+	trainerbattle_single TRAINER_SCIENTIST_CARSON, Route110_TrickHousePuzzle7_Text_EverettIntro, Route110_TrickHousePuzzle7_Text_EverettDefeat
 	msgbox Route110_TrickHousePuzzle7_Text_EverettPostBattle, MSGBOX_AUTOCLOSE
 	end
 

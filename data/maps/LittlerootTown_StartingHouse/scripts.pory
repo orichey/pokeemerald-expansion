@@ -1,0 +1,143 @@
+mapscripts LittlerootTown_StartingHouse_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: StartingHouse_EventScript_MomDefault
+}
+
+script StartingHouse_EventScript_MomDefault{
+    if(!(flag(FLAG_UNUSED_0x025))){
+        setobjectxy(1,6,4)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_UP)
+        return
+    }
+    else{
+        setobjectxyperm(1,7,5)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
+        return
+    }
+}
+
+script StartingHouse_EventScript_MomAskSpruce{
+    lock
+    faceplayer
+    msgbox("MOM: Did you talk to PROF. SPRUCE?")
+    waitmessage
+    release
+    end
+}
+
+script StartingHouse_EventScript_MomBeckons{
+    if(!(flag(FLAG_UNUSED_0x025))){
+        lock
+        applymovement(1, MomLook)
+        waitmovement(0)
+        applymovement(1,Common_Movement_ExclamationMark)
+        waitmovement(0)
+        msgbox("MOM: Oh, {PLAYER}! You're awake!\n"
+        "I was just about to watch the news.\p"
+        "Come quick!$")
+        applymovement(1,MomMove)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER,GoToTV)
+        waitmovement(0)
+        special(TurnOnTVScreen)
+        playbgm(MUS_ENCOUNTER_INTERVIEWER, FALSE)
+        msgbox("BREAKING NEWS! The impacts of climate\n"
+        "change continue to batter ECODIA!\p"
+        "Heat waves, forest fires, deluges, and\n"
+        "floods are all roaring ferociously!\p"
+        "When will it come to an end?$")
+        special(TurnOffTVScreen)
+        fadedefaultbgm
+        delay(35)
+        applymovement(OBJ_EVENT_ID_PLAYER,LookToMom)
+        waitmovement(0)
+        msgbox("MOM: I can't believe this is happening\n"
+        "to our new home. To think, after\l"
+        "escaping the calamities in HOENN, we\l"
+        "would find something even worse.")
+        applymovement(1,MomLookUp)
+        waitmovement(0)
+        msgbox("MOM:...$")
+        applymovement(1,MomLook)
+        waitmovement(0)
+        msgbox("Say, why don't you go see PROF. SPRUCE?\n"
+        "He might have some explanation for this!")
+        setflag(FLAG_UNUSED_0x025)
+    }
+    release
+}
+
+script StartingHouse_EventScript_MomBeckonsFromLeft{
+    if(!(flag(FLAG_UNUSED_0x025))){
+        lock
+        applymovement(1, MomLook)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, LookRight)
+        applymovement(1,Common_Movement_ExclamationMark)
+        waitmovement(0)
+        msgbox("MOM: Oh, {PLAYER}! You're awake!\n"
+        "I was just about to watch the news.\p"
+        "Come quick!$")
+        applymovement(1,MomMove)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER,GoToTVFromLeft)
+        waitmovement(0)
+        special(TurnOnTVScreen)
+        playbgm(MUS_ENCOUNTER_INTERVIEWER, FALSE)
+        msgbox("BREAKING NEWS! The impacts of climate\n"
+        "change continue to batter ECODIA!\p"
+        "Heat waves, forest fires, deluges, and\n"
+        "floods are all roaring ferociously!\p"
+        "When will it come to an end?$")
+        special(TurnOffTVScreen)
+        fadedefaultbgm
+        delay(35)
+        applymovement(OBJ_EVENT_ID_PLAYER,LookToMom)
+        waitmovement(0)
+        msgbox("MOM: I can't believe this is happening\n"
+        "to our new home. To think, after\l"
+        "escaping the calamities in HOENN, we\l"
+        "would find something even worse.")
+        applymovement(1,MomLookUp)
+        waitmovement(0)
+        msgbox("MOM:...$")
+        applymovement(1,MomLook)
+        waitmovement(0)
+        msgbox("Say, why don't you go see PROF. SPRUCE?\n"
+        "He might have some explanation for this!")
+        setflag(FLAG_UNUSED_0x025)
+    }
+    release
+}
+
+
+
+movement MomLook {
+    face_left
+}
+
+movement MomMove {
+    walk_right
+    face_left
+}
+
+movement GoToTV {
+    walk_right*3
+    face_up
+}
+
+movement GoToTVFromLeft {
+    walk_right*5
+    face_up
+}
+
+movement LookRight {
+    face_right
+}
+
+movement LookToMom {
+    face_right
+}
+
+movement MomLookUp {
+    face_up
+}

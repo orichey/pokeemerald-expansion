@@ -1059,3 +1059,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/NewHouse/scripts.inc"
+
+	.include "data/maps/LittlerootTown_StartingHouse/scripts.inc"
+
+	.include "data/maps/PetalburgCity_House2_2/scripts.inc"
