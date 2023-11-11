@@ -10,22 +10,38 @@ script NewHouse_EventScript_Wailmer{
     lock
     faceplayer
     if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
-        msgbox("Hello, would you like to see more?", MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES){
-            if(var(VAR_UNUSED_0x40F7) != 2){
-                addvar(VAR_UNUSED_0x40F7, 1)
-            }
-            else{
-                setvar(VAR_UNUSED_0x40F7, 0)
-            }
-            msgbox("Choose your Pokemon wisely!")
+        if(var(VAR_UNUSED_0x40F7) == 0){
+            msgbox("Why, hello there, {PLAYER}!\n"
+            "What brings you to my laboratory?\l"
+            "Hm, I see. The climate events we are\n"
+            "experiencing are very concerning.")
+            applymovement(1,FaceLeft)
+            waitmovement(0)
+            msgbox("As you know, I have made my career in\n"
+            "studying the climate of ECODIA. Never\l"
+            "have I seen the frequency and intensity\n"
+            "of such extreme events.")
+            applymovement(1,FacePlayer)
+            waitmovement(0)
+            msgbox("{PLAYER}, I am getting old. In the past,\n"
+            "I would have ventured out to see what\l"
+            "it is we are dealing with. Instead,\n"
+            "I must make a request of you.\l"
+            "I must ask you to go survey the region.\n"
+            "{PLAYER}, go take a POKéMON from my table.\l"
+            "Make us all proud.")
+            setvar(VAR_UNUSED_0x40F7, 1)
         }
-        else{
-            msgbox("Choose your Pokemon wisely!")
+        if(var(VAR_UNUSED_0x40F7) == 1){
+            msgbox("{PLAYER}, go ahead and take a POKéMON.")
         }
+        
     }
     else{
-        msgbox("Take care of your Pokemon!")
+        msgbox("Take care of your POKéMON, and be safe.\n"
+        "I do not know what perils you may face.\l"
+        "Trust in yourself, and remember to\n"
+        "report back!")
     }
     waitmessage
     release
@@ -36,17 +52,14 @@ script NewHouse_EventScript_PokeballOne{
     lockall
     if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
-            call(NewHouse_EventScript_Articuno)
+            msgbox("Maybe the Professor would like to talk.")
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
-            call(NewHouse_EventScript_Suicune)
-        }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
-            call(NewHouse_EventScript_Palkia)
+        else {
+        call(NewHouse_EventScript_Articuno)
         }
     }
     else{
-        msgbox("Better not take another!")
+        msgbox("Shouldn't take another!")
     }
     waitmessage
     releaseall
@@ -57,17 +70,14 @@ script NewHouse_EventScript_PokeballTwo{
     lockall
     if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
-            call(NewHouse_EventScript_Zapdos)
+            msgbox("Maybe the Professor would like to talk.")
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
-            call(NewHouse_EventScript_Raikou)
-        }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
-            call(NewHouse_EventScript_Dialga)
+        else {
+        call(NewHouse_EventScript_Zapdos)
         }
     }
     else{
-        msgbox("Better not take another!")
+        msgbox("Shouldn't take another!")
     }
     waitmessage
     releaseall
@@ -78,17 +88,14 @@ script NewHouse_EventScript_PokeballThree{
     lockall
     if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
         if(var(VAR_UNUSED_0x40F7) == 0){
-            call(NewHouse_EventScript_Moltres)
+            msgbox("Maybe the Professor would like to talk.")
         }
-        elif(var(VAR_UNUSED_0x40F7) == 1){
-            call(NewHouse_EventScript_Entei)
-        }
-        elif(var(VAR_UNUSED_0x40F7) == 2){
-            call(NewHouse_EventScript_Giratina)
+        else {
+        call(NewHouse_EventScript_Moltres)
         }
     }
     else{
-        msgbox("Better not take another!")
+        msgbox("Shouldn't take another!")
     }
     waitmessage
     releaseall
@@ -97,13 +104,14 @@ script NewHouse_EventScript_PokeballThree{
  
  
 script NewHouse_EventScript_Articuno{
-    showmonpic(SPECIES_ARTICUNO, 10,3)
-    msgbox("Do you want to choose Articuno?", MSGBOX_YESNO)
+    showmonpic(SPECIES_CHARMANDER, 10,3)
+    msgbox("It's a Charmander!\l"
+    "Do you want to choose Charmander?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_ARTICUNO, 50, ITEM_MASTER_BALL)
+        givemon(SPECIES_CHARMANDER, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Articuno!")
+            msgbox("Recieved Charmander!")
             removeobject(2)
             setflag(FLAG_UNUSED_0x020)
             setflag(FLAG_SYS_POKEMON_GET)
@@ -111,7 +119,7 @@ script NewHouse_EventScript_Articuno{
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Articuno!")
+            msgbox("Recieved Charmander!")
             removeobject(2)
             setflag(FLAG_UNUSED_0x020)
             setflag(FLAG_SYS_POKEMON_GET)
@@ -128,81 +136,16 @@ script NewHouse_EventScript_Articuno{
     }
  
 }
- 
-script NewHouse_EventScript_Suicune{
-    showmonpic(SPECIES_SUICUNE, 10,3)
-    msgbox("Do you want to choose Suicune?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_SUICUNE, 50, ITEM_MASTER_BALL)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Suicune!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Suicune!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(NewHouse_NotChosen)
-    }
- 
-}
- 
-script NewHouse_EventScript_Palkia{
-    showmonpic(SPECIES_PALKIA, 10,3)
-    msgbox("Do you want to choose Palkia?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_PALKIA, 50, ITEM_MASTER_BALL)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Palkia!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Palkia!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(2)
-            setflag(FLAG_UNUSED_0x020)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(NewHouse_NotChosen)
-    }
- 
-}
- 
+
 script NewHouse_EventScript_Zapdos{
-    showmonpic(SPECIES_ZAPDOS, 10,3)
-    msgbox("Do you want to choose Zapdos?", MSGBOX_YESNO)
+    showmonpic(SPECIES_MUDKIP, 10,3)
+    msgbox("It's a Mudkip!\l"
+        "Do you want to choose Mudkip?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_ZAPDOS, 50, ITEM_MASTER_BALL)
+        givemon(SPECIES_MUDKIP, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Zapdos!")
+            msgbox("Recieved Mudkip!")
             setflag(FLAG_SYS_POKEMON_GET)
             removeobject(3)
             setflag(FLAG_UNUSED_0x021)
@@ -210,7 +153,7 @@ script NewHouse_EventScript_Zapdos{
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Zapdos!")
+            msgbox("Recieved Mudkip!")
             setflag(FLAG_SYS_POKEMON_GET)
             removeobject(3)
             setflag(FLAG_UNUSED_0x021)
@@ -227,81 +170,16 @@ script NewHouse_EventScript_Zapdos{
     }
  
 }
- 
-script NewHouse_EventScript_Raikou{
-    showmonpic(SPECIES_RAIKOU, 10,3)
-    msgbox("Do you want to choose Raikou?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_RAIKOU, 50, ITEM_MASTER_BALL)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Raikou!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(3)
-            setflag(FLAG_UNUSED_0x021)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Raikou!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(3)
-            setflag(FLAG_UNUSED_0x021)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(NewHouse_NotChosen)
-    }
- 
-}
- 
-script NewHouse_EventScript_Dialga{
-    showmonpic(SPECIES_DIALGA, 10,3)
-    msgbox("Do you want to choose Dialga?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_DIALGA, 50, ITEM_MASTER_BALL)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Dialga!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(3)
-            setflag(FLAG_UNUSED_0x021)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Dialga!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(3)
-            setflag(FLAG_UNUSED_0x021)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(NewHouse_NotChosen)
-    }
- 
-}
- 
+
 script NewHouse_EventScript_Moltres{
-    showmonpic(SPECIES_MOLTRES, 10,3)
-    msgbox("Do you want to choose Moltres?", MSGBOX_YESNO)
+    showmonpic(SPECIES_TURTWIG, 10,3)
+    msgbox("It's a Turtwig!\l"
+        "Do you want to choose Turtwig?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_MOLTRES, 50, ITEM_MASTER_BALL)
+        givemon(SPECIES_TURTWIG, 5)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Moltres!")
+            msgbox("Recieved Turtwig!")
             setflag(FLAG_SYS_POKEMON_GET)
             removeobject(4)
             setflag(FLAG_UNUSED_0x022)
@@ -309,7 +187,7 @@ script NewHouse_EventScript_Moltres{
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Moltres!")
+            msgbox("Recieved Turtwig!")
             setflag(FLAG_SYS_POKEMON_GET)
             removeobject(4)
             setflag(FLAG_UNUSED_0x022)
@@ -326,73 +204,6 @@ script NewHouse_EventScript_Moltres{
     }
  
 }
- 
-script NewHouse_EventScript_Entei{
-    showmonpic(SPECIES_ENTEI, 10,3)
-    msgbox("Do you want to choose Entei?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_ENTEI, 50, ITEM_MASTER_BALL)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Entei!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(4)
-            setflag(FLAG_UNUSED_0x022)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Entei!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(4)
-            setflag(FLAG_UNUSED_0x022)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(NewHouse_NotChosen)
-    }
- 
-}
- 
-script NewHouse_EventScript_Giratina{
-    showmonpic(SPECIES_GIRATINA, 10,3)
-    msgbox("Do you want to choose Giratina?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_GIRATINA, 50, ITEM_MASTER_BALL)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Giratina!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(4)
-            setflag(FLAG_UNUSED_0x022)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved Giratina!")
-            setflag(FLAG_SYS_POKEMON_GET)
-            removeobject(4)
-            setflag(FLAG_UNUSED_0x022)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(NewHouse_NotChosen)
-    }
- 
-}
- 
  
 script NicknamePartyMon{
     msgbox("Give a nickname?", MSGBOX_YESNO)
@@ -415,5 +226,13 @@ script NicknameBoxMon{
 }
  
 text NewHouse_NotChosen{
-    "You did not choose the Pokemon."
+    "You did not choose the POKéMON."
+}
+
+movement FaceLeft {
+    face_left
+}
+
+movement FacePlayer {
+    face_player
 }
