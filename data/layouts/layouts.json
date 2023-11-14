@@ -184,9 +184,9 @@
     {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
-      "width": 80,
+      "width": 40,
       "height": 22,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_snowy_attempt2",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route103/border.bin",
       "blockdata_filepath": "data/layouts/Route103/map.bin"

@@ -1,5 +1,5 @@
 mapscripts NewHouse_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: NewHouse_EventScript_BallDefault
+    MAP_SCRIPT_ON_LOAD: NewHouse_EventScript_BallDefault
 }
  
 script NewHouse_EventScript_BallDefault{
@@ -10,36 +10,38 @@ script NewHouse_EventScript_Wailmer{
     lock
     faceplayer
     if(!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
+        if(var(VAR_UNUSED_0x40F7) == 1){
+            msgbox("{PLAYER}, go ahead and take a POKéMON.")
+        }
+        if(var(VAR_UNUSED_0x40F7) == 2){
+            msgbox("{PLAYER}, go ahead and take a POKéMON.")
+        }
         if(var(VAR_UNUSED_0x40F7) == 0){
             msgbox("Why, hello there, {PLAYER}!\n"
-            "What brings you to my laboratory?\l"
+            "What brings you to my laboratory?\p"
             "Hm, I see. The climate events we are\n"
             "experiencing are very concerning.")
             applymovement(1,FaceLeft)
             waitmovement(0)
             msgbox("As you know, I have made my career in\n"
             "studying the climate of ECODIA. Never\l"
-            "have I seen the frequency and intensity\n"
-            "of such extreme events.")
+            "have I seen such frequency and\l"
+            "intensity of these extreme events.")
             applymovement(1,FacePlayer)
             waitmovement(0)
             msgbox("{PLAYER}, I am getting old. In the past,\n"
             "I would have ventured out to see what\l"
-            "it is we are dealing with. Instead,\n"
-            "I must make a request of you.\l"
+            "it is we are dealing with. Instead,\l"
+            "I must make a request of you.\p"
             "I must ask you to go survey the region.\n"
-            "{PLAYER}, go take a POKéMON from my table.\l"
-            "Make us all proud.")
+            "{PLAYER}, take a POKéMON from my table,\l"
+            "and go see what is happening to ECODIA.")
             setvar(VAR_UNUSED_0x40F7, 1)
         }
-        if(var(VAR_UNUSED_0x40F7) == 1){
-            msgbox("{PLAYER}, go ahead and take a POKéMON.")
-        }
-        
     }
     else{
         msgbox("Take care of your POKéMON, and be safe.\n"
-        "I do not know what perils you may face.\l"
+        "I do not know what perils you may face.\p"
         "Trust in yourself, and remember to\n"
         "report back!")
     }
@@ -235,4 +237,24 @@ movement FaceLeft {
 
 movement FacePlayer {
     face_player
+}
+
+script NewHouse_EventScript_Text_Scientist {
+	lock
+	faceplayer
+	msgbox("The species of POKéMON Professor\n"
+	"Spruce is offering have been critical\l"
+    "to his research.\p"
+    "Charmander is a case study in how\n"
+    "sensitive POKéMON are to their\l"
+    "environment, as shown by it's tail.\p"
+    "Mudkip demonstrates how resilient\n"
+    "and adaptable POKéMON can be in\l"
+    "different terrains.\p"
+    "And Turtwig has been studied to see\n"
+    "how plants and animals can live\l"
+    "symbiotically.\p"
+    "Professor Spruce's research may pave a\n"
+    "path towards a more sustainable future!")
+	release
 }

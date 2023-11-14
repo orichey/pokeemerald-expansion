@@ -1691,3 +1691,41 @@ const u16 gTilesetPalettes_gTileset_Gym[][16] =
 };
 
 const u32 gTilesetTiles_gTileset_Gym[] = INCBIN_U32("data/tilesets/primary/gym/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_snowy[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_snowy[] = INCBIN_U32("data/tilesets/primary/snowy/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_snowy_attempt2[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowy_attempt_2/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_snowy_attempt2[] = INCBIN_U32("data/tilesets/primary/snowy_attempt_2/tiles.4bpp.lz");

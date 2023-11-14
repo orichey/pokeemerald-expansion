@@ -216,3 +216,9 @@ const u16 gMetatileAttributes_gTileset_TreefallGym[] = INCBIN_U16("data/tilesets
 
 const u16 gMetatiles_gTileset_Gym[] = INCBIN_U16("data/tilesets/primary/gym/metatiles.bin");
 const u16 gMetatileAttributes_gTileset_Gym[] = INCBIN_U16("data/tilesets/primary/gym/metatile_attributes.bin");
+
+const u16 gMetatiles_snowy[] = INCBIN_U16("data/tilesets/primary/snowy/metatiles.bin");
+const u16 gMetatileAttributes_snowy[] = INCBIN_U16("data/tilesets/primary/snowy/metatile_attributes.bin");
+
+const u16 gMetatiles_snowy_attempt2[] = INCBIN_U16("data/tilesets/primary/snowy_attempt_2/metatiles.bin");
+const u16 gMetatileAttributes_snowy_attempt2[] = INCBIN_U16("data/tilesets/primary/snowy_attempt_2/metatile_attributes.bin");

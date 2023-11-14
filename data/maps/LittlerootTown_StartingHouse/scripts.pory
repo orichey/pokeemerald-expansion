@@ -3,6 +3,7 @@ mapscripts LittlerootTown_StartingHouse_MapScripts {
 }
 
 script StartingHouse_EventScript_MomDefault{
+    setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE)
     if(!(flag(FLAG_UNUSED_0x025))){
         setobjectxy(1,6,4)
         setobjectmovementtype(1, MOVEMENT_TYPE_FACE_UP)
@@ -18,7 +19,23 @@ script StartingHouse_EventScript_MomDefault{
 script StartingHouse_EventScript_MomAskSpruce{
     lock
     faceplayer
-    msgbox("MOM: Did you talk to PROF. SPRUCE?")
+    if(var(VAR_UNUSED_0x40F7) == 0) {
+        msgbox("MOM: Did you talk to Professor Spruce?")
+    }
+    if(var(VAR_UNUSED_0x40F7) == 2) {
+        msgbox("MOM: Hi, honey! You look tired.\n"
+        "Why not take a quick rest?")
+        call(Common_EventScript_OutOfCenterPartyHeal)
+        msgbox("Be safe out there!$")
+    }
+    if(var(VAR_UNUSED_0x40F7) == 1) {
+        msgbox("MOM: So Professor Spruce wants you to\n"
+        "explore ECODIA for him?\p"
+        "MOM: That sounds like quite a task.\n"
+        "But I know you can do it, sweetie!\l"
+        "Be safe, and come home any time!$")
+        setvar(VAR_UNUSED_0x40F7, 2)
+    }
     waitmessage
     release
     end
@@ -56,7 +73,7 @@ script StartingHouse_EventScript_MomBeckons{
         "would find something even worse.")
         applymovement(1,MomLookUp)
         waitmovement(0)
-        msgbox("MOM:...$")
+        msgbox("MOM: ...$")
         applymovement(1,MomLook)
         waitmovement(0)
         msgbox("Say, why don't you go see PROF. SPRUCE?\n"
