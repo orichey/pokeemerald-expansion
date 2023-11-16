@@ -1065,3 +1065,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/LittlerootTown_StartingHouse/scripts.inc"
 
 	.include "data/maps/PetalburgCity_House2_2/scripts.inc"
+
+	.include "data/maps/OldaleTown_JoeysHouse/scripts.inc"

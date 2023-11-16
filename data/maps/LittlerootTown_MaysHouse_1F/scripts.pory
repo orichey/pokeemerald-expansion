@@ -1,3 +1,4 @@
+raw `
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4
 .set LOCALID_RIVAL, 7
@@ -402,15 +403,12 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "Hi, neighbor!\p"
 	.string "Do you already have your\n"
 	.string "own POKéMON?$"
+`
 
-LittlerootTown_MaysHouse_Text_Woman::
+script LittlerootTown_MaysHouse_Text_Woman {
 	lock
 	faceplayer
-	msgbox LittlerootTown_MaysHouse_Text_Woman_Text_0
+	msgbox("Joey's Rattata really is strong.\n"
+	"I wonder, is it truly top percentage?")
 	release
-	return
-
-
-LittlerootTown_MaysHouse_Text_Woman_Text_0:
-	.string "Joey's Rattata really is strong.\n"
-	.string "I wonder, is it truly top percentage?$"
+}

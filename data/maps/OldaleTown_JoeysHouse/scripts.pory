@@ -1,0 +1,103 @@
+raw `OldaleTown_JoeysHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, JoeysHouse_EventScript_JoeyDefault
+	.byte 0
+
+OldaleTown_JoeysHouse_EventScript_Woman::
+	msgbox OldaleTown_JoeysHouse_Text_PokemonLevelUp, MSGBOX_NPC
+	end
+
+OldaleTown_JoeysHouse_EventScript_Man::
+	msgbox OldaleTown_JoeysHouse_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_NPC
+	end
+
+OldaleTown_JoeysHouse_Text_PokemonLevelUp:
+	.string "When POKéMON battle, they eventually\n"
+	.string "level up and become stronger.$"
+
+OldaleTown_JoeysHouse_Text_YoullGoFurtherWithStrongPokemon:
+	.string "If the POKéMON with you become\n"
+	.string "stronger, you'll be able to go farther\l"
+	.string "away from here.$"
+
+`
+
+script JoeysHouse_EventScript_JoeyDefault{
+    if(!(flag(FLAG_UNUSED_0x026))){
+        setobjectxy(1,5,2)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
+        return
+    }
+    else{
+        setobjectxyperm(1,4,2)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
+        return
+    }
+}
+
+script OldaleTown_JoeysHouse_Text_Woman {
+	lock
+	faceplayer
+	msgbox("Joey's Rattata really is strong.\n"
+	"I wonder, is it truly top percentage?")
+	release
+}
+
+script OldaleTown_JoeysHouse_EventScript_PikachuSign {
+    lockall
+    msgbox("Is this Joey's second favorite rodent?$")
+    releaseall
+}
+
+script OldaleTown_JoeysHouse_YoungsterJoeyBattle {
+ 
+	trainerbattle_single(TRAINER_YOUNGSTER_JOEY, Joey_Intro, Joey_Outro, Joey_Leave)
+	waitmessage
+    msgbox(Joey_Overworld, MSGBOX_AUTOCLOSE)
+    end
+}
+ 
+script Joey_Leave{
+    setflag(FLAG_UNUSED_0x026)
+    msgbox(PostBattle_Joey, MSGBOX_AUTOCLOSE) 
+    call(JoeyMove)
+}
+
+text Joey_Intro{
+    "My Rattata is different from regular\n"
+    "Rattata. It's like my Rattata is in the\l" 
+    "top percentage of all Rattata."
+}
+ 
+text Joey_Outro{
+    "Oh... I'm all out of Pokémon that can\n"
+    "fight."
+}
+ 
+text PostBattle_Joey{
+    "What a battle! I'll let you try to find\n"
+    "a top percentage Rattata too!"
+}
+
+text Joey_Overworld{
+    "Have you found any Rattata?"
+}
+
+script JoeyMove {
+    getplayerxy(VAR_TEMP_8,VAR_TEMP_9)
+    if(var(VAR_TEMP_8)==4) {
+        applymovement(1,JoeyRight)
+    }
+    else{
+        applymovement(1,JoeyLeft)
+    }
+}
+
+movement JoeyLeft{
+    walk_left
+    face_right
+}
+
+movement JoeyRight{
+    walk_right
+    face_left
+}

@@ -439,8 +439,7 @@ script OldaleTown_EventScript_LittleBoy {
 script OldaleTown_EventScript_ScholarBoy {
 	lock
 	faceplayer
-	msgbox("I learned so much about ECODIA at the\n"
-	"LIBRARY!")
+	msgbox(format("This house has been abandoned for a long time, much like the POKéMON MART. It's hard to imagine DESOLA TOWN will recover, but I have hope in Anthrotech!"))
 	release
 }
 
