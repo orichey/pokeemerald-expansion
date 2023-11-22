@@ -554,10 +554,10 @@
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "name": "LittlerootTown_MaysHouse_1F_Layout",
-      "width": 11,
+      "width": 10,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin"
     },
@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/OldaleTown_JoeysHouse/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown_JoeysHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_SMALL_HOUSE",
+      "name": "LittlerootTown_SmallHouse_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/LittlerootTown_SmallHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_SmallHouse/map.bin"
     }
   ]
 }

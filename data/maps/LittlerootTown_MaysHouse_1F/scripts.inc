@@ -403,14 +403,31 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "Do you already have your\n"
 	.string "own POKéMON?$"
 
-LittlerootTown_MaysHouse_Text_Woman::
+LittlerootTown_MaysHouse_EventScript_Dad::
 	lock
 	faceplayer
-	msgbox LittlerootTown_MaysHouse_Text_Woman_Text_0
+	msgbox LittlerootTown_MaysHouse_EventScript_Dad_Text_0
 	release
 	return
 
 
-LittlerootTown_MaysHouse_Text_Woman_Text_0:
-	.string "Joey's Rattata really is strong.\n"
-	.string "I wonder, is it truly top percentage?$"
+LittlerootTown_MaysHouse_EventScript_Girl::
+	lock
+	faceplayer
+	msgbox LittlerootTown_MaysHouse_EventScript_Girl_Text_0
+	release
+	return
+
+
+LittlerootTown_MaysHouse_EventScript_Dad_Text_0:
+	.string "The POKéMON league is starting to\n"
+	.string "address climate change.\p"
+	.string "Some of the actions by gym leaders give\n"
+	.string "me hope for the future.$"
+
+LittlerootTown_MaysHouse_EventScript_Girl_Text_0:
+	.string "Anthrotech develops technology across\n"
+	.string "ECODIA to improve our living\l"
+	.string "conditions.\p"
+	.string "The company's founder was born in\n"
+	.string "ANTHROH TOWN!$"

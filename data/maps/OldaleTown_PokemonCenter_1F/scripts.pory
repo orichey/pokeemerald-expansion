@@ -1,3 +1,4 @@
+raw `
 .set LOCALID_NURSE, 1
 
 OldaleTown_PokemonCenter_1F_MapScripts::
@@ -62,33 +63,18 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 	.string "the second floor was built recently.\p"
 	.string "I traded POKéMON right away.$"
 
-OldaleTown_PokemonCenter_EventScript_Woman::
+`
+
+script OldaleTown_PokemonCenter_EventScript_Woman {
 	lock
 	faceplayer
-	msgbox OldaleTown_PokemonCenter_EventScript_Woman_Text_0
-	release
-	return
+	msgbox(format("Although many of our ecosystems and cities are in flux, ECODIA still has many functional social services.\pI'm glad we still have free healthcare!"))
+    release
+}
 
-
-OldaleTown_PokemonCenter_EventScript_Scientist::
+script OldaleTown_PokemonCenter_EventScript_Scientist {
 	lock
 	faceplayer
-	msgbox OldaleTown_PokemonCenter_EventScript_Scientist_Text_0
-	release
-	return
-
-
-OldaleTown_PokemonCenter_EventScript_Woman_Text_0:
-	.string "Although many of our ecosystems and\n"
-	.string "cities are in flux, ECODIA still has\l"
-	.string "many functional social services.\p"
-	.string "I'm glad we still have free healthcare!$"
-
-OldaleTown_PokemonCenter_EventScript_Scientist_Text_0:
-	.string "All of the surrounding regions got hit\n"
-	.string "by disasters even worse than ECODIA.\l"
-	.string "It seems that POKéMON from those\l"
-	.string "regions have migrated here, and there\l"
-	.string "are people who dedicate their lives to\l"
-	.string "their conservation.\p"
-	.string "There's even one such person in town!$"
+	msgbox(format("All of the surrounding regions got hit by disasters even worse than ECODIA. It seems that POKéMON from those regions have migrated here, and there are people who dedicate their lives to their conservation.\pThere's even one such person in town!"))
+    release
+}

@@ -29,50 +29,17 @@ OldaleTown_House1_Text_Man::
 	return
 
 
-OldaleTown_House1_Text_Scientist::
-	lock
-	faceplayer
-	msgbox OldaleTown_House1_Text_Scientist_Text_0
-	release
-	return
-
-
-OldaleTown_House1_Text_Girl::
-	lock
-	faceplayer
-	msgbox OldaleTown_House1_Text_Girl_Text_0
-	release
-	return
-
-
-OldaleTown_House1_EventScript_SoilSign::
-	lockall
-	msgbox OldaleTown_House1_EventScript_SoilSign_Text_0
-	releaseall
-	return
-
-
 OldaleTown_House1_Text_Woman_Text_0:
-	.string "This library holds many records of\n"
-	.string "events in ECODIA.\p"
-	.string "People journey from far and wide to read\n"
-	.string "about our history.$"
+	.string "It's hard to know where our next meal is\n"
+	.string "coming from.\p"
+	.string "We're debating moving to a bigger city,\n"
+	.string "like our neighbors did.$"
 
 OldaleTown_House1_Text_Man_Text_0:
-	.string "You're looking at some of the last few\n"
-	.string "books around.\p"
-	.string "Feast your eyes!$"
-
-OldaleTown_House1_Text_Scientist_Text_0:
-	.string "This soil core can tell us about the\n"
-	.string "composition of the atmosphere decades\l"
-	.string "ago.\p"
-	.string "We are lucky the library preserved\n"
-	.string "such a valuable artifact.$"
-
-OldaleTown_House1_Text_Girl_Text_0:
-	.string "I found treasure in the shelves!$"
-
-OldaleTown_House1_EventScript_SoilSign_Text_0:
-	.string "It's a cylinder of dirt with unreadable\n"
-	.string "labels. What does it mean?$"
+	.string "Believe it or not, many people used to\n"
+	.string "live in DESOLA TOWN. However, a lack of\l"
+	.string "economic opportunities drove many\l"
+	.string "people out.\p"
+	.string "Now, we just serve as a rest stop for\n"
+	.string "travelers between TREEFALL WOODS and\l"
+	.string "the mountains.$"

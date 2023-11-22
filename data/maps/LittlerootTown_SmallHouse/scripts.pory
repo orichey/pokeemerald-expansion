@@ -1,0 +1,18 @@
+raw`
+LittlerootTown_SmallHouse_MapScripts::
+	.byte 0
+`
+
+script LittlerootTown_SmallHouse_EventScript_Mom {
+	lock
+	faceplayer
+	msgbox(format("Nearly all of the towns and cities across ECODIA are experiencing different effects of climate collapse.\pWho knew there would be so many kinds of impacts?"))
+    release
+}
+
+script LittlerootTown_SmallHouse_EventScript_Kid {
+	lock
+	faceplayer
+	msgbox(format("I'm scared of growing up! Who will solve our problems?"))
+    release
+}

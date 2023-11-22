@@ -11,7 +11,7 @@ OldaleTown_OnTransition:
 	setflag FLAG_VISITED_OLDALE_TOWN
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
-	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
+	call_if_set FLAG_UNUSED_0x028, OldaleTown_EventScript_SetOldaleState
 	end
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
@@ -439,7 +439,7 @@ script OldaleTown_EventScript_LittleBoy {
 script OldaleTown_EventScript_ScholarBoy {
 	lock
 	faceplayer
-	msgbox(format("This house has been abandoned for a long time, much like the POKéMON MART. It's hard to imagine DESOLA TOWN will recover, but I have hope in Anthrotech!"))
+	msgbox(format("This house has been abandoned for a long time, much like the POKéMON MART.\pIt's hard to imagine DESOLA TOWN will recover, but I have hope in Anthrotech!"))
 	release
 }
 
@@ -469,6 +469,111 @@ script OldaleTown_EventScript_CantPass {
 	release
 }
 
+script OldaleTown_EventScript_EnterTop {
+	if(flag(FLAG_UNUSED_0x028) == FALSE) {
+		lockall
+		applymovement(OBJ_EVENT_ID_PLAYER,EnterTop)
+		waitmovement(0)
+		applymovement(5,AnthrotechWalkLeft)
+		waitmovement(0)
+		msgbox(format("???: Hmmm..."))
+		applymovement(5,PlayerUp)
+		delay(60)
+		applymovement(5,HikerDown)
+		msgbox(format("???: I see..."))
+		applymovement(5,LookLeft)
+		waitmovement(0)
+		delay(35)
+		applymovement(5,AnthroLookRight)
+		applymovement(5,Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("???: Oh! Hello there!"))
+		applymovement(5,WalkToPlayer)
+		waitmovement(0)
+		msgbox(format("???: Are you a resident of DESOLA TOWN?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMUNDUNGUS: I'm going around ECODIA, learning about the problems our cities face and how I can help solve them!"))
+		applymovement(5,HikerDown)
+		waitmovement(0)
+		msgbox(format("MUNDUNGUS: For example, DESOLA TOWN seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the POKéMON MART or constructing a resort for travelers?"))
+		applymovement(5,AnthroLookRight)
+		msgbox(format("MUNDUNGUS: In any case, what is your name? \p{PLAYER}? From ANTHROH TOWN? Why, you and I have the same roots!\pMUNDUNGUS: I would love to hear about your ideas on how to make ECODIA a more resilient and sustainable region, how about you come talk to me later, in TREEFALL TOWN?\pMUNDUNGUS: I'll see you soon, {PLAYER}!"))
+		applymovement(5,AnthroLeaves)
+		waitmovement(0)
+		removeobject(5)
+		setflag(FLAG_UNUSED_0x028)
+	}
+	release
+}
+
+script OldaleTown_EventScript_EnterMid {
+	if(flag(FLAG_UNUSED_0x028) == FALSE) {
+		lockall
+		applymovement(OBJ_EVENT_ID_PLAYER,EnterMid)
+		waitmovement(0)
+		applymovement(5,AnthrotechWalkLeft)
+		waitmovement(0)
+		msgbox(format("???: Hmmm..."))
+		applymovement(5,PlayerUp)
+		delay(60)
+		applymovement(5,HikerDown)
+		msgbox(format("???: I see..."))
+		applymovement(5,LookLeft)
+		waitmovement(0)
+		delay(35)
+		applymovement(5,AnthroLookRight)
+		applymovement(5,Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("???: Oh! Hello there!"))
+		applymovement(5,WalkToPlayer)
+		waitmovement(0)
+		msgbox(format("???: Are you a resident of DESOLA TOWN?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMUNDUNGUS: I'm going around ECODIA, learning about the problems our cities face and how I can help solve them!"))
+		applymovement(5,HikerDown)
+		waitmovement(0)
+		msgbox(format("MUNDUNGUS: For example, DESOLA TOWN seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the POKéMON MART or constructing a resort for travelers?"))
+		applymovement(5,AnthroLookRight)
+		msgbox(format("MUNDUNGUS: In any case, what is your name? \p{PLAYER}? From ANTHROH TOWN? Why, you and I have the same roots!\pMUNDUNGUS: I would love to hear about your ideas on how to make ECODIA a more resilient and sustainable region, how about you come talk to me later, in TREEFALL TOWN?\pMUNDUNGUS: I'll see you soon, {PLAYER}!"))
+		applymovement(5,AnthroLeaves)
+		waitmovement(0)
+		removeobject(5)
+		setflag(FLAG_UNUSED_0x028)
+	}
+	release
+}
+
+script OldaleTown_EventScript_EnterBottom {
+	if(flag(FLAG_UNUSED_0x028) == FALSE) {
+		lockall
+		applymovement(OBJ_EVENT_ID_PLAYER,EnterBottom)
+		waitmovement(0)
+		applymovement(5,AnthrotechWalkLeft)
+		waitmovement(0)
+		msgbox(format("???: Hmmm..."))
+		applymovement(5,PlayerUp)
+		delay(60)
+		applymovement(5,HikerDown)
+		msgbox(format("???: I see..."))
+		applymovement(5,LookLeft)
+		waitmovement(0)
+		delay(35)
+		applymovement(5,AnthroLookRight)
+		applymovement(5,Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("???: Oh! Hello there!"))
+		applymovement(5,WalkToPlayer)
+		waitmovement(0)
+		msgbox(format("???: Are you a resident of DESOLA TOWN?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMUNDUNGUS: I'm going around ECODIA, learning about the problems our cities face and how I can help solve them!"))
+		applymovement(5,HikerDown)
+		waitmovement(0)
+		msgbox(format("MUNDUNGUS: For example, DESOLA TOWN seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the POKéMON MART or constructing a resort for travelers?"))
+		applymovement(5,AnthroLookRight)
+		msgbox(format("MUNDUNGUS: In any case, what is your name? \p{PLAYER}? From ANTHROH TOWN? Why, you and I have the same roots!\pMUNDUNGUS: I would love to hear about your ideas on how to make ECODIA a more resilient and sustainable region, how about you come talk to me later, in TREEFALL TOWN?\pMUNDUNGUS: I'll see you soon, {PLAYER}!"))
+		applymovement(5,AnthroLeaves)
+		waitmovement(0)
+		removeobject(5)
+		setflag(FLAG_UNUSED_0x028)
+	}
+	release
+}
+
 movement HikerDown{
 	face_down
 }
@@ -479,4 +584,43 @@ movement GoBack{
 
 movement PlayerUp{
 	face_up
+}
+
+movement EnterTop{
+	walk_left*8
+}
+
+movement EnterMid{
+	walk_left*3
+	walk_up
+	walk_left*5
+}
+
+movement EnterBottom{
+	walk_left*3
+	walk_up*2
+	walk_left*5
+}
+
+movement AnthrotechWalkLeft{
+	walk_left
+}
+
+movement LookLeft{
+	face_left
+}
+
+movement AnthroLookRight{
+	face_right
+}
+
+movement WalkToPlayer{
+	walk_right*3
+}
+
+movement AnthroLeaves{
+	walk_left*3
+	walk_down*5
+	walk_right
+	walk_down*5
 }

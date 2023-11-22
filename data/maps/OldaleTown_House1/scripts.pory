@@ -18,13 +18,13 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
 script OldaleTown_House1_Text_Woman {
 	lock
 	faceplayer
-	msgbox(format("It's hard to know where our next meal is coming from. We're debating moving to a bigger city, like our neighbors did."))
+	msgbox(format("It's hard to know where our next meal is coming from.\pWe're debating moving to a bigger city, like our neighbors did."))
 	release
 }
 
 script OldaleTown_House1_Text_Man {
 	lock
 	faceplayer
-	msgbox(format("Believe it or not, many people used to live in DESOLA TOWN. However, a lack of economic opportunities drove many people out. Now, we just serve as a rest stop for travelers between TREEFALL WOODS and the mountains."))
+	msgbox(format("Believe it or not, many people used to live in DESOLA TOWN. However, a lack of economic opportunities drove many people out.\pNow, we just serve as a rest stop for travelers between TREEFALL WOODS and the mountains."))
 	release
 }

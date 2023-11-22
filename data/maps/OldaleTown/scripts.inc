@@ -11,7 +11,7 @@ OldaleTown_OnTransition:
 	setflag FLAG_VISITED_OLDALE_TOWN
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
-	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
+	call_if_set FLAG_UNUSED_0x028, OldaleTown_EventScript_SetOldaleState
 	end
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
@@ -468,6 +468,123 @@ OldaleTown_EventScript_CantPass_2:
 	goto OldaleTown_EventScript_CantPass_1
 
 
+OldaleTown_EventScript_EnterTop::
+	goto_if_unset FLAG_UNUSED_0x028, OldaleTown_EventScript_EnterTop_2
+OldaleTown_EventScript_EnterTop_1:
+	release
+	return
+
+OldaleTown_EventScript_EnterTop_2:
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, EnterTop
+	waitmovement 0
+	applymovement 5, AnthrotechWalkLeft
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_0
+	applymovement 5, PlayerUp
+	delay 60
+	applymovement 5, HikerDown
+	msgbox OldaleTown_EventScript_EnterTop_Text_1
+	applymovement 5, LookLeft
+	waitmovement 0
+	delay 35
+	applymovement 5, Common_Movement_ExclamationMark
+	applymovement 5, AnthroLookRight
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_2
+	applymovement 5, WalkToPlayer
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_3
+	applymovement 5, HikerDown
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_4
+	applymovement 5, AnthroLookRight
+	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	applymovement 5, AnthroLeaves
+	waitmovement 0
+	removeobject 5
+	setflag FLAG_UNUSED_0x028
+	goto OldaleTown_EventScript_EnterTop_1
+
+
+OldaleTown_EventScript_EnterMid::
+	goto_if_unset FLAG_UNUSED_0x028, OldaleTown_EventScript_EnterMid_2
+OldaleTown_EventScript_EnterMid_1:
+	release
+	return
+
+OldaleTown_EventScript_EnterMid_2:
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, EnterMid
+	waitmovement 0
+	applymovement 5, AnthrotechWalkLeft
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_0
+	applymovement 5, PlayerUp
+	delay 60
+	applymovement 5, HikerDown
+	msgbox OldaleTown_EventScript_EnterTop_Text_1
+	applymovement 5, LookLeft
+	waitmovement 0
+	delay 35
+	applymovement 5, Common_Movement_ExclamationMark
+	applymovement 5, AnthroLookRight
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_2
+	applymovement 5, WalkToPlayer
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_3
+	applymovement 5, HikerDown
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_4
+	applymovement 5, AnthroLookRight
+	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	applymovement 5, AnthroLeaves
+	waitmovement 0
+	removeobject 5
+	setflag FLAG_UNUSED_0x028
+	goto OldaleTown_EventScript_EnterMid_1
+
+
+OldaleTown_EventScript_EnterBottom::
+	goto_if_unset FLAG_UNUSED_0x028, OldaleTown_EventScript_EnterBottom_2
+OldaleTown_EventScript_EnterBottom_1:
+	release
+	return
+
+OldaleTown_EventScript_EnterBottom_2:
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, EnterBottom
+	waitmovement 0
+	applymovement 5, AnthrotechWalkLeft
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_0
+	applymovement 5, PlayerUp
+	delay 60
+	applymovement 5, HikerDown
+	msgbox OldaleTown_EventScript_EnterTop_Text_1
+	applymovement 5, LookLeft
+	waitmovement 0
+	delay 35
+	applymovement 5, Common_Movement_ExclamationMark
+	applymovement 5, AnthroLookRight
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_2
+	applymovement 5, WalkToPlayer
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_3
+	applymovement 5, HikerDown
+	waitmovement 0
+	msgbox OldaleTown_EventScript_EnterTop_Text_4
+	applymovement 5, AnthroLookRight
+	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	applymovement 5, AnthroLeaves
+	waitmovement 0
+	removeobject 5
+	setflag FLAG_UNUSED_0x028
+	goto OldaleTown_EventScript_EnterBottom_1
+
+
 HikerDown:
 	face_down
 	step_end
@@ -478,6 +595,77 @@ GoBack:
 
 PlayerUp:
 	face_up
+	step_end
+
+EnterTop:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+EnterMid:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+EnterBottom:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+AnthrotechWalkLeft:
+	walk_left
+	step_end
+
+LookLeft:
+	face_left
+	step_end
+
+AnthroLookRight:
+	face_right
+	step_end
+
+WalkToPlayer:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+AnthroLeaves:
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 OldaleTown_EventScript_NewSign_Text_0:
@@ -503,8 +691,11 @@ OldaleTown_EventScript_LittleBoy_Text_0:
 	.string "Even TREEFALL FOREST is scary!$"
 
 OldaleTown_EventScript_ScholarBoy_Text_0:
-	.string "I learned so much about ECODIA at the\n"
-	.string "LIBRARY!$"
+	.string "This house has been abandoned for a\n"
+	.string "long time, much like the POKéMON MART.\p"
+	.string "It's hard to imagine DESOLA TOWN will\n"
+	.string "recover, but I have hope in\l"
+	.string "Anthrotech!$"
 
 OldaleTown_EventScript_Hiker_Text_0:
 	.string "I don't know what is going on at the\n"
@@ -514,3 +705,45 @@ OldaleTown_EventScript_CantPass_Text_0:
 	.string "Watch out! The mountain pass is closed\n"
 	.string "to travelers.\p"
 	.string "Come back after the work crews disperse.$"
+
+OldaleTown_EventScript_EnterTop_Text_0:
+	.string "???: Hmmm...$"
+
+OldaleTown_EventScript_EnterTop_Text_1:
+	.string "???: I see...$"
+
+OldaleTown_EventScript_EnterTop_Text_2:
+	.string "???: Oh! Hello there!$"
+
+OldaleTown_EventScript_EnterTop_Text_3:
+	.string "???: Are you a resident of DESOLA TOWN?\p"
+	.string "???: You're not? That's too bad. I was\n"
+	.string "hoping to talk to a local and get their\l"
+	.string "opinion on the state of the town.\p"
+	.string "???: How rude, I didn't introduce\n"
+	.string "myself! I am Mundungus, the founder\l"
+	.string "and president of Anthrotech!\p"
+	.string "MUNDUNGUS: I'm going around ECODIA,\n"
+	.string "learning about the problems our cities\l"
+	.string "face and how I can help solve them!$"
+
+OldaleTown_EventScript_EnterTop_Text_4:
+	.string "MUNDUNGUS: For example, DESOLA TOWN\n"
+	.string "seems a little empty, but I'm certain\l"
+	.string "Anthrotech can work to bring some\l"
+	.string "economic revitalization! Perhaps\l"
+	.string "reopening the POKéMON MART or\l"
+	.string "constructing a resort for travelers?$"
+
+OldaleTown_EventScript_EnterTop_Text_5:
+	.string "MUNDUNGUS: In any case, what is your\n"
+	.string "name?\p"
+	.string "{PLAYER}? From ANTHROH TOWN? Why,\n"
+	.string "you and I have the same roots!\p"
+	.string "MUNDUNGUS: I would love to hear about\n"
+	.string "your ideas on how to make ECODIA a\l"
+	.string "more resilient and sustainable region,\l"
+	.string "how about you come talk to me later, in\l"
+	.string "TREEFALL TOWN?\p"
+	.string "MUNDUNGUS: I'll see you soon,\n"
+	.string "{PLAYER}!$"

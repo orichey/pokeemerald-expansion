@@ -238,10 +238,6 @@ LittlerootTown_EventScript_FatMan::
 	msgbox LittlerootTown_Text_TechnologyIsAmazing, MSGBOX_NPC
 	end
 
-LittlerootTown_EventScript_Boy::
-	msgbox LittlerootTown_Text_SpruceSpendsDaysInLab, MSGBOX_NPC
-	end
-
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -951,7 +947,7 @@ LittlerootTown_Text_TechnologyIsAmazing:
 
 LittlerootTown_Text_SpruceSpendsDaysInLab:
 	.string "PROF. SPRUCE spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
+	.string "studying. uddenly go out in\l"
 	.string "the wild to do more research…\p"
 	.string "When does PROF. SPRUCE spend time\n"
 	.string "at home?$"
@@ -1021,6 +1017,14 @@ LittlerootTown_EventScript_OldWoman::
 	return
 
 
+LittlerootTown_EventScript_Boy::
+	lock
+	faceplayer
+	msgbox LittlerootTown_EventScript_Boy_Text_0
+	release
+	return
+
+
 LittlerootTown_EventScript_ShouldGetPokemon::
 	goto_if_unset FLAG_SYS_POKEMON_GET, LittlerootTown_EventScript_ShouldGetPokemon_2
 LittlerootTown_EventScript_ShouldGetPokemon_1:
@@ -1072,6 +1076,13 @@ LittlerootTown_EventScript_OldWoman_Text_0:
 	.string "This pond is the only water source for\n"
 	.string "ANTHROH TOWN.\p"
 	.string "We are luckier than most in ECODIA.$"
+
+LittlerootTown_EventScript_Boy_Text_0:
+	.string "Professor Spruce used to explore our\n"
+	.string "region, tracking the weather and\l"
+	.string "analyzing climate change.\p"
+	.string "He doesn't leave his lab much these\n"
+	.string "days.$"
 
 LittlerootTown_EventScript_ShouldGetPokemon_Text_0:
 	.string "Better get a POKéMON first!$"

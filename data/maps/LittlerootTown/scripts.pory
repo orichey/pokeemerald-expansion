@@ -239,10 +239,6 @@ LittlerootTown_EventScript_FatMan::
 	msgbox LittlerootTown_Text_TechnologyIsAmazing, MSGBOX_NPC
 	end
 
-LittlerootTown_EventScript_Boy::
-	msgbox LittlerootTown_Text_SpruceSpendsDaysInLab, MSGBOX_NPC
-	end
-
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -952,7 +948,7 @@ LittlerootTown_Text_TechnologyIsAmazing:
 
 LittlerootTown_Text_SpruceSpendsDaysInLab:
 	.string "PROF. SPRUCE spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
+	.string "studying. uddenly go out in\l"
 	.string "the wild to do more research…\p"
 	.string "When does PROF. SPRUCE spend time\n"
 	.string "at home?$"
@@ -1022,6 +1018,13 @@ script LittlerootTown_EventScript_OldWoman {
 	msgbox("This pond is the only water source for\n"
 	"ANTHROH TOWN.\p"
 	"We are luckier than most in ECODIA.")
+	release
+}
+
+script LittlerootTown_EventScript_Boy {
+	lock
+	faceplayer
+	msgbox(format("Professor Spruce used to explore our region, tracking the weather and analyzing climate change.\pHe doesn't leave his lab much these days."))
 	release
 }
 
