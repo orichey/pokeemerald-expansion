@@ -1,3 +1,4 @@
+raw `
 .set LOCALID_BIRCH, 2
 .set LOCALID_ZIGZAGOON, 4
 
@@ -300,54 +301,34 @@ Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
 
-Route101_EventScript_YoungsterBattle::
-	trainerbattle_single TRAINER_ALVARO, Adam_Intro, Adam_Outro
-	msgbox PostBattle_Adam, MSGBOX_AUTOCLOSE
+`
+script Route101_EventScript_YoungsterBattle {
+	trainerbattle_single(TRAINER_ALVARO, Adam_Intro, Adam_Outro)
+	msgbox(PostBattle_Adam, MSGBOX_AUTOCLOSE) 
 	waitmessage
-	end
+    end
+}
+text Adam_Intro{
+    format("Are you also seeing if climate change is as bad as they say? C'mon, let's battle!")
+}
+text Adam_Outro{
+    format("Maybe I'm not ready for this...")
+}
+text PostBattle_Adam{
+    format("I hope the disasters aren't as bad as the TV says.")
+}
 
-
-Route101_EventScript_Balls::
+script Route101_EventScript_Balls {
 	lock
 	faceplayer
-	goto_if_unset FLAG_UNUSED_0x029, Route101_EventScript_Balls_2
-Route101_EventScript_Balls_1:
-	goto_if_set FLAG_UNUSED_0x029, Route101_EventScript_Balls_5
-Route101_EventScript_Balls_4:
-	release
-	return
-
-Route101_EventScript_Balls_2:
-	msgbox Route101_EventScript_Balls_Text_0
-	giveitem ITEM_POKE_BALL, 5
-	giveitem ITEM_POTION, 1
-	setflag FLAG_UNUSED_0x029
-	goto Route101_EventScript_Balls_1
-
-Route101_EventScript_Balls_5:
-	msgbox Route101_EventScript_Balls_Text_1
-	goto Route101_EventScript_Balls_4
-
-
-Route101_EventScript_Balls_Text_0:
-	.string "The POKéMON MART in DESOLA TOWN is\n"
-	.string "shut down. Are you going on an\l"
-	.string "adventure? Have some POKéBALLS and\l"
-	.string "potions!$"
-
-Route101_EventScript_Balls_Text_1:
-	.string "Other POKéMON MARTS throughout the\n"
-	.string "region are open, but these might be the\l"
-	.string "only supplies you can find before\l"
-	.string "TREEFALL TOWN.$"
-
-Adam_Intro::
-	.string "Are you also seeing if climate change is\n"
-	.string "as bad as they say? C'mon, let's battle!$"
-
-Adam_Outro::
-	.string "Maybe I'm not ready for this...$"
-
-PostBattle_Adam::
-	.string "I hope the disasters aren't as bad as\n"
-	.string "the TV says.$"
+    if(flag(FLAG_UNUSED_0x029) == FALSE) {
+	    msgbox(format("The POKéMON MART in DESOLA TOWN is shut down. Are you going on an adventure? Have some POKéBALLS and potions!"))
+        giveitem(ITEM_POKE_BALL, 5)
+        giveitem(ITEM_POTION, 1)
+        setflag(FLAG_UNUSED_0x029)
+    }
+    if(flag(FLAG_UNUSED_0x029) == TRUE) {
+        msgbox(format("Other POKéMON MARTS throughout the region are open, but these might be the only supplies you can find before TREEFALL TOWN."))
+    }
+    release
+}

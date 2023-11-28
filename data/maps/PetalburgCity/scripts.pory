@@ -1,3 +1,4 @@
+raw`
 .set LOCALID_WALLY, 2
 .set LOCALID_BOY, 3
 .set LOCALID_WALLYS_DAD, 5
@@ -762,15 +763,9 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
-
-PetalburgCity_EventScript_GrassSign::
-	lockall
-	msgbox PetalburgCity_EventScript_GrassSign_Text_0
-	releaseall
-	return
-
-
-PetalburgCity_EventScript_GrassSign_Text_0:
-	.string "Welcome to the grassy sanctuary. I\n"
-	.string "need to think this through a little\l"
-	.string "more.$"
+`
+script PetalburgCity_EventScript_GrassSign {
+    lockall
+    msgbox(format("Welcome to the grassy sanctuary. I need to think this through a little more."))
+    releaseall
+}

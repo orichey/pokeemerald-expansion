@@ -488,8 +488,8 @@ OldaleTown_EventScript_EnterTop_2:
 	applymovement 5, LookLeft
 	waitmovement 0
 	delay 35
-	applymovement 5, Common_Movement_ExclamationMark
 	applymovement 5, AnthroLookRight
+	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_2
 	applymovement 5, WalkToPlayer
@@ -502,8 +502,8 @@ OldaleTown_EventScript_EnterTop_2:
 	msgbox OldaleTown_EventScript_EnterTop_Text_5
 	applymovement 5, AnthroLeaves
 	waitmovement 0
-	removeobject 5
 	setflag FLAG_UNUSED_0x028
+	removeobject 5
 	goto OldaleTown_EventScript_EnterTop_1
 
 
@@ -527,22 +527,22 @@ OldaleTown_EventScript_EnterMid_2:
 	applymovement 5, LookLeft
 	waitmovement 0
 	delay 35
-	applymovement 5, Common_Movement_ExclamationMark
 	applymovement 5, AnthroLookRight
+	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_2
 	applymovement 5, WalkToPlayer
 	waitmovement 0
-	msgbox OldaleTown_EventScript_EnterTop_Text_3
+	msgbox OldaleTown_EventScript_EnterMid_Text_0
 	applymovement 5, HikerDown
 	waitmovement 0
-	msgbox OldaleTown_EventScript_EnterTop_Text_4
+	msgbox OldaleTown_EventScript_EnterMid_Text_1
 	applymovement 5, AnthroLookRight
-	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	msgbox OldaleTown_EventScript_EnterMid_Text_2
 	applymovement 5, AnthroLeaves
 	waitmovement 0
-	removeobject 5
 	setflag FLAG_UNUSED_0x028
+	removeobject 5
 	goto OldaleTown_EventScript_EnterMid_1
 
 
@@ -566,22 +566,22 @@ OldaleTown_EventScript_EnterBottom_2:
 	applymovement 5, LookLeft
 	waitmovement 0
 	delay 35
-	applymovement 5, Common_Movement_ExclamationMark
 	applymovement 5, AnthroLookRight
+	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_2
 	applymovement 5, WalkToPlayer
 	waitmovement 0
-	msgbox OldaleTown_EventScript_EnterTop_Text_3
+	msgbox OldaleTown_EventScript_EnterMid_Text_0
 	applymovement 5, HikerDown
 	waitmovement 0
-	msgbox OldaleTown_EventScript_EnterTop_Text_4
+	msgbox OldaleTown_EventScript_EnterMid_Text_1
 	applymovement 5, AnthroLookRight
-	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	msgbox OldaleTown_EventScript_EnterMid_Text_2
 	applymovement 5, AnthroLeaves
 	waitmovement 0
-	removeobject 5
 	setflag FLAG_UNUSED_0x028
+	removeobject 5
 	goto OldaleTown_EventScript_EnterBottom_1
 
 
@@ -718,8 +718,8 @@ OldaleTown_EventScript_EnterTop_Text_2:
 OldaleTown_EventScript_EnterTop_Text_3:
 	.string "???: Are you a resident of DESOLA TOWN?\p"
 	.string "???: You're not? That's too bad. I was\n"
-	.string "hoping to talk to a local and get their\l"
-	.string "opinion on the state of the town.\p"
+	.string "hoping to talk to a local about the\l"
+	.string "state of the town.\p"
 	.string "???: How rude, I didn't introduce\n"
 	.string "myself! I am Mundungus, the founder\l"
 	.string "and president of Anthrotech!\p"
@@ -731,11 +731,42 @@ OldaleTown_EventScript_EnterTop_Text_4:
 	.string "MUNDUNGUS: For example, DESOLA TOWN\n"
 	.string "seems a little empty, but I'm certain\l"
 	.string "Anthrotech can work to bring some\l"
+	.string "economic revitalization!$"
+
+OldaleTown_EventScript_EnterTop_Text_5:
+	.string "MUNDUNGUS: In any case, what is your\n"
+	.string "name?\p"
+	.string "{PLAYER}? From ANTHROH TOWN? Why,\n"
+	.string "you and I have the same roots!\p"
+	.string "MUNDUNGUS: I would love to hear about\n"
+	.string "your ideas on how to make ECODIA a\l"
+	.string "more resilient and sustainable region.\l"
+	.string "How about you come talk to me later, in\l"
+	.string "TREEFALL TOWN?\p"
+	.string "MUNDUNGUS: I'll see you soon,\n"
+	.string "{PLAYER}!$"
+
+OldaleTown_EventScript_EnterMid_Text_0:
+	.string "???: Are you a resident of DESOLA TOWN?\p"
+	.string "???: You're not? That's too bad. I was\n"
+	.string "hoping to talk to a local and get their\l"
+	.string "opinion on the state of the town.\p"
+	.string "???: How rude, I didn't introduce\n"
+	.string "myself! I am Mundungus, the founder\l"
+	.string "and president of Anthrotech!\p"
+	.string "MUNDUNGUS: I'm going around ECODIA,\n"
+	.string "learning about the problems our cities\l"
+	.string "face and how I can help solve them!$"
+
+OldaleTown_EventScript_EnterMid_Text_1:
+	.string "MUNDUNGUS: For example, DESOLA TOWN\n"
+	.string "seems a little empty, but I'm certain\l"
+	.string "Anthrotech can work to bring some\l"
 	.string "economic revitalization! Perhaps\l"
 	.string "reopening the POKéMON MART or\l"
 	.string "constructing a resort for travelers?$"
 
-OldaleTown_EventScript_EnterTop_Text_5:
+OldaleTown_EventScript_EnterMid_Text_2:
 	.string "MUNDUNGUS: In any case, what is your\n"
 	.string "name?\p"
 	.string "{PLAYER}? From ANTHROH TOWN? Why,\n"

@@ -11762,12 +11762,14 @@ static const struct TrainerMon sParty_Mariela[] = {
 
 static const struct TrainerMon sParty_Alvaro[] = {
     {
-    .lvl = 41,
-    .species = SPECIES_BANETTE,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 3,
+    .species = SPECIES_STARLY,
     },
     {
-    .lvl = 41,
-    .species = SPECIES_KADABRA,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 3,
+    .species = SPECIES_WURMPLE,
     }
 };
 
@@ -11826,7 +11828,7 @@ static const struct TrainerMon sParty_BugCatcher_Tim[] = {
 static const struct TrainerMon sParty_Youngster_Joey[] = {
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-    .lvl = 50,
+    .lvl = 5,
     .species = SPECIES_RATTATA,
     }
 };

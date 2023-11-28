@@ -132,6 +132,331 @@ PetalburgCity_Gym_EventScript_CheckLilith::
 PetalburgCity_Gym_EventScript_StopCountingTrainers::
 	return
 
+PetalburgCity_Gym_EventScript_Brawly::
+	trainerbattle_single TRAINER_BRAWLY_1, PetalburgCity_Gym_Text_BrawlyIntro, PetalburgCity_Gym_Text_BrawlyDefeat, PetalburgCity_Gym_EventScript_BrawlyDefeated, NO_MUSIC
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_BrawlyRematch
+	goto_if_unset FLAG_RECEIVED_TM_BULK_UP, PetalburgCity_Gym_EventScript_GiveBulkUp2
+	msgbox PetalburgCity_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_Gym_EventScript_BrawlyDefeated::
+	call PetalburgCity_Gym_EventScript_AnimateFlashFullBrightness
+	message PetalburgCity_Gym_Text_ReceivedKnuckleBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox PetalburgCity_Gym_Text_KnuckleBadgeInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_DEWFORD_GYM
+	setflag FLAG_BADGE02_GET
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	setvar VAR_0x8008, 2
+	call Common_EventScript_SetGymTrainers
+	call PetalburgCity_Gym_EventScript_GiveBulkUp
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgCity_Gym_Text_RegisteredBrawly, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_BRAWLY_MATCH_CALL
+	setvar VAR_ROXANNE_CALL_STEP_COUNTER, 0
+	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
+	release
+	end
+
+PetalburgCity_Gym_EventScript_GiveBulkUp::
+	giveitem ITEM_TM_BULK_UP
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
+	msgbox PetalburgCity_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_BULK_UP
+	return
+
+PetalburgCity_Gym_EventScript_GiveBulkUp2:
+	giveitem ITEM_TM_BULK_UP
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
+	msgbox PetalburgCity_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_BULK_UP
+	release
+	end
+
+PetalburgCity_Gym_EventScript_BrawlyRematch::
+	trainerbattle_rematch_double TRAINER_BRAWLY_1, PetalburgCity_Gym_Text_BrawlyPreRematch, PetalburgCity_Gym_Text_BrawlyRematchDefeat, PetalburgCity_Gym_Text_BrawlyRematchNeedTwoMons
+	msgbox PetalburgCity_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_Takao::
+	trainerbattle_single TRAINER_TAKAO, PetalburgCity_Gym_Text_TakaoIntro, PetalburgCity_Gym_Text_TakaoDefeat, PetalburgCity_Gym_EventScript_TakaoBrightenRoom
+	msgbox PetalburgCity_Gym_Text_TakaoPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_TakaoBrightenRoom::
+	call PetalburgCity_Gym_EventScript_BrightenRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_Jocelyn::
+	trainerbattle_single TRAINER_JOCELYN, PetalburgCity_Gym_Text_JocelynIntro, PetalburgCity_Gym_Text_JocelynDefeat, PetalburgCity_Gym_EventScript_JocelynBrightenRoom
+	msgbox PetalburgCity_Gym_Text_JocelynPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_JocelynBrightenRoom::
+	call PetalburgCity_Gym_EventScript_BrightenRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_Laura::
+	trainerbattle_single TRAINER_LAURA, PetalburgCity_Gym_Text_LauraIntro, PetalburgCity_Gym_Text_LauraDefeat, PetalburgCity_Gym_EventScript_LauraBrightenRoom
+	msgbox PetalburgCity_Gym_Text_LauraPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_LauraBrightenRoom::
+	call PetalburgCity_Gym_EventScript_BrightenRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_Brenden::
+	trainerbattle_single TRAINER_BRENDEN, PetalburgCity_Gym_Text_BrendenIntro, PetalburgCity_Gym_Text_BrendenDefeat, PetalburgCity_Gym_EventScript_BrendenBrightenRoom
+	msgbox PetalburgCity_Gym_Text_BrendenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_BrendenBrightenRoom::
+	call PetalburgCity_Gym_EventScript_BrightenRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_Cristian::
+	trainerbattle_single TRAINER_CRISTIAN, PetalburgCity_Gym_Text_CristianIntro, PetalburgCity_Gym_Text_CristianDefeat, PetalburgCity_Gym_EventScript_CristianBrightenRoom
+	msgbox PetalburgCity_Gym_Text_CristianPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_CristianBrightenRoom::
+	call PetalburgCity_Gym_EventScript_BrightenRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_Lilith::
+	trainerbattle_single TRAINER_LILITH, PetalburgCity_Gym_Text_LilithIntro, PetalburgCity_Gym_Text_LilithDefeat, PetalburgCity_Gym_EventScript_LilithBrightenRoom
+	msgbox PetalburgCity_Gym_Text_LilithPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_LilithBrightenRoom::
+	call PetalburgCity_Gym_EventScript_BrightenRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_GymGuide::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, PetalburgCity_Gym_EventScript_GymGuidePostVictory
+	msgbox PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_Gym_EventScript_GymGuidePostVictory::
+	msgbox PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_Gym_EventScript_LeftGymStatue::
+	lockall
+	goto_if_set FLAG_BADGE02_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
+	goto PetalburgCity_Gym_EventScript_GymStatue
+	end
+
+PetalburgCity_Gym_EventScript_RightGymStatue::
+	lockall
+	goto_if_set FLAG_BADGE02_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
+	goto PetalburgCity_Gym_EventScript_GymStatue
+	end
+
+PetalburgCity_Gym_EventScript_GymStatueCertified::
+	msgbox PetalburgCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_GymStatue::
+	msgbox PetalburgCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PetalburgCity_Gym_Text_GymGuideAdvice:
+	.string "Hey, how's it going, CHAMPION-\n"
+	.string "bound {PLAYER}?\p"
+	.string "DEWFORD's GYM LEADER BRAWLY commands\n"
+	.string "FIGHTING-type POKéMON.\p"
+	.string "Going against him with NORMAL-type\n"
+	.string "POKéMON is asking for trouble.\p"
+	.string "FIGHTING POKéMON will lay a serious\n"
+	.string "smack down on NORMAL POKéMON,\l"
+	.string "so be careful!\p"
+	.string "What's worse, the GYM is as dark as\n"
+	.string "the ocean floor.\p"
+	.string "But it will get brighter after defeating\n"
+	.string "the TRAINERS in your way.\p"
+	.string "Hey, okay, go for it!$"
+
+PetalburgCity_Gym_Text_GymGuidePostVictory:
+	.string "Whoah! It's turned too bright in here!\p"
+	.string "Your future is bright, too!$"
+
+PetalburgCity_Gym_Text_TakaoIntro:
+	.string "Might is right!\n"
+	.string "Come on!$"
+
+PetalburgCity_Gym_Text_TakaoDefeat:
+	.string "Not enough power…$"
+
+PetalburgCity_Gym_Text_TakaoPostBattle:
+	.string "Your skill overcame my strength!\n"
+	.string "Your technique is commendable!$"
+
+PetalburgCity_Gym_Text_JocelynIntro:
+	.string "There's no need for BRAWLY to be\n"
+	.string "involved!\p"
+	.string "I'll crush you!$"
+
+PetalburgCity_Gym_Text_JocelynDefeat:
+	.string "But… How?\n"
+	.string "How could I lose so easily?$"
+
+PetalburgCity_Gym_Text_JocelynPostBattle:
+	.string "I'm not going to waste this loss.\n"
+	.string "I'll use it to motivate me to train!\p"
+	.string "One day I'll become a GYM LEADER…\p"
+	.string "No, I'll become the POKéMON LEAGUE\n"
+	.string "CHAMPION!$"
+
+PetalburgCity_Gym_Text_LauraIntro:
+	.string "Don't you dare brush me off!\n"
+	.string "It's not my fault if you cry!$"
+
+PetalburgCity_Gym_Text_LauraDefeat:
+	.string "Waaaaaaah!\n"
+	.string "I lost!$"
+
+PetalburgCity_Gym_Text_LauraPostBattle:
+	.string "I battle in the dark to make my heart\n"
+	.string "stronger.\p"
+	.string "But because it's so dark, I can never\n"
+	.string "see BRAWLY's face…$"
+
+PetalburgCity_Gym_Text_LilithIntro:
+	.string "Ufufu…\n"
+	.string "Are you stumbling around in the dark?$"
+
+PetalburgCity_Gym_Text_LilithDefeat:
+	.string "Oh, you…\n"
+	.string "I don't want to know you!$"
+
+PetalburgCity_Gym_Text_LilithPostBattle:
+	.string "You deserve to stay lost and end up\n"
+	.string "back at the entrance again!$"
+
+PetalburgCity_Gym_Text_BrendenIntro:
+	.string "I'll show you the gumption of\n"
+	.string "a sailing man!$"
+
+PetalburgCity_Gym_Text_BrendenDefeat:
+	.string "How'd this happen?\n"
+	.string "It's not like me to lose this way!$"
+
+PetalburgCity_Gym_Text_BrendenPostBattle:
+	.string "Oh, aye! You're worthy of seeing\n"
+	.string "our GYM LEADER.$"
+
+PetalburgCity_Gym_Text_CristianIntro:
+	.string "If you mean to pass, it has to be\n"
+	.string "through me!$"
+
+PetalburgCity_Gym_Text_CristianDefeat:
+	.string "Grrrrr!\n"
+	.string "Vastly overpowered!$"
+
+PetalburgCity_Gym_Text_CristianPostBattle:
+	.string "You win!\n"
+	.string "Go after that BADGE!$"
+
+PetalburgCity_Gym_Text_BrawlyIntro:
+	.string "I'm BRAWLY!\n"
+	.string "DEWFORD's GYM LEADER!\p"
+	.string "I've been churned in the rough waves\n"
+	.string "of these parts, and I've grown tough\l"
+	.string "in the pitch-black cave!\p"
+	.string "So you wanted to challenge me?\n"
+	.string "Let me see what you're made of!$"
+
+PetalburgCity_Gym_Text_BrawlyDefeat:
+	.string "Whoah, wow! You made a much bigger\n"
+	.string "splash than I expected!\p"
+	.string "You swamped me!\p"
+	.string "Okay, you've got me.\n"
+	.string "Take this GYM BADGE!$"
+
+PetalburgCity_Gym_Text_ReceivedKnuckleBadge:
+	.string "{PLAYER} received the KNUCKLE BADGE\n"
+	.string "from BRAWLY.$"
+
+PetalburgCity_Gym_Text_KnuckleBadgeInfoTakeThis:
+	.string "The KNUCKLE BADGE makes all POKéMON\n"
+	.string "up to Level 30, even those you get in\l"
+	.string "trades, obey without question.\p"
+	.string "And, you'll be able to use the HM move\n"
+	.string "FLASH outside of battle.\p"
+	.string "If you'd like, use this TECHNICAL\n"
+	.string "MACHINE, too.$"
+
+PetalburgCity_Gym_Text_ExplainBulkUp:
+	.string "That TM08 contains BULK UP.\p"
+	.string "It's a move that raises both ATTACK\n"
+	.string "and DEFENSE stats.\p"
+	.string "… … … … … …$"
+
+PetalburgCity_Gym_Text_RegisteredBrawly:
+	.string "Registered GYM LEADER BRAWLY\n"
+	.string "in the POKéNAV.$"
+
+PetalburgCity_Gym_Text_BrawlyPostBattle:
+	.string "I can see your talent becoming a giant\n"
+	.string "wave to cause a storm of astonishment\l"
+	.string "among TRAINERS one day!$"
+
+PetalburgCity_Gym_Text_GymStatue:
+	.string "DEWFORD TOWN POKéMON GYM$"
+
+PetalburgCity_Gym_Text_GymStatueCertified:
+	.string "DEWFORD TOWN POKéMON GYM\p"
+	.string "BRAWLY'S CERTIFIED TRAINERS:\n"
+	.string "{PLAYER}$"
+
+PetalburgCity_Gym_Text_BrawlyPreRematch:
+	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "always returns to the shore.\p"
+	.string "A giant wave of a talent like you…\n"
+	.string "I knew you would return!\p"
+	.string "Show me how much higher\n"
+	.string "you've gone!$"
+
+PetalburgCity_Gym_Text_BrawlyRematchDefeat:
+	.string "Wow!\n"
+	.string "Swamped again!$"
+
+PetalburgCity_Gym_Text_BrawlyPostRematch:
+	.string "BRAWLY: Battling is vast and it's deep.\n"
+	.string "You can't see the bottom.\l"
+	.string "It's just like the sea of HOENN!$"
+
+PetalburgCity_Gym_Text_BrawlyRematchNeedTwoMons:
+	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "always returns to the shore.\p"
+	.string "A giant wave of a talent like you…\n"
+	.string "I knew you would return!\p"
+	.string "Oh? You only have one POKéMON\n"
+	.string "that can battle.\p"
+	.string "I'm sorry, but I'd like you to come back\n"
+	.string "with at least two POKéMON.$"
 
 
 
@@ -424,7 +749,7 @@ PetalburgCity_Gym_EventScript_NormanFaceDoorEast::
 PetalburgCity_Gym_EventScript_NormanPostBattle::
 	call PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry
-	goto_if_unset FLAG_RECEIVED_TM_FACADE, PetalburgCity_Gym_EventScript_GiveFacade2
+@	goto_if_unset FLAG_RECEIVED_TM42, PetalburgCity_Gym_EventScript_GiveFacade2
 	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
 	msgbox PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT
 	release
@@ -496,9 +821,9 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	end
 
 PetalburgCity_Gym_EventScript_GiveFacade::
-	giveitem ITEM_TM_FACADE
+	giveitem ITEM_TM42
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-	setflag FLAG_RECEIVED_TM_FACADE
+@	setflag FLAG_RECEIVED_TM42
 	msgbox PetalburgCity_Gym_Text_ExplainFacade, MSGBOX_DEFAULT
 	return
 
@@ -1180,40 +1505,40 @@ PetalburgCity_Gym_EventScript_UnlockRoomDoors::
 	special PetalburgGymUnlockRoomDoors
 	return
 
-PetalburgCity_Gym_EventScript_GymGuide::
-	lock
-	faceplayer
-	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgCity_Gym_EventScript_GymGuidePostVictory
-	msgbox PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
-	release
-	end
+@ PetalburgCity_Gym_EventScript_GymGuide::
+@	lock
+@	faceplayer
+@	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgCity_Gym_EventScript_GymGuidePostVictory
+@	msgbox PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+@	release
+@	end
 
-PetalburgCity_Gym_EventScript_GymGuidePostVictory::
-	msgbox PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
-	release
-	end
+@PetalburgCity_Gym_EventScript_GymGuidePostVictory::
+@	msgbox PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
+@	release
+@	end
 
-PetalburgCity_Gym_EventScript_LeftGymStatue::
-	lockall
-	goto_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
-	goto PetalburgCity_Gym_EventScript_GymStatue
-	end
+@PetalburgCity_Gym_EventScript_LeftGymStatue::
+@	lockall
+@	goto_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
+@	goto PetalburgCity_Gym_EventScript_GymStatue
+@	end
 
-PetalburgCity_Gym_EventScript_RightGymStatue::
-	lockall
-	goto_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
-	goto PetalburgCity_Gym_EventScript_GymStatue
-	end
+@PetalburgCity_Gym_EventScript_RightGymStatue::
+@	lockall
+@	goto_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
+@	goto PetalburgCity_Gym_EventScript_GymStatue
+@	end
 
-PetalburgCity_Gym_EventScript_GymStatueCertified::
-	msgbox PetalburgCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
-	releaseall
-	end
+@PetalburgCity_Gym_EventScript_GymStatueCertified::
+@	msgbox PetalburgCity_Gym_Text_GymStatueCertified, MSGBOX_DEFAULT
+@	releaseall
+@	end
 
-PetalburgCity_Gym_EventScript_GymStatue::
-	msgbox PetalburgCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
-	releaseall
-	end
+@PetalburgCity_Gym_EventScript_GymStatue::
+@	msgbox PetalburgCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+@	releaseall
+@	end
 
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "DAD: Hm?\p"
@@ -1402,29 +1727,29 @@ PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough:
 	.string "I honestly think that no amount of\n"
 	.string "training would ever be enough.$"
 
-PetalburgCity_Gym_Text_GymGuideAdvice:
-	.string "Hey, how's it going, CHAMPION-\n"
-	.string "bound {PLAYER}?\p"
-	.string "The doors in this GYM open when you\n"
-	.string "beat the awaiting TRAINERS.\p"
-	.string "Whoops! The doors in this room are\n"
-	.string "already open, so don't attack me!\p"
-	.string "The TRAINERS of PETALBURG GYM\n"
-	.string "use all kinds of items.\p"
-	.string "The door at the left leads to\n"
-	.string "the SPEED ROOM.\p"
-	.string "The door at the right leads to\n"
-	.string "the ACCURACY ROOM.\p"
-	.string "The room's name will be on\n"
-	.string "the door, so choose carefully.\p"
-	.string "Once you've chosen the door…\n"
-	.string "Well, hey, go for it!$"
+@PetalburgCity_Gym_Text_GymGuideAdvice:
+@	.string "Hey, how's it going, CHAMPION-\n"
+@	.string "bound {PLAYER}?\p"
+@	.string "The doors in this GYM open when you\n"
+@	.string "beat the awaiting TRAINERS.\p"
+@	.string "Whoops! The doors in this room are\n"
+@	.string "already open, so don't attack me!\p"
+@	.string "The TRAINERS of PETALBURG GYM\n"
+@	.string "use all kinds of items.\p"
+@	.string "The door at the left leads to\n"
+@	.string "the SPEED ROOM.\p"
+@	.string "The door at the right leads to\n"
+@	.string "the ACCURACY ROOM.\p"
+@	.string "The room's name will be on\n"
+@	.string "the door, so choose carefully.\p"
+@	.string "Once you've chosen the door…\n"
+@	.string "Well, hey, go for it!$"
 
-PetalburgCity_Gym_Text_GymGuidePostVictory:
-	.string "{PLAYER}! Whoa! You've overcome even\n"
-	.string "your own father!\p"
-	.string "Like, whoa!\n"
-	.string "What a stunning turn of events!$"
+@PetalburgCity_Gym_Text_GymGuidePostVictory:
+@	.string "{PLAYER}! Whoa! You've overcome even\n"
+@	.string "your own father!\p"
+@	.string "Like, whoa!\n"
+@	.string "What a stunning turn of events!$"
 
 PetalburgCity_Gym_Text_RandallIntro:
 	.string "The ability to attack before the\n"
@@ -1622,13 +1947,13 @@ PetalburgCity_Gym_Text_EnterGymLeadersRoom:
 	.string "you!” the sign says.\p"
 	.string "Do you want to go through?$"
 
-PetalburgCity_Gym_Text_GymStatue:
-	.string "PETALBURG CITY POKéMON GYM$"
+@PetalburgCity_Gym_Text_GymStatue:
+@	.string "PETALBURG CITY POKéMON GYM$"
 
-PetalburgCity_Gym_Text_GymStatueCertified:
-	.string "PETALBURG CITY POKéMON GYM\p"
-	.string "NORMAN'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+@PetalburgCity_Gym_Text_GymStatueCertified:
+@	.string "PETALBURG CITY POKéMON GYM\p"
+@	.string "NORMAN'S CERTIFIED TRAINERS:\n"
+@	.string "{PLAYER}$"
 
 PetalburgCity_Gym_Text_NormanPreRematch:
 	.string "DAD: {PLAYER}…\n"

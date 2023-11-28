@@ -1,0 +1,2 @@
+PetalburgCity_GrassHouse_MapScripts::
+	.byte 0
