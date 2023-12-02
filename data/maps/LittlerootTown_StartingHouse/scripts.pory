@@ -79,6 +79,7 @@ script StartingHouse_EventScript_MomBeckons{
         msgbox("Say, why don't you go see PROF. SPRUCE?\n"
         "He might have some explanation for this!")
         setflag(FLAG_UNUSED_0x025)
+        setflag(FLAG_SYS_B_DASH)
     }
     release
 }
@@ -122,6 +123,7 @@ script StartingHouse_EventScript_MomBeckonsFromLeft{
         msgbox("Say, why don't you go see PROF. SPRUCE?\n"
         "He might have some explanation for this!")
         setflag(FLAG_UNUSED_0x025)
+        setflag(FLAG_SYS_B_DASH)
     }
     release
 }

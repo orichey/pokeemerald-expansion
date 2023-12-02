@@ -81,6 +81,7 @@ StartingHouse_EventScript_MomBeckons_2:
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_4
 	setflag FLAG_UNUSED_0x025
+	setflag FLAG_SYS_B_DASH
 	goto StartingHouse_EventScript_MomBeckons_1
 
 
@@ -118,6 +119,7 @@ StartingHouse_EventScript_MomBeckonsFromLeft_2:
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_4
 	setflag FLAG_UNUSED_0x025
+	setflag FLAG_SYS_B_DASH
 	goto StartingHouse_EventScript_MomBeckonsFromLeft_1
 
 
