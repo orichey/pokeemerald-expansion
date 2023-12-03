@@ -497,6 +497,13 @@ PetalburgWoods_EventScript_BugCatcherBattle::
 	end
 
 
+PetalburgWoods_EventScript_RangerBattle::
+	trainerbattle_single TRAINER_THALIA_5, Alan_Intro, Alan_Outro
+	msgbox PostBattle_Alan, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
 PetalburgWoods_EventScript_ExpertBattle::
 	trainerbattle_single TRAINER_EXPERT_BARBARA, Barbara_Intro, Barbara_Outro
 	msgbox PostBattle_Barbara, MSGBOX_AUTOCLOSE
@@ -527,25 +534,44 @@ PetalburgWoods_Text_WarningSign::
 
 PetalburgWoods_EventScript_Camper_Text_0:
 	.string "I was hoping to set up a tent and camp\n"
-	.string "for the night.\p"
-	.string "Good thing there's so much clear space!$"
+	.string "for the night. Good thing there's so\l"
+	.string "much clear space!$"
 
 PetalburgWoods_EventScript_Youngster_Text_0:
 	.string "So many trees have been chopped down\n"
 	.string "here. Just look at all these stumps!$"
 
 PetalburgWoods_Text_WarningSign_Text_0:
-	.string "Watch out for abandoned machinery!$"
+	.string "TREEFALL WOODS: Watch out for\n"
+	.string "abandoned machinery!$"
 
 Tim_Intro::
-	.string "When people cut down trees, the bugs go\n"
-	.string "away. I still have a few though!$"
+	.string "After people cut down trees, bugs and\n"
+	.string "mushrooms started to move in.\p"
+	.string "Check out some of mine!$"
 
 Tim_Outro::
 	.string "Think of the bugs!$"
 
 PostBattle_Tim::
-	.string "Turns out, we all need trees to survive!$"
+	.string "Even though many other POKéMON were\n"
+	.string "driven away, a few species remain.\p"
+	.string "This forest is not nearly as lively as it\n"
+	.string "once was.$"
+
+Alan_Intro::
+	.string "I'm here to study how cutting down\n"
+	.string "trees impacts the hydrologic cycle.\l"
+	.string "Will you help my research?$"
+
+Alan_Outro::
+	.string "Washed away!$"
+
+PostBattle_Alan::
+	.string "Parts of ECODIA are experiencing\n"
+	.string "severe flooding. It seems planting\l"
+	.string "trees may help mitigate the effects of\l"
+	.string "rainfall.$"
 
 Barbara_Intro::
 	.string "I used to play here as a child. Where\n"
@@ -559,8 +585,8 @@ PostBattle_Barbara::
 	.string "forest, they'll suffer!$"
 
 Mortimer_Intro::
-	.string "My fire POKéMON will help me scorch\n"
-	.string "the remnants of this forest!$"
+	.string "My fire POKéMON will help me scorch the\n"
+	.string "remnants of this forest!$"
 
 Mortimer_Outro::
 	.string "You have only slowed my burn!$"
@@ -570,12 +596,12 @@ PostBattle_Mortimer::
 	.string "huh?$"
 
 Carson_Intro::
-	.string "With these tools I have collected, I\n"
-	.string "can maximize my economic production!$"
+	.string "With these tools I have collected, I can\n"
+	.string "maximize my economic production!$"
 
 Carson_Outro::
-	.string "You can defeat my POKéMON, but not\n"
-	.string "my machines!$"
+	.string "You can defeat my POKéMON, but not my\n"
+	.string "machines!$"
 
 PostBattle_Carson::
 	.string "How much do you think this lumber is\n"

@@ -479,17 +479,14 @@ PetalburgWoods_Text_TrainerTipsPP:
 script PetalburgWoods_EventScript_Camper {
 	lock
 	faceplayer
-	msgbox("I was hoping to set up a tent and camp\n"
-	"for the night.\p"
-    "Good thing there's so much clear space!")
+	msgbox(format("I was hoping to set up a tent and camp for the night. Good thing there's so much clear space!"))
 	release
 }
 
 script PetalburgWoods_EventScript_Youngster {
 	lock
 	faceplayer
-	msgbox("So many trees have been chopped down\n"
-	"here. Just look at all these stumps!")
+	msgbox(format("So many trees have been chopped down here. Just look at all these stumps!"))
 	release
 }
 
@@ -500,14 +497,29 @@ script PetalburgWoods_EventScript_BugCatcherBattle {
     end
 }
 text Tim_Intro{
-    "When people cut down trees, the bugs go\n"
-    "away. I still have a few though!"
+    format("After people cut down trees, bugs and mushrooms started to move in.\pCheck out some of mine!")
 }
 text Tim_Outro{
-    "Think of the bugs!"
+    format("Think of the bugs!")
 }
 text PostBattle_Tim{
-    "Turns out, we all need trees to survive!"
+    format("Even though many other POKéMON were driven away, a few species remain.\pThis forest is not nearly as lively as it once was.")
+}
+
+script PetalburgWoods_EventScript_RangerBattle {
+	trainerbattle_single(TRAINER_THALIA_5, Alan_Intro, Alan_Outro)
+	msgbox(PostBattle_Alan, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+text Alan_Intro{
+    format("I'm here to study how cutting down trees impacts the hydrologic cycle. Will you help my research?")
+}
+text Alan_Outro{
+    format("Washed away!")
+}
+text PostBattle_Alan{
+    format("Parts of ECODIA are experiencing severe flooding. It seems planting trees may help mitigate the effects of rainfall.")
 }
 
 script PetalburgWoods_EventScript_ExpertBattle {
@@ -517,15 +529,13 @@ script PetalburgWoods_EventScript_ExpertBattle {
     end
 }
 text Barbara_Intro{
-    "I used to play here as a child. Where\n"
-    "have all of the trees gone?"
+    format("I used to play here as a child. Where have all of the trees gone?")
 }
 text Barbara_Outro{
     "So it wasn't you who cut them down?"
 }
 text PostBattle_Barbara{
-    "When I find who defiled my beloved\n"
-    "forest, they'll suffer!"
+    format("When I find who defiled my beloved forest, they'll suffer!")
 }
 
 script PetalburgWoods_EventScript_KindlerBattle {
@@ -535,15 +545,13 @@ script PetalburgWoods_EventScript_KindlerBattle {
     end
 }
 text Mortimer_Intro{
-    "My fire POKéMON will help me scorch\n"
-    "the remnants of this forest!"
+    format("My fire POKéMON will help me scorch the remnants of this forest!")
 }
 text Mortimer_Outro{
-    "You have only slowed my burn!"
+    format("You have only slowed my burn!")
 }
 text PostBattle_Mortimer{
-    "I guess there isn't much left to burn,\n"
-    "huh?"
+    format("I guess there isn't much left to burn, huh?")
 }
 
 script PetalburgWoods_EventScript_ScientistBattle {
@@ -553,20 +561,17 @@ script PetalburgWoods_EventScript_ScientistBattle {
     end
 }
 text Carson_Intro{
-    "With these tools I have collected, I\n"
-    "can maximize my economic production!"
+    format("With these tools I have collected, I can maximize my economic production!")
 }
 text Carson_Outro{
-    "You can defeat my POKéMON, but not\n"
-	"my machines!"
+    format("You can defeat my POKéMON, but not my machines!")
 }
 text PostBattle_Carson{
-    "How much do you think this lumber is\n"
-    "worth?"
+    format("How much do you think this lumber is worth?")
 }
 
 script PetalburgWoods_Text_WarningSign {
     lockall
-    msgbox("Watch out for abandoned machinery!")
+    msgbox(format("TREEFALL WOODS: Watch out for abandoned machinery!"))
     releaseall
 }

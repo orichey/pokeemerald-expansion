@@ -174,8 +174,8 @@
     {
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
-      "width": 24,
-      "height": 40,
+      "width": 36,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Route102/border.bin",

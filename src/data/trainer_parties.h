@@ -11738,25 +11738,26 @@ static const struct TrainerMon sParty_Thalia4[] = {
 static const struct TrainerMon sParty_Thalia5[] = {
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-    .lvl = 40,
-    .species = SPECIES_LUVDISC,
+    .lvl = 6,
+    .species = SPECIES_LOTAD,
     },
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-    .lvl = 40,
-    .species = SPECIES_WAILORD,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-    .lvl = 40,
-    .species = SPECIES_KINGDRA,
+    .lvl = 6,
+    .species = SPECIES_POLIWAG,
     }
 };
 
 static const struct TrainerMon sParty_Mariela[] = {
     {
-    .lvl = 41,
-    .species = SPECIES_CHIMECHO,
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 3,
+    .species = SPECIES_WHISMUR,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
+    .lvl = 4,
+    .species = SPECIES_SKITTY,
     }
 };
 
@@ -11816,12 +11817,12 @@ static const struct TrainerMon sParty_BugCatcher_Tim[] = {
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 6,
-    .species = SPECIES_WURMPLE,
+    .species = SPECIES_PARAS,
     },
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 6,
-    .species = SPECIES_BURMY_TRASH_CLOAK,
+    .species = SPECIES_WURMPLE,
     }
 };
 

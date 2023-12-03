@@ -116,6 +116,14 @@ Route102_EventScript_Youngster::
 	return
 
 
+Route102_EventScript_Woman::
+	lock
+	faceplayer
+	msgbox Route102_EventScript_Woman_Text_0
+	release
+	return
+
+
 Route102_Text_UpDownSign::
 	lockall
 	msgbox Route102_Text_UpDownSign_Text_0
@@ -132,8 +140,18 @@ Route102_Text_LeftRightSign::
 
 Route102_EventScript_Youngster_Text_0:
 	.string "I've heard TREEFALL WOODS has\n"
-	.string "experienced deforestation.\p"
+	.string "experienced severe deforestation.\p"
 	.string "Are the rumors true?$"
+
+Route102_EventScript_Woman_Text_0:
+	.string "Just a year ago, lumberjacks decimated\n"
+	.string "TREEFALL WOODS. They left suddenly,\l"
+	.string "following the orders of Paul, TREEFALL\l"
+	.string "CITY'S Gym Leader.\p"
+	.string "Many POKéMON species that used to live\n"
+	.string "in the woods were driven out due to the\l"
+	.string "destruction of the forest, and new\l"
+	.string "POKéMON have moved in.$"
 
 Route102_Text_UpDownSign_Text_0:
 	.string "DESOLA TOWN {UP_ARROW}\n"

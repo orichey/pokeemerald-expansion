@@ -307,6 +307,13 @@ Route101_EventScript_YoungsterBattle::
 	end
 
 
+Route101_EventScript_GirlBattle::
+	trainerbattle_single TRAINER_MARIELA, Eva_Intro, Eva_Outro
+	msgbox PostBattle_Eva, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
 Route101_EventScript_Balls::
 	lock
 	faceplayer
@@ -332,8 +339,8 @@ Route101_EventScript_Balls_5:
 Route101_EventScript_Balls_Text_0:
 	.string "The POKéMON MART in DESOLA TOWN is\n"
 	.string "shut down. Are you going on an\l"
-	.string "adventure? Have some POKéBALLS and\l"
-	.string "potions!$"
+	.string "adventure? Have some POKéBALLS and a\l"
+	.string "potion!$"
 
 Route101_EventScript_Balls_Text_1:
 	.string "Other POKéMON MARTS throughout the\n"
@@ -351,3 +358,13 @@ Adam_Outro::
 PostBattle_Adam::
 	.string "I hope the disasters aren't as bad as\n"
 	.string "the TV says.$"
+
+Eva_Intro::
+	.string "DESOLA TOWN is so empty, will you give\n"
+	.string "me some company?$"
+
+Eva_Outro::
+	.string "Well, thanks for talking to me, at least.$"
+
+PostBattle_Eva::
+	.string "I wonder where everyone went?$"

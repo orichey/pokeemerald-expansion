@@ -112,9 +112,14 @@ Route102_Text_RouteSignPetalburg:
 script Route102_EventScript_Youngster {
 	lock
 	faceplayer
-	msgbox("I've heard TREEFALL WOODS has\n"
-	"experienced deforestation.\p" 
-	"Are the rumors true?")
+	msgbox(format("I've heard TREEFALL WOODS has experienced severe deforestation.\pAre the rumors true?"))
+	release
+}
+
+script Route102_EventScript_Woman {
+	lock
+	faceplayer
+	msgbox(format("Just a year ago, lumberjacks decimated TREEFALL WOODS. They left suddenly, following the orders of Paul, TREEFALL CITY'S Gym Leader.\pMany POKéMON species that used to live in the woods were driven out due to the destruction of the forest, and new POKéMON have moved in."))
 	release
 }
 

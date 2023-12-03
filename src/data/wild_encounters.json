@@ -1961,7 +1961,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SLAKOTH"
+                "species": "SPECIES_FOONGUS"
               },
               {
                 "min_level": 6,
@@ -1971,7 +1971,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_SLAKOTH"
+                "species": "SPECIES_FOONGUS"
               }
             ]
           }

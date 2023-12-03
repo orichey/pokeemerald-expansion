@@ -318,11 +318,27 @@ text PostBattle_Adam{
     format("I hope the disasters aren't as bad as the TV says.")
 }
 
+script Route101_EventScript_GirlBattle {
+	trainerbattle_single(TRAINER_MARIELA, Eva_Intro, Eva_Outro)
+	msgbox(PostBattle_Eva, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+text Eva_Intro{
+    format("DESOLA TOWN is so empty, will you give me some company?")
+}
+text Eva_Outro{
+    format("Well, thanks for talking to me, at least.")
+}
+text PostBattle_Eva{
+    format("I wonder where everyone went?")
+}
+
 script Route101_EventScript_Balls {
 	lock
 	faceplayer
     if(flag(FLAG_UNUSED_0x029) == FALSE) {
-	    msgbox(format("The POKéMON MART in DESOLA TOWN is shut down. Are you going on an adventure? Have some POKéBALLS and potions!"))
+	    msgbox(format("The POKéMON MART in DESOLA TOWN is shut down. Are you going on an adventure? Have some POKéBALLS and a potion!"))
         giveitem(ITEM_POKE_BALL, 5)
         giveitem(ITEM_POTION, 1)
         setflag(FLAG_UNUSED_0x029)
