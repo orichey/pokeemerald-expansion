@@ -124,6 +124,22 @@ Route102_EventScript_Woman::
 	return
 
 
+Route102_EventScript_JSOboy1::
+	lock
+	faceplayer
+	msgbox Route102_EventScript_JSOboy1_Text_0
+	release
+	return
+
+
+Route102_EventScript_JSOboy2::
+	lock
+	faceplayer
+	msgbox Route102_EventScript_JSOboy2_Text_0
+	release
+	return
+
+
 Route102_Text_UpDownSign::
 	lockall
 	msgbox Route102_Text_UpDownSign_Text_0
@@ -152,6 +168,12 @@ Route102_EventScript_Woman_Text_0:
 	.string "in the woods were driven out due to the\l"
 	.string "destruction of the forest, and new\l"
 	.string "POKéMON have moved in.$"
+
+Route102_EventScript_JSOboy1_Text_0:
+	.string "My hair is green lol.$"
+
+Route102_EventScript_JSOboy2_Text_0:
+	.string "My shirt is orange lol.$"
 
 Route102_Text_UpDownSign_Text_0:
 	.string "DESOLA TOWN {UP_ARROW}\n"

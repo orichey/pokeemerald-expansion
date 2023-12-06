@@ -123,6 +123,20 @@ script Route102_EventScript_Woman {
 	release
 }
 
+script Route102_EventScript_JSOboy1 {
+	lock
+	faceplayer
+	msgbox(format("My hair is green lol."))
+	release
+}
+
+script Route102_EventScript_JSOboy2 {
+	lock
+	faceplayer
+	msgbox(format("My shirt is orange lol."))
+	release
+}
+
 script Route102_Text_UpDownSign {
     lockall
     msgbox("DESOLA TOWN {UP_ARROW}\n"

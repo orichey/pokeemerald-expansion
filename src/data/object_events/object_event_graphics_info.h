@@ -4654,13 +4654,13 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JSOBoy = { 
-    .tileTag = TAG_NONE,
+    .tileTag = 0xFFFF,
     .paletteTag = OBJ_EVENT_PAL_JSOBOY,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
+    .size = 256,
+    .width = 16,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_1,
+    .paletteSlot = PALSLOT_NPC_2,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,
@@ -4668,6 +4668,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JSOBoy = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_JSOBoy,
+    .images = gObjectEventPicTable_JSOBoy,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
