@@ -222,3 +222,6 @@ const u16 gMetatileAttributes_snowy[] = INCBIN_U16("data/tilesets/primary/snowy/
 
 const u16 gMetatiles_snowy_attempt2[] = INCBIN_U16("data/tilesets/primary/snowy_attempt_2/metatiles.bin");
 const u16 gMetatileAttributes_snowy_attempt2[] = INCBIN_U16("data/tilesets/primary/snowy_attempt_2/metatile_attributes.bin");
+
+const u16 gMetatiles_General_Flood[] = INCBIN_U16("data/tilesets/primary/general_flood/metatiles.bin");
+const u16 gMetatileAttributes_General_Flood[] = INCBIN_U16("data/tilesets/primary/general_flood/metatile_attributes.bin");

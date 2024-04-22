@@ -949,6 +949,10 @@
 #define MUS_HG_OBTAIN_CASTLE_POINTS       896 // Received Castle Points!
 #define MUS_HG_OBTAIN_B_POINTS            897 // Received Battle Points!
 #define MUS_HG_WIN_MINIGAME               898 // Cleared Wobbuffet Pop!
+#define MUS_PMD_SKY_DONT_EVER_FORGET      899 // Don't Ever Forget
+#define MUS_SECRET_TUNNEL                 900 // Secret Tunnel
+#define MUS_SECRET_TUNNEL_TWO             901 // Secret Tunnel Two
+#define MUS_LEAVES_FROM_THE_VINE          902 // Leaves From The Vine
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 

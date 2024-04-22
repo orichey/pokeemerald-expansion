@@ -325,10 +325,10 @@ script Route101_EventScript_GirlBattle {
     end
 }
 text Eva_Intro{
-    format("DESOLA TOWN is so empty, will you give me some company?")
+    format("DESOLA TOWN is so empty, is the rest of the region like this too?")
 }
 text Eva_Outro{
-    format("Well, thanks for talking to me, at least.")
+    format("You're the first person I've seen all day!")
 }
 text PostBattle_Eva{
     format("I wonder where everyone went?")

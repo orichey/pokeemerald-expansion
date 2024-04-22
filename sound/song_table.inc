@@ -900,6 +900,10 @@ gSongTable::
 	song mus_hg_obtain_castle_points, 2, 2
 	song mus_hg_obtain_b_points, 2, 2
 	song mus_hg_win_minigame, 2, 2
+	song mus_pmd_sky_dont_ever_forget, 0, 0
+	song mus_secret_tunnel, 0, 0
+	song mus_secret_tunnel_two, 0, 0
+	song mus_leaves_from_the_vine, 0, 0
 
 	.align 2
 dummy_song_header:

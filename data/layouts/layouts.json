@@ -5,8 +5,8 @@
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
       "width": 30,
-      "height": 40,
-      "primary_tileset": "gTileset_General",
+      "height": 38,
+      "primary_tileset": "gTileset_General_Flood",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/PetalburgCity/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity/map.bin"
@@ -184,10 +184,10 @@
     {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
-      "width": 40,
-      "height": 22,
-      "primary_tileset": "gTileset_snowy_attempt2",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 50,
+      "height": 64,
+      "primary_tileset": "gTileset_General_Flood",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route103/border.bin",
       "blockdata_filepath": "data/layouts/Route103/map.bin"
     },
@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
       "border_filepath": "data/layouts/PetalburgCity_GrassHouse/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_GrassHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_MUNDUNGUS_HOUSE",
+      "name": "PetalburgCity_MundungusHouse_Layout",
+      "width": 18,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/PetalburgCity_MundungusHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_MundungusHouse/map.bin"
     }
   ]
 }

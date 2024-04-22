@@ -126,14 +126,14 @@ script Route102_EventScript_Woman {
 script Route102_EventScript_JSOboy1 {
 	lock
 	faceplayer
-	msgbox(format("My hair is green lol."))
+	msgbox(format("Anthrotech and Paul are trying to plant trees in the forest to bring it back. \pIt'll never work!"))
 	release
 }
 
-script Route102_EventScript_JSOboy2 {
+script Route102_EventScript_Questioner {
 	lock
 	faceplayer
-	msgbox(format("My shirt is orange lol."))
+	msgbox(format("Who are all of these people in orange, and why are they so angry?"))
 	release
 }
 

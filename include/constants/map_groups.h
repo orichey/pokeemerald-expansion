@@ -139,6 +139,7 @@
 #define MAP_PETALBURG_CITY_MART              (6 | (8 << 8))
 #define MAP_PETALBURG_CITY_HOUSE2_2          (7 | (8 << 8))
 #define MAP_PETALBURG_CITY_GRASS_HOUSE       (8 | (8 << 8))
+#define MAP_PETALBURG_CITY_MUNDUNGUS_HOUSE   (9 | (8 << 8))
 
 // gMapGroup_IndoorSlateport
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))

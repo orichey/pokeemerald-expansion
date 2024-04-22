@@ -500,6 +500,16 @@ OldaleTown_EventScript_EnterTop_2:
 	msgbox OldaleTown_EventScript_EnterTop_Text_4
 	applymovement 5, AnthroLookRight
 	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox OldaleTown_EventScript_EnterTop_Text_6
+	waitfanfare
+	msgbox OldaleTown_EventScript_EnterTop_Text_7
 	applymovement 5, AnthroLeaves
 	waitmovement 0
 	setflag FLAG_UNUSED_0x028
@@ -538,7 +548,17 @@ OldaleTown_EventScript_EnterMid_2:
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterMid_Text_1
 	applymovement 5, AnthroLookRight
-	msgbox OldaleTown_EventScript_EnterMid_Text_2
+	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox OldaleTown_EventScript_EnterTop_Text_6
+	waitfanfare
+	msgbox OldaleTown_EventScript_EnterTop_Text_7
 	applymovement 5, AnthroLeaves
 	waitmovement 0
 	setflag FLAG_UNUSED_0x028
@@ -577,7 +597,17 @@ OldaleTown_EventScript_EnterBottom_2:
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterMid_Text_1
 	applymovement 5, AnthroLookRight
-	msgbox OldaleTown_EventScript_EnterMid_Text_2
+	msgbox OldaleTown_EventScript_EnterTop_Text_5
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox OldaleTown_EventScript_EnterTop_Text_6
+	waitfanfare
+	msgbox OldaleTown_EventScript_EnterTop_Text_7
 	applymovement 5, AnthroLeaves
 	waitmovement 0
 	setflag FLAG_UNUSED_0x028
@@ -740,9 +770,16 @@ OldaleTown_EventScript_EnterTop_Text_5:
 	.string "you and I have the same roots!\p"
 	.string "MUNDUNGUS: I would love to hear about\n"
 	.string "your ideas on how to make ECODIA a\l"
-	.string "more resilient and sustainable region.\l"
-	.string "How about you come talk to me later, in\l"
-	.string "TREEFALL TOWN?\p"
+	.string "more resilient and sustainable region,\l"
+	.string "how about you come talk to me later, in\l"
+	.string "TREEFALL CITY?\p"
+	.string "MUNDUNGUS: Here, take one of our\n"
+	.string "innovations, the POKéDEX!$"
+
+OldaleTown_EventScript_EnterTop_Text_6:
+	.string "{PLAYER} received the POKéDEX!$"
+
+OldaleTown_EventScript_EnterTop_Text_7:
 	.string "MUNDUNGUS: I'll see you soon,\n"
 	.string "{PLAYER}!$"
 
@@ -765,16 +802,3 @@ OldaleTown_EventScript_EnterMid_Text_1:
 	.string "economic revitalization! Perhaps\l"
 	.string "reopening the POKéMON MART or\l"
 	.string "constructing a resort for travelers?$"
-
-OldaleTown_EventScript_EnterMid_Text_2:
-	.string "MUNDUNGUS: In any case, what is your\n"
-	.string "name?\p"
-	.string "{PLAYER}? From ANTHROH TOWN? Why,\n"
-	.string "you and I have the same roots!\p"
-	.string "MUNDUNGUS: I would love to hear about\n"
-	.string "your ideas on how to make ECODIA a\l"
-	.string "more resilient and sustainable region,\l"
-	.string "how about you come talk to me later, in\l"
-	.string "TREEFALL TOWN?\p"
-	.string "MUNDUNGUS: I'll see you soon,\n"
-	.string "{PLAYER}!$"

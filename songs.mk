@@ -2345,3 +2345,15 @@ $(MID_SUBDIR)/mus_hg_obtain_b_points.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_hg_win_minigame.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V091 -p5
+
+$(MID_SUBDIR)/mus_pmd_sky_dont_ever_forget.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_secret_tunnel.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_secret_tunnel_two.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_leaves_from_the_vine.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090

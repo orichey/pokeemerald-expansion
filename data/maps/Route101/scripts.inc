@@ -360,11 +360,12 @@ PostBattle_Adam::
 	.string "the TV says.$"
 
 Eva_Intro::
-	.string "DESOLA TOWN is so empty, will you give\n"
-	.string "me some company?$"
+	.string "DESOLA TOWN is so empty, is the rest of\n"
+	.string "the region like this too?$"
 
 Eva_Outro::
-	.string "Well, thanks for talking to me, at least.$"
+	.string "You're the first person I've seen all\n"
+	.string "day!$"
 
 PostBattle_Eva::
 	.string "I wonder where everyone went?$"

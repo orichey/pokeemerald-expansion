@@ -132,10 +132,10 @@ Route102_EventScript_JSOboy1::
 	return
 
 
-Route102_EventScript_JSOboy2::
+Route102_EventScript_Questioner::
 	lock
 	faceplayer
-	msgbox Route102_EventScript_JSOboy2_Text_0
+	msgbox Route102_EventScript_Questioner_Text_0
 	release
 	return
 
@@ -170,10 +170,13 @@ Route102_EventScript_Woman_Text_0:
 	.string "POKéMON have moved in.$"
 
 Route102_EventScript_JSOboy1_Text_0:
-	.string "My hair is green lol.$"
+	.string "Anthrotech and Paul are trying to plant\n"
+	.string "trees in the forest to bring it back.\p"
+	.string "It'll never work!$"
 
-Route102_EventScript_JSOboy2_Text_0:
-	.string "My shirt is orange lol.$"
+Route102_EventScript_Questioner_Text_0:
+	.string "Who are all of these people in orange,\n"
+	.string "and why are they so angry?$"
 
 Route102_Text_UpDownSign_Text_0:
 	.string "DESOLA TOWN {UP_ARROW}\n"
