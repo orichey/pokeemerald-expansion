@@ -2,7 +2,7 @@
   "id": "MAP_LITTLEROOT_TOWN_SMALL_HOUSE",
   "name": "LittlerootTown_SmallHouse",
   "layout": "LAYOUT_LITTLEROOT_TOWN_SMALL_HOUSE",
-  "music": "MUS_SECRET_TUNNEL_TWO",
+  "music": "MUS_PMD_RESCUETEAM_AWAKENING",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

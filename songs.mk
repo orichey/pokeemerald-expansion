@@ -2357,3 +2357,12 @@ $(MID_SUBDIR)/mus_secret_tunnel_two.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_leaves_from_the_vine.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_awakening.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_mt_thun.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_quiz.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090

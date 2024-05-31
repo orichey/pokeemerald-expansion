@@ -22,7 +22,7 @@ voicegroup274::
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_low, 255, 76, 154, 188
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_accordion, 255, 0, 255, 165
-    voice_directsound 60, 0, DirectSoundWaveData_sc88pro_accordion, 255, 0, 255, 165
+    voice_directsound 60, 0, DirectSoundWaveData_dp_harmonica_c3_16, 67, 247, 191, 171
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_accordion, 255, 0, 255, 165
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_nylon_str_guitar, 255, 249, 25, 248
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_nylon_str_guitar, 255, 249, 25, 248
@@ -70,7 +70,7 @@ voicegroup274::
     voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 43, 188, 103, 165
     voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_oboe, 43, 188, 103, 165
     voice_keysplit voicegroup009, KeySplitTable5            @ french horn
-    voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
+	voice_keysplit voicegroup268, KeySplitTable54           @ bassoon
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
     voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127
@@ -89,10 +89,10 @@ voicegroup274::
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_6, 0, 7, 15, 0
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_7, 0, 7, 15, 1
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-    voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-    voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-    voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_5, 0, 7, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -117,3 +117,14 @@ voicegroup274::
     voice_directsound 62, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 0
     voice_directsound 63, 64, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0
     voice_directsound 63, 64, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0
+    voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 255, 255, 127
+	voice_noise_alt 60, 0, 0, 0, 1, 3, 2

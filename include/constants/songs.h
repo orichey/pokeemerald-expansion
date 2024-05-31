@@ -953,6 +953,9 @@
 #define MUS_SECRET_TUNNEL                 900 // Secret Tunnel
 #define MUS_SECRET_TUNNEL_TWO             901 // Secret Tunnel Two
 #define MUS_LEAVES_FROM_THE_VINE          902 // Leaves From The Vine
+#define MUS_PMD_RESCUETEAM_AWAKENING      903 // Awakening
+#define MUS_PMD_RESCUETEAM_MT_THUN        904 // Mt. Thunder
+#define MUS_PMD_RESCUETEAM_QUIZ           905 // Personality Quiz
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 

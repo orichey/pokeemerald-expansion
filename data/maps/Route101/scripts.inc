@@ -327,7 +327,7 @@ Route101_EventScript_Balls_4:
 Route101_EventScript_Balls_2:
 	msgbox Route101_EventScript_Balls_Text_0
 	giveitem ITEM_POKE_BALL, 5
-	giveitem ITEM_POTION, 1
+	giveitem ITEM_POTION, 5
 	setflag FLAG_UNUSED_0x029
 	goto Route101_EventScript_Balls_1
 

@@ -904,6 +904,9 @@ gSongTable::
 	song mus_secret_tunnel, 0, 0
 	song mus_secret_tunnel_two, 0, 0
 	song mus_leaves_from_the_vine, 0, 0
+	song mus_pmd_rescueteam_awakening, 0, 0
+	song mus_pmd_rescueteam_mt_thun, 0, 0
+	song mus_pmd_rescueteam_quiz, 0, 0
 
 	.align 2
 dummy_song_header:

@@ -25,10 +25,10 @@
 #include "sound_check_menu.h"
 
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
-#define VERSION_BANNER_LEFT_X 98
-#define VERSION_BANNER_RIGHT_X 162
+#define VERSION_BANNER_LEFT_X 88            // was 98
+#define VERSION_BANNER_RIGHT_X 152          // was 162
 #define VERSION_BANNER_Y 2
-#define VERSION_BANNER_Y_GOAL 66
+#define VERSION_BANNER_Y_GOAL 72            // was 64
 #define START_BANNER_X 128
 
 #define CLEAR_SAVE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_UP)
@@ -57,8 +57,8 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 // const rom data
 static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
 
-static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/fiery_field_tiles_update.4bpp.lz");
-static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/fiery_field_tiles_update.bin.lz");
+static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/fiery_field_tiles_tiles.4bpp.lz");
+static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/fiery_field_tiles_tiles.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
 
@@ -510,7 +510,7 @@ static void StartPokemonLogoShine(u8 flashBg)
 
 static void VBlankCB(void)
 {
-    ScanlineEffect_InitHBlankDmaTransfer();
+    //ScanlineEffect_InitHBlankDmaTransfer();
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
@@ -558,7 +558,7 @@ void CB2_InitTitleScreen(void)
         // bg1
         LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
         LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
-        ScanlineEffect_Stop();
+        //ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
         FreeAllSpritePalettes();
@@ -611,14 +611,14 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_TITLE);
+        m4aSongNumStart(MUS_PMD_RESCUETEAM_MT_THUN);
         gMain.state = 5;
         break;
     case 5:
         if (!UpdatePaletteFade())
         {
             StartPokemonLogoShine(0);
-            ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, TRUE);
+            //ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, TRUE);
             SetMainCallback2(MainCB2);
         }
         break;
@@ -646,9 +646,9 @@ static void Task_TitleScreenPhase1(u8 taskId)
     if (gTasks[taskId].tCounter != 0)
     {
         u16 frameNum = gTasks[taskId].tCounter;
-        if (frameNum == 176)
+        if (frameNum == 176)                
             StartPokemonLogoShine(1);
-        else if (frameNum == 64)
+        else if (frameNum == 64)            
             StartPokemonLogoShine(2);
 
         gTasks[taskId].tCounter--;
@@ -766,7 +766,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
         if (gTasks[taskId].tCounter & 1)
         {
             gTasks[taskId].data[4]++;
-            gBattle_BG1_Y = gTasks[taskId].data[4] / 2;
+            gBattle_BG1_Y = -gTasks[taskId].data[4] * 7;
             gBattle_BG1_X = 0;
         }
         UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
@@ -821,15 +821,14 @@ static void CB2_GoToBerryFixScreen(void)
 
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
-    return;
-    if ((frameNum % 4) == 0) // Change color every 4th frame
+    if ((frameNum % 3) == 0) // Change color every 4th frame
     {
         s32 intensity = Cos(frameNum, 128) + 128;
-        s32 r = 31 - ((intensity * 32 - intensity) / 256);
-        s32 g = 31 - (intensity * 22 / 256);
-        s32 b = 12;
+        s32 r = 31 - ((intensity * 29 - intensity) / 256);      // initially s32 r = 31 - ((intensity * 32 - intensity) / 256);     trying to get 2 at min
+        s32 g = 31 - (intensity * 18 / 256);                    // initially s32 g = 31 - (intensity * 22 / 256);                   trying to get 13 at min
+        s32 b = 15;
 
         u16 color = RGB(r, g, b);
-        LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
+        LoadPalette(&color, BG_PLTT_ID(14) + 8, sizeof(color));
    }
 }

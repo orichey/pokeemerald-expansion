@@ -340,7 +340,7 @@ script Route101_EventScript_Balls {
     if(flag(FLAG_UNUSED_0x029) == FALSE) {
 	    msgbox(format("The POKéMON MART in DESOLA TOWN is shut down. Are you going on an adventure? Have some POKéBALLS and a potion!"))
         giveitem(ITEM_POKE_BALL, 5)
-        giveitem(ITEM_POTION, 1)
+        giveitem(ITEM_POTION, 5)
         setflag(FLAG_UNUSED_0x029)
     }
     if(flag(FLAG_UNUSED_0x029) == TRUE) {

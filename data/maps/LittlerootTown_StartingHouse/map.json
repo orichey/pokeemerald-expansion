@@ -2,7 +2,7 @@
   "id": "MAP_LITTLEROOT_TOWN_STARTING_HOUSE",
   "name": "LittlerootTown_StartingHouse",
   "layout": "LAYOUT_LITTLEROOT_TOWN_STARTING_HOUSE",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_PMD_RESCUETEAM_AWAKENING",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
