@@ -467,9 +467,8 @@ static void EnterNewlyCreatedSecretBase_WaitFadeIn(u8 taskId)
 
 static void EnterNewlyCreatedSecretBase_StartFadeIn(void)
 {
-    s16 x, y;
-    x = 0;
-    y = 0;
+    s16 x = 0, y = 0;
+
     LockPlayerFieldControls();
     HideMapNamePopUpWindow();
     FindMetatileIdMapCoords(&x, &y, METATILE_SecretBase_PC);
@@ -517,9 +516,7 @@ bool8 CurMapIsSecretBase(void)
 void InitSecretBaseAppearance(bool8 hidePC)
 {
     u16 secretBaseIdx;
-    s16 x, y;
-    x = 0;
-    y = 0;
+    s16 x, y = 0;
     u8 *decorations;
     u8 *decorPos;
 
