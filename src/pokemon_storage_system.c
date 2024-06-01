@@ -5984,8 +5984,10 @@ static bool8 UpdateCursorPos(void)
 
 static void InitNewCursorPos(u8 newCursorArea, u8 newCursorPosition)
 {
+    
     u16 x, y;
-
+    x = 0;
+    y = 0;
     GetCursorCoordsByPos(newCursorArea, newCursorPosition, &x, &y);
     sStorage->newCursorArea = newCursorArea;
     sStorage->newCursorPosition = newCursorPosition;
