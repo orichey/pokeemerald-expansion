@@ -1,5 +1,5 @@
 gText_Birch_Welcome::
-	.string "Swag! Sorry to keep you waiting!\p"
+	.string "Oi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of POKéMON!\p"
 	.string "My name is BIRCH.\p"
 	.string "But everyone calls me the POKéMON\n"
