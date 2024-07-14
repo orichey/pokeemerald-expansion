@@ -49,6 +49,7 @@ static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
 static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
+static void QueueAnimTiles_General_New_Flower(u16);
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
@@ -148,6 +149,17 @@ const u16 *const gTilesetAnims_General_LandWaterEdge[] = {
     gTilesetAnims_General_LandWaterEdge_Frame1,
     gTilesetAnims_General_LandWaterEdge_Frame2,
     gTilesetAnims_General_LandWaterEdge_Frame3
+};
+
+const u16 gTilesetAnims_General_New_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/new_flower/new_flower_1.4bpp");
+const u16 gTilesetAnims_General_New_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/new_flower/new_flower_2.4bpp");
+const u16 gTilesetAnims_General_New_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/new_flower/new_flower_3.4bpp");
+
+const u16 *const gTilesetAnims_General_New_Flower[] = {
+    gTilesetAnims_General_New_Flower_Frame0,
+    gTilesetAnims_General_New_Flower_Frame1,
+    gTilesetAnims_General_New_Flower_Frame0,
+    gTilesetAnims_General_New_Flower_Frame2
 };
 
 const u16 gTilesetAnims_Lavaridge_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/0.4bpp");
@@ -649,6 +661,8 @@ static void TilesetAnim_General(u16 timer)
         QueueAnimTiles_General_Waterfall(timer / 16);
     if (timer % 16 == 4)
         QueueAnimTiles_General_LandWaterEdge(timer / 16);
+    if (timer % 16 == 5)
+        QueueAnimTiles_General_New_Flower(timer / 16);
 }
 
 static void TilesetAnim_General_Flood(u16 timer)
@@ -693,6 +707,12 @@ static void QueueAnimTiles_General_Waterfall(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Waterfall);
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(496)), 6 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_General_New_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_New_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_New_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(502)), 0x80);
 }
 
 void InitTilesetAnim_Petalburg(void)

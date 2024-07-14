@@ -2,7 +2,7 @@
   "id": "MAP_NEW_HOUSE",
   "name": "NewHouse",
   "layout": "LAYOUT_NEW_HOUSE",
-  "music": "MUS_LEAVES_FROM_THE_VINE",
+  "music": "MUS_PMD_RESCUETEAM_FILE_SELECT",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

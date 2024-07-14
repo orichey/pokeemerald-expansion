@@ -956,6 +956,10 @@
 #define MUS_PMD_RESCUETEAM_AWAKENING      903 // Awakening
 #define MUS_PMD_RESCUETEAM_MT_THUN        904 // Mt. Thunder
 #define MUS_PMD_RESCUETEAM_QUIZ           905 // Personality Quiz
+#define MUS_PMD_RESCUETEAM_FILE_SELECT    906 // File Select
+#define MUS_PMD_RESCUETEAM_FAREWELL       907 // Farewell
+#define MUS_PMD_RESCUETEAM_PEANUT_SWAMP   908 // Peanut Swamp
+#define MUS_PMD_RESCUETEAM_OCEANIC        909 // Friend Area Oceanic
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 

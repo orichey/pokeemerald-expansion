@@ -873,7 +873,7 @@ static void CB2_GoToBerryFixScreen(void)
 
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
-    if ((frameNum % 3) == 0) // Change color every 4th frame
+    if ((frameNum % 4) == 0) // Change color every 4th frame
     {
         s32 intensity = Cos(frameNum, 128) + 128;
         s32 r = 31 - ((intensity * 29 - intensity) / 256);      // initially s32 r = 31 - ((intensity * 32 - intensity) / 256);     trying to get 2 at min

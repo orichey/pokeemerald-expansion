@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE103",
   "name": "Route103",
   "layout": "LAYOUT_ROUTE103",
-  "music": "MUS_DP_ROUTE209_DAY",
+  "music": "MUS_PMD_RESCUETEAM_PEANUT_SWAMP",
   "region_map_section": "MAPSEC_ROUTE_103",
   "requires_flash": false,
   "weather": "WEATHER_RAIN",
@@ -17,6 +17,16 @@
       "map": "MAP_PETALBURG_CITY",
       "offset": 15,
       "direction": "up"
+    },
+    {
+      "map": "MAP_DEWFORD_TOWN",
+      "offset": 56,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_DEWFORD_TOWN",
+      "offset": 10,
+      "direction": "down"
     }
   ],
   "object_events": [

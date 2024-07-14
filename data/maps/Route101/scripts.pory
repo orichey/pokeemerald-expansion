@@ -328,7 +328,7 @@ text Eva_Intro{
     format("DESOLA TOWN is so empty, is the rest of the region like this too?")
 }
 text Eva_Outro{
-    format("You're the first person I've seen all day!")
+    format("You're the first person I've seen come through the foothills all day!")
 }
 text PostBattle_Eva{
     format("I wonder where everyone went?")
@@ -338,13 +338,13 @@ script Route101_EventScript_Balls {
 	lock
 	faceplayer
     if(flag(FLAG_UNUSED_0x029) == FALSE) {
-	    msgbox(format("The POKéMON MART in DESOLA TOWN is shut down. Are you going on an adventure? Have some POKéBALLS and a potion!"))
+	    msgbox(format("The POKéMON MART in DESOLA TOWN is shut down. Are you going on an adventure? Have some Poké Balls and Potions!"))
         giveitem(ITEM_POKE_BALL, 5)
-        giveitem(ITEM_POTION, 5)
+        giveitem(ITEM_POTION, 2)
         setflag(FLAG_UNUSED_0x029)
     }
     if(flag(FLAG_UNUSED_0x029) == TRUE) {
-        msgbox(format("Other POKéMON MARTS throughout the region are open, but these might be the only supplies you can find before TREEFALL TOWN."))
+        msgbox(format("Other POKéMON MARTS throughout the region are open, but these might be the only supplies you can find before TREEFALL TOWN.\pI may have dropped some other items around here too..."))
     }
     release
 }

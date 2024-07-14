@@ -28,10 +28,10 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 15,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
+      "movement_range_x": 3,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -40,6 +40,19 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 26,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route101_EventScript_YoungsterBattle",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 7,
       "y": 13,
       "elevation": 0,
@@ -48,21 +61,34 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route101_EventScript_YoungsterBattle",
+      "script": "Route101_EventScript_GirlBattle",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 5,
-      "y": 7,
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 12,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route101_EventScript_GirlBattle",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ANTIDOTE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_101_ANTIDOTE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_PARALYZE_HEAL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_101_PARALYZE_HEAL"
     }
   ],
   "warp_events": [

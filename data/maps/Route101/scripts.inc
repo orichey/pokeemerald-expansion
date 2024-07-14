@@ -327,7 +327,7 @@ Route101_EventScript_Balls_4:
 Route101_EventScript_Balls_2:
 	msgbox Route101_EventScript_Balls_Text_0
 	giveitem ITEM_POKE_BALL, 5
-	giveitem ITEM_POTION, 5
+	giveitem ITEM_POTION, 2
 	setflag FLAG_UNUSED_0x029
 	goto Route101_EventScript_Balls_1
 
@@ -339,14 +339,16 @@ Route101_EventScript_Balls_5:
 Route101_EventScript_Balls_Text_0:
 	.string "The POKéMON MART in DESOLA TOWN is\n"
 	.string "shut down. Are you going on an\l"
-	.string "adventure? Have some POKéBALLS and a\l"
-	.string "potion!$"
+	.string "adventure? Have some Poké Balls and\l"
+	.string "Potions!$"
 
 Route101_EventScript_Balls_Text_1:
 	.string "Other POKéMON MARTS throughout the\n"
 	.string "region are open, but these might be the\l"
 	.string "only supplies you can find before\l"
-	.string "TREEFALL TOWN.$"
+	.string "TREEFALL TOWN.\p"
+	.string "I may have dropped some other items\n"
+	.string "around here too...$"
 
 Adam_Intro::
 	.string "Are you also seeing if climate change is\n"
@@ -364,8 +366,8 @@ Eva_Intro::
 	.string "the region like this too?$"
 
 Eva_Outro::
-	.string "You're the first person I've seen all\n"
-	.string "day!$"
+	.string "You're the first person I've seen come\n"
+	.string "through the foothills all day!$"
 
 PostBattle_Eva::
 	.string "I wonder where everyone went?$"

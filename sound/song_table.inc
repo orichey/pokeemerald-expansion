@@ -907,6 +907,10 @@ gSongTable::
 	song mus_pmd_rescueteam_awakening, 0, 0
 	song mus_pmd_rescueteam_mt_thun, 0, 0
 	song mus_pmd_rescueteam_quiz, 0, 0
+	song mus_pmd_rescueteam_file_select, 0, 0
+	song mus_pmd_rescueteam_farewell, 0, 0
+	song mus_pmd_rescueteam_peanut_swamp, 0, 0
+	song mus_pmd_rescueteam_oceanic, 0, 0
 
 	.align 2
 dummy_song_header:

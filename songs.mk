@@ -2366,3 +2366,15 @@ $(MID_SUBDIR)/mus_pmd_rescueteam_mt_thun.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_pmd_rescueteam_quiz.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_file_select.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_farewell.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_peanut_swamp.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V093
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_oceanic.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V095

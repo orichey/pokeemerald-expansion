@@ -1295,6 +1295,10 @@ SECTIONS {
         sound/songs/midi/mus_pmd_rescueteam_awakening.o(.rodata);
         sound/songs/midi/mus_pmd_rescueteam_mt_thun.o(.rodata);
         sound/songs/midi/mus_pmd_rescueteam_quiz.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_file_select.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_farewell.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_peanut_swamp.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_oceanic.o(.rodata);
     } > ROM =0
 
     lib_rodata :
