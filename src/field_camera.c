@@ -225,6 +225,23 @@ void DrawDoorMetatileAt(int x, int y, u16 *tiles)
 
 static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x, int y)
 {
+    u16 metatileId = MapGridGetMetatileIdAt(x, y);
+    const u16 *metatiles;
+
+    if (metatileId > NUM_METATILES_TOTAL)
+        metatileId = 0;
+    if (metatileId < NUM_METATILES_IN_PRIMARY)
+        metatiles = mapLayout->primaryTileset->metatiles;
+    else
+    {
+        metatiles = mapLayout->secondaryTileset->metatiles;
+        metatileId -= NUM_METATILES_IN_PRIMARY;
+    }
+    DrawMetatile(MapGridGetMetatileLayerTypeAt(x, y), metatiles + metatileId * NUM_TILES_PER_METATILE, offset);
+}
+
+static void DrawMetatile(s32 metatileLayerType, const u16 *tiles, u16 offset)
+{
     if (metatileLayerType == 0xFF)
     {
         // A door metatile shall be drawn, we use covered behavior

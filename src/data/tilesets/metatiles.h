@@ -225,3 +225,9 @@ const u16 gMetatileAttributes_snowy_attempt2[] = INCBIN_U16("data/tilesets/prima
 
 const u16 gMetatiles_General_Flood[] = INCBIN_U16("data/tilesets/primary/general_flood/metatiles.bin");
 const u16 gMetatileAttributes_General_Flood[] = INCBIN_U16("data/tilesets/primary/general_flood/metatile_attributes.bin");
+
+const u16 gMetatiles_PorytilesPrimaryTutorialTwo[] = INCBIN_U16("data/tilesets/primary/porytiles_primary_tutorial_two/metatiles.bin");
+const u16 gMetatileAttributes_PorytilesPrimaryTutorialTwo[] = INCBIN_U16("data/tilesets/primary/porytiles_primary_tutorial_two/metatile_attributes.bin");
+
+const u16 gMetatiles_PorytilesSecondaryTutorial[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_tutorial/metatiles.bin");
+const u16 gMetatileAttributes_PorytilesSecondaryTutorial[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_tutorial/metatile_attributes.bin");

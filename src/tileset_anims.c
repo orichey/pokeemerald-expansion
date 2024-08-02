@@ -50,6 +50,7 @@ static void QueueAnimTiles_General_SandWaterEdge(u16);
 static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
 static void QueueAnimTiles_General_New_Flower(u16);
+static void QueueAnimTiles_Secondary_Palm(u16);
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
@@ -160,6 +161,17 @@ const u16 *const gTilesetAnims_General_New_Flower[] = {
     gTilesetAnims_General_New_Flower_Frame1,
     gTilesetAnims_General_New_Flower_Frame0,
     gTilesetAnims_General_New_Flower_Frame2
+};
+
+const u16 gTilesetAnims_Secondary_Palm_Frame0[] = INCBIN_U16("data/tilesets/secondary/sootopolis/anim/palm/palm_anim0.4bpp");
+const u16 gTilesetAnims_Secondary_Palm_Frame1[] = INCBIN_U16("data/tilesets/secondary/sootopolis/anim/palm/palm_anim1.4bpp");
+const u16 gTilesetAnims_Secondary_Palm_Frame2[] = INCBIN_U16("data/tilesets/secondary/sootopolis/anim/palm/palm_anim2.4bpp");
+
+const u16 *const gTilesetAnims_Secondary_Palm[] = {
+    gTilesetAnims_Secondary_Palm_Frame0,
+    gTilesetAnims_Secondary_Palm_Frame1,
+    gTilesetAnims_Secondary_Palm_Frame0,
+    gTilesetAnims_Secondary_Palm_Frame2
 };
 
 const u16 gTilesetAnims_Lavaridge_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/0.4bpp");
@@ -715,6 +727,12 @@ static void QueueAnimTiles_General_New_Flower(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_General_New_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(502)), 0x80);
 }
 
+static void QueueAnimTiles_Secondary_Palm(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Secondary_Palm);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Secondary_Palm[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(720)), 0x100);
+}
+
 void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -971,6 +989,8 @@ static void TilesetAnim_Sootopolis(u16 timer)
 {
     if (timer % 16 == 0)
         QueueAnimTiles_Sootopolis_StormyWater(timer / 16);
+    if (timer % 16 == 0)
+        QueueAnimTiles_Secondary_Palm(timer / 16);
 }
 
 static void TilesetAnim_Underwater(u16 timer)

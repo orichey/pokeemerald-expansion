@@ -801,3 +801,18 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DewfordTown_EventScript_OceanWoman::
+	lock
+	faceplayer
+	msgbox DewfordTown_EventScript_OceanWoman_Text_0
+	release
+	return
+
+
+DewfordTown_EventScript_OceanWoman_Text_0:
+	.string "TOWN NAME has always been a vacation\n"
+	.string "destination for people across ECODIA.\p"
+	.string "Now, due to rising sea levels, we have\n"
+	.string "been cut off from the rest of the\l"
+	.string "region.$"

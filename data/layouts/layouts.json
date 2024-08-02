@@ -114,8 +114,8 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
-      "width": 40,
-      "height": 60,
+      "width": 50,
+      "height": 70,
       "primary_tileset": "gTileset_General_Flood",
       "secondary_tileset": "gTileset_Sootopolis",
       "border_filepath": "data/layouts/DewfordTown/border.bin",
@@ -654,10 +654,10 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN_HALL",
       "name": "DewfordTown_Hall_Layout",
-      "width": 17,
-      "height": 9,
+      "width": 11,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/DewfordTown_Hall/border.bin",
       "blockdata_filepath": "data/layouts/DewfordTown_Hall/map.bin"
     },

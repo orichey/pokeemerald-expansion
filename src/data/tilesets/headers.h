@@ -891,3 +891,25 @@ const struct Tileset gTileset_General_Flood =
     .metatileAttributes = gMetatileAttributes_General_Flood,
     .callback = InitTilesetAnim_General_Flood,
 };
+
+const struct Tileset gTileset_PorytilesPrimaryTutorialTwo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PorytilesPrimaryTutorialTwo,
+    .palettes = gTilesetPalettes_PorytilesPrimaryTutorialTwo,
+    .metatiles = gMetatiles_PorytilesPrimaryTutorialTwo,
+    .metatileAttributes = gMetatileAttributes_PorytilesPrimaryTutorialTwo,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PorytilesSecondaryTutorial =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PorytilesSecondaryTutorial,
+    .palettes = gTilesetPalettes_PorytilesSecondaryTutorial,
+    .metatiles = gMetatiles_PorytilesSecondaryTutorial,
+    .metatileAttributes = gMetatileAttributes_PorytilesSecondaryTutorial,
+    .callback = NULL,
+};

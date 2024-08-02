@@ -126,7 +126,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(LITTLEROOT_TOWN_STARTING_HOUSE), MAP_NUM(LITTLEROOT_TOWN_STARTING_HOUSE), WARP_ID_NONE, 2, 4);
+    SetWarpDestination(MAP_GROUP(DEWFORD_TOWN), MAP_NUM(DEWFORD_TOWN), WARP_ID_NONE, 34, 12);
     WarpIntoMap();
 }
 
@@ -194,6 +194,7 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
     WarpToTruck();
+    FlagSet(FLAG_SYS_B_DASH);
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
