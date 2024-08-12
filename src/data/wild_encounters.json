@@ -729,14 +729,14 @@
             "encounter_rate": 30,
             "mons": [
               {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_MAGIKARP"
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_CORSOLA"
               },
               {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_TENTACOOL"
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_CHINCHOU"
               },
               {
                 "min_level": 10,
@@ -8710,7 +8710,7 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_TENTACOOL"
+                "species": "SPECIES_GOLDEEN"
               },
               {
                 "min_level": 10,

@@ -715,7 +715,6 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
-    u8 currentBehavior = MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
     
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
@@ -2514,14 +2513,13 @@ u8 GetLeftSideStairsDirection(u8 direction)
 
 bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
 {
-    #if SLOW_MOVEMENT_ON_STAIRS
+    #if SLOW_MOVEMENT_ON_STAIRS == TRUE
         s16 x = objectEvent->currentCoords.x;
         s16 y = objectEvent->currentCoords.y;
         
-        #if FOLLOW_ME_IMPLEMENTED
-            if (PlayerHasFollower() && (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId()))
-                return FALSE;
-        #endif
+        // TODO followers on sideways stairs
+        if (IsFollowerVisible() && (objectEvent->isPlayer || objectEvent->localId == OBJ_EVENT_ID_FOLLOWER))
+            return FALSE;
         
         switch (direction)
         {
@@ -2546,4 +2544,3 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
         return FALSE;
     #endif
 }
-

@@ -1337,7 +1337,7 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
             NewGameBirchSpeech_ClearWindow(0);
             StringExpandPlaceholders(gStringVar4, gText_Birch_Welcome);
             AddTextPrinterForMessage(TRUE);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_ThisIsAPokemon;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_AndYouAre;
         }
     }
 }
@@ -1670,7 +1670,7 @@ static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8 taskId)
         spriteId = gTasks[taskId].tLotadSpriteId;
         gSprites[spriteId].x = 100;
         gSprites[spriteId].y = 75;
-        gSprites[spriteId].invisible = FALSE;
+        gSprites[spriteId].invisible = TRUE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);

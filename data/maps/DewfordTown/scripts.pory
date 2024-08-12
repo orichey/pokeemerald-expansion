@@ -13,6 +13,7 @@ raw `
 
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, DewfordTown_OnLoad
 	.byte 0
 
 DewfordTown_OnTransition:
@@ -646,8 +647,8 @@ DewfordTown_Text_TinyIslandCommunity:
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign:
-	.string "DEWFORD TOWN\n"
-	.string "“A tiny island in the blue sea.”$"
+	.string "SEASPRAY TOWN\n"
+	.string "“The sunniest resort in ECODIA.”$"
 
 DewfordTown_Text_GymSign:
 	.string "DEWFORD TOWN POKéMON GYM\n"
@@ -804,10 +805,223 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "definition of “in” right now.$"
 
 `
+script DewfordTown_OnLoad {
+	// Set all the flags used by the birds so that they start out all hidden
+	setflag(FLAG_TEMP_1)
+	setflag(FLAG_TEMP_2)
+	setflag(FLAG_TEMP_3)
+	setflag(FLAG_TEMP_4)
+
+	random(4)
+	switch(var(VAR_RESULT)) {
+		case 0:
+			// This will display only the bird(s) using FLAG_TEMP_1
+			clearflag(FLAG_TEMP_1)
+		case 1:
+			// This will display only the bird(s) using FLAG_TEMP_2
+			clearflag(FLAG_TEMP_2)
+		case 2:
+			clearflag(FLAG_TEMP_4)
+		case 3:
+			// Adding a little variety by having several birds at once in this case
+			clearflag(FLAG_TEMP_1)
+			clearflag(FLAG_TEMP_3)
+    }
+}
 
 script DewfordTown_EventScript_OceanWoman {
-	lock
+	lockall
 	faceplayer
-	msgbox(format("TOWN NAME has always been a vacation destination for people across ECODIA. \pNow, due to rising sea levels, we have been cut off from the rest of the region."))
+	msgbox(format("Seaspray Town has always been a vacation destination for people across Ecodia. \pNow, due to rising sea levels, we have been cut off from the rest of the region.\pThis path was our only way out!"))
+	waitmovement(0)
+	applymovement(1,WomanLookUp)
+	waitmovement(0)
 	release
+	end
+}
+
+script DewfordTown_EventScript_Charmander{
+	lock
+	if(flag(FLAG_SYS_POKEMON_GET) == FALSE){
+    showmonpic(SPECIES_MONFERNO, 10,3)
+    msgbox("It's a Monferno!\l"
+    "Do you want to pick up Monferno?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_MONFERNO, 18)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Recieved Monferno!")
+			callnative(UpdateFollowingPokemon)
+            removeobject(8)
+            setflag(FLAG_UNUSED_0x020)
+            setflag(FLAG_SYS_POKEMON_GET)
+			setflag(FLAG_BADGE01_GET)
+            call(NicknamePartyMonDewf)
+			setrespawn(HEAL_LOCATION_DEWFORD_TOWN)
+			fadescreenswapbuffers(FADE_TO_BLACK)
+			delay(60)
+			removeobject(6)
+			removeobject(7)
+			playse(SE_M_SURF)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
+			msgbox(format("The other POKéMON were swept out to sea..."))
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Recieved Monferno!")
+            removeobject(8)
+            setflag(FLAG_UNUSED_0x020)
+            setflag(FLAG_SYS_POKEMON_GET)
+			setflag(FLAG_BADGE01_GET)
+            call(NicknameBoxMonDewf)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room.")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(Dewf_NotChosen)
+    }
+	}
+	else{
+		msgbox(NoMore)
+	}
+	release
+	end
+}
+
+script DewfordTown_EventScript_Mudkip{
+	lock
+	if(flag(FLAG_SYS_POKEMON_GET) == FALSE){
+    showmonpic(SPECIES_MARSHTOMP, 10,3)
+    msgbox("It's a Marshtomp!\l"
+        "Do you want to pick up Marshtomp?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_MARSHTOMP, 18)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Recieved Marshtomp!")
+			callnative(UpdateFollowingPokemon)
+            setflag(FLAG_SYS_POKEMON_GET)
+            removeobject(7)
+            setflag(FLAG_UNUSED_0x021)
+			setflag(FLAG_BADGE01_GET)
+            call(NicknamePartyMonDewf)
+			setrespawn(HEAL_LOCATION_DEWFORD_TOWN)
+			fadescreenswapbuffers(FADE_TO_BLACK)
+			delay(60)
+			removeobject(6)
+			removeobject(8)
+			playse(SE_M_SURF)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
+			msgbox(format("The other POKéMON were swept out to sea..."))
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Recieved Marshtomp!")
+            setflag(FLAG_SYS_POKEMON_GET)
+            removeobject(7)
+            setflag(FLAG_UNUSED_0x021)
+			setflag(FLAG_BADGE01_GET)
+            call(NicknameBoxMonDewf)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room.")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(Dewf_NotChosen)
+    }
+	}
+	else{
+		msgbox(NoMore)
+	}
+	release
+	end
+}
+
+script DewfordTown_EventScript_Turtwig{
+	lock
+	if(flag(FLAG_SYS_POKEMON_GET) == FALSE){
+    showmonpic(SPECIES_BAYLEEF, 10,3)
+    msgbox("It's a Bayleef!\l"
+        "Do you want to pick up Bayleef?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        givemon(SPECIES_BAYLEEF, 18)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Recieved Bayleef!")
+			callnative(UpdateFollowingPokemon)
+            setflag(FLAG_SYS_POKEMON_GET)
+            removeobject(6)
+            setflag(FLAG_UNUSED_0x022)
+			setflag(FLAG_BADGE01_GET)
+            call(NicknamePartyMonDewf)
+			setrespawn(HEAL_LOCATION_DEWFORD_TOWN)
+			fadescreenswapbuffers(FADE_TO_BLACK)
+			delay(60)
+			removeobject(7)
+			removeobject(8)
+			playse(SE_M_SURF)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
+			msgbox(format("The other POKéMON were swept out to sea..."))
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Recieved Bayleef!")
+            setflag(FLAG_SYS_POKEMON_GET)
+            removeobject(6)
+            setflag(FLAG_UNUSED_0x022)
+			setflag(FLAG_BADGE01_GET)
+            call(NicknameBoxMonDewf)
+        }
+        else{
+            hidemonpic
+            msgbox("No more room.")
+        }
+    }
+    else{
+        hidemonpic
+        msgbox(Dewf_NotChosen)
+    }
+	}
+	else{
+		msgbox(NoMore)
+	}
+	release 
+	end
+}
+ 
+script NicknamePartyMonDewf{
+    msgbox("Give a nickname?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+    }
+}
+ 
+script NicknameBoxMonDewf{
+    msgbox("Give a nickname?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedBoxMon)
+    }
+    msgbox("Transferred to PC")
+}
+
+text Dewf_NotChosen{
+    "You did not choose the Pokémon."
+}
+
+text NoMore{
+	"Better not be greedy!"
+}
+
+movement WomanLookUp{
+	face_up
 }

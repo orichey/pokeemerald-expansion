@@ -114,7 +114,7 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
-      "width": 50,
+      "width": 48,
       "height": 70,
       "primary_tileset": "gTileset_General_Flood",
       "secondary_tileset": "gTileset_Sootopolis",
@@ -206,8 +206,8 @@
       "name": "Route105_Layout",
       "width": 40,
       "height": 80,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Dewford",
+      "primary_tileset": "gTileset_General_Flood",
+      "secondary_tileset": "gTileset_Sootopolis",
       "border_filepath": "data/layouts/Route105/border.bin",
       "blockdata_filepath": "data/layouts/Route105/map.bin"
     },
@@ -4480,6 +4480,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/PetalburgCity_MundungusHouse/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_MundungusHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_TOWN_HOUSE3",
+      "name": "DewfordTown_House3_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/DewfordTown_House3/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordTown_House3/map.bin"
     }
   ]
 }

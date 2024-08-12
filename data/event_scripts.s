@@ -1088,3 +1088,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PetalburgCity_GrassHouse/scripts.inc"
 
 	.include "data/maps/PetalburgCity_MundungusHouse/scripts.inc"
+
+	.include "data/maps/DewfordTown_House3/scripts.inc"

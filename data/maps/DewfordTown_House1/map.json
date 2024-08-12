@@ -2,7 +2,7 @@
   "id": "MAP_DEWFORD_TOWN_HOUSE1",
   "name": "DewfordTown_House1",
   "layout": "LAYOUT_HOUSE3",
-  "music": "MUS_DEWFORD",
+  "music": "MUS_PMD_RESCUETEAM_PEANUT_SWAMP",
   "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -60,14 +60,14 @@
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN",
-      "dest_warp_id": "3"
+      "dest_warp_id": "5"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN",
-      "dest_warp_id": "3"
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

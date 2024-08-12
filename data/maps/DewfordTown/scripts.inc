@@ -12,6 +12,7 @@
 
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, DewfordTown_OnLoad
 	.byte 0
 
 DewfordTown_OnTransition:
@@ -645,8 +646,8 @@ DewfordTown_Text_TinyIslandCommunity:
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign:
-	.string "DEWFORD TOWN\n"
-	.string "“A tiny island in the blue sea.”$"
+	.string "SEASPRAY TOWN\n"
+	.string "“The sunniest resort in ECODIA.”$"
 
 DewfordTown_Text_GymSign:
 	.string "DEWFORD TOWN POKéMON GYM\n"
@@ -802,17 +803,295 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
 
-DewfordTown_EventScript_OceanWoman::
-	lock
-	faceplayer
-	msgbox DewfordTown_EventScript_OceanWoman_Text_0
-	release
+DewfordTown_OnLoad::
+	setflag FLAG_TEMP_1
+	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_4
+	random 4
+	switch VAR_RESULT
+	case 0, DewfordTown_OnLoad_2
+	case 1, DewfordTown_OnLoad_3
+	case 2, DewfordTown_OnLoad_4
+	case 3, DewfordTown_OnLoad_5
+	return
+
+DewfordTown_OnLoad_2:
+	clearflag FLAG_TEMP_1
+	return
+
+DewfordTown_OnLoad_3:
+	clearflag FLAG_TEMP_2
+	return
+
+DewfordTown_OnLoad_4:
+	clearflag FLAG_TEMP_4
+	return
+
+DewfordTown_OnLoad_5:
+	clearflag FLAG_TEMP_1
+	clearflag FLAG_TEMP_3
 	return
 
 
+DewfordTown_EventScript_OceanWoman::
+	lockall
+	faceplayer
+	msgbox DewfordTown_EventScript_OceanWoman_Text_0
+	waitmovement 0
+	applymovement 1, WomanLookUp
+	waitmovement 0
+	release
+	end
+
+
+DewfordTown_EventScript_Charmander::
+	lock
+	goto_if_unset FLAG_SYS_POKEMON_GET, DewfordTown_EventScript_Charmander_2
+	msgbox NoMore
+DewfordTown_EventScript_Charmander_1:
+	release
+	end
+
+DewfordTown_EventScript_Charmander_2:
+	showmonpic SPECIES_MONFERNO, 10, 3
+	msgbox DewfordTown_EventScript_Charmander_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq DewfordTown_EventScript_Charmander_5
+	hidemonpic
+	msgbox Dewf_NotChosen
+	goto DewfordTown_EventScript_Charmander_1
+
+DewfordTown_EventScript_Charmander_5:
+	givemon SPECIES_MONFERNO, 18
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq DewfordTown_EventScript_Charmander_8
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq DewfordTown_EventScript_Charmander_9
+	hidemonpic
+	msgbox DewfordTown_EventScript_Charmander_Text_3
+	goto DewfordTown_EventScript_Charmander_1
+
+DewfordTown_EventScript_Charmander_8:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_EventScript_Charmander_Text_1
+	callnative UpdateFollowingPokemon
+	removeobject 8
+	setflag FLAG_UNUSED_0x020
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE01_GET
+	call NicknamePartyMonDewf
+	setrespawn HEAL_LOCATION_DEWFORD_TOWN
+	fadescreenswapbuffers FADE_TO_BLACK
+	delay 60
+	removeobject 6
+	removeobject 7
+	playse SE_M_SURF
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox DewfordTown_EventScript_Charmander_Text_2
+	goto DewfordTown_EventScript_Charmander_1
+
+DewfordTown_EventScript_Charmander_9:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_EventScript_Charmander_Text_1
+	removeobject 8
+	setflag FLAG_UNUSED_0x020
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_BADGE01_GET
+	call NicknameBoxMonDewf
+	goto DewfordTown_EventScript_Charmander_1
+
+
+DewfordTown_EventScript_Mudkip::
+	lock
+	goto_if_unset FLAG_SYS_POKEMON_GET, DewfordTown_EventScript_Mudkip_2
+	msgbox NoMore
+DewfordTown_EventScript_Mudkip_1:
+	release
+	end
+
+DewfordTown_EventScript_Mudkip_2:
+	showmonpic SPECIES_MARSHTOMP, 10, 3
+	msgbox DewfordTown_EventScript_Mudkip_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq DewfordTown_EventScript_Mudkip_5
+	hidemonpic
+	msgbox Dewf_NotChosen
+	goto DewfordTown_EventScript_Mudkip_1
+
+DewfordTown_EventScript_Mudkip_5:
+	givemon SPECIES_MARSHTOMP, 18
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq DewfordTown_EventScript_Mudkip_8
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq DewfordTown_EventScript_Mudkip_9
+	hidemonpic
+	msgbox DewfordTown_EventScript_Charmander_Text_3
+	goto DewfordTown_EventScript_Mudkip_1
+
+DewfordTown_EventScript_Mudkip_8:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_EventScript_Mudkip_Text_1
+	callnative UpdateFollowingPokemon
+	setflag FLAG_SYS_POKEMON_GET
+	removeobject 7
+	setflag FLAG_UNUSED_0x021
+	setflag FLAG_BADGE01_GET
+	call NicknamePartyMonDewf
+	setrespawn HEAL_LOCATION_DEWFORD_TOWN
+	fadescreenswapbuffers FADE_TO_BLACK
+	delay 60
+	removeobject 6
+	removeobject 8
+	playse SE_M_SURF
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox DewfordTown_EventScript_Charmander_Text_2
+	goto DewfordTown_EventScript_Mudkip_1
+
+DewfordTown_EventScript_Mudkip_9:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_EventScript_Mudkip_Text_1
+	setflag FLAG_SYS_POKEMON_GET
+	removeobject 7
+	setflag FLAG_UNUSED_0x021
+	setflag FLAG_BADGE01_GET
+	call NicknameBoxMonDewf
+	goto DewfordTown_EventScript_Mudkip_1
+
+
+DewfordTown_EventScript_Turtwig::
+	lock
+	goto_if_unset FLAG_SYS_POKEMON_GET, DewfordTown_EventScript_Turtwig_2
+	msgbox NoMore
+DewfordTown_EventScript_Turtwig_1:
+	release
+	end
+
+DewfordTown_EventScript_Turtwig_2:
+	showmonpic SPECIES_BAYLEEF, 10, 3
+	msgbox DewfordTown_EventScript_Turtwig_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq DewfordTown_EventScript_Turtwig_5
+	hidemonpic
+	msgbox Dewf_NotChosen
+	goto DewfordTown_EventScript_Turtwig_1
+
+DewfordTown_EventScript_Turtwig_5:
+	givemon SPECIES_BAYLEEF, 18
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq DewfordTown_EventScript_Turtwig_8
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq DewfordTown_EventScript_Turtwig_9
+	hidemonpic
+	msgbox DewfordTown_EventScript_Charmander_Text_3
+	goto DewfordTown_EventScript_Turtwig_1
+
+DewfordTown_EventScript_Turtwig_8:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_EventScript_Turtwig_Text_1
+	callnative UpdateFollowingPokemon
+	setflag FLAG_SYS_POKEMON_GET
+	removeobject 6
+	setflag FLAG_UNUSED_0x022
+	setflag FLAG_BADGE01_GET
+	call NicknamePartyMonDewf
+	setrespawn HEAL_LOCATION_DEWFORD_TOWN
+	fadescreenswapbuffers FADE_TO_BLACK
+	delay 60
+	removeobject 7
+	removeobject 8
+	playse SE_M_SURF
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox DewfordTown_EventScript_Charmander_Text_2
+	goto DewfordTown_EventScript_Turtwig_1
+
+DewfordTown_EventScript_Turtwig_9:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox DewfordTown_EventScript_Turtwig_Text_1
+	setflag FLAG_SYS_POKEMON_GET
+	removeobject 6
+	setflag FLAG_UNUSED_0x022
+	setflag FLAG_BADGE01_GET
+	call NicknameBoxMonDewf
+	goto DewfordTown_EventScript_Turtwig_1
+
+
+NicknamePartyMonDewf::
+	msgbox NicknamePartyMonDewf_Text_0, MSGBOX_YESNO
+	hidemonpic
+	compare VAR_RESULT, YES
+	goto_if_eq NicknamePartyMonDewf_1
+	return
+
+NicknamePartyMonDewf_1:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	return
+
+
+NicknameBoxMonDewf::
+	msgbox NicknamePartyMonDewf_Text_0, MSGBOX_YESNO
+	hidemonpic
+	compare VAR_RESULT, YES
+	goto_if_eq NicknameBoxMonDewf_2
+NicknameBoxMonDewf_1:
+	msgbox NicknameBoxMonDewf_Text_0
+	return
+
+NicknameBoxMonDewf_2:
+	call Common_EventScript_NameReceivedBoxMon
+	goto NicknameBoxMonDewf_1
+
+
+WomanLookUp:
+	face_up
+	step_end
+
 DewfordTown_EventScript_OceanWoman_Text_0:
-	.string "TOWN NAME has always been a vacation\n"
-	.string "destination for people across ECODIA.\p"
+	.string "SEASPRAY TOWN has always been a\n"
+	.string "vacation destination for people\l"
+	.string "across ECODIA.\p"
 	.string "Now, due to rising sea levels, we have\n"
 	.string "been cut off from the rest of the\l"
-	.string "region.$"
+	.string "region.\p"
+	.string "This path was our only way out!$"
+
+DewfordTown_EventScript_Charmander_Text_0:
+	.string "It's a Monferno!\l"
+	.string "Do you want to pick up Monferno?$"
+
+DewfordTown_EventScript_Charmander_Text_1:
+	.string "Recieved Monferno!$"
+
+DewfordTown_EventScript_Charmander_Text_2:
+	.string "The other POKéMON were swept out to\n"
+	.string "sea...$"
+
+DewfordTown_EventScript_Charmander_Text_3:
+	.string "No more room.$"
+
+DewfordTown_EventScript_Mudkip_Text_0:
+	.string "It's a Marshtomp!\l"
+	.string "Do you want to pick up Marshtomp?$"
+
+DewfordTown_EventScript_Mudkip_Text_1:
+	.string "Recieved Marshtomp!$"
+
+DewfordTown_EventScript_Turtwig_Text_0:
+	.string "It's a Bayleef!\l"
+	.string "Do you want to pick up Bayleef?$"
+
+DewfordTown_EventScript_Turtwig_Text_1:
+	.string "Recieved Bayleef!$"
+
+NicknamePartyMonDewf_Text_0:
+	.string "Give a nickname?$"
+
+NicknameBoxMonDewf_Text_0:
+	.string "Transferred to PC$"
+
+Dewf_NotChosen::
+	.string "You did not choose the POKéMON.$"
+
+NoMore::
+	.string "Better not be greedy!$"

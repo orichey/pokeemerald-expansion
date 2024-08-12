@@ -1,3 +1,4 @@
+raw`
 .set LOCALID_EXPERT_M, 4
 .set LOCALID_TWIN, 5
 .set LOCALID_SCHOOL_KID_M, 7
@@ -462,44 +463,27 @@ DewfordTown_Mart_Pokemart:
 	.2byte ITEM_NONE
 	release
 	end
+`
 
-DewfordTown_Mart_EventScript_Man::
-	lock
-	faceplayer
-	msgbox DewfordTown_Mart_EventScript_Man_Text_0
-	release
-	end
+script DewfordTown_Mart_EventScript_Man{
+    lock
+    faceplayer
+    msgbox(format("We are all at risk of losing our homes to the rising tides.\pI'm looking for anything that might help my family hold on longer, but it looks like our fate lies with NINA."))
+    release
+    end
+}
 
-
-DewfordTown_Mart_EventScript_Girl::
-	lock
-	faceplayer
-	goto_if_set FLAG_UNUSED_0x02B, DewfordTown_Mart_EventScript_Girl_2
-	msgbox DewfordTown_Mart_EventScript_Girl_Text_1
-	giveitem ITEM_PEARL
-	setflag FLAG_UNUSED_0x02B
-DewfordTown_Mart_EventScript_Girl_1:
-	release
-	end
-
-DewfordTown_Mart_EventScript_Girl_2:
-	msgbox DewfordTown_Mart_EventScript_Girl_Text_0
-	goto DewfordTown_Mart_EventScript_Girl_1
-
-
-DewfordTown_Mart_EventScript_Man_Text_0:
-	.string "We are all at risk of losing our homes to\n"
-	.string "the rising tides.\p"
-	.string "I'm looking for anything that might help\n"
-	.string "my family hold on longer, but it looks\l"
-	.string "like our fate lies with NINA.$"
-
-DewfordTown_Mart_EventScript_Girl_Text_0:
-	.string "I hope you like your gift, I found it on the beach!$"
-
-DewfordTown_Mart_EventScript_Girl_Text_1:
-	.string "Daddy says we're getting out of\n"
-	.string "SEASPRAY TOWN soon. To make the flight\l"
-	.string "easier, I'm giving away some of my\l"
-	.string "stuff.\p"
-	.string "You can have this!$"
+script DewfordTown_Mart_EventScript_Girl{
+    lock
+    faceplayer
+    if(flag(FLAG_UNUSED_0x02B) == TRUE){
+        msgbox("I hope you like your gift, I found it on the beach!")
+    }
+    else{
+        msgbox(format("Daddy says we're getting out of SEASPRAY TOWN soon. To make the flight easier, I'm giving away some of my stuff.\pYou can have this!"))
+        giveitem(ITEM_PEARL)
+        setflag(FLAG_UNUSED_0x02B)
+    }
+    release
+    end
+}

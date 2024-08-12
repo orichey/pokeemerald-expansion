@@ -1,3 +1,4 @@
+raw `
 DewfordTown_House2_MapScripts::
 	.byte 0
 
@@ -55,47 +56,28 @@ DewfordTown_House2_Text_BrawlySoCool:
 	.string "He's so cool…\n"
 	.string "Everyone idolizes him.$"
 
-DewfordTown_House2_OldRod::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_OLD_ROD, DewfordTown_House2_OldRod_2
-	msgbox DewfordTown_House2_OldRod_Text_1
-	giveitem ITEM_OLD_ROD
-	msgbox DewfordTown_House2_OldRod_Text_2
-	setflag FLAG_RECEIVED_OLD_ROD
-DewfordTown_House2_OldRod_1:
-	release
-	end
+`
 
-DewfordTown_House2_OldRod_2:
-	msgbox DewfordTown_House2_OldRod_Text_0
-	goto DewfordTown_House2_OldRod_1
+script DewfordTown_House2_OldRod{
+    lock
+    faceplayer
+    if(flag(FLAG_RECEIVED_OLD_ROD) == TRUE) {
+        msgbox(format("Caught anything good?"))
+    }
+    else{
+        msgbox(format("Ahoy! You look like an adventurer!\pHere, take this!"))
+        giveitem(ITEM_OLD_ROD)
+        msgbox(format("It ain't much, but you might be able to catch something with it.\pEspecially now that the ocean is all around us! Wahah!"))
+        setflag(FLAG_RECEIVED_OLD_ROD)
+    }
+    release
+    end
+}
 
-
-DewfordTown_House2_Boy::
-	lock
-	faceplayer
-	msgbox DewfordTown_House2_Boy_Text_0
-	release
-	end
-
-
-DewfordTown_House2_OldRod_Text_0:
-	.string "Caught anything good?$"
-
-DewfordTown_House2_OldRod_Text_1:
-	.string "Ahoy! You look like an adventurer!\p"
-	.string "Here, take this!$"
-
-DewfordTown_House2_OldRod_Text_2:
-	.string "It ain't much, but you might be able to\n"
-	.string "catch something with it.\p"
-	.string "Especially now that the ocean is all\n"
-	.string "around us! Wahah!$"
-
-DewfordTown_House2_Boy_Text_0:
-	.string "Greenhouse gases in the atmosphere\n"
-	.string "trap heat from the sun, which has\l"
-	.string "caused polar ice to melt.\p"
-	.string "Now, SEASPRAY TOWN is almost entirely\n"
-	.string "underwater!$"
+script DewfordTown_House2_Boy{
+    lock
+    faceplayer
+    msgbox(format("Greenhouse gases in the atmosphere trap heat from the sun, which has caused polar ice to melt.\pNow, SEASPRAY TOWN is almost entirely underwater!"))
+    release
+    end
+}
