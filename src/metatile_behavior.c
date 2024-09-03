@@ -28,6 +28,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_WATERFALL]                       = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_SOOTOPOLIS_DEEP_WATER]           = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_OCEAN_WATER]                     = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_OCEAN_WATER_NO_SURF]             = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     //make everything not surfable for now, besides a new tile that is surfable for gym
     [MB_PUDDLE]                          = TILE_FLAG_UNUSED,
     [MB_SHALLOW_WATER]                   = TILE_FLAG_UNUSED,
@@ -1169,6 +1170,7 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
      || metatileBehavior == MB_OCEAN_WATER
+     || metatileBehavior == MB_OCEAN_WATER_NO_SURF
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
      || metatileBehavior == MB_DEEP_WATER
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER

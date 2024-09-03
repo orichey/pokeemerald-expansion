@@ -63,6 +63,7 @@ DewfordTown_House2_OldRod::
 	giveitem ITEM_OLD_ROD
 	msgbox DewfordTown_House2_OldRod_Text_2
 	setflag FLAG_RECEIVED_OLD_ROD
+	clearflag FLAG_UNUSED_0x02D
 DewfordTown_House2_OldRod_1:
 	release
 	end
@@ -84,7 +85,7 @@ DewfordTown_House2_OldRod_Text_0:
 	.string "Caught anything good?$"
 
 DewfordTown_House2_OldRod_Text_1:
-	.string "Ahoy! You look like an adventurer!\p"
+	.string "You look like an adventurer!\p"
 	.string "Here, take this!$"
 
 DewfordTown_House2_OldRod_Text_2:
@@ -97,5 +98,5 @@ DewfordTown_House2_Boy_Text_0:
 	.string "Greenhouse gases in the atmosphere\n"
 	.string "trap heat from the sun, which has\l"
 	.string "caused polar ice to melt.\p"
-	.string "Now, SEASPRAY TOWN is almost entirely\n"
+	.string "Now, Seaspray Town is almost entirely\n"
 	.string "underwater!$"

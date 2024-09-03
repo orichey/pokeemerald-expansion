@@ -176,6 +176,7 @@ SlateportCity_EventScript_EffortRibbonWoman::
 	release
 	end
 
+
 SlateportCity_EventScript_MonEVsNotMaxed::
 	msgbox SlateportCity_Text_GoForItLittleHarder, MSGBOX_DEFAULT
 	release

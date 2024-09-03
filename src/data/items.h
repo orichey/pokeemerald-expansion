@@ -8832,18 +8832,16 @@ const struct Item gItemsInfo[] =
 
     [ITEM_AIR_BALLOON] =
     {
-        .name = _("Air Balloon"),
-        .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
-        .holdEffect = HOLD_EFFECT_AIR_BALLOON,
-        .holdEffectParam = 0,
+        .name = _("Balloon"),
+        .price = 0,
         .description = COMPOUND_STRING(
-            "Elevates the holder\n"
-            "in the air. If hit,\n"
-            "this item will burst."),
-        .pocket = POCKET_ITEMS,
+            "A brightly colored\n"
+            "balloon. It could\n"
+            "make someone happy."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
         .iconPic = gItemIcon_AirBalloon,
         .iconPalette = gItemIconPalette_AirBalloon,
     },
@@ -14069,5 +14067,20 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+    [ITEM_KAYAK] =
+    {
+        .name = _("Kayak"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "An old kayak that\n"
+            "can not handle the\n"
+            "waves of the sea."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_Kayak,
+        .iconPic = gItemIcon_Kayak,
+        .iconPalette = gItemIconPalette_Kayak,
     },
 };

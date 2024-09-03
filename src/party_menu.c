@@ -499,7 +499,7 @@ static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
-static bool8 SetUpFieldMove_Surf(void);
+//static bool8 SetUpFieldMove_Surf(void);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
@@ -3959,18 +3959,19 @@ static void CursorCb_FieldMove(u8 taskId)
         // Cant use Field Move
         else
         {
-            switch (fieldMove)
-            {
-            case FIELD_MOVE_SURF:
-                DisplayCantUseSurfMessage();
-                break;
-            case FIELD_MOVE_FLASH:
-                DisplayCantUseFlashMessage();
-                break;
-            default:
-                DisplayPartyMenuStdMessage(sFieldMoveCursorCallbacks[fieldMove].msgId);
-                break;
-            }
+    //        switch (fieldMove)
+  //          {
+//            case FIELD_MOVE_SURF:
+                //DisplayCantUseSurfMessage();
+              //  break;
+            //case FIELD_MOVE_FLASH:
+          //      DisplayCantUseFlashMessage();
+        //        break;
+      //      default:
+    //            DisplayPartyMenuStdMessage(sFieldMoveCursorCallbacks[fieldMove].msgId);
+  //              break;
+//            }
+            DisplayPartyMenuStdMessage(sFieldMoveCursorCallbacks[fieldMove].msgId);
             gTasks[taskId].func = Task_CancelAfterAorBPress;
         }
     }
@@ -4053,22 +4054,22 @@ static void DisplayCantUseFlashMessage(void)
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_USE_HERE);
 }
 
-static void FieldCallback_Surf(void)
-{
-    gFieldEffectArguments[0] = GetCursorSelectionMonId();
-    FieldEffectStart(FLDEFF_USE_SURF);
-}
+//static void FieldCallback_Surf(void)
+//{
+    //gFieldEffectArguments[0] = GetCursorSelectionMonId();
+  //  FieldEffectStart(FLDEFF_USE_SURF);
+//}
 
-static bool8 SetUpFieldMove_Surf(void)
-{
-    if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
-    {
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_Surf;
-        return TRUE;
-    }
-    return FALSE;
-}
+//static bool8 SetUpFieldMove_Surf(void)
+//{
+    //if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+  //  {
+//        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        //gPostMenuFieldCallback = FieldCallback_Surf;
+      //  return TRUE;
+    //}
+  //  return FALSE;
+//}
 
 static void DisplayCantUseSurfMessage(void)
 {

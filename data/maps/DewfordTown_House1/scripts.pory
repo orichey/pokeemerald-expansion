@@ -1,0 +1,111 @@
+raw`
+DewfordTown_House1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_House1_OnTransition
+	.byte 0
+
+DewfordTown_House1_OnTransition:
+	call_if_eq VAR_DEWFORD_TOWN_STATE, 1, DewfordTown_House1_EventScript_AddMantine
+	end
+`
+script DewfordTown_House1_EventScript_AddMantine{
+    setobjectxyperm(3, 3, 5)
+    setobjectxyperm(2, 3, 4)
+    setobjectxyperm(1, 4, 5)
+    addobject(3)
+    setobjectmovementtype(3, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    setobjectmovementtype(2, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype(1, MOVEMENT_TYPE_FACE_LEFT)
+    end
+}
+
+script DewfordTown_House1_EventScript_Man{
+    lockall
+    if(var(VAR_DEWFORD_TOWN_STATE) == 0){
+        faceplayer
+        msgbox(format("My wife and I are planning on leaving Seaspray Town as soon as possible."))
+    }
+    elif(var(VAR_DEWFORD_TOWN_STATE) == 1 && flag(FLAG_UNUSED_0x032) == FALSE){
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        applymovement(2, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        applymovement(2, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        applymovement(2, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Come on, honey! This Mantine is our ticket out of here!"))
+        closemessage
+        applymovement(1, Common_Movement_WalkInPlaceLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("I don't feel so good about this..."))
+        closemessage
+        applymovement(2, Common_Movement_FacePlayer)
+        applymovement(2, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Oh? This is Stormy's Mantine?\pWell, you'll have to fight me to get it back to her!"))
+        trainerbattle_no_intro(TRAINER_THALIA_3, Ishmael_Loss)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        applymovement(2, Common_Movement_FaceDown)
+        waitmovement(0)
+        delay(15)
+        applymovement(2, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        delay(15)
+        applymovement(2, Common_Movement_FacePlayer)
+        waitmovement(0)
+        msgbox(format("You have me beat!\nI'll let the Mantine go.\lCould you please talk to Stormy for me, though?"))
+        closemessage
+        delay(15)
+        fadescreenswapbuffers(FADE_TO_BLACK)
+	    removeobject(3)
+        waitmovement(0)
+	    playse(SE_EXIT)
+        waitse
+	    fadescreenswapbuffers(FADE_FROM_BLACK)
+        addvar(VAR_UNUSED_0x40F8, 1)
+        setflag(FLAG_UNUSED_0x032) //for changing text of objects
+        setflag(FLAG_UNUSED_0x033) //for mantine
+	    fadedefaultbgm
+    }
+    elif(flag(FLAG_UNUSED_0x032) == TRUE){
+        faceplayer
+        msgbox(format("My wife and I are still looking to get out of here as soon as we can."))
+    }
+    releaseall
+    end
+}
+
+text Ishmael_Loss{
+    format("Grr...\nWell, take it!")
+}
+
+script DewfordTown_House1_EventScript_Woman{
+    lockall
+    faceplayer
+    if(var(VAR_DEWFORD_TOWN_STATE) == 0){
+        msgbox(format("My husband has been trying to get Stormy to fly us away from here ever since the sea started to rise.\pI loved living here when we first moved, if only there was something we could have done."))
+    }
+    elif(var(VAR_DEWFORD_TOWN_STATE) == 1 && flag(FLAG_UNUSED_0x032) == FALSE){
+        msgbox(format("Eek! I don't trust this Mantine!"))
+        applymovement(1, Common_Movement_FaceOriginalDirection)
+    }
+    elif(flag(FLAG_UNUSED_0x032) == TRUE){
+        msgbox(format("I'm glad I don't have the theft of that Mantine weighing on my conscience, but I sure would like to leave Seaspray Town."))
+    }
+    releaseall
+    end
+}
+
+script DewfordTown_House1_EventScript_Mantine{
+    lockall
+    faceplayer
+    playmoncry(SPECIES_MANTINE, CRY_MODE_NORMAL)
+	waitmoncry
+    msgbox(format("The Mantine looks scared!"))
+    closemessage
+    applymovement(3, Common_Movement_FaceOriginalDirection)
+    releaseall
+    end
+}

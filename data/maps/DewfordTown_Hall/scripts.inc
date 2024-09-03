@@ -492,14 +492,14 @@ DewfordTown_Mart_EventScript_Man_Text_0:
 	.string "the rising tides.\p"
 	.string "I'm looking for anything that might help\n"
 	.string "my family hold on longer, but it looks\l"
-	.string "like our fate lies with NINA.$"
+	.string "like our fate lies with Stormy.$"
 
 DewfordTown_Mart_EventScript_Girl_Text_0:
 	.string "I hope you like your gift, I found it on the beach!$"
 
 DewfordTown_Mart_EventScript_Girl_Text_1:
 	.string "Daddy says we're getting out of\n"
-	.string "SEASPRAY TOWN soon. To make the flight\l"
+	.string "Seaspray Town soon. To make the flight\l"
 	.string "easier, I'm giving away some of my\l"
 	.string "stuff.\p"
 	.string "You can have this!$"

@@ -13,7 +13,9 @@ Common_EventScript_SetGymTrainers::
 RustboroCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_JOSH
 	settrainerflag TRAINER_TOMMY
-	settrainerflag TRAINER_MARC
+	settrainerflag TRAINER_BEN
+	settrainerflag TRAINER_QUINCY
+	settrainerflag TRAINER_KATELYNN
 	return
 
 DewfordTown_Gym_SetGymTrainers::

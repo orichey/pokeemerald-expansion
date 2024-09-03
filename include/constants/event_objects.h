@@ -387,8 +387,10 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
 #define OBJ_EVENT_PAL_BRAWLY                      0x1125
-#define OBJ_EVENT_PAL_JSOBOY                      0x1126
-#define OBJ_EVENT_PAL_JSOGIRL                     0x1127
+#define OBJ_EVENT_PAL_ROXANNE                     0x1126
+#define OBJ_EVENT_PAL_JUAN                        0x1127
+#define OBJ_EVENT_PAL_JSOBOY                      0x1128
+#define OBJ_EVENT_PAL_JSOGIRL                     0x1129
 
 
 

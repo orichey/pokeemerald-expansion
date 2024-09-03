@@ -192,8 +192,8 @@ static void SpriteCB_FieldMoveMonSlideOffscreen(struct Sprite *);
 
 static void Task_SurfFieldEffect(u8);
 static void SurfFieldEffect_Init(struct Task *);
-static void SurfFieldEffect_FieldMovePose(struct Task *);
-static void SurfFieldEffect_ShowMon(struct Task *);
+//static void SurfFieldEffect_FieldMovePose(struct Task *);
+//static void SurfFieldEffect_ShowMon(struct Task *);
 static void SurfFieldEffect_JumpOnSurfBlob(struct Task *);
 static void SurfFieldEffect_End(struct Task *);
 
@@ -3011,8 +3011,8 @@ u8 FldEff_UseSurf(void)
 
 static void (*const sSurfFieldEffectFuncs[])(struct Task *) = {
     SurfFieldEffect_Init,
-    SurfFieldEffect_FieldMovePose,
-    SurfFieldEffect_ShowMon,
+    //SurfFieldEffect_FieldMovePose,
+    //SurfFieldEffect_ShowMon,
     SurfFieldEffect_JumpOnSurfBlob,
     SurfFieldEffect_End,
 };
@@ -3035,29 +3035,29 @@ static void SurfFieldEffect_Init(struct Task *task)
     task->tState++;
 }
 
-static void SurfFieldEffect_FieldMovePose(struct Task *task)
-{
-    struct ObjectEvent *objectEvent;
-    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
-    {
-        SetPlayerAvatarFieldMove();
-        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
-        task->tState++;
-    }
-}
+//static void SurfFieldEffect_FieldMovePose(struct Task *task)
+//{
+//    struct ObjectEvent *objectEvent;
+//   objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+//   if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
+//    {
+//        SetPlayerAvatarFieldMove();
+//        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+//        task->tState++;
+//    }
+//}
 
-static void SurfFieldEffect_ShowMon(struct Task *task)
-{
-    struct ObjectEvent *objectEvent;
-    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    if (ObjectEventCheckHeldMovementStatus(objectEvent))
-    {
-        gFieldEffectArguments[0] = task->tMonId | SHOW_MON_CRY_NO_DUCKING;
-        FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
-        task->tState++;
-    }
-}
+//static void SurfFieldEffect_ShowMon(struct Task *task)
+//{
+//    struct ObjectEvent *objectEvent;
+//    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+//    if (ObjectEventCheckHeldMovementStatus(objectEvent))
+//   {
+//        gFieldEffectArguments[0] = task->tMonId | SHOW_MON_CRY_NO_DUCKING;
+//        FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+//        task->tState++;
+//    }
+//}
 
 static void SurfFieldEffect_JumpOnSurfBlob(struct Task *task)
 {

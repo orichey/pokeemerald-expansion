@@ -8373,9 +8373,9 @@ u8 IsMonDisobedient(void)
         obedienceLevel = 10;
 
         if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-            obedienceLevel = 20;
+            obedienceLevel = 55;
         if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-            obedienceLevel = 30;
+            obedienceLevel = 55;
         if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
             obedienceLevel = 40;
         if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge

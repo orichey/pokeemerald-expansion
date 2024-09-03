@@ -23,6 +23,7 @@ DewfordTown_House3_SailorBattle::
 
 Briney_Leave::
 	setflag FLAG_UNUSED_0x02C
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	msgbox PostBattle_Briney, MSGBOX_AUTOCLOSE
 	call BrineyMove
 	return

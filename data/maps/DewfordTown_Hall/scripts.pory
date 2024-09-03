@@ -468,7 +468,7 @@ DewfordTown_Mart_Pokemart:
 script DewfordTown_Mart_EventScript_Man{
     lock
     faceplayer
-    msgbox(format("We are all at risk of losing our homes to the rising tides.\pI'm looking for anything that might help my family hold on longer, but it looks like our fate lies with NINA."))
+    msgbox(format("We are all at risk of losing our homes to the rising tides.\pI'm looking for anything that might help my family hold on longer, but it looks like our fate lies with Stormy."))
     release
     end
 }
@@ -480,7 +480,7 @@ script DewfordTown_Mart_EventScript_Girl{
         msgbox("I hope you like your gift, I found it on the beach!")
     }
     else{
-        msgbox(format("Daddy says we're getting out of SEASPRAY TOWN soon. To make the flight easier, I'm giving away some of my stuff.\pYou can have this!"))
+        msgbox(format("Daddy says we're getting out of Seaspray Town soon. To make the flight easier, I'm giving away some of my stuff.\pYou can have this!"))
         giveitem(ITEM_PEARL)
         setflag(FLAG_UNUSED_0x02B)
     }

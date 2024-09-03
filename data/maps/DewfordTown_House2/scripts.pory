@@ -65,10 +65,11 @@ script DewfordTown_House2_OldRod{
         msgbox(format("Caught anything good?"))
     }
     else{
-        msgbox(format("Ahoy! You look like an adventurer!\pHere, take this!"))
+        msgbox(format("You look like an adventurer!\pHere, take this!"))
         giveitem(ITEM_OLD_ROD)
         msgbox(format("It ain't much, but you might be able to catch something with it.\pEspecially now that the ocean is all around us! Wahah!"))
         setflag(FLAG_RECEIVED_OLD_ROD)
+		clearflag(FLAG_UNUSED_0x02D)
     }
     release
     end
@@ -77,7 +78,7 @@ script DewfordTown_House2_OldRod{
 script DewfordTown_House2_Boy{
     lock
     faceplayer
-    msgbox(format("Greenhouse gases in the atmosphere trap heat from the sun, which has caused polar ice to melt.\pNow, SEASPRAY TOWN is almost entirely underwater!"))
+    msgbox(format("Greenhouse gases in the atmosphere trap heat from the sun, which has caused polar ice to melt.\pNow, Seaspray Town is almost entirely underwater!"))
     release
     end
 }
