@@ -1165,12 +1165,18 @@ bool8 MetatileBehavior_IsMossdeepGymWarp(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsFishableWaterNoSurf(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_OCEAN_WATER_NO_SURF)
+        return TRUE;
+    else
+        return FALSE;
+}
 
 bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
      || metatileBehavior == MB_OCEAN_WATER
-     || metatileBehavior == MB_OCEAN_WATER_NO_SURF
      || metatileBehavior == MB_INTERIOR_DEEP_WATER
      || metatileBehavior == MB_DEEP_WATER
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER

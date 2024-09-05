@@ -19,8 +19,8 @@
       "direction": "up"
     },
     {
-      "map": "MAP_ROUTE105",
-      "offset": 0,
+      "map": "MAP_ROUTE106",
+      "offset": 13,
       "direction": "right"
     }
   ],
@@ -130,7 +130,7 @@
       "flag": "FLAG_UNUSED_0x020"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RELICANTH)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAPRAS)",
       "x": 40,
       "y": 10,
       "elevation": 3,
@@ -143,7 +143,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUIZEL)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MANTYKE)",
       "x": 38,
       "y": 16,
       "elevation": 3,
@@ -156,7 +156,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLOATZEL)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(REMORAID)",
       "x": 27,
       "y": 26,
       "elevation": 3,
@@ -195,7 +195,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FINNEON)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TIRTOUGA)",
       "x": 32,
       "y": 38,
       "elevation": 0,
@@ -381,7 +381,7 @@
       "x": 29,
       "y": 55,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -442,7 +442,7 @@
       "flag": "FLAG_UNUSED_0x02F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MANECTRIC)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUXIO)",
       "x": -2,
       "y": 40,
       "elevation": 0,
@@ -455,7 +455,7 @@
       "flag": "FLAG_UNUSED_0x02F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(URSARING)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GEODUDE)",
       "x": -4,
       "y": 40,
       "elevation": 0,

@@ -17,11 +17,6 @@
       "map": "MAP_UNDERWATER_ROUTE105",
       "offset": 0,
       "direction": "dive"
-    },
-    {
-      "map": "MAP_DEWFORD_TOWN",
-      "offset": 0,
-      "direction": "left"
     }
   ],
   "object_events": [

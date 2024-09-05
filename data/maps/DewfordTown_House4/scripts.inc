@@ -24,7 +24,7 @@ DewfordTown_House4_EventScript_AddTropius_3:
 
 
 DewfordTown_House4_EventScript_LittleGirl::
-	lockall
+	lock
 	faceplayer
 	goto_if_unset FLAG_UNUSED_0x030, DewfordTown_House4_EventScript_LittleGirl_9
 DewfordTown_House4_EventScript_LittleGirl_7:
@@ -32,7 +32,7 @@ DewfordTown_House4_EventScript_LittleGirl_7:
 DewfordTown_House4_EventScript_LittleGirl_5:
 	goto_if_set FLAG_UNUSED_0x030, DewfordTown_House4_EventScript_LittleGirl_4
 DewfordTown_House4_EventScript_LittleGirl_1:
-	releaseall
+	release
 	end
 
 DewfordTown_House4_EventScript_LittleGirl_2:
@@ -98,7 +98,7 @@ DewfordTown_House4_EventScript_LittleGirl_13:
 
 
 DewfordTown_House4_EventScript_Tropius::
-	lockall
+	lock
 	faceplayer
 	playmoncry SPECIES_TROPIUS, CRY_MODE_NORMAL
 	waitmoncry
@@ -108,15 +108,15 @@ DewfordTown_House4_EventScript_Tropius::
 	waitmovement 0
 	applymovement 1, Common_Movement_FaceLeft
 	waitmovement 0
-	releaseall
+	release
 	end
 
 
 DewfordTown_House4_EventScript_OldMan::
-	lockall
+	lock
 	faceplayer
 	msgbox DewfordTown_House4_EventScript_OldMan_Text_0
-	releaseall
+	release
 	end
 
 

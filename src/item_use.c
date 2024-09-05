@@ -286,6 +286,12 @@ static bool32 CanFish(void)
         if (IsPlayerFacingSurfableFishableWater())
             return TRUE;
     }
+
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+    {
+        if ((IsPlayerFacingFishableWaterNoSurf()))
+            return TRUE;
+    }
     else
     {
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && MapGridGetCollisionAt(x, y) == 0)

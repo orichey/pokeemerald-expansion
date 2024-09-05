@@ -5496,12 +5496,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Numel @ Oran Berry
-Level: 22
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Slugma @ Oran Berry
-Level: 22
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Smog
+- Ember
+- Rock Throw
+- Harden
 
 === TRAINER_MIGUEL_1 ===
 Name: MIGUEL
@@ -5634,9 +5638,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Golbat @ Oran Berry
-Level: 23
+Zubat @ Oran Berry
+Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Supersonic
+- Poison Fang
+- Mean Look
+- Absorb
 
 === TRAINER_VANESSA ===
 Name: VANESSA
@@ -5839,7 +5847,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Dig
 
 === TRAINER_VICKY ===
-Name: VICKY
+Name: Bronwyn
 Class: Parasol Lady
 Pic: Parasol Lady
 Gender: Female
@@ -5848,8 +5856,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Skarmory
-Level: 24
+Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Agility
+- Metal Claw
+- Sand Attack
+- Fury Attack
 
 === TRAINER_SHELBY_1 ===
 Name: SHELBY
@@ -5984,7 +5996,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mist
 
 Staravia
-Level: 22
+Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Double Team
 - Wing Attack
@@ -6000,13 +6012,21 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 24
+Chatot
+Level: 22
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+- Chatter
+- Sing
+- Hyper Voice
+- Growl
 
-Pelipper
+Honchkrow
 Level: 25
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Swagger
+- Sucker Punch
+- Haze
+- Astonish
 
 === TRAINER_JOEY ===
 Name: JOEY
@@ -11075,16 +11095,16 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Cherubi
-Level: 22
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Lombre
-Level: 22
+Shroomish
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Breloom
-Level: 23
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Stun Spore
+- Leech Seed
+- Headbutt
+- Mega Drain
 
 === TRAINER_HALEY_2 ===
 Name: HALEY
@@ -16707,7 +16727,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Wailmer
-Level: 26
+Level: 20
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_THALIA_4 ===
@@ -16721,7 +16741,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 
 Pelipper @ Sitrus Berry  
 Ability: Keen Eye  
-Level: 22   
+Level: 25   
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Supersonic
 - Protect

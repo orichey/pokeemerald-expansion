@@ -121,6 +121,7 @@ bool8 MetatileBehavior_IsAquaHideoutWarp(u8);
 bool8 MetatileBehavior_IsUnionRoomWarp(u8);
 bool8 MetatileBehavior_IsMossdeepGymWarp(u8);
 bool8 MetatileBehavior_IsSurfableFishableWater(u8);
+bool8 MetatileBehavior_IsFishableWaterNoSurf(u8);
 bool8 MetatileBehavior_IsMtPyreHole(u8);
 bool8 MetatileBehavior_IsCrackedFloorHole(u8);
 bool8 MetatileBehavior_IsCrackedFloor(u8);

@@ -18,7 +18,7 @@ DewfordTown_House1_EventScript_AddMantine::
 
 
 DewfordTown_House1_EventScript_Man::
-	lockall
+	lock
 	compare VAR_DEWFORD_TOWN_STATE, 0
 	goto_if_eq DewfordTown_House1_EventScript_Man_2
 	compare VAR_DEWFORD_TOWN_STATE, 1
@@ -26,7 +26,7 @@ DewfordTown_House1_EventScript_Man::
 DewfordTown_House1_EventScript_Man_5:
 	goto_if_set FLAG_UNUSED_0x032, DewfordTown_House1_EventScript_Man_4
 DewfordTown_House1_EventScript_Man_1:
-	releaseall
+	release
 	end
 
 DewfordTown_House1_EventScript_Man_2:
@@ -91,7 +91,7 @@ DewfordTown_House1_EventScript_Man_6:
 
 
 DewfordTown_House1_EventScript_Woman::
-	lockall
+	lock
 	faceplayer
 	compare VAR_DEWFORD_TOWN_STATE, 0
 	goto_if_eq DewfordTown_House1_EventScript_Woman_2
@@ -100,7 +100,7 @@ DewfordTown_House1_EventScript_Woman::
 DewfordTown_House1_EventScript_Woman_5:
 	goto_if_set FLAG_UNUSED_0x032, DewfordTown_House1_EventScript_Woman_4
 DewfordTown_House1_EventScript_Woman_1:
-	releaseall
+	release
 	end
 
 DewfordTown_House1_EventScript_Woman_2:
@@ -122,14 +122,14 @@ DewfordTown_House1_EventScript_Woman_6:
 
 
 DewfordTown_House1_EventScript_Mantine::
-	lockall
+	lock
 	faceplayer
 	playmoncry SPECIES_MANTINE, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox DewfordTown_House1_EventScript_Mantine_Text_0
 	closemessage
 	applymovement 3, Common_Movement_FaceOriginalDirection
-	releaseall
+	release
 	end
 
 

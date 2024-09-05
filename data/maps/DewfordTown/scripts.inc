@@ -17,11 +17,15 @@
 
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, DewfordTown_OnResume
 	.byte 0
 
 DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
 	call_if_eq VAR_DEWFORD_TOWN_STATE, 1, DewfordTown_EventScript_StormyInFront
+	end
+
+DewfordTown_OnResume:
 	goto_if_not_defeated TRAINER_VICKY, DewfordTown_EventScript_SetWinstratesNotDefeated
 	goto_if_defeated TRAINER_VICKY, DewfordTown_EventScript_SetWinstratesDefeated
 	end
@@ -1124,10 +1128,10 @@ DewfordTown_EventScript_PushyMan::
 DewfordTown_EventScript_Ursaring::
 	lock
 	faceplayer
-	playmoncry SPECIES_URSARING, CRY_MODE_NORMAL
+	playmoncry SPECIES_GEODUDE, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox DewfordTown_EventScript_Ursaring_Text_0
-	setwildbattle SPECIES_URSARING, 22, ITEM_NONE, SPECIES_MANECTRIC, 22, ITEM_NONE
+	setwildbattle SPECIES_GEODUDE, 16, ITEM_NONE, SPECIES_LUXIO, 16, ITEM_NONE
 	dowildbattle
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	waitmovement 0
@@ -1156,6 +1160,7 @@ DewfordTown_EventScript_Ursaring::
 	compare VAR_UNUSED_0x40F8, 3
 	goto_if_eq DewfordTown_EventScript_Ursaring_2
 DewfordTown_EventScript_Ursaring_1:
+	waitmovement 0
 	releaseall
 	end
 
@@ -1168,10 +1173,10 @@ DewfordTown_EventScript_Manectric::
 	lock
 	faceplayer
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
+	playmoncry SPECIES_LUXIO, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox DewfordTown_EventScript_Ursaring_Text_0
-	setwildbattle SPECIES_URSARING, 22, ITEM_NONE, SPECIES_MANECTRIC, 22, ITEM_NONE
+	setwildbattle SPECIES_GEODUDE, 16, ITEM_NONE, SPECIES_LUXIO, 16, ITEM_NONE
 	dowildbattle
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	waitmovement 0
@@ -1289,7 +1294,7 @@ DewfordTown_EventScript_Mudkip_2:
 	goto DewfordTown_EventScript_Mudkip_1
 
 DewfordTown_EventScript_Mudkip_5:
-	givemon SPECIES_MARSHTOMP, 50
+	givemon SPECIES_MARSHTOMP, 18
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq DewfordTown_EventScript_Mudkip_8
 	compare VAR_RESULT, MON_GIVEN_TO_PC

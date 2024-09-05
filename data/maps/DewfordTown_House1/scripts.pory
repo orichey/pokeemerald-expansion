@@ -19,7 +19,7 @@ script DewfordTown_House1_EventScript_AddMantine{
 }
 
 script DewfordTown_House1_EventScript_Man{
-    lockall
+    lock
     if(var(VAR_DEWFORD_TOWN_STATE) == 0){
         faceplayer
         msgbox(format("My wife and I are planning on leaving Seaspray Town as soon as possible."))
@@ -73,7 +73,7 @@ script DewfordTown_House1_EventScript_Man{
         faceplayer
         msgbox(format("My wife and I are still looking to get out of here as soon as we can."))
     }
-    releaseall
+    release
     end
 }
 
@@ -82,7 +82,7 @@ text Ishmael_Loss{
 }
 
 script DewfordTown_House1_EventScript_Woman{
-    lockall
+    lock
     faceplayer
     if(var(VAR_DEWFORD_TOWN_STATE) == 0){
         msgbox(format("My husband has been trying to get Stormy to fly us away from here ever since the sea started to rise.\pI loved living here when we first moved, if only there was something we could have done."))
@@ -94,18 +94,18 @@ script DewfordTown_House1_EventScript_Woman{
     elif(flag(FLAG_UNUSED_0x032) == TRUE){
         msgbox(format("I'm glad I don't have the theft of that Mantine weighing on my conscience, but I sure would like to leave Seaspray Town."))
     }
-    releaseall
+    release
     end
 }
 
 script DewfordTown_House1_EventScript_Mantine{
-    lockall
+    lock
     faceplayer
     playmoncry(SPECIES_MANTINE, CRY_MODE_NORMAL)
 	waitmoncry
     msgbox(format("The Mantine looks scared!"))
     closemessage
     applymovement(3, Common_Movement_FaceOriginalDirection)
-    releaseall
+    release
     end
 }

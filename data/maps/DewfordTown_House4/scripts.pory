@@ -21,7 +21,7 @@ script DewfordTown_House4_EventScript_AddTropius{
 }
 
 script DewfordTown_House4_EventScript_LittleGirl{
-    lockall
+    lock
 	faceplayer
     if(flag(FLAG_UNUSED_0x030) == FALSE && var(VAR_DEWFORD_TOWN_STATE) == 0){
         msgbox(format("It's scary here! I want to leave!"))
@@ -65,12 +65,12 @@ script DewfordTown_House4_EventScript_LittleGirl{
     elif(flag(FLAG_UNUSED_0x030) == TRUE){
         msgbox(format("Thank you for the balloon, but I do miss that Tropius..."))
     }
-    releaseall
+    release
     end
 }
 
 script DewfordTown_House4_EventScript_Tropius{
-    lockall
+    lock
     faceplayer
     playmoncry(SPECIES_TROPIUS, CRY_MODE_NORMAL)
 	waitmoncry
@@ -80,14 +80,14 @@ script DewfordTown_House4_EventScript_Tropius{
     waitmovement(0)
     applymovement(1, Common_Movement_FaceLeft)
     waitmovement(0)
-    releaseall
+    release
     end
 }
 
 script DewfordTown_House4_EventScript_OldMan{
-    lockall
+    lock
     faceplayer
     msgbox("This is no place to raise a child, but Stormy isn't able to evacuate people quickly enough.\pI don't know who to blame!")
-    releaseall
+    release
     end
 }

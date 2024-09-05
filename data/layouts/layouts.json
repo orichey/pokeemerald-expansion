@@ -215,9 +215,9 @@
       "id": "LAYOUT_ROUTE106",
       "name": "Route106_Layout",
       "width": 80,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Dewford",
+      "height": 80,
+      "primary_tileset": "gTileset_General_Flood",
+      "secondary_tileset": "gTileset_Sootopolis",
       "border_filepath": "data/layouts/Route106/border.bin",
       "blockdata_filepath": "data/layouts/Route106/map.bin"
     },
