@@ -4798,29 +4798,17 @@ Items: Super Potion / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
+Gyarados
+Level: 22
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Tropius
+Level: 23
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
 Mantine
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bullet Seed
-- Agility
-- Roost
-- Bubblebeam
-
-Tropius @ Sitrus Berry
-Level: 26
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Leech Seed
-- Substitute
-- Air Slash
-- Protect
-
-Gyarados @ Sitrus Berry
-Level: 26
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dragon Dance
-- Bounce
-- Waterfall
-- Taunt
+Level: 24
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -6013,9 +6001,9 @@ Double Battle: No
 AI: Check Bad Move
 
 Chatot
-Level: 22
+Level: 20
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
-- Chatter
+- Fury Attack
 - Sing
 - Hyper Voice
 - Growl
@@ -6068,12 +6056,11 @@ Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KATELYNN ===
-Name: KATELYNN
-Class: Cooltrainer
-Pic: Cooltrainer F
+Name: Marina
+Class: Swimmer F
+Pic: Swimmer F
 Gender: Female
-Music: Cool
-Items: Full Restore
+Music: Swimmer
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 

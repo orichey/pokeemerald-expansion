@@ -8703,12 +8703,12 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 14,
-                "max_level": 17,
+                "min_level": 16,
+                "max_level": 18,
                 "species": "SPECIES_GOLDEEN"
               },
               {
-                "min_level": 15,
+                "min_level": 16,
                 "max_level": 18,
                 "species": "SPECIES_STARYU"
               },

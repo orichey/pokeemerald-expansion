@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_MAP_SCRIPTS_H
 
 /*
-    IDs for special scripts that can be run for a particular map.
+    IDs for special scripts that can be run for a particular map
     For the functions that handle when they are run, see these constants' uses in src/script.c
 
     Below describes when a script of this kind will be called, and what it typically does.

@@ -46,17 +46,18 @@ DewfordTown_EventScript_SetWinstratesNotDefeated::
 
 DewfordTown_EventScript_SetWinstratesDefeated::
 	clearflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
+	setflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
 	setobjectxyperm LOCALID_VICKY, 13, 17
 	end
 
 DewfordTown_EventScript_StormyInFront::
 	setobjectxyperm 19, 42, 42
 	setobjectxyperm 32, 15, 37
-	setobjectxyperm 33, 14, 37
-	setobjectxyperm 34, 15, 36
+	setobjectxyperm 34, 14, 37
+	setobjectxyperm 33, 15, 36
 	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
-	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
+	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	call_if_eq VAR_UNUSED_0x40F8, 3, DewfordTown_EventScript_RemoveStormy
 	end
 
@@ -847,9 +848,9 @@ DewfordTown_Text_TownSign:
 	.string "“The sunniest resort in Ecodia.”$"
 
 DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN POKéMON GYM\n"
-	.string "LEADER: BRAWLY\l"
-	.string "“A big wave in fighting!”$"
+	.string "Seaspray Town Pokémon Gym\n"
+	.string "Leader: Stormy\l"
+	.string "“A master of the skies!”$"
 
 DewfordTown_Text_HallSign:
 	.string "DEWFORD HALL\n"
@@ -1046,12 +1047,12 @@ DewfordTown_EventScript_PushyMan::
 	playbgm MUS_DP_ENCOUNTER_INTENSE, FALSE
 	applymovement 18, WalkLeft
 	waitmovement 0
-	setobjectxy 19, 42, 41
-	applymovement 19, WalkDown
-	waitmovement 0
 	applymovement 18, FaceRight
 	waitmovement 0
 	applymovement 18, Common_Movement_ExclamationMark
+	waitmovement 0
+	setobjectxy 19, 42, 41
+	applymovement 19, WalkDown
 	waitmovement 0
 	closedoor 42, 41
 	waitdooranim
@@ -1063,6 +1064,8 @@ DewfordTown_EventScript_PushyMan::
 	applymovement 27, Common_Movement_ExclamationMark
 	applymovement 22, Common_Movement_ExclamationMark
 	waitmovement 0
+	applymovement 24, Common_Movement_FaceLeft
+	waitmovement 0
 	applymovement 22, Common_Movement_FaceDown
 	waitmovement 0
 	applymovement 20, Common_Movement_FaceLeft
@@ -1071,8 +1074,9 @@ DewfordTown_EventScript_PushyMan::
 	waitmovement 0
 	applymovement 20, Common_Movement_FaceDown
 	waitmovement 0
-	delay 180
+	delay 120
 	applymovement 22, Common_Movement_FaceOriginalDirection
+	applymovement 24, Common_Movement_FaceOriginalDirection
 	applymovement 20, Common_Movement_FaceOriginalDirection
 	applymovement 26, Common_Movement_FaceOriginalDirection
 	applymovement 20, Common_Movement_FaceOriginalDirection
@@ -1110,15 +1114,15 @@ DewfordTown_EventScript_PushyMan::
 	waitmovement 0
 	setobjectxyperm 32, 15, 37
 	waitmovement 0
-	setobjectxyperm 33, 14, 37
+	setobjectxyperm 34, 14, 37
 	waitmovement 0
-	setobjectxyperm 34, 15, 36
+	setobjectxyperm 33, 15, 36
 	waitmovement 0
 	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
 	waitmovement 0
-	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
+	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
 	waitmovement 0
-	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	waitmovement 0
 	setvar VAR_DEWFORD_TOWN_STATE, 1
 	releaseall
@@ -1131,7 +1135,7 @@ DewfordTown_EventScript_Ursaring::
 	playmoncry SPECIES_GEODUDE, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox DewfordTown_EventScript_Ursaring_Text_0
-	setwildbattle SPECIES_GEODUDE, 16, ITEM_NONE, SPECIES_LUXIO, 16, ITEM_NONE
+	setwildbattle SPECIES_GEODUDE, 18, ITEM_NONE, SPECIES_LUXIO, 18, ITEM_NONE
 	dowildbattle
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	waitmovement 0
@@ -1148,6 +1152,8 @@ DewfordTown_EventScript_Ursaring::
 	waitmovement 0
 	delay 15
 	applymovement 32, UpOneLeftOne
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	playmoncry SPECIES_GYARADOS, CRY_MODE_NORMAL
 	waitmoncry
@@ -1176,7 +1182,7 @@ DewfordTown_EventScript_Manectric::
 	playmoncry SPECIES_LUXIO, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox DewfordTown_EventScript_Ursaring_Text_0
-	setwildbattle SPECIES_GEODUDE, 16, ITEM_NONE, SPECIES_LUXIO, 16, ITEM_NONE
+	setwildbattle SPECIES_GEODUDE, 18, ITEM_NONE, SPECIES_LUXIO, 18, ITEM_NONE
 	dowildbattle
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	waitmovement 0
@@ -1669,22 +1675,22 @@ DewfordTown_EventScript_LastWinstrate_Text_0:
 	.string "Good luck on the rest of your journey!$"
 
 DewfordTown_EventScript_PushyMan_Text_0:
-	.string "I've waited long enough, I want my\n"
-	.string "family out of here.\p"
+	.string "I've waited long enough, I want to get\n"
+	.string "my family to safety.\p"
 	.string "STORMY, WHERE ARE YOU?$"
 
 DewfordTown_EventScript_PushyMan_Text_1:
 	.string "You want me? Here I am!$"
 
 DewfordTown_EventScript_PushyMan_Text_2:
-	.string "Stormy: My Pokémon are missing! I can\n"
-	.string "not fly anyone out of here before I\l"
-	.string "get them back!$"
+	.string "Stormy: My Pokémon are missing! I can't\n"
+	.string "fly anyone out of here before I get\l"
+	.string "them back!$"
 
 DewfordTown_EventScript_PushyMan_Text_3:
 	.string "Stormy: Someone will have to find them\n"
 	.string "before I can continue the evacuation,\l"
-	.string "or before I reopen the gym!$"
+	.string "and before I reopen the Gym!$"
 
 DewfordTown_EventScript_Ursaring_Text_0:
 	.string "The Pokémon attacked!$"
@@ -1727,13 +1733,17 @@ NicknameBoxMonDewf_Text_0:
 	.string "Transferred to PC$"
 
 DewfordTown_EventScript_Stormy_Text_0:
-	.string "Find my Pokémon!$"
+	.string "I don't know where my Pokémon are, but\n"
+	.string "they must be somewhere in town.\p"
+	.string "I won't reopen the Gym until they're\n"
+	.string "found!$"
 
 DewfordTown_EventScript_Stormy_Text_1:
-	.string "Thank you for finding him!$"
+	.string "I am still missing two Pokémon!$"
 
 DewfordTown_EventScript_Stormy_Text_2:
-	.string "One more to go!$"
+	.string "Thank you for finding two of my\n"
+	.string "Pokémon, but there's one left!$"
 
 DewfordTown_EventScript_Stormy_Text_3:
 	.string "You found them all!$"

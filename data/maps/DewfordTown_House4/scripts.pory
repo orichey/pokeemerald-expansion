@@ -48,6 +48,7 @@ script DewfordTown_House4_EventScript_LittleGirl{
             applymovement(2, Common_Movement_FacePlayer)
             setobjectmovementtype(2,MOVEMENT_TYPE_WANDER_AROUND)
             waitmovement(0)
+            removeitem(ITEM_AIR_BALLOON,1)
 	        playse(SE_EXIT)
 	        fadescreenswapbuffers(FADE_FROM_BLACK)
             addvar(VAR_UNUSED_0x40F8, 1)
@@ -87,7 +88,7 @@ script DewfordTown_House4_EventScript_Tropius{
 script DewfordTown_House4_EventScript_OldMan{
     lock
     faceplayer
-    msgbox("This is no place to raise a child, but Stormy isn't able to evacuate people quickly enough.\pI don't know who to blame!")
+    msgbox(format("This is no place to raise a child, but Stormy isn't able to evacuate people quickly enough.\pI don't know who to blame!"))
     release
     end
 }

@@ -81,6 +81,7 @@ DewfordTown_House4_EventScript_LittleGirl_12:
 	applymovement 2, Common_Movement_FacePlayer
 	setobjectmovementtype 2, MOVEMENT_TYPE_WANDER_AROUND
 	waitmovement 0
+	removeitem ITEM_AIR_BALLOON, 1
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	addvar VAR_UNUSED_0x40F8, 1
@@ -145,4 +146,7 @@ DewfordTown_House4_EventScript_Tropius_Text_0:
 	.string "The Tropius roared with glee!$"
 
 DewfordTown_House4_EventScript_OldMan_Text_0:
-	.string "This is no place to raise a child, but Stormy isn't able to evacuate people quickly enough.\pI don't know who to blame!$"
+	.string "This is no place to raise a child, but\n"
+	.string "Stormy isn't able to evacuate people\l"
+	.string "quickly enough.\p"
+	.string "I don't know who to blame!$"

@@ -1,6 +1,6 @@
 .set LOCALID_SAILOR, 1
 .set LOCALID_SCOTT, 5
-
+ 
 SSTidalCorridor_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SSTidalCorridor_OnFrame
 	.byte 0

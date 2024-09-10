@@ -457,6 +457,7 @@ DewfordTown_Mart_EventScript_Clerk::
 DewfordTown_Mart_Pokemart:
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_NONE
@@ -495,7 +496,8 @@ DewfordTown_Mart_EventScript_Man_Text_0:
 	.string "like our fate lies with Stormy.$"
 
 DewfordTown_Mart_EventScript_Girl_Text_0:
-	.string "I hope you like your gift, I found it on the beach!$"
+	.string "I hope you like your gift, I found it on\n"
+	.string "the beach!$"
 
 DewfordTown_Mart_EventScript_Girl_Text_1:
 	.string "Daddy says we're getting out of\n"

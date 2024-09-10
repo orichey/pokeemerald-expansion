@@ -458,6 +458,7 @@ DewfordTown_Mart_EventScript_Clerk::
 DewfordTown_Mart_Pokemart:
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_NONE
@@ -477,7 +478,7 @@ script DewfordTown_Mart_EventScript_Girl{
     lock
     faceplayer
     if(flag(FLAG_UNUSED_0x02B) == TRUE){
-        msgbox("I hope you like your gift, I found it on the beach!")
+        msgbox(format("I hope you like your gift, I found it on the beach!"))
     }
     else{
         msgbox(format("Daddy says we're getting out of Seaspray Town soon. To make the flight easier, I'm giving away some of my stuff.\pYou can have this!"))

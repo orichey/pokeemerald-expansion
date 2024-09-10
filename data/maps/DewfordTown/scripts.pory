@@ -47,17 +47,18 @@ DewfordTown_EventScript_SetWinstratesNotDefeated::
 
 DewfordTown_EventScript_SetWinstratesDefeated::
 	clearflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
+	setflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
 	setobjectxyperm LOCALID_VICKY, 13, 17
 	end
 
 DewfordTown_EventScript_StormyInFront::
 	setobjectxyperm 19, 42, 42
 	setobjectxyperm 32, 15, 37
-	setobjectxyperm 33, 14, 37
-	setobjectxyperm 34, 15, 36
+	setobjectxyperm 34, 14, 37
+	setobjectxyperm 33, 15, 36
 	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
-	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
+	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	call_if_eq VAR_UNUSED_0x40F8, 3, DewfordTown_EventScript_RemoveStormy
 	end
 
@@ -848,9 +849,9 @@ DewfordTown_Text_TownSign:
 	.string "“The sunniest resort in Ecodia.”$"
 
 DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN POKéMON GYM\n"
-	.string "LEADER: BRAWLY\l"
-	.string "“A big wave in fighting!”$"
+	.string "Seaspray Town Pokémon Gym\n"
+	.string "Leader: Stormy\l"
+	.string "“A master of the skies!”$"
 
 DewfordTown_Text_HallSign:
 	.string "DEWFORD HALL\n"
@@ -1056,7 +1057,7 @@ script DewfordTown_EventScript_PushyMan {
 	waitmovement(0)
 	applymovement(18, ManWalkInPlaceUp)
 	waitmovement(0)
-	msgbox(format("I've waited long enough, I want my family out of here.\pSTORMY, WHERE ARE YOU?"))
+	msgbox(format("I've waited long enough, I want to get my family to safety.\pSTORMY, WHERE ARE YOU?"))
 	waitmovement(0)
 	closemessage
 	delay(30)
@@ -1068,22 +1069,24 @@ script DewfordTown_EventScript_PushyMan {
 	playbgm(MUS_DP_ENCOUNTER_INTENSE, FALSE)
 	applymovement(18, WalkLeft)
 	waitmovement(0)
-	setobjectxy(19, 42, 41)
-	applymovement(19, WalkDown)
-	waitmovement(0)
 	applymovement(18, FaceRight)
 	waitmovement(0)
 	applymovement(18, Common_Movement_ExclamationMark)
 	waitmovement(0)
+	setobjectxy(19, 42, 41)
+	applymovement(19, WalkDown)
+	waitmovement(0)
 	closedoor(42, 41)
 	waitdooranim
 	delay(30)
-	msgbox(format("Stormy: My Pokémon are missing! I can not fly anyone out of here before I get them back!$"))
+	msgbox(format("Stormy: My Pokémon are missing! I can't fly anyone out of here before I get them back!$"))
 	closemessage
 	waitmovement(0)
 	applymovement(24, Common_Movement_ExclamationMark)
 	applymovement(27, Common_Movement_ExclamationMark)
 	applymovement(22, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(24, Common_Movement_FaceLeft)
 	waitmovement(0)
 	applymovement(22, Common_Movement_FaceDown)
 	waitmovement(0)
@@ -1093,15 +1096,16 @@ script DewfordTown_EventScript_PushyMan {
 	waitmovement(0)
 	applymovement(20, Common_Movement_FaceDown)
 	waitmovement(0)
-	delay(180)
+	delay(120)
 	applymovement(22, Common_Movement_FaceOriginalDirection)
+	applymovement(24, Common_Movement_FaceOriginalDirection)
 	applymovement(20, Common_Movement_FaceOriginalDirection)
 	applymovement(26, Common_Movement_FaceOriginalDirection)
 	applymovement(20, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
 	applymovement(19, Common_Movement_WalkInPlaceFasterDown)
 	waitmovement(0)
-	msgbox(format("Stormy: Someone will have to find them before I can continue the evacuation, or before I reopen the gym!"))
+	msgbox(format("Stormy: Someone will have to find them before I can continue the evacuation, and before I reopen the Gym!"))
 	closemessage
 	delay(15)
 	applymovement(OBJ_EVENT_ID_CAMERA, CameraDownTwo)
@@ -1132,15 +1136,15 @@ script DewfordTown_EventScript_PushyMan {
 	waitmovement(0)
 	setobjectxyperm(32, 15, 37)
 	waitmovement(0)
-	setobjectxyperm(33, 14, 37)
+	setobjectxyperm(34, 14, 37)
 	waitmovement(0)
-	setobjectxyperm(34, 15, 36)
+	setobjectxyperm(33, 15, 36)
 	waitmovement(0)
 	setobjectmovementtype(32, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
 	waitmovement(0)
-	setobjectmovementtype(33, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+	setobjectmovementtype(34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
 	waitmovement(0)
-	setobjectmovementtype(34, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+	setobjectmovementtype(33, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
 	waitmovement(0)
 	setvar(VAR_DEWFORD_TOWN_STATE, 1)
 	releaseall
@@ -1153,7 +1157,7 @@ script DewfordTown_EventScript_Ursaring{
 	playmoncry(SPECIES_GEODUDE, CRY_MODE_NORMAL)
 	waitmoncry
 	msgbox(format("The Pokémon attacked!"))
-	setwildbattle(SPECIES_GEODUDE, 16, ITEM_NONE, SPECIES_LUXIO, 16, ITEM_NONE)
+	setwildbattle(SPECIES_GEODUDE, 18, ITEM_NONE, SPECIES_LUXIO, 18, ITEM_NONE)
 	dowildbattle
 	setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 	waitmovement(0)
@@ -1170,6 +1174,8 @@ script DewfordTown_EventScript_Ursaring{
 	waitmovement(0)
 	delay(15)
 	applymovement(32, UpOneLeftOne)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 	waitmovement(0)
 	playmoncry(SPECIES_GYARADOS, CRY_MODE_NORMAL)
 	waitmoncry
@@ -1194,7 +1200,7 @@ script DewfordTown_EventScript_Manectric{
 	playmoncry(SPECIES_LUXIO, CRY_MODE_NORMAL)
 	waitmoncry
 	msgbox(format("The Pokémon attacked!"))
-	setwildbattle(SPECIES_GEODUDE, 16, ITEM_NONE, SPECIES_LUXIO, 16, ITEM_NONE)
+	setwildbattle(SPECIES_GEODUDE, 18, ITEM_NONE, SPECIES_LUXIO, 18, ITEM_NONE)
 	dowildbattle
 	setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 	waitmovement(0)
@@ -1419,13 +1425,13 @@ script DewfordTown_EventScript_Stormy{
 	lock
 	faceplayer
 	if(var(VAR_UNUSED_0x40F8) == 0){
-		msgbox(format("Find my Pokémon!"))
+		msgbox(format("I don't know where my Pokémon are, but they must be somewhere in town.\pI won't reopen the Gym until they're found!"))
 	}
 	elif(var(VAR_UNUSED_0x40F8) == 1){
-		msgbox(format("Thank you for finding him!"))
+		msgbox(format("I am still missing two Pokémon!"))
 	}
 	elif(var(VAR_UNUSED_0x40F8) == 2){
-		msgbox(format("One more to go!"))
+		msgbox(format("Thank you for finding two of my Pokémon, but there's one left!"))
 	}
 	elif(var(VAR_UNUSED_0x40F8) == 3){
 		msgbox(format("You found them all!"))
