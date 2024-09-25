@@ -496,6 +496,7 @@ script PetalburgWoods_EventScript_BugCatcherBattle {
 	waitmessage
     end
 }
+
 text Tim_Intro{
     format("After people cut down trees, bugs and mushrooms started to move in.\pCheck out some of mine!")
 }
@@ -545,7 +546,7 @@ script PetalburgWoods_EventScript_KindlerBattle {
     end
 }
 text Mortimer_Intro{
-    format("My fire POKéMON will help me scorch the remnants of this forest!")
+    format("My fire Pokémon will help me scorch the remnants of this forest!")
 }
 text Mortimer_Outro{
     format("You have only slowed my burn!")

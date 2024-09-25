@@ -911,6 +911,8 @@ gSongTable::
 	song mus_pmd_rescueteam_farewell, 0, 0
 	song mus_pmd_rescueteam_peanut_swamp, 0, 0
 	song mus_pmd_rescueteam_oceanic, 0, 0
+	song mus_stardew_the_stardrop_saloon, 0, 0
+	song mus_stardew_cloud_country, 0, 0
 
 	.align 2
 dummy_song_header:

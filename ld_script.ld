@@ -1301,6 +1301,8 @@ SECTIONS {
         sound/songs/midi/mus_pmd_rescueteam_farewell.o(.rodata);
         sound/songs/midi/mus_pmd_rescueteam_peanut_swamp.o(.rodata);
         sound/songs/midi/mus_pmd_rescueteam_oceanic.o(.rodata);
+        sound/songs/midi/mus_stardew_the_stardrop_saloon.o(.rodata);
+        sound/songs/midi/mus_stardew_cloud_country.o(.rodata);
     } > ROM =0
 
     lib_rodata :

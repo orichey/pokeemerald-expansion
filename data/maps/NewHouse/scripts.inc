@@ -171,6 +171,7 @@ NewHouse_EventScript_Articuno_4:
 	setflag FLAG_UNUSED_0x020
 	setflag FLAG_SYS_POKEMON_GET
 	call NicknamePartyMon
+	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 NewHouse_EventScript_Articuno_5:
@@ -180,6 +181,7 @@ NewHouse_EventScript_Articuno_5:
 	setflag FLAG_UNUSED_0x020
 	setflag FLAG_SYS_POKEMON_GET
 	call NicknameBoxMon
+	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 
@@ -209,6 +211,7 @@ NewHouse_EventScript_Zapdos_4:
 	removeobject 3
 	setflag FLAG_UNUSED_0x021
 	call NicknamePartyMon
+	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 NewHouse_EventScript_Zapdos_5:
@@ -218,6 +221,7 @@ NewHouse_EventScript_Zapdos_5:
 	removeobject 3
 	setflag FLAG_UNUSED_0x021
 	call NicknameBoxMon
+	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 
@@ -247,6 +251,7 @@ NewHouse_EventScript_Moltres_4:
 	removeobject 4
 	setflag FLAG_UNUSED_0x022
 	call NicknamePartyMon
+	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 NewHouse_EventScript_Moltres_5:
@@ -256,6 +261,7 @@ NewHouse_EventScript_Moltres_5:
 	removeobject 4
 	setflag FLAG_UNUSED_0x022
 	call NicknameBoxMon
+	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 

@@ -59,7 +59,7 @@ LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
 	return
 
 LittlerootTown_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 LittlerootTown_EventScript_SetRivalLeftForRoute103::
@@ -980,7 +980,7 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "ANTHROH TOWN\n"
+	.string "Anthroh Town\n"
 	.string "“Where the journey begins anew.”$"
 
 LittlerootTown_Text_ProfSprucesLab:
@@ -1008,16 +1008,14 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 script LittlerootTown_EventScript_PlayerHouseSign {
     lockall
-    msgbox("{PLAYER}'s HOUSE$")
+    msgbox("{PLAYER}'s House$")
     releaseall
 }
 
 script LittlerootTown_EventScript_OldWoman {
 	lock
 	faceplayer
-	msgbox("This pond is the only water source for\n"
-	"ANTHROH TOWN.\p"
-	"We are luckier than most in ECODIA.")
+	msgbox(format("This pond is the water source for Anthroh Town.\pEven though we may not have much, we are luckier than most in Ecodia."))
 	release
 }
 
@@ -1031,7 +1029,7 @@ script LittlerootTown_EventScript_Boy {
 script LittlerootTown_EventScript_ShouldGetPokemon {
 	if(flag(FLAG_SYS_POKEMON_GET) == FALSE) {
 		lockall
-		msgbox("Better get a POKéMON first!")
+		msgbox("Better get a Pokémon first!")
 		applymovement(OBJ_EVENT_ID_PLAYER,NoPokemon)
 		waitmovement(0)
 	}
@@ -1040,33 +1038,4 @@ script LittlerootTown_EventScript_ShouldGetPokemon {
 
 movement NoPokemon {
 	walk_right
-}
-
-script LittlerootTown_EventScript_SetupArchieBattle {
-	if (!(flag(FLAG_UNUSED_0x020) || flag(FLAG_UNUSED_0x021) || flag(FLAG_UNUSED_0x022))){
-		setflag(FLAG_UNUSED_0x023)
-	}
-	else{
-		clearflag(FLAG_UNUSED_0x023)
-	}
-}
-
-script LittlerootTown_EventScript_ArchieTestBattle {
-	trainerbattle_single(TRAINER_ARCHIE, Archie_Intro, Archie_Outro)
-	msgbox(PostBattle_Archie, MSGBOX_AUTOCLOSE)
-	waitmessage
-	end
-}
-
-text Archie_Intro{
-	"You have a POKéMON?\n"
-	"Let's fight!"
-}
-
-text Archie_Outro{
-	"I need a stronger KYOGRE"
-}
-
-text PostBattle_Archie{
-	"Hmm, what will you code next?"
 }

@@ -14,6 +14,7 @@ DewfordTown_Gym_EventScript_RoxanneDefeated::
 	message DewfordTown_Gym_Text_ReceivedStoneBadge
 	waitmessage
 	fadescreenspeed FADE_TO_BLACK, 24
+	setrespawn HEAL_LOCATION_DEWFORD_TOWN
 	special GameClear
 	releaseall
 	end

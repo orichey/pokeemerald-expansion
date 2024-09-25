@@ -51,6 +51,7 @@ script StartingHouse_EventScript_MomBeckons{
         msgbox("MOM: Oh, {PLAYER}! You're awake!\n"
         "I was just about to watch the news.\p"
         "Come quick!$")
+        closemessage
         applymovement(1,MomMove)
         waitmovement(0)
         applymovement(OBJ_EVENT_ID_PLAYER,GoToTV)
@@ -95,6 +96,7 @@ script StartingHouse_EventScript_MomBeckonsFromLeft{
         msgbox("MOM: Oh, {PLAYER}! You're awake!\n"
         "I was just about to watch the news.\p"
         "Come quick!$")
+        closemessage
         applymovement(1,MomMove)
         waitmovement(0)
         applymovement(OBJ_EVENT_ID_PLAYER,GoToTVFromLeft)
@@ -140,12 +142,16 @@ movement MomMove {
 }
 
 movement GoToTV {
-    walk_right*3
+    walk_right
+    walk_down
+    walk_right*2
     face_up
 }
 
 movement GoToTVFromLeft {
-    walk_right*5
+    walk_right*3
+    walk_down
+    walk_right*2
     face_up
 }
 

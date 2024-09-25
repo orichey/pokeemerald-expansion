@@ -58,7 +58,7 @@ LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
 	return
 
 LittlerootTown_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 LittlerootTown_EventScript_SetRivalLeftForRoute103::
@@ -979,7 +979,7 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "ANTHROH TOWN\n"
+	.string "Anthroh Town\n"
 	.string "“Where the journey begins anew.”$"
 
 LittlerootTown_Text_ProfSprucesLab:

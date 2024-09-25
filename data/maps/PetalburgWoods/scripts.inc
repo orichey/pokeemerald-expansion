@@ -585,7 +585,7 @@ PostBattle_Barbara::
 	.string "forest, they'll suffer!$"
 
 Mortimer_Intro::
-	.string "My fire POKéMON will help me scorch the\n"
+	.string "My fire Pokémon will help me scorch the\n"
 	.string "remnants of this forest!$"
 
 Mortimer_Outro::

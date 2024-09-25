@@ -61,6 +61,7 @@ StartingHouse_EventScript_MomBeckons_2:
 	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_0
+	closemessage
 	applymovement 1, MomMove
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, GoToTV
@@ -99,6 +100,7 @@ StartingHouse_EventScript_MomBeckonsFromLeft_2:
 	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_0
+	closemessage
 	applymovement 1, MomMove
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, GoToTVFromLeft
@@ -134,6 +136,7 @@ MomMove:
 
 GoToTV:
 	walk_right
+	walk_down
 	walk_right
 	walk_right
 	face_up
@@ -143,6 +146,7 @@ GoToTVFromLeft:
 	walk_right
 	walk_right
 	walk_right
+	walk_down
 	walk_right
 	walk_right
 	face_up

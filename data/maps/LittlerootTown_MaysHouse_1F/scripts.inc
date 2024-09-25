@@ -420,14 +420,14 @@ LittlerootTown_MaysHouse_EventScript_Girl::
 
 
 LittlerootTown_MaysHouse_EventScript_Dad_Text_0:
-	.string "The POKéMON league is starting to\n"
+	.string "The Pokémon league is starting to\n"
 	.string "address climate change.\p"
 	.string "Some of the actions by gym leaders give\n"
 	.string "me hope for the future.$"
 
 LittlerootTown_MaysHouse_EventScript_Girl_Text_0:
 	.string "Anthrotech develops technology across\n"
-	.string "ECODIA to improve our living\l"
+	.string "Ecodia to improve our living\l"
 	.string "conditions.\p"
 	.string "The company's founder was born in\n"
-	.string "ANTHROH TOWN!$"
+	.string "Anthroh Town!$"

@@ -3163,17 +3163,21 @@ Level: 39
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_TAKAO ===
-Name: TAKAO
-Class: Black Belt
-Pic: Black Belt
+Name: Logan
+Class: Camper
+Pic: Camper
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
-Level: 13
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Forretress
+Level: 9
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+
+SPECIES_WORMADAM_TRASH_CLOAK 
+Level: 11
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_HITOSHI ===
 Name: HITOSHI
@@ -4811,7 +4815,7 @@ Level: 24
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_BRAWLY_1 ===
-Name: BRAWLY
+Name: Paul
 Class: Leader
 Pic: Leader Brawly
 Gender: Male
@@ -4820,29 +4824,17 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machop
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Karate Chop
-- Low Kick
-- Seismic Toss
-- Bulk Up
+Beldum
+Level: 13
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
-Meditite
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Bulk Up
+Bronzor
+Level: 13
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
-Makuhita @ Sitrus Berry
-Level: 19
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Arm Thrust
-- Vital Throw
-- Reversal
-- Bulk Up
+Skarmory @ Oran Berry
+Level: 15
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
 === TRAINER_WATTSON_1 ===
 Name: WATTSON
@@ -6017,7 +6009,7 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Astonish
 
 === TRAINER_JOEY ===
-Name: JOEY
+Name: Joey
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6027,6 +6019,87 @@ AI: Check Bad Move
 
 Machop
 Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_YOUNGSTER_JOEY ===
+Name: Joey
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+
+Rattata
+Level: 8
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+=== TRAINER_BUGCATCHER_TIM ===
+Name: Tim
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+
+Paras
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wurmple
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_EXPERT_BARBARA ===
+Name: Barbara
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Hoppip
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Budew
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_KINDLER_MORTIMER ===
+Name: Mortimer
+Class: Kindler
+Pic: Kindler
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Check Bad Move
+
+Magby
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Slugma
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SCIENTIST_CARSON ===
+Name: Carson
+Class: Collector
+Pic: Collector
+Gender: Male
+Music: Suspicious
+Double Battle: No
+AI: Check Bad Move
+
+Magnemite
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Bronzor
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BEN ===
@@ -7813,30 +7886,34 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sludge
 
 === TRAINER_JOCELYN ===
-Name: JOCELYN
-Class: Battle Girl
-Pic: Battle Girl
-Gender: Female
+Name: Mason
+Class: Camper
+Pic: Camper
+Gender: Male
 Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 13
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Mawile
+Level: 14
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_LAURA ===
-Name: LAURA
-Class: Battle Girl
-Pic: Battle Girl
-Gender: Female
+Name: Brent
+Class: Hiker
+Pic: Hiker
+Gender: Male
 Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 13
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Aron
+Level: 11
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+
+Aron
+Level: 12
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_CYNDY_1 ===
 Name: CYNDY
@@ -16736,50 +16813,50 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Water Pulse
 
 === TRAINER_THALIA_5 ===
-Name: THALIA
-Class: Beauty
-Pic: Beauty
-Gender: Female
-Music: Female
+Name: Alan
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Poliwag
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wailord
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Kingdra
-Level: 40
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Lotad
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MARIELA ===
-Name: MARIELA
-Class: Psychic
-Pic: Psychic F
+Name: Eva
+Class: Lass
+Pic: Lass
 Gender: Female
-Music: Intense
+Music: Female
 Double Battle: No
 
-Chimecho
-Level: 41
+Whismur
+Level: 3
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Skitty
+Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALVARO ===
-Name: ALVARO
-Class: Psychic
-Pic: Psychic M
+Name: Adam
+Class: Youngster
+Pic: Youngster
 Gender: Male
-Music: Intense
+Music: Male
 Double Battle: No
 
-Banette
-Level: 41
+Starly
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kadabra
-Level: 41
+Wurmple
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

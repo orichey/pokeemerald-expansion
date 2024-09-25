@@ -2378,3 +2378,9 @@ $(MID_SUBDIR)/mus_pmd_rescueteam_peanut_swamp.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_pmd_rescueteam_oceanic.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V095
+
+$(MID_SUBDIR)/mus_stardew_the_stardrop_saloon.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_stardew_cloud_country.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090

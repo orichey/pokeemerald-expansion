@@ -28,8 +28,6 @@ PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	savebgm MUS_FOLLOW_ME
 	return
 
 PetalburgCity_EventScript_SetGymDoorsUnlocked::

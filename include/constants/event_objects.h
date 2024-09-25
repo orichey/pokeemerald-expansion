@@ -394,6 +394,7 @@
 
 
 
+
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
 #define OBJ_EVENT_PAL_TAG_BALL_MASTER             0x1150

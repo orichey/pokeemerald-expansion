@@ -408,13 +408,13 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 script LittlerootTown_MaysHouse_EventScript_Dad {
 	lock
 	faceplayer
-	msgbox(format("The POKéMON league is starting to address climate change.\pSome of the actions by gym leaders give me hope for the future."))
+	msgbox(format("The Pokémon league is starting to address climate change.\pSome of the actions by gym leaders give me hope for the future."))
     release
 }
 
 script LittlerootTown_MaysHouse_EventScript_Girl {
 	lock
 	faceplayer
-	msgbox(format("Anthrotech develops technology across ECODIA to improve our living conditions.\pThe company's founder was born in ANTHROH TOWN!"))
+	msgbox(format("Anthrotech develops technology across Ecodia to improve our living conditions.\pThe company's founder was born in Anthroh Town!"))
     release
 }
