@@ -25,6 +25,6 @@ script OldaleTown_House1_Text_Woman {
 script OldaleTown_House1_Text_Man {
 	lock
 	faceplayer
-	msgbox(format("Believe it or not, many people used to live in DESOLA TOWN. However, a lack of economic opportunities drove many people out.\pNow, we just serve as a rest stop for travelers between TREEFALL WOODS and the mountains."))
+	msgbox(format("Believe it or not, many people used to live in Desola Town. However, a lack of economic opportunities drove many people out.\pNow, we just serve as a rest stop for travelers between Treefall Woods and the mountains."))
 	release
 }

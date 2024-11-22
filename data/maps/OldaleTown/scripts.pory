@@ -1,4 +1,4 @@
-raw `.set LOCALID_MART_EMPLOYEE, 2
+raw `.set LOCALID_Mart_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
 
@@ -49,14 +49,14 @@ OldaleTown_EventScript_MartEmployee::
 	end
 
 OldaleTown_EventScript_GoToMartSouth::
-	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeSouth
+	applymovement LOCALID_Mart_EMPLOYEE, OldaleTown_Movement_EmployeeSouth
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerSouth
 	waitmovement 0
 	goto OldaleTown_EventScript_ExplainPokemonMart
 	end
 
 OldaleTown_EventScript_GoToMartNorth::
-	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeNorth
+	applymovement LOCALID_Mart_EMPLOYEE, OldaleTown_Movement_EmployeeNorth
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerNorth
 	waitmovement 0
 	goto OldaleTown_EventScript_ExplainPokemonMart
@@ -64,7 +64,7 @@ OldaleTown_EventScript_GoToMartNorth::
 
 OldaleTown_EventScript_GoToMartEast::
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerEast
-	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeEast
+	applymovement LOCALID_Mart_EMPLOYEE, OldaleTown_Movement_EmployeeEast
 	waitmovement 0
 	goto OldaleTown_EventScript_ExplainPokemonMart
 	end
@@ -345,39 +345,39 @@ OldaleTown_Text_SavingMyProgress:
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a Pokémon Mart.\p"
 	.string "Can I get you to come with me?$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
+	.string "This is a Pokémon Mart.\n"
 	.string "Just look for our blue roof.\p"
 	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "POKé BALLS for catching Pokémon.\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
 	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
+	.string "even more useful than a Pokémon CENTER\l"
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
 	.string "Please don't come in here.\p"
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints:
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
+	.string "a rare Pokémon.\p"
 	.string "But it turns out they were only my\n"
 	.string "own footprints…$"
 
@@ -399,15 +399,15 @@ OldaleTown_Text_TownSign:
 
 script OldaleTown_EventScript_NewSign {
     lockall
-    msgbox("DESOLA TOWN\n"
+    msgbox("Desola Town\n"
     "“A sign of what's to come.”$")
     releaseall
 }
 
 script OldaleTown_EventScript_LibrarySign {
     lockall
-    msgbox("DESOLA TOWN Library: Where the past,\n"
-    "present, and future of ECODIA is\l"
+    msgbox("Desola Town Library: Where the past,\n"
+    "present, and future of Ecodia is\l"
 	"studied.$")
     releaseall
 }
@@ -430,16 +430,16 @@ script OldaleTown_EventScript_OldWoman {
 script OldaleTown_EventScript_LittleBoy {
 	lock
 	faceplayer
-	msgbox("Mommy says DESOLA TOWN is one of the\n"
-	"last safe places in ECODIA.\p"
-	"Even TREEFALL FOREST is scary!")
+	msgbox("Mommy says Desola Town is one of the\n"
+	"last safe places in Ecodia.\p"
+	"Even Treefall Forest is scary!")
 	release
 }
 
 script OldaleTown_EventScript_ScholarBoy {
 	lock
 	faceplayer
-	msgbox(format("This house has been abandoned for a long time, much like the POKéMON MART.\pIt's hard to imagine DESOLA TOWN will recover, but I have hope in Anthrotech!"))
+	msgbox(format("This house has been abandoned for a long time, much like the Pokémon Mart.\pIt's hard to imagine Desola Town will recover, but I have hope in Anthrotech!"))
 	release
 }
 
@@ -472,15 +472,18 @@ script OldaleTown_EventScript_CantPass {
 script OldaleTown_EventScript_EnterTop {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
 		lockall
+		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement(OBJ_EVENT_ID_PLAYER,EnterTop)
 		waitmovement(0)
 		applymovement(5,AnthrotechWalkLeft)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
+		closemessage
 		applymovement(5,PlayerUp)
 		delay(60)
 		applymovement(5,HikerDown)
 		msgbox(format("???: I see..."))
+		closemessage
 		applymovement(5,LookLeft)
 		waitmovement(0)
 		delay(35)
@@ -488,14 +491,17 @@ script OldaleTown_EventScript_EnterTop {
 		applymovement(5,Common_Movement_ExclamationMark)
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
+		closemessage
 		applymovement(5,WalkToPlayer)
 		waitmovement(0)
-		msgbox(format("???: Are you a resident of DESOLA TOWN?\p???: You're not? That's too bad. I was hoping to talk to a local about the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMUNDUNGUS: I'm going around ECODIA, learning about the problems our cities face and how I can help solve them!"))
+		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local about the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
+		closemessage
 		applymovement(5,HikerDown)
 		waitmovement(0)
-		msgbox(format("MUNDUNGUS: For example, DESOLA TOWN seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization!"))
+		msgbox(format("Mundungus: For example, Desola Town seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization!"))
+		closemessage
 		applymovement(5,AnthroLookRight)
-		msgbox(format("MUNDUNGUS: In any case, what is your name? \p{PLAYER}? From ANTHROH TOWN? Why, you and I have the same roots!\pMUNDUNGUS: I would love to hear about your ideas on how to make ECODIA a more resilient and sustainable region, how about you come talk to me later, in TREEFALL CITY?\pMUNDUNGUS: Here, take one of our innovations, the POKéDEX!"))
+		msgbox(format("Mundungus: In any case, what is your name? \p{PLAYER}? From Anthroh Town? Why, you and I have the same roots!\pMundungus: I would love to hear about your ideas on how to make Ecodia a more resilient and sustainable region, how about you come talk to me later, in Treefall City?\pMundungus: Here, take one of our innovations, the Pokédex!"))
 		setflag(FLAG_SYS_POKEDEX_GET)
 		special(SetUnlockedPokedexFlags)
 		setflag(FLAG_SYS_NATIONAL_DEX)
@@ -503,9 +509,10 @@ script OldaleTown_EventScript_EnterTop {
 		setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
 		setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("{PLAYER} received the POKéDEX!$"))
+		msgbox(format("{PLAYER} received the Pokédex!$"))
 		waitfanfare
-		msgbox(format("MUNDUNGUS: I'll see you soon, {PLAYER}!"))
+		msgbox(format("Mundungus: I'll see you soon, {PLAYER}!"))
+		closemessage
 		applymovement(5,AnthroLeaves)
 		waitmovement(0)
 		setflag(FLAG_UNUSED_0x028)
@@ -517,15 +524,18 @@ script OldaleTown_EventScript_EnterTop {
 script OldaleTown_EventScript_EnterMid {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
 		lockall
+		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement(OBJ_EVENT_ID_PLAYER,EnterMid)
 		waitmovement(0)
 		applymovement(5,AnthrotechWalkLeft)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
+		closemessage
 		applymovement(5,PlayerUp)
 		delay(60)
 		applymovement(5,HikerDown)
 		msgbox(format("???: I see..."))
+		closemessage
 		applymovement(5,LookLeft)
 		waitmovement(0)
 		delay(35)
@@ -533,14 +543,17 @@ script OldaleTown_EventScript_EnterMid {
 		applymovement(5,Common_Movement_ExclamationMark)
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
+		closemessage
 		applymovement(5,WalkToPlayer)
 		waitmovement(0)
-		msgbox(format("???: Are you a resident of DESOLA TOWN?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMUNDUNGUS: I'm going around ECODIA, learning about the problems our cities face and how I can help solve them!"))
+		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
+		closemessage
 		applymovement(5,HikerDown)
 		waitmovement(0)
-		msgbox(format("MUNDUNGUS: For example, DESOLA TOWN seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the POKéMON MART or constructing a resort for travelers?"))
+		msgbox(format("Mundungus: For example, Desola Town seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the Pokémon Mart or constructing a resort for travelers?"))
+		closemessage
 		applymovement(5,AnthroLookRight)
-		msgbox(format("MUNDUNGUS: In any case, what is your name? \p{PLAYER}? From ANTHROH TOWN? Why, you and I have the same roots!\pMUNDUNGUS: I would love to hear about your ideas on how to make ECODIA a more resilient and sustainable region, how about you come talk to me later, in TREEFALL CITY?\pMUNDUNGUS: Here, take one of our innovations, the POKéDEX!"))
+		msgbox(format("Mundungus: In any case, what is your name? \p{PLAYER}? From Anthroh Town? Why, you and I have the same roots!\pMundungus: I would love to hear about your ideas on how to make Ecodia a more resilient and sustainable region, how about you come talk to me later, in Treefall City?\pMundungus: Here, take one of our innovations, the Pokédex!"))
 		setflag(FLAG_SYS_POKEDEX_GET)
 		special(SetUnlockedPokedexFlags)
 		setflag(FLAG_SYS_NATIONAL_DEX)
@@ -548,9 +561,10 @@ script OldaleTown_EventScript_EnterMid {
 		setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
 		setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("{PLAYER} received the POKéDEX!$"))
+		msgbox(format("{PLAYER} received the Pokédex!$"))
 		waitfanfare
-		msgbox(format("MUNDUNGUS: I'll see you soon, {PLAYER}!"))
+		msgbox(format("Mundungus: I'll see you soon, {PLAYER}!"))
+		closemessage
 		applymovement(5,AnthroLeaves)
 		waitmovement(0)
 		setflag(FLAG_UNUSED_0x028)
@@ -562,15 +576,18 @@ script OldaleTown_EventScript_EnterMid {
 script OldaleTown_EventScript_EnterBottom {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
 		lockall
+		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement(OBJ_EVENT_ID_PLAYER,EnterBottom)
 		waitmovement(0)
 		applymovement(5,AnthrotechWalkLeft)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
+		closemessage
 		applymovement(5,PlayerUp)
 		delay(60)
 		applymovement(5,HikerDown)
 		msgbox(format("???: I see..."))
+		closemessage
 		applymovement(5,LookLeft)
 		waitmovement(0)
 		delay(35)
@@ -578,14 +595,17 @@ script OldaleTown_EventScript_EnterBottom {
 		applymovement(5,Common_Movement_ExclamationMark)
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
+		closemessage
 		applymovement(5,WalkToPlayer)
 		waitmovement(0)
-		msgbox(format("???: Are you a resident of DESOLA TOWN?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMUNDUNGUS: I'm going around ECODIA, learning about the problems our cities face and how I can help solve them!"))
+		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
+		closemessage
 		applymovement(5,HikerDown)
 		waitmovement(0)
-		msgbox(format("MUNDUNGUS: For example, DESOLA TOWN seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the POKéMON MART or constructing a resort for travelers?"))
+		msgbox(format("Mundungus: For example, Desola Town seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the Pokémon Mart or constructing a resort for travelers?"))
+		closemessage
 		applymovement(5,AnthroLookRight)
-		msgbox(format("MUNDUNGUS: In any case, what is your name? \p{PLAYER}? From ANTHROH TOWN? Why, you and I have the same roots!\pMUNDUNGUS: I would love to hear about your ideas on how to make ECODIA a more resilient and sustainable region, how about you come talk to me later, in TREEFALL CITY?\pMUNDUNGUS: Here, take one of our innovations, the POKéDEX!"))
+		msgbox(format("Mundungus: In any case, what is your name? \p{PLAYER}? From Anthroh Town? Why, you and I have the same roots!\pMundungus: I would love to hear about your ideas on how to make Ecodia a more resilient and sustainable region, how about you come talk to me later, in Treefall City?\pMundungus: Here, take one of our innovations, the Pokédex!"))
 		setflag(FLAG_SYS_POKEDEX_GET)
 		special(SetUnlockedPokedexFlags)
 		setflag(FLAG_SYS_NATIONAL_DEX)
@@ -593,9 +613,10 @@ script OldaleTown_EventScript_EnterBottom {
 		setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
 		setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("{PLAYER} received the POKéDEX!$"))
+		msgbox(format("{PLAYER} received the Pokédex!$"))
 		waitfanfare
-		msgbox(format("MUNDUNGUS: I'll see you soon, {PLAYER}!"))
+		msgbox(format("Mundungus: I'll see you soon, {PLAYER}!"))
+		closemessage
 		applymovement(5,AnthroLeaves)
 		waitmovement(0)
 		setflag(FLAG_UNUSED_0x028)

@@ -64,20 +64,28 @@ StartingHouse_EventScript_MomBeckons_2:
 	closemessage
 	applymovement 1, MomMove
 	waitmovement 0
+	delay 15
 	applymovement OBJ_EVENT_ID_PLAYER, GoToTV
 	waitmovement 0
+	delay 45
 	special TurnOnTVScreen
 	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
 	msgbox StartingHouse_EventScript_MomBeckons_Text_1
 	special TurnOffTVScreen
 	fadedefaultbgm
-	delay 35
+	delay 120
 	applymovement OBJ_EVENT_ID_PLAYER, LookToMom
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_2
+	waitmovement 0
+	closemessage
+	delay 30
 	applymovement 1, MomLookUp
 	waitmovement 0
+	delay 60
 	msgbox StartingHouse_EventScript_MomBeckons_Text_3
+	closemessage
+	delay 60
 	applymovement 1, MomLook
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_4
@@ -103,20 +111,28 @@ StartingHouse_EventScript_MomBeckonsFromLeft_2:
 	closemessage
 	applymovement 1, MomMove
 	waitmovement 0
+	delay 15
 	applymovement OBJ_EVENT_ID_PLAYER, GoToTVFromLeft
 	waitmovement 0
+	delay 45
 	special TurnOnTVScreen
 	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
 	msgbox StartingHouse_EventScript_MomBeckons_Text_1
 	special TurnOffTVScreen
 	fadedefaultbgm
-	delay 35
+	delay 120
 	applymovement OBJ_EVENT_ID_PLAYER, LookToMom
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_2
+	waitmovement 0
+	closemessage
+	delay 30
 	applymovement 1, MomLookUp
 	waitmovement 0
-	msgbox StartingHouse_EventScript_MomBeckonsFromLeft_Text_0
+	delay 60
+	msgbox StartingHouse_EventScript_MomBeckons_Text_3
+	closemessage
+	delay 60
 	applymovement 1, MomLook
 	waitmovement 0
 	msgbox StartingHouse_EventScript_MomBeckons_Text_4
@@ -165,46 +181,44 @@ MomLookUp:
 	step_end
 
 StartingHouse_EventScript_MomAskSpruce_Text_0:
-	.string "MOM: Did you talk to Professor Spruce?$"
+	.string "Mom: Did you talk to Professor Spruce?$"
 
 StartingHouse_EventScript_MomAskSpruce_Text_1:
-	.string "MOM: Hi, honey! You look tired.\n"
+	.string "Mom: Hi, honey! You look tired.\n"
 	.string "Why not take a quick rest?$"
 
 StartingHouse_EventScript_MomAskSpruce_Text_2:
 	.string "Be safe out there!$"
 
 StartingHouse_EventScript_MomAskSpruce_Text_3:
-	.string "MOM: So Professor Spruce wants you to\n"
-	.string "explore ECODIA for him?\p"
-	.string "MOM: That sounds like quite a task.\n"
+	.string "Mom: So Professor Spruce wants you to\n"
+	.string "explore Ecodia for him?\p"
+	.string "Mom: That sounds like quite a task.\n"
 	.string "But I know you can do it, sweetie!\l"
 	.string "Be safe, and come home any time!$"
 
 StartingHouse_EventScript_MomBeckons_Text_0:
-	.string "MOM: Oh, {PLAYER}! You're awake!\n"
+	.string "Mom: Oh, {PLAYER}! You're awake!\n"
 	.string "I was just about to watch the news.\p"
 	.string "Come quick!$"
 
 StartingHouse_EventScript_MomBeckons_Text_1:
 	.string "BREAKING NEWS! The impacts of climate\n"
-	.string "change continue to batter ECODIA!\p"
+	.string "change continue to batter Ecodia!\p"
 	.string "Heat waves, forest fires, deluges, and\n"
 	.string "floods are all roaring ferociously!\p"
 	.string "When will it come to an end?$"
 
 StartingHouse_EventScript_MomBeckons_Text_2:
-	.string "MOM: I can't believe this is happening\n"
+	.string "Mom: I can't believe this is happening\n"
 	.string "to our new home. To think, after\l"
-	.string "escaping the calamities in HOENN, we\l"
+	.string "escaping the calamities in Hoenn, we\l"
 	.string "would find something even worse.$"
 
 StartingHouse_EventScript_MomBeckons_Text_3:
-	.string "MOM: ...$"
+	.string "Mom: ...$"
 
 StartingHouse_EventScript_MomBeckons_Text_4:
-	.string "Say, why don't you go see PROF. SPRUCE?\n"
-	.string "He might have some explanation for this!$"
-
-StartingHouse_EventScript_MomBeckonsFromLeft_Text_0:
-	.string "MOM:...$"
+	.string "Say, why don't you talk to Professor\n"
+	.string "Spruce? He might have an explanation\l"
+	.string "for all of this!$"

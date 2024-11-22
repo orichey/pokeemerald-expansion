@@ -13,7 +13,7 @@ NewHouse_EventScript_Wailmer::
 	faceplayer
 	goto_if_unset FLAG_UNUSED_0x020, NewHouse_EventScript_Wailmer_4
 NewHouse_EventScript_Wailmer_3:
-	msgbox NewHouse_EventScript_Wailmer_Text_4
+	msgbox NewHouse_EventScript_Wailmer_Text_5
 NewHouse_EventScript_Wailmer_1:
 	waitmessage
 	release
@@ -48,12 +48,20 @@ NewHouse_EventScript_Wailmer_13:
 
 NewHouse_EventScript_Wailmer_15:
 	msgbox NewHouse_EventScript_Wailmer_Text_1
+	closemessage
+	delay 60
+	msgbox NewHouse_EventScript_Wailmer_Text_2
+	closemessage
 	applymovement 1, FaceLeft
 	waitmovement 0
-	msgbox NewHouse_EventScript_Wailmer_Text_2
+	delay 60
+	msgbox NewHouse_EventScript_Wailmer_Text_3
+	closemessage
+	delay 60
 	applymovement 1, FacePlayer
 	waitmovement 0
-	msgbox NewHouse_EventScript_Wailmer_Text_3
+	delay 45
+	msgbox NewHouse_EventScript_Wailmer_Text_4
 	setvar VAR_UNUSED_0x40F7, 1
 	goto NewHouse_EventScript_Wailmer_1
 
@@ -309,31 +317,35 @@ NewHouse_EventScript_Text_Scientist::
 
 
 NewHouse_EventScript_Wailmer_Text_0:
-	.string "{PLAYER}, go ahead and take a POKéMON.$"
+	.string "{PLAYER}, go ahead and take a Pokémon.$"
 
 NewHouse_EventScript_Wailmer_Text_1:
 	.string "Why, hello there, {PLAYER}!\n"
-	.string "What brings you to my laboratory?\p"
+	.string "What brings you to my laboratory?$"
+
+NewHouse_EventScript_Wailmer_Text_2:
 	.string "Hm, I see. The climate events we are\n"
 	.string "experiencing are very concerning.$"
 
-NewHouse_EventScript_Wailmer_Text_2:
-	.string "As you know, I have made my career in\n"
-	.string "studying the climate of ECODIA. Never\l"
-	.string "have I seen such frequency and\l"
-	.string "intensity of these extreme events.$"
-
 NewHouse_EventScript_Wailmer_Text_3:
+	.string "As you undoubtedly know, I have made my\n"
+	.string "career in studying the climate of\l"
+	.string "Ecodia.\p"
+	.string "Never have I seen such frequency and\n"
+	.string "intensity of these storms and\l"
+	.string "disasters we now witness daily.$"
+
+NewHouse_EventScript_Wailmer_Text_4:
 	.string "{PLAYER}, I am getting old. In the past,\n"
 	.string "I would have ventured out to see what\l"
 	.string "it is we are dealing with. Instead,\l"
 	.string "I must make a request of you.\p"
 	.string "I must ask you to go survey the region.\n"
-	.string "{PLAYER}, take a POKéMON from my table,\l"
-	.string "and go see what is happening to ECODIA.$"
+	.string "{PLAYER}, take a Pokémon from my table,\l"
+	.string "and go see what is happening to Ecodia.$"
 
-NewHouse_EventScript_Wailmer_Text_4:
-	.string "Take care of your POKéMON, and be safe.\n"
+NewHouse_EventScript_Wailmer_Text_5:
+	.string "Take care of your Pokémon, and be safe.\n"
 	.string "I do not know what perils you may face.\p"
 	.string "Trust in yourself, and remember to\n"
 	.string "report back!$"
@@ -375,20 +387,21 @@ NicknameBoxMon_Text_0:
 	.string "Transferred to PC$"
 
 NewHouse_EventScript_Text_Scientist_Text_0:
-	.string "The species of POKéMON Professor\n"
+	.string "The species of Pokémon Professor\n"
 	.string "Spruce is offering have been critical\l"
 	.string "to his research.\p"
 	.string "Charmander is a case study in how\n"
-	.string "sensitive POKéMON are to their\l"
-	.string "environment, as shown by it's tail.\p"
-	.string "Mudkip demonstrates how resilient\n"
-	.string "and adaptable POKéMON can be in\l"
-	.string "different terrains.\p"
-	.string "And Turtwig has been studied to see\n"
-	.string "how plants and animals can live\l"
-	.string "symbiotically.\p"
-	.string "Professor Spruce's research may pave a\n"
-	.string "path towards a more sustainable future!$"
+	.string "sensitive Pokémon can be to their\l"
+	.string "environment, as shown by the\l"
+	.string "vulnerability in their tail.\p"
+	.string "Mudkip demonstrates how resilient and\n"
+	.string "adaptable Pokémon can be in different\l"
+	.string "terrains.\p"
+	.string "And Turtwig has been studied to see how\n"
+	.string "plants and animals can live together in\l"
+	.string "symbiosis.\p"
+	.string "Professor Spruce's research may pave\n"
+	.string "the way to a more sustainable future!$"
 
 NewHouse_NotChosen::
-	.string "You did not choose the POKéMON.$"
+	.string "You did not choose the Pokémon.$"

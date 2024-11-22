@@ -17,27 +17,9 @@
       "map": "MAP_ROUTE103",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE106",
-      "offset": 13,
-      "direction": "right"
     }
   ],
   "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 32,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_EventScript_OceanWoman",
-      "flag": "0"
-    },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": -4,
@@ -196,8 +178,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LANTURN)",
-      "x": 45,
-      "y": 24,
+      "x": 44,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -300,8 +282,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 41,
-      "y": 44,
+      "x": 61,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -544,6 +526,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DewfordTown_EventScript_Charmander",
       "flag": "FLAG_UNUSED_0x020"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 44,
+      "y": 42,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DewfordTown_EventScript_SecondFisher",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -601,6 +596,13 @@
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN_HOUSE4",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 44,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_GRANITE_CAVE_1F",
       "dest_warp_id": "0"
     }
   ],

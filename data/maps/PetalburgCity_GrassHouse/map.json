@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_CITY_GRASS_HOUSE",
   "name": "PetalburgCity_GrassHouse",
   "layout": "LAYOUT_PETALBURG_CITY_GRASS_HOUSE",
-  "music": "MUS_PETALBURG",
+  "music": "MUS_BIG_YELLOW_TAXI",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

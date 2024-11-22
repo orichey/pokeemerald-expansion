@@ -50,7 +50,6 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
-	call_if_unset FLAG_UNUSED_0x024, LittlerootTown_EventScript_SetupArchieBattle
 	end
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
@@ -942,7 +941,7 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 
 LittlerootTown_Text_TechnologyIsAmazing:
 	.string "Human activity has caused irreversible\n"
-	.string "damage throughout ECODIA.\p"
+	.string "damage throughout Ecodia.\p"
 	.string "The power of technology is amazing!$"
 
 LittlerootTown_Text_SpruceSpendsDaysInLab:
@@ -1043,39 +1042,14 @@ NoPokemon:
 	walk_right
 	step_end
 
-LittlerootTown_EventScript_SetupArchieBattle::
-	goto_if_unset FLAG_UNUSED_0x020, LittlerootTown_EventScript_SetupArchieBattle_3
-LittlerootTown_EventScript_SetupArchieBattle_2:
-	clearflag FLAG_UNUSED_0x023
-	return
-
-LittlerootTown_EventScript_SetupArchieBattle_1:
-	setflag FLAG_UNUSED_0x023
-	return
-
-LittlerootTown_EventScript_SetupArchieBattle_3:
-	goto_if_unset FLAG_UNUSED_0x021, LittlerootTown_EventScript_SetupArchieBattle_5
-	goto LittlerootTown_EventScript_SetupArchieBattle_2
-
-LittlerootTown_EventScript_SetupArchieBattle_5:
-	goto_if_unset FLAG_UNUSED_0x022, LittlerootTown_EventScript_SetupArchieBattle_1
-	goto LittlerootTown_EventScript_SetupArchieBattle_2
-
-
-LittlerootTown_EventScript_ArchieTestBattle::
-	trainerbattle_single TRAINER_ARCHIE, Archie_Intro, Archie_Outro
-	msgbox PostBattle_Archie, MSGBOX_AUTOCLOSE
-	waitmessage
-	end
-
-
 LittlerootTown_EventScript_PlayerHouseSign_Text_0:
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s House$"
 
 LittlerootTown_EventScript_OldWoman_Text_0:
-	.string "This pond is the only water source for\n"
-	.string "ANTHROH TOWN.\p"
-	.string "We are luckier than most in ECODIA.$"
+	.string "This pond is the water source for\n"
+	.string "Anthroh Town.\p"
+	.string "Even though we may not have much, we\n"
+	.string "are luckier than most in Ecodia.$"
 
 LittlerootTown_EventScript_Boy_Text_0:
 	.string "Professor Spruce used to explore our\n"
@@ -1085,14 +1059,4 @@ LittlerootTown_EventScript_Boy_Text_0:
 	.string "days.$"
 
 LittlerootTown_EventScript_ShouldGetPokemon_Text_0:
-	.string "Better get a POKéMON first!$"
-
-Archie_Intro::
-	.string "You have a POKéMON?\n"
-	.string "Let's fight!$"
-
-Archie_Outro::
-	.string "I need a stronger KYOGRE$"
-
-PostBattle_Archie::
-	.string "Hmm, what will you code next?$"
+	.string "Better get a Pokémon first!$"

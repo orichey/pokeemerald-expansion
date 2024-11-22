@@ -1,7 +1,7 @@
 .set LOCALID_WALLY, 2
 .set LOCALID_JSOGIRL, 3
 .set LOCALID_JSOBOY, 4
-.set LOCALID_MUNDUNGUS, 5
+.set LOCALID_Mundungus, 5
 .set LOCALID_GYM_BOY, 8
 .set LOCALID_SCOTT, 9
 
@@ -20,14 +20,16 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_SetAnthroLocation::
-	setobjectxyperm LOCALID_MUNDUNGUS, 25, 8
-	setobjectmovementtype LOCALID_MUNDUNGUS, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_Mundungus, 25, 8
+	setobjectmovementtype LOCALID_Mundungus, MOVEMENT_TYPE_FACE_UP
 	return
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	savebgm MUS_FOLLOW_ME
 	return
 
 PetalburgCity_EventScript_SetGymDoorsUnlocked::
@@ -69,14 +71,14 @@ PetalburgCity_EventScript_WallyTutorial::
 PetalburgCity_EventScript_WalkToWallyHouse::
 	lockall
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	applymovement LOCALID_MUNDUNGUS, PetalburgCity_Movement_WalkToWallyHouseWallysDad
+	applymovement LOCALID_Mundungus, PetalburgCity_Movement_WalkToWallyHouseWallysDad
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
 	waitmovement 0
 	setvar VAR_0x8004, 7
 	setvar VAR_0x8005, 5
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	applymovement LOCALID_MUNDUNGUS, PetalburgCity_Movement_WalkInsideHouseWallysDad
+	applymovement LOCALID_Mundungus, PetalburgCity_Movement_WalkInsideHouseWallysDad
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
@@ -812,15 +814,15 @@ PetalburgCity_EventScript_JSOFight::
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, CameraRightSeven
 	waitmovement 0
-	applymovement LOCALID_MUNDUNGUS, WalkInPlaceUp
+	applymovement LOCALID_Mundungus, WalkInPlaceUp
 	waitmovement 0
 	msgbox PetalburgCity_EventScript_JSOFight_Text_0
 	applymovement LOCALID_JSOGIRL, WalkInPlaceDown
 	waitmovement 0
 	msgbox PetalburgCity_EventScript_JSOFight_Text_1
-	applymovement LOCALID_MUNDUNGUS, LookLeft
+	applymovement LOCALID_Mundungus, LookLeft
 	waitmovement 0
-	applymovement LOCALID_MUNDUNGUS, Common_Movement_ExclamationMark
+	applymovement LOCALID_Mundungus, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox PetalburgCity_EventScript_JSOFight_Text_2
 	applymovement OBJ_EVENT_ID_CAMERA, CameraLeftSeven
@@ -846,18 +848,18 @@ PetalburgCity_EventScript_JSOFight::
 	delay 60
 	fadescreen FADE_FROM_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, LookRight
-	applymovement LOCALID_MUNDUNGUS, LookLeft
-	applymovement LOCALID_MUNDUNGUS, WalkInPlaceLeft
+	applymovement LOCALID_Mundungus, LookLeft
+	applymovement LOCALID_Mundungus, WalkInPlaceLeft
 	msgbox PetalburgCity_EventScript_JSOFight_Text_5
-	applymovement LOCALID_MUNDUNGUS, LookDown
+	applymovement LOCALID_Mundungus, LookDown
 	delay 30
 	msgbox PetalburgCity_EventScript_JSOFight_Text_6
-	applymovement LOCALID_MUNDUNGUS, LookLeft
+	applymovement LOCALID_Mundungus, LookLeft
 	msgbox PetalburgCity_EventScript_JSOFight_Text_7
-	applymovement LOCALID_MUNDUNGUS, WalkUpTwo
+	applymovement LOCALID_Mundungus, WalkUpTwo
 	waitmovement 0
-	setobjectxyperm LOCALID_MUNDUNGUS, 0, 20
-	removeobject LOCALID_MUNDUNGUS
+	setobjectxyperm LOCALID_Mundungus, 0, 20
+	removeobject LOCALID_Mundungus
 	applymovement OBJ_EVENT_ID_PLAYER, PlayerUpTwo
 	waitmovement 0
 	warp MAP_PETALBURG_CITY_MUNDUNGUS_HOUSE, 1
@@ -951,30 +953,30 @@ PetalburgCity_EventScript_GrassSign_Text_0:
 	.string "more.$"
 
 PetalburgCity_EventScript_JSOBoy_Text_0:
-	.string "Have you seen MUNDUNGUS? We found his\n"
+	.string "Have you seen Mundungus? We found his\n"
 	.string "house, and we'd like a word.$"
 
 PetalburgCity_EventScript_JSOGirl_Text_0:
-	.string "Anthrotech is ruining ECODIA! We won't\n"
+	.string "Anthrotech is ruining Ecodia! We won't\n"
 	.string "stand for it!$"
 
 PetalburgCity_EventScript_JSOFight_Text_0:
-	.string "MUNDUNGUS: You can't stop me from\n"
+	.string "Mundungus: You can't stop me from\n"
 	.string "entering my own home!$"
 
 PetalburgCity_EventScript_JSOFight_Text_1:
 	.string "???: And you can't expect to restore\n"
-	.string "TREEFALL WOODS by planting the same\l"
+	.string "Treefall Woods by planting the same\l"
 	.string "trees over and over!\p"
 	.string "When will you realize what you are truly\n"
-	.string "doing to ECODIA?$"
+	.string "doing to Ecodia?$"
 
 PetalburgCity_EventScript_JSOFight_Text_2:
-	.string "MUNDUNGUS: Oh, {PLAYER}! Will you\n"
+	.string "Mundungus: Oh, {PLAYER}! Will you\n"
 	.string "come give me a hand?$"
 
 PetalburgCity_EventScript_JSOFight_Text_3:
-	.string "MUNDUNGUS: If you earned an AXE BADGE,\n"
+	.string "Mundungus: If you earned an Axe Badge,\n"
 	.string "then I'm certain you can defeat these\l"
 	.string "rapscallions and let me back in my\l"
 	.string "home!$"
@@ -987,22 +989,22 @@ PetalburgCity_EventScript_JSOFight_Text_4:
 	.string "anything worse happens.$"
 
 PetalburgCity_EventScript_JSOFight_Text_5:
-	.string "MUNDUNGUS: Thank you, {PLAYER}.\p"
+	.string "Mundungus: Thank you, {PLAYER}.\p"
 	.string "I am still not quite sure who those\n"
 	.string "people dressed in orange are, but they\l"
 	.string "were quite the nuisance. I haven't the\l"
 	.string "faintest clue what they were talking\l"
 	.string "about, Anthrotech is dedicated to\l"
 	.string "improving the lives of those living in\l"
-	.string "ECODIA!$"
+	.string "Ecodia!$"
 
 PetalburgCity_EventScript_JSOFight_Text_6:
-	.string "MUNDUNGUS: There are some who wish to\n"
+	.string "Mundungus: There are some who wish to\n"
 	.string "get in our way, in the way of progress.\l"
 	.string "I do not understand their motives.$"
 
 PetalburgCity_EventScript_JSOFight_Text_7:
-	.string "MUNDUNGUS: Anyhow, that roadblock\n"
+	.string "Mundungus: Anyhow, that roadblock\n"
 	.string "appears to be in the past. Why don't\l"
 	.string "you come inside, I have something to\l"
 	.string "give you.$"

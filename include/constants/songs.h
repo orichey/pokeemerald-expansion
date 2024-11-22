@@ -962,6 +962,8 @@
 #define MUS_PMD_RESCUETEAM_OCEANIC        909 // Friend Area Oceanic
 #define MUS_STARDEW_THE_STARDROP_SALOON   910 // The Stardrop Saloon
 #define MUS_STARDEW_CLOUD_COUNTRY         911 // Cloud Country
+#define MUS_STARDEW_CLOTH                 912 // Cloth
+#define MUS_BIG_YELLOW_TAXI               913 // Big Yellow Taxi
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 

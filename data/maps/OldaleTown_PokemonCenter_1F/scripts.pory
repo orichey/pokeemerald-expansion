@@ -68,13 +68,13 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
 script OldaleTown_PokemonCenter_EventScript_Woman {
 	lock
 	faceplayer
-	msgbox(format("Although many of our ecosystems and cities are in flux, ECODIA still has many functional social services.\pI'm glad we still have free healthcare!"))
+	msgbox(format("Although many of our ecosystems and cities are in flux, Ecodia still has many functional social services.\pI'm glad we still have free healthcare!"))
     release
 }
 
 script OldaleTown_PokemonCenter_EventScript_Scientist {
 	lock
 	faceplayer
-	msgbox(format("All of the surrounding regions got hit by disasters even worse than ECODIA. It seems that POKéMON from those regions have migrated here, and there are people who dedicate their lives to their conservation.\pThere's even one such person in town!"))
+	msgbox(format("All of the surrounding regions got hit by disasters even worse than Ecodia. It seems that Pokémon from those regions have migrated here, and there are people who dedicate their lives to their conservation.\pThere's even one such person in town!"))
     release
 }

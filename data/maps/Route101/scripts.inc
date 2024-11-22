@@ -331,16 +331,15 @@ Route101_EventScript_Balls_5:
 
 
 Route101_EventScript_Balls_Text_0:
-	.string "The POKéMON MART in DESOLA TOWN is\n"
-	.string "shut down. Are you going on an\l"
-	.string "adventure? Have some Poké Balls and\l"
-	.string "Potions!$"
+	.string "The Pokémon Mart in Desola Town is shut\n"
+	.string "down. Are you going on an adventure?\l"
+	.string "Have some Poké Balls and Potions!$"
 
 Route101_EventScript_Balls_Text_1:
-	.string "Other POKéMON MARTS throughout the\n"
+	.string "Other Pokémon Marts throughout the\n"
 	.string "region are open, but these might be the\l"
 	.string "only supplies you can find before\l"
-	.string "TREEFALL TOWN.\p"
+	.string "Treefall Town.\p"
 	.string "I may have dropped some other items\n"
 	.string "around here too...$"
 
@@ -356,7 +355,7 @@ PostBattle_Adam::
 	.string "the TV says.$"
 
 Eva_Intro::
-	.string "DESOLA TOWN is so empty, is the rest of\n"
+	.string "Desola Town is so empty, is the rest of\n"
 	.string "the region like this too?$"
 
 Eva_Outro::

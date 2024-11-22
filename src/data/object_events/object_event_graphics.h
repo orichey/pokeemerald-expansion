@@ -382,7 +382,7 @@ const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_event
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u32 gObjectEventPic_JSOBoy[] = INCBIN_U32("graphics/object_events/pics/people/jsoboy_1.4bpp");
-const u16 gObjectEventPalette_JSOBoy[] = INCBIN_U16("graphics/object_events/pics/people/jsoboy_1.gbapal");
+const u16 gObjectEventPalette_JSOBoy[] = INCBIN_U16("graphics/object_events/pics/people/jsogirl.gbapal");
 const u32 gObjectEventPic_JSOGirl[] = INCBIN_U32("graphics/object_events/pics/people/jsogirl.4bpp");
 const u16 gObjectEventPalette_JSOGirl[] = INCBIN_U16("graphics/object_events/pics/people/jsogirl.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");

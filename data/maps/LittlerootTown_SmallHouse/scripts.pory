@@ -6,7 +6,7 @@ LittlerootTown_SmallHouse_MapScripts::
 script LittlerootTown_SmallHouse_EventScript_Mom {
 	lock
 	faceplayer
-	msgbox(format("Nearly all of the towns and cities across ECODIA are experiencing different effects of climate collapse.\pWho knew there would be so many kinds of impacts?"))
+	msgbox(format("Nearly all of the towns and cities across Ecodia are experiencing different effects of climate collapse.\pWho knew there would be so many kinds of impacts?"))
     release
 }
 

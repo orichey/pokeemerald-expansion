@@ -51,7 +51,6 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
-	call_if_unset FLAG_UNUSED_0x024, LittlerootTown_EventScript_SetupArchieBattle
 	end
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
@@ -943,7 +942,7 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 
 LittlerootTown_Text_TechnologyIsAmazing:
 	.string "Human activity has caused irreversible\n"
-	.string "damage throughout ECODIA.\p"
+	.string "damage throughout Ecodia.\p"
 	.string "The power of technology is amazing!$"
 
 LittlerootTown_Text_SpruceSpendsDaysInLab:

@@ -1303,6 +1303,8 @@ SECTIONS {
         sound/songs/midi/mus_pmd_rescueteam_oceanic.o(.rodata);
         sound/songs/midi/mus_stardew_the_stardrop_saloon.o(.rodata);
         sound/songs/midi/mus_stardew_cloud_country.o(.rodata);
+        sound/songs/midi/mus_stardew_cloth.o(.rodata);
+        sound/songs/midi/mus_big_yellow_taxi.o(.rodata);
     } > ROM =0
 
     lib_rodata :

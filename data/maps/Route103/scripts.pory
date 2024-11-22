@@ -1,3 +1,4 @@
+raw`
 .set LOCALID_RIVAL, 2
 
 Route103_MapScripts::
@@ -350,104 +351,94 @@ Route103_Text_ShortcutToOldale:
 Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
-
-Route103_EventScript_WalkingYoungster::
+`
+script Route103_EventScript_WalkingYoungster{
 	lock
 	faceplayer
-	msgbox Route103_EventScript_WalkingYoungster_Text_0
+	msgbox(format("I was hoping to visit my friends in Seaspray Town, but I don't know that I can get through!"))
 	release
 	end
+}
 
-
-Route103_EventScript_HappyFisher::
+script Route103_EventScript_HappyFisher{
 	lock
 	faceplayer
-	msgbox Route103_EventScript_HappyFisher_Text_0
+	msgbox(format("The sea levels have risen.\nMore fish for me!"))
 	closemessage
-	applymovement 15, Common_Movement_FaceOriginalDirection
-	waitmovement 0
+	applymovement(15, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
 	release
 	end
+}
 
 
-Route103_EventScript_DoubleBattlePartOne::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_1, IntroText_Francis, LoseText_Francis
-	msgbox PostBattle_OldCouple1, MSGBOX_AUTOCLOSE
+script Route103_EventScript_DoubleBattlePartOne {
+    trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_1, IntroText_Francis, LoseText_Francis)
+	msgbox(PostBattle_OldCouple1, MSGBOX_AUTOCLOSE) 
 	waitmessage
-	end
+    end
+}
 
-
-Route103_EventScript_DoubleBattlePartTwo::
-	trainerbattle_single TRAINER_SAWYER_1, IntroText_George, LoseText_George
-	msgbox PostBattle_OldCouple2, MSGBOX_AUTOCLOSE
+script Route103_EventScript_DoubleBattlePartTwo {
+	trainerbattle_single(TRAINER_SAWYER_1, IntroText_George, LoseText_George)
+	msgbox(PostBattle_OldCouple2, MSGBOX_AUTOCLOSE) 
 	waitmessage
-	end
+    end
+}
 
-
-Route103_EventScript_HidingBugTrainer::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_2, IntroText_Jonny, LoseText_Jonny
-	msgbox PostBattle_Jonny, MSGBOX_AUTOCLOSE
+script Route103_EventScript_HidingBugTrainer {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_2, IntroText_Jonny, LoseText_Jonny)
+	msgbox(PostBattle_Jonny, MSGBOX_AUTOCLOSE) 
 	waitmessage
-	end
+    end
+}
 
-
-Route103_EventScript_KingTrainer::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_3, IntroText_Kingston, LoseText_Kingston
-	msgbox PostBattle_Kingston, MSGBOX_AUTOCLOSE
+script Route103_EventScript_KingTrainer {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_3, IntroText_Kingston, LoseText_Kingston)
+	msgbox(PostBattle_Kingston, MSGBOX_AUTOCLOSE) 
 	waitmessage
-	end
+    end
+}
 
+text IntroText_Kingston{
+	format("My Pokémon are strong against water. I feel like I'm the king of the hill!")
+}
 
-Route103_EventScript_WalkingYoungster_Text_0:
-	.string "I was hoping to visit my friends in\n"
-	.string "Seaspray Town, but I don't know that I\l"
-	.string "can get through!$"
+text LoseText_Kingston{
+	format("You've unseated me!")
+}
 
-Route103_EventScript_HappyFisher_Text_0:
-	.string "The sea levels have risen.\n"
-	.string "More fish for me!$"
+text PostBattle_Kingston{
+	format("Even though my Pokémon are successful, this sea level rise can't possibly be a good thing.\pThe environment that was here previously has been destroyed!")
+}
 
-IntroText_Kingston::
-	.string "My Pokémon are strong against water. I\n"
-	.string "feel like I'm the king of the hill!$"
+text IntroText_Jonny{
+	format("Hah!\nI bet you didn't see me!")
+}
 
-LoseText_Kingston::
-	.string "You've unseated me!$"
+text LoseText_Jonny{
+	format("Huh, you were ready!")
+}
 
-PostBattle_Kingston::
-	.string "Even though my Pokémon are successful,\n"
-	.string "this sea level rise can't possibly be a\l"
-	.string "good thing.\p"
-	.string "The environment that was here\n"
-	.string "previously has been destroyed!$"
+text PostBattle_Jonny{
+	format("There's a storm ahead. Good thing my Pokémon like the rain!")
+}
 
-IntroText_Jonny::
-	.string "Hah!\n"
-	.string "I bet you didn't see me!$"
-
-LoseText_Jonny::
-	.string "Huh, you were ready!$"
-
-PostBattle_Jonny::
-	.string "There's a storm ahead. Good thing my\n"
-	.string "Pokémon like the rain!$"
-
-IntroText_George::
-	.string "We escaped, why are you going south?$"
-
-IntroText_Francis::
-	.string "Disaster lies ahead!$"
-
-LoseText_George::
-	.string "You're strong!$"
-
-LoseText_Francis::
-	.string "Wow, maybe you can handle the storm!$"
-
-PostBattle_OldCouple1::
-	.string "We escaped from Seaspray Town. We don't\n"
-	.string "see many people heading there.$"
-
-PostBattle_OldCouple2::
-	.string "I've never seen such stormy conditions.\n"
-	.string "Hopefully the rain lets up soon.$"
+text IntroText_George{
+	format("We escaped, why are you going south?")
+}
+text IntroText_Francis{
+	format("Disaster lies ahead!")
+}
+text LoseText_George{
+    format("You're strong!")
+}
+text LoseText_Francis{
+    format("Wow, maybe you can handle the storm!")
+}
+text PostBattle_OldCouple1{
+    format("We escaped from Seaspray Town. We don't see many people heading there.")
+}
+text PostBattle_OldCouple2{
+    format("I've never seen such stormy conditions. Hopefully the rain lets up soon.")
+}

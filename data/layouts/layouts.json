@@ -114,7 +114,7 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
-      "width": 48,
+      "width": 55,
       "height": 70,
       "primary_tileset": "gTileset_General_Flood",
       "secondary_tileset": "gTileset_Sootopolis",
@@ -1314,8 +1314,8 @@
     {
       "id": "LAYOUT_GRANITE_CAVE_1F",
       "name": "GraniteCave_1F_Layout",
-      "width": 42,
-      "height": 15,
+      "width": 11,
+      "height": 11,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/GraniteCave_1F/border.bin",

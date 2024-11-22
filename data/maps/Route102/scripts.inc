@@ -155,19 +155,19 @@ Route102_Text_LeftRightSign::
 
 
 Route102_EventScript_Youngster_Text_0:
-	.string "I've heard TREEFALL WOODS has\n"
+	.string "I've heard Treefall Woods has\n"
 	.string "experienced severe deforestation.\p"
 	.string "Are the rumors true?$"
 
 Route102_EventScript_Woman_Text_0:
 	.string "Just a year ago, lumberjacks decimated\n"
-	.string "TREEFALL WOODS. They left suddenly,\l"
-	.string "following the orders of Paul, TREEFALL\l"
-	.string "CITY'S Gym Leader.\p"
-	.string "Many POKéMON species that used to live\n"
+	.string "Treefall Woods. They left suddenly,\l"
+	.string "following the orders of Paul, Treefall\l"
+	.string "City's Gym Leader.\p"
+	.string "Many Pokémon species that used to live\n"
 	.string "in the woods were driven out due to the\l"
 	.string "destruction of the forest, and new\l"
-	.string "POKéMON have moved in.$"
+	.string "Pokémon have moved in.$"
 
 Route102_EventScript_JSOboy1_Text_0:
 	.string "Anthrotech and Paul are trying to plant\n"
@@ -179,9 +179,9 @@ Route102_EventScript_Questioner_Text_0:
 	.string "and why are they so angry?$"
 
 Route102_Text_UpDownSign_Text_0:
-	.string "DESOLA TOWN {UP_ARROW}\n"
-	.string "TREEFALL WOODS {DOWN_ARROW}$"
+	.string "Desola Town {UP_ARROW}\n"
+	.string "Treefall Woods {DOWN_ARROW}$"
 
 Route102_Text_LeftRightSign_Text_0:
-	.string "TREEFALL WOODS {LEFT_ARROW}\n"
-	.string "TREEFALL CITY {RIGHT_ARROW}$"
+	.string "Treefall Woods {LEFT_ARROW}\n"
+	.string "Treefall City {RIGHT_ARROW}$"

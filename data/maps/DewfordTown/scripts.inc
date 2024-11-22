@@ -1,7 +1,7 @@
-.set LOCALID_VICTOR, 35
-.set LOCALID_VICTORIA, 36
-.set LOCALID_VIVI, 37
-.set LOCALID_VICKY, 38
+.set LOCALID_VICTOR, 33
+.set LOCALID_VICTORIA, 34
+.set LOCALID_VIVI, 35
+.set LOCALID_VICKY, 36
 
 @ Sailing to and from Dewford uses local IDs from different maps
 @ e.g. Route 104's sail to Dewford script references local IDs from Dewford's map
@@ -18,6 +18,7 @@
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, DewfordTown_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DewfordTown_OnFrame
 	.byte 0
 
 DewfordTown_OnTransition:
@@ -29,6 +30,10 @@ DewfordTown_OnResume:
 	goto_if_not_defeated TRAINER_VICKY, DewfordTown_EventScript_SetWinstratesNotDefeated
 	goto_if_defeated TRAINER_VICKY, DewfordTown_EventScript_SetWinstratesDefeated
 	end
+
+DewfordTown_OnFrame:
+	map_script_2 VAR_DEWFORD_TOWN_STATE, 2, DewfordTown_EventScript_RemoveWinstrate
+	.2byte 0
 
 DewfordTown_EventScript_RemoveStormy::
 	setflag FLAG_UNUSED_0x034
@@ -52,12 +57,12 @@ DewfordTown_EventScript_SetWinstratesDefeated::
 
 DewfordTown_EventScript_StormyInFront::
 	setobjectxyperm 19, 42, 42
-	setobjectxyperm 32, 15, 37
-	setobjectxyperm 34, 14, 37
-	setobjectxyperm 33, 15, 36
-	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
-	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectxyperm 30, 15, 37
+	setobjectxyperm 32, 14, 37
+	setobjectxyperm 31, 15, 36
+	setobjectmovementtype 30, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
+	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
+	setobjectmovementtype 31, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	call_if_eq VAR_UNUSED_0x40F8, 3, DewfordTown_EventScript_RemoveStormy
 	end
 
@@ -1026,14 +1031,26 @@ DewfordTown_EventScript_LastWinstrate::
 	end
 
 
+DewfordTown_EventScript_SecondFisher::
+	lock
+	faceplayer
+	msgbox DewfordTown_EventScript_SecondFisher_Text_0
+	closemessage
+	applymovement 40, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
 DewfordTown_EventScript_PushyMan::
 	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, CameraUpTwo
 	waitmovement 0
-	addobject 19
+	addobject 17
 	waitmovement 0
-	applymovement 18, ManWalkInPlaceUp
+	applymovement 16, ManWalkInPlaceUp
 	waitmovement 0
 	msgbox DewfordTown_EventScript_PushyMan_Text_0
 	waitmovement 0
@@ -1045,14 +1062,19 @@ DewfordTown_EventScript_PushyMan::
 	msgbox DewfordTown_EventScript_PushyMan_Text_1
 	closemessage
 	playbgm MUS_DP_ENCOUNTER_INTENSE, FALSE
-	applymovement 18, WalkLeft
+	applymovement 16, WalkLeft
 	waitmovement 0
-	applymovement 18, FaceRight
+	applymovement 16, FaceRight
 	waitmovement 0
-	applymovement 18, Common_Movement_ExclamationMark
+	setobjectxy 17, 42, 41
 	waitmovement 0
-	setobjectxy 19, 42, 41
-	applymovement 19, WalkDown
+	applymovement 17, WalkDown
+	waitmovement 0
+	applymovement 16, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 40, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement 40, Common_Movement_ExclamationMark
 	waitmovement 0
 	closedoor 42, 41
 	waitdooranim
@@ -1060,28 +1082,25 @@ DewfordTown_EventScript_PushyMan::
 	msgbox DewfordTown_EventScript_PushyMan_Text_2
 	closemessage
 	waitmovement 0
-	applymovement 24, Common_Movement_ExclamationMark
-	applymovement 27, Common_Movement_ExclamationMark
 	applymovement 22, Common_Movement_ExclamationMark
+	applymovement 24, Common_Movement_ExclamationMark
+	applymovement 20, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement 24, Common_Movement_FaceLeft
-	waitmovement 0
-	applymovement 22, Common_Movement_FaceDown
-	waitmovement 0
-	applymovement 20, Common_Movement_FaceLeft
-	waitmovement 0
-	applymovement 26, Common_Movement_FaceRight
+	applymovement 22, Common_Movement_FaceLeft
 	waitmovement 0
 	applymovement 20, Common_Movement_FaceDown
 	waitmovement 0
+	applymovement 18, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement 24, Common_Movement_FaceRight
+	waitmovement 0
 	delay 120
 	applymovement 22, Common_Movement_FaceOriginalDirection
+	applymovement 20, Common_Movement_FaceOriginalDirection
+	applymovement 18, Common_Movement_FaceOriginalDirection
 	applymovement 24, Common_Movement_FaceOriginalDirection
-	applymovement 20, Common_Movement_FaceOriginalDirection
-	applymovement 26, Common_Movement_FaceOriginalDirection
-	applymovement 20, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	applymovement 19, Common_Movement_WalkInPlaceFasterDown
+	applymovement 17, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox DewfordTown_EventScript_PushyMan_Text_3
 	closemessage
@@ -1092,37 +1111,38 @@ DewfordTown_EventScript_PushyMan::
 	fadescreenswapbuffers FADE_TO_BLACK
 	playse SE_EXIT
 	delay 120
+	removeobject 16
 	removeobject 18
+	removeobject 19
 	removeobject 20
-	removeobject 21
 	removeobject 22
-	removeobject 23
 	removeobject 24
-	removeobject 26
-	removeobject 27
+	removeobject 25
+	applymovement 40, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	setflag FLAG_UNUSED_0x02E
 	fadescreenswapbuffers FADE_FROM_BLACK
 	fadedefaultbgm
 	waitmovement 0
+	addobject 30
+	waitmovement 0
+	addobject 31
+	waitmovement 0
 	addobject 32
 	waitmovement 0
-	addobject 33
+	setobjectxyperm 17, 42, 42
 	waitmovement 0
-	addobject 34
+	setobjectxyperm 30, 15, 37
 	waitmovement 0
-	setobjectxyperm 19, 42, 42
+	setobjectxyperm 32, 14, 37
 	waitmovement 0
-	setobjectxyperm 32, 15, 37
+	setobjectxyperm 31, 15, 36
 	waitmovement 0
-	setobjectxyperm 34, 14, 37
+	setobjectmovementtype 30, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
 	waitmovement 0
-	setobjectxyperm 33, 15, 36
+	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
 	waitmovement 0
-	setobjectmovementtype 32, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-	waitmovement 0
-	setobjectmovementtype 34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
-	waitmovement 0
-	setobjectmovementtype 33, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectmovementtype 31, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	waitmovement 0
 	setvar VAR_DEWFORD_TOWN_STATE, 1
 	releaseall
@@ -1141,17 +1161,17 @@ DewfordTown_EventScript_Ursaring::
 	waitmovement 0
 	delay 15
 	addvar VAR_UNUSED_0x40F8, 1
-	setobjectxyperm 19, 42, 42
+	setobjectxyperm 17, 42, 42
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject 33
-	removeobject 34
+	removeobject 31
+	removeobject 32
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	fadedefaultbgm
 	waitmovement 0
 	delay 15
-	applymovement 32, UpOneLeftOne
+	applymovement 30, UpOneLeftOne
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
@@ -1159,9 +1179,9 @@ DewfordTown_EventScript_Ursaring::
 	waitmoncry
 	msgbox DewfordTown_EventScript_Ursaring_Text_1
 	closemessage
-	applymovement 32, RightEight
+	applymovement 30, RightEight
 	waitmovement 0
-	removeobject 32
+	removeobject 30
 	setflag FLAG_UNUSED_0x02F
 	compare VAR_UNUSED_0x40F8, 3
 	goto_if_eq DewfordTown_EventScript_Ursaring_2
@@ -1171,7 +1191,7 @@ DewfordTown_EventScript_Ursaring_1:
 	end
 
 DewfordTown_EventScript_Ursaring_2:
-	removeobject 19
+	removeobject 17
 	goto DewfordTown_EventScript_Ursaring_1
 
 
@@ -1188,17 +1208,17 @@ DewfordTown_EventScript_Manectric::
 	waitmovement 0
 	delay 15
 	addvar VAR_UNUSED_0x40F8, 1
-	setobjectxyperm 19, 42, 42
+	setobjectxyperm 17, 42, 42
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject 33
-	removeobject 34
+	removeobject 31
+	removeobject 32
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	fadedefaultbgm
 	waitmovement 0
 	delay 15
-	applymovement 32, UpOneLeftOne
+	applymovement 30, UpOneLeftOne
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
 	waitmovement 0
@@ -1206,9 +1226,9 @@ DewfordTown_EventScript_Manectric::
 	waitmoncry
 	msgbox DewfordTown_EventScript_Ursaring_Text_1
 	closemessage
-	applymovement 32, RightEight
+	applymovement 30, RightEight
 	waitmovement 0
-	removeobject 32
+	removeobject 30
 	setflag FLAG_UNUSED_0x02F
 	compare VAR_UNUSED_0x40F8, 3
 	goto_if_eq DewfordTown_EventScript_Manectric_2
@@ -1217,7 +1237,7 @@ DewfordTown_EventScript_Manectric_1:
 	end
 
 DewfordTown_EventScript_Manectric_2:
-	removeobject 19
+	removeobject 17
 	goto DewfordTown_EventScript_Manectric_1
 
 
@@ -1514,6 +1534,38 @@ UpOneLeftOne:
 	face_left
 	step_end
 
+CameraToWinstrate:
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_slow_diag_northwest
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 DewfordTown_EventScript_Aqua::
 	lock
 	faceplayer
@@ -1610,7 +1662,7 @@ DewfordTown_EventScript_WomanInLine::
 	faceplayer
 	msgbox DewfordTown_EventScript_WomanInLine_Text_0
 	closemessage
-	applymovement 20, Common_Movement_FaceOriginalDirection
+	applymovement 18, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -1621,7 +1673,7 @@ DewfordTown_EventScript_Boy1InLine::
 	faceplayer
 	msgbox DewfordTown_EventScript_Boy1InLine_Text_0
 	closemessage
-	applymovement 27, Common_Movement_FaceOriginalDirection
+	applymovement 25, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -1632,7 +1684,7 @@ DewfordTown_EventScript_Boy2InLine::
 	faceplayer
 	msgbox DewfordTown_EventScript_Boy2InLine_Text_0
 	closemessage
-	applymovement 21, Common_Movement_FaceOriginalDirection
+	applymovement 19, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -1643,7 +1695,7 @@ DewfordTown_EventScript_Boy3InLine::
 	faceplayer
 	msgbox DewfordTown_EventScript_Boy3InLine_Text_0
 	closemessage
-	applymovement 26, Common_Movement_FaceOriginalDirection
+	applymovement 24, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -1654,9 +1706,39 @@ DewfordTown_EventScript_SailorInLine::
 	faceplayer
 	msgbox DewfordTown_EventScript_SailorInLine_Text_0
 	closemessage
-	applymovement 22, Common_Movement_FaceOriginalDirection
+	applymovement 20, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
+	end
+
+
+DewfordTown_EventScript_RemoveWinstrate::
+	lockall
+	delay 30
+	fadescreenswapbuffers FADE_TO_BLACK
+	addobject 36
+	delay 30
+	waitmovement 0
+	setvar VAR_0x8004, 13
+	setvar VAR_0x8005, 17
+	special TeleportCamera
+	fadescreenswapbuffers FADE_FROM_BLACK
+	fadedefaultbgm
+	waitmovement 0
+	delay 60
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject 36
+	delay 60
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	setvar VAR_DEWFORD_TOWN_STATE, 3
+	delay 60
+	fadescreenswapbuffers FADE_TO_BLACK
+	special ReturnCameraToPlayer
+	fadescreenswapbuffers FADE_FROM_BLACK
+	special RemoveCameraObject
+	releaseall
 	end
 
 
@@ -1673,6 +1755,12 @@ DewfordTown_EventScript_LastWinstrate_Text_0:
 	.string "Thank you again for giving us something\n"
 	.string "to smile about.\p"
 	.string "Good luck on the rest of your journey!$"
+
+DewfordTown_EventScript_SecondFisher_Text_0:
+	.string "I'm not sure if I want to leave Seaspray\n"
+	.string "Town.\p"
+	.string "Who knows if where we're being sent has\n"
+	.string "fishing as good as this!$"
 
 DewfordTown_EventScript_PushyMan_Text_0:
 	.string "I've waited long enough, I want to get\n"

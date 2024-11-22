@@ -1,4 +1,4 @@
-.set LOCALID_MART_EMPLOYEE, 2
+.set LOCALID_Mart_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
 
@@ -49,14 +49,14 @@ OldaleTown_EventScript_MartEmployee::
 	end
 
 OldaleTown_EventScript_GoToMartSouth::
-	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeSouth
+	applymovement LOCALID_Mart_EMPLOYEE, OldaleTown_Movement_EmployeeSouth
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerSouth
 	waitmovement 0
 	goto OldaleTown_EventScript_ExplainPokemonMart
 	end
 
 OldaleTown_EventScript_GoToMartNorth::
-	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeNorth
+	applymovement LOCALID_Mart_EMPLOYEE, OldaleTown_Movement_EmployeeNorth
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerNorth
 	waitmovement 0
 	goto OldaleTown_EventScript_ExplainPokemonMart
@@ -64,7 +64,7 @@ OldaleTown_EventScript_GoToMartNorth::
 
 OldaleTown_EventScript_GoToMartEast::
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerEast
-	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeEast
+	applymovement LOCALID_Mart_EMPLOYEE, OldaleTown_Movement_EmployeeEast
 	waitmovement 0
 	goto OldaleTown_EventScript_ExplainPokemonMart
 	end
@@ -345,39 +345,39 @@ OldaleTown_Text_SavingMyProgress:
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a Pokémon Mart.\p"
 	.string "Can I get you to come with me?$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
+	.string "This is a Pokémon Mart.\n"
 	.string "Just look for our blue roof.\p"
 	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "POKé BALLS for catching Pokémon.\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
 	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
+	.string "even more useful than a Pokémon CENTER\l"
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
 	.string "Please don't come in here.\p"
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints:
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
+	.string "a rare Pokémon.\p"
 	.string "But it turns out they were only my\n"
 	.string "own footprints…$"
 
@@ -476,15 +476,18 @@ OldaleTown_EventScript_EnterTop_1:
 
 OldaleTown_EventScript_EnterTop_2:
 	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement OBJ_EVENT_ID_PLAYER, EnterTop
 	waitmovement 0
 	applymovement 5, AnthrotechWalkLeft
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_0
+	closemessage
 	applymovement 5, PlayerUp
 	delay 60
 	applymovement 5, HikerDown
 	msgbox OldaleTown_EventScript_EnterTop_Text_1
+	closemessage
 	applymovement 5, LookLeft
 	waitmovement 0
 	delay 35
@@ -492,12 +495,15 @@ OldaleTown_EventScript_EnterTop_2:
 	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_2
+	closemessage
 	applymovement 5, WalkToPlayer
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_3
+	closemessage
 	applymovement 5, HikerDown
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_4
+	closemessage
 	applymovement 5, AnthroLookRight
 	msgbox OldaleTown_EventScript_EnterTop_Text_5
 	setflag FLAG_SYS_POKEDEX_GET
@@ -510,6 +516,7 @@ OldaleTown_EventScript_EnterTop_2:
 	msgbox OldaleTown_EventScript_EnterTop_Text_6
 	waitfanfare
 	msgbox OldaleTown_EventScript_EnterTop_Text_7
+	closemessage
 	applymovement 5, AnthroLeaves
 	waitmovement 0
 	setflag FLAG_UNUSED_0x028
@@ -525,15 +532,18 @@ OldaleTown_EventScript_EnterMid_1:
 
 OldaleTown_EventScript_EnterMid_2:
 	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement OBJ_EVENT_ID_PLAYER, EnterMid
 	waitmovement 0
 	applymovement 5, AnthrotechWalkLeft
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_0
+	closemessage
 	applymovement 5, PlayerUp
 	delay 60
 	applymovement 5, HikerDown
 	msgbox OldaleTown_EventScript_EnterTop_Text_1
+	closemessage
 	applymovement 5, LookLeft
 	waitmovement 0
 	delay 35
@@ -541,12 +551,15 @@ OldaleTown_EventScript_EnterMid_2:
 	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_2
+	closemessage
 	applymovement 5, WalkToPlayer
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterMid_Text_0
+	closemessage
 	applymovement 5, HikerDown
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterMid_Text_1
+	closemessage
 	applymovement 5, AnthroLookRight
 	msgbox OldaleTown_EventScript_EnterTop_Text_5
 	setflag FLAG_SYS_POKEDEX_GET
@@ -559,6 +572,7 @@ OldaleTown_EventScript_EnterMid_2:
 	msgbox OldaleTown_EventScript_EnterTop_Text_6
 	waitfanfare
 	msgbox OldaleTown_EventScript_EnterTop_Text_7
+	closemessage
 	applymovement 5, AnthroLeaves
 	waitmovement 0
 	setflag FLAG_UNUSED_0x028
@@ -574,15 +588,18 @@ OldaleTown_EventScript_EnterBottom_1:
 
 OldaleTown_EventScript_EnterBottom_2:
 	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement OBJ_EVENT_ID_PLAYER, EnterBottom
 	waitmovement 0
 	applymovement 5, AnthrotechWalkLeft
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_0
+	closemessage
 	applymovement 5, PlayerUp
 	delay 60
 	applymovement 5, HikerDown
 	msgbox OldaleTown_EventScript_EnterTop_Text_1
+	closemessage
 	applymovement 5, LookLeft
 	waitmovement 0
 	delay 35
@@ -590,12 +607,15 @@ OldaleTown_EventScript_EnterBottom_2:
 	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterTop_Text_2
+	closemessage
 	applymovement 5, WalkToPlayer
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterMid_Text_0
+	closemessage
 	applymovement 5, HikerDown
 	waitmovement 0
 	msgbox OldaleTown_EventScript_EnterMid_Text_1
+	closemessage
 	applymovement 5, AnthroLookRight
 	msgbox OldaleTown_EventScript_EnterTop_Text_5
 	setflag FLAG_SYS_POKEDEX_GET
@@ -608,6 +628,7 @@ OldaleTown_EventScript_EnterBottom_2:
 	msgbox OldaleTown_EventScript_EnterTop_Text_6
 	waitfanfare
 	msgbox OldaleTown_EventScript_EnterTop_Text_7
+	closemessage
 	applymovement 5, AnthroLeaves
 	waitmovement 0
 	setflag FLAG_UNUSED_0x028
@@ -699,12 +720,12 @@ AnthroLeaves:
 	step_end
 
 OldaleTown_EventScript_NewSign_Text_0:
-	.string "DESOLA TOWN\n"
+	.string "Desola Town\n"
 	.string "“A sign of what's to come.”$"
 
 OldaleTown_EventScript_LibrarySign_Text_0:
-	.string "DESOLA TOWN Library: Where the past,\n"
-	.string "present, and future of ECODIA is\l"
+	.string "Desola Town Library: Where the past,\n"
+	.string "present, and future of Ecodia is\l"
 	.string "studied.$"
 
 OldaleTown_EventScript_JoeySign_Text_0:
@@ -716,14 +737,14 @@ OldaleTown_EventScript_OldWoman_Text_0:
 	.string "nothing but a pile of rubble.$"
 
 OldaleTown_EventScript_LittleBoy_Text_0:
-	.string "Mommy says DESOLA TOWN is one of the\n"
-	.string "last safe places in ECODIA.\p"
-	.string "Even TREEFALL FOREST is scary!$"
+	.string "Mommy says Desola Town is one of the\n"
+	.string "last safe places in Ecodia.\p"
+	.string "Even Treefall Forest is scary!$"
 
 OldaleTown_EventScript_ScholarBoy_Text_0:
 	.string "This house has been abandoned for a\n"
-	.string "long time, much like the POKéMON MART.\p"
-	.string "It's hard to imagine DESOLA TOWN will\n"
+	.string "long time, much like the Pokémon Mart.\p"
+	.string "It's hard to imagine Desola Town will\n"
 	.string "recover, but I have hope in\l"
 	.string "Anthrotech!$"
 
@@ -746,59 +767,59 @@ OldaleTown_EventScript_EnterTop_Text_2:
 	.string "???: Oh! Hello there!$"
 
 OldaleTown_EventScript_EnterTop_Text_3:
-	.string "???: Are you a resident of DESOLA TOWN?\p"
+	.string "???: Are you a resident of Desola Town?\p"
 	.string "???: You're not? That's too bad. I was\n"
 	.string "hoping to talk to a local about the\l"
 	.string "state of the town.\p"
 	.string "???: How rude, I didn't introduce\n"
 	.string "myself! I am Mundungus, the founder\l"
 	.string "and president of Anthrotech!\p"
-	.string "MUNDUNGUS: I'm going around ECODIA,\n"
+	.string "Mundungus: I'm going around Ecodia,\n"
 	.string "learning about the problems our cities\l"
 	.string "face and how I can help solve them!$"
 
 OldaleTown_EventScript_EnterTop_Text_4:
-	.string "MUNDUNGUS: For example, DESOLA TOWN\n"
+	.string "Mundungus: For example, Desola Town\n"
 	.string "seems a little empty, but I'm certain\l"
 	.string "Anthrotech can work to bring some\l"
 	.string "economic revitalization!$"
 
 OldaleTown_EventScript_EnterTop_Text_5:
-	.string "MUNDUNGUS: In any case, what is your\n"
+	.string "Mundungus: In any case, what is your\n"
 	.string "name?\p"
-	.string "{PLAYER}? From ANTHROH TOWN? Why,\n"
+	.string "{PLAYER}? From Anthroh Town? Why,\n"
 	.string "you and I have the same roots!\p"
-	.string "MUNDUNGUS: I would love to hear about\n"
-	.string "your ideas on how to make ECODIA a\l"
-	.string "more resilient and sustainable region,\l"
-	.string "how about you come talk to me later, in\l"
-	.string "TREEFALL CITY?\p"
-	.string "MUNDUNGUS: Here, take one of our\n"
-	.string "innovations, the POKéDEX!$"
+	.string "Mundungus: I would love to hear about\n"
+	.string "your ideas on how to make Ecodia a more\l"
+	.string "resilient and sustainable region, how\l"
+	.string "about you come talk to me later, in\l"
+	.string "Treefall City?\p"
+	.string "Mundungus: Here, take one of our\n"
+	.string "innovations, the Pokédex!$"
 
 OldaleTown_EventScript_EnterTop_Text_6:
-	.string "{PLAYER} received the POKéDEX!$"
+	.string "{PLAYER} received the Pokédex!$"
 
 OldaleTown_EventScript_EnterTop_Text_7:
-	.string "MUNDUNGUS: I'll see you soon,\n"
+	.string "Mundungus: I'll see you soon,\n"
 	.string "{PLAYER}!$"
 
 OldaleTown_EventScript_EnterMid_Text_0:
-	.string "???: Are you a resident of DESOLA TOWN?\p"
+	.string "???: Are you a resident of Desola Town?\p"
 	.string "???: You're not? That's too bad. I was\n"
 	.string "hoping to talk to a local and get their\l"
 	.string "opinion on the state of the town.\p"
 	.string "???: How rude, I didn't introduce\n"
 	.string "myself! I am Mundungus, the founder\l"
 	.string "and president of Anthrotech!\p"
-	.string "MUNDUNGUS: I'm going around ECODIA,\n"
+	.string "Mundungus: I'm going around Ecodia,\n"
 	.string "learning about the problems our cities\l"
 	.string "face and how I can help solve them!$"
 
 OldaleTown_EventScript_EnterMid_Text_1:
-	.string "MUNDUNGUS: For example, DESOLA TOWN\n"
+	.string "Mundungus: For example, Desola Town\n"
 	.string "seems a little empty, but I'm certain\l"
 	.string "Anthrotech can work to bring some\l"
 	.string "economic revitalization! Perhaps\l"
-	.string "reopening the POKéMON MART or\l"
+	.string "reopening the Pokémon Mart or\l"
 	.string "constructing a resort for travelers?$"

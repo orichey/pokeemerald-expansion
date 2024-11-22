@@ -20,18 +20,18 @@ script StartingHouse_EventScript_MomAskSpruce{
     lock
     faceplayer
     if(var(VAR_UNUSED_0x40F7) == 0) {
-        msgbox("MOM: Did you talk to Professor Spruce?")
+        msgbox("Mom: Did you talk to Professor Spruce?")
     }
     if(var(VAR_UNUSED_0x40F7) == 2) {
-        msgbox("MOM: Hi, honey! You look tired.\n"
+        msgbox("Mom: Hi, honey! You look tired.\n"
         "Why not take a quick rest?")
         call(Common_EventScript_OutOfCenterPartyHeal)
         msgbox("Be safe out there!$")
     }
     if(var(VAR_UNUSED_0x40F7) == 1) {
-        msgbox("MOM: So Professor Spruce wants you to\n"
-        "explore ECODIA for him?\p"
-        "MOM: That sounds like quite a task.\n"
+        msgbox("Mom: So Professor Spruce wants you to\n"
+        "explore Ecodia for him?\p"
+        "Mom: That sounds like quite a task.\n"
         "But I know you can do it, sweetie!\l"
         "Be safe, and come home any time!$")
         setvar(VAR_UNUSED_0x40F7, 2)
@@ -48,37 +48,44 @@ script StartingHouse_EventScript_MomBeckons{
         waitmovement(0)
         applymovement(1,Common_Movement_ExclamationMark)
         waitmovement(0)
-        msgbox("MOM: Oh, {PLAYER}! You're awake!\n"
+        msgbox("Mom: Oh, {PLAYER}! You're awake!\n"
         "I was just about to watch the news.\p"
         "Come quick!$")
         closemessage
         applymovement(1,MomMove)
         waitmovement(0)
+        delay(15)
         applymovement(OBJ_EVENT_ID_PLAYER,GoToTV)
         waitmovement(0)
+        delay(45)
         special(TurnOnTVScreen)
         playbgm(MUS_ENCOUNTER_INTERVIEWER, FALSE)
         msgbox("BREAKING NEWS! The impacts of climate\n"
-        "change continue to batter ECODIA!\p"
+        "change continue to batter Ecodia!\p"
         "Heat waves, forest fires, deluges, and\n"
         "floods are all roaring ferociously!\p"
         "When will it come to an end?$")
         special(TurnOffTVScreen)
         fadedefaultbgm
-        delay(35)
+        delay(120)
         applymovement(OBJ_EVENT_ID_PLAYER,LookToMom)
         waitmovement(0)
-        msgbox("MOM: I can't believe this is happening\n"
+        msgbox("Mom: I can't believe this is happening\n"
         "to our new home. To think, after\l"
-        "escaping the calamities in HOENN, we\l"
+        "escaping the calamities in Hoenn, we\l"
         "would find something even worse.")
+        waitmovement(0)
+        closemessage
+        delay(30)
         applymovement(1,MomLookUp)
         waitmovement(0)
-        msgbox("MOM: ...$")
+        delay(60)
+        msgbox("Mom: ...$")
+        closemessage
+        delay(60)
         applymovement(1,MomLook)
         waitmovement(0)
-        msgbox("Say, why don't you go see PROF. SPRUCE?\n"
-        "He might have some explanation for this!")
+        msgbox(format("Say, why don't you talk to Professor Spruce? He might have an explanation for all of this!"))
         setflag(FLAG_UNUSED_0x025)
         setflag(FLAG_SYS_B_DASH)
     }
@@ -93,37 +100,44 @@ script StartingHouse_EventScript_MomBeckonsFromLeft{
         applymovement(OBJ_EVENT_ID_PLAYER, LookRight)
         applymovement(1,Common_Movement_ExclamationMark)
         waitmovement(0)
-        msgbox("MOM: Oh, {PLAYER}! You're awake!\n"
+        msgbox("Mom: Oh, {PLAYER}! You're awake!\n"
         "I was just about to watch the news.\p"
         "Come quick!$")
         closemessage
         applymovement(1,MomMove)
         waitmovement(0)
+        delay(15)
         applymovement(OBJ_EVENT_ID_PLAYER,GoToTVFromLeft)
         waitmovement(0)
+        delay(45)
         special(TurnOnTVScreen)
         playbgm(MUS_ENCOUNTER_INTERVIEWER, FALSE)
         msgbox("BREAKING NEWS! The impacts of climate\n"
-        "change continue to batter ECODIA!\p"
+        "change continue to batter Ecodia!\p"
         "Heat waves, forest fires, deluges, and\n"
         "floods are all roaring ferociously!\p"
         "When will it come to an end?$")
         special(TurnOffTVScreen)
         fadedefaultbgm
-        delay(35)
+        delay(120)
         applymovement(OBJ_EVENT_ID_PLAYER,LookToMom)
         waitmovement(0)
-        msgbox("MOM: I can't believe this is happening\n"
+        msgbox("Mom: I can't believe this is happening\n"
         "to our new home. To think, after\l"
-        "escaping the calamities in HOENN, we\l"
+        "escaping the calamities in Hoenn, we\l"
         "would find something even worse.")
+        waitmovement(0)
+        closemessage
+        delay(30)
         applymovement(1,MomLookUp)
         waitmovement(0)
-        msgbox("MOM:...$")
+        delay(60)
+        msgbox("Mom: ...$")
+        closemessage
+        delay(60)
         applymovement(1,MomLook)
         waitmovement(0)
-        msgbox("Say, why don't you go see PROF. SPRUCE?\n"
-        "He might have some explanation for this!")
+        msgbox(format("Say, why don't you talk to Professor Spruce? He might have an explanation for all of this!"))
         setflag(FLAG_UNUSED_0x025)
         setflag(FLAG_SYS_B_DASH)
     }

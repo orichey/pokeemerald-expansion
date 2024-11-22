@@ -2,7 +2,7 @@ raw`
 .set LOCALID_WALLY, 2
 .set LOCALID_JSOGIRL, 3
 .set LOCALID_JSOBOY, 4
-.set LOCALID_MUNDUNGUS, 5
+.set LOCALID_Mundungus, 5
 .set LOCALID_GYM_BOY, 8
 .set LOCALID_SCOTT, 9
 
@@ -21,8 +21,8 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_SetAnthroLocation::
-	setobjectxyperm LOCALID_MUNDUNGUS, 25, 8
-	setobjectmovementtype LOCALID_MUNDUNGUS, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_Mundungus, 25, 8
+	setobjectmovementtype LOCALID_Mundungus, MOVEMENT_TYPE_FACE_UP
 	return
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
@@ -72,14 +72,14 @@ PetalburgCity_EventScript_WallyTutorial::
 PetalburgCity_EventScript_WalkToWallyHouse::
 	lockall
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	applymovement LOCALID_MUNDUNGUS, PetalburgCity_Movement_WalkToWallyHouseWallysDad
+	applymovement LOCALID_Mundungus, PetalburgCity_Movement_WalkToWallyHouseWallysDad
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
 	waitmovement 0
 	setvar VAR_0x8004, 7
 	setvar VAR_0x8005, 5
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	applymovement LOCALID_MUNDUNGUS, PetalburgCity_Movement_WalkInsideHouseWallysDad
+	applymovement LOCALID_Mundungus, PetalburgCity_Movement_WalkInsideHouseWallysDad
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
@@ -785,7 +785,7 @@ script PetalburgCity_EventScript_JSOBoy {
 	if(flag(FLAG_BADGE01_GET) == FALSE) {
 		lock
 		faceplayer
-		msgbox(format("Have you seen MUNDUNGUS? We found his house, and we'd like a word."))
+		msgbox(format("Have you seen Mundungus? We found his house, and we'd like a word."))
 		release
 	}
 }
@@ -794,7 +794,7 @@ script PetalburgCity_EventScript_JSOGirl {
 	if(flag(FLAG_BADGE01_GET) == FALSE) {
 		lock
 		faceplayer
-		msgbox(format("Anthrotech is ruining ECODIA! We won't stand for it!"))
+		msgbox(format("Anthrotech is ruining Ecodia! We won't stand for it!"))
 		release
 	}
 }
@@ -809,23 +809,23 @@ script PetalburgCity_EventScript_JSOFight {
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, CameraRightSeven)
 	waitmovement(0)
-	applymovement(LOCALID_MUNDUNGUS, WalkInPlaceUp)
+	applymovement(LOCALID_Mundungus, WalkInPlaceUp)
 	waitmovement(0)
-	msgbox(format("MUNDUNGUS: You can't stop me from entering my own home!"))
+	msgbox(format("Mundungus: You can't stop me from entering my own home!"))
 	applymovement(LOCALID_JSOGIRL, WalkInPlaceDown)
 	waitmovement(0)
-	msgbox(format("???: And you can't expect to restore TREEFALL WOODS by planting the same trees over and over!\pWhen will you realize what you are truly doing to ECODIA?"))
-	applymovement(LOCALID_MUNDUNGUS, LookLeft)
+	msgbox(format("???: And you can't expect to restore Treefall Woods by planting the same trees over and over!\pWhen will you realize what you are truly doing to Ecodia?"))
+	applymovement(LOCALID_Mundungus, LookLeft)
 	waitmovement(0)
-	applymovement(LOCALID_MUNDUNGUS, Common_Movement_ExclamationMark)
+	applymovement(LOCALID_Mundungus, Common_Movement_ExclamationMark)
 	waitmovement(0)
-	msgbox(format("MUNDUNGUS: Oh, {PLAYER}! Will you come give me a hand?"))
+	msgbox(format("Mundungus: Oh, {PLAYER}! Will you come give me a hand?"))
 	applymovement(OBJ_EVENT_ID_CAMERA, CameraLeftSeven)
 	waitmovement(0)
 	special(RemoveCameraObject)
 	applymovement(OBJ_EVENT_ID_PLAYER, WalkToDung)
 	waitmovement(0)
-	msgbox(format("MUNDUNGUS: If you earned an AXE BADGE, then I'm certain you can defeat these rapscallions and let me back in my home!"))
+	msgbox(format("Mundungus: If you earned an Axe Badge, then I'm certain you can defeat these rapscallions and let me back in my home!"))
 	applymovement(OBJ_EVENT_ID_PLAYER, LookUp)
 	waitmovement(0)
 	delay(60)
@@ -843,21 +843,21 @@ script PetalburgCity_EventScript_JSOFight {
 	delay(60)
 	fadescreen(FADE_FROM_BLACK)
 	applymovement(OBJ_EVENT_ID_PLAYER, LookRight)
-	applymovement(LOCALID_MUNDUNGUS, LookLeft)
-	applymovement(LOCALID_MUNDUNGUS, WalkInPlaceLeft)
-	msgbox(format("MUNDUNGUS: Thank you, {PLAYER}.\pI am still not quite sure who those people dressed in orange are, but they were quite the nuisance. I haven't the faintest clue what they were talking about, Anthrotech is dedicated to improving the lives of those living in ECODIA!"))
-	applymovement(LOCALID_MUNDUNGUS, LookDown)
+	applymovement(LOCALID_Mundungus, LookLeft)
+	applymovement(LOCALID_Mundungus, WalkInPlaceLeft)
+	msgbox(format("Mundungus: Thank you, {PLAYER}.\pI am still not quite sure who those people dressed in orange are, but they were quite the nuisance. I haven't the faintest clue what they were talking about, Anthrotech is dedicated to improving the lives of those living in Ecodia!"))
+	applymovement(LOCALID_Mundungus, LookDown)
 	delay(30)
-	msgbox(format("MUNDUNGUS: There are some who wish to get in our way, in the way of progress. I do not understand their motives."))
-	applymovement(LOCALID_MUNDUNGUS, LookLeft)
-	msgbox(format("MUNDUNGUS: Anyhow, that roadblock appears to be in the past. Why don't you come inside, I have something to give you."))
-	applymovement(LOCALID_MUNDUNGUS, WalkUpTwo)
+	msgbox(format("Mundungus: There are some who wish to get in our way, in the way of progress. I do not understand their motives."))
+	applymovement(LOCALID_Mundungus, LookLeft)
+	msgbox(format("Mundungus: Anyhow, that roadblock appears to be in the past. Why don't you come inside, I have something to give you."))
+	applymovement(LOCALID_Mundungus, WalkUpTwo)
 	waitmovement(0)
-	setobjectxyperm(LOCALID_MUNDUNGUS, 0, 20)
-	removeobject(LOCALID_MUNDUNGUS)
+	setobjectxyperm(LOCALID_Mundungus, 0, 20)
+	removeobject(LOCALID_Mundungus)
 	applymovement(OBJ_EVENT_ID_PLAYER, PlayerUpTwo)
 	waitmovement(0)
-	warp(MAP_PETALBURG_CITY_MUNDUNGUS_HOUSE, 1)
+	warp(MAP_PETALBURG_CITY_Mundungus_HOUSE, 1)
 	releaseall
 	end
 }

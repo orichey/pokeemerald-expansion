@@ -80,14 +80,14 @@ OldaleTown_PokemonCenter_EventScript_Scientist::
 
 OldaleTown_PokemonCenter_EventScript_Woman_Text_0:
 	.string "Although many of our ecosystems and\n"
-	.string "cities are in flux, ECODIA still has\l"
-	.string "many functional social services.\p"
+	.string "cities are in flux, Ecodia still has many\l"
+	.string "functional social services.\p"
 	.string "I'm glad we still have free healthcare!$"
 
 OldaleTown_PokemonCenter_EventScript_Scientist_Text_0:
 	.string "All of the surrounding regions got hit\n"
-	.string "by disasters even worse than ECODIA.\l"
-	.string "It seems that POKéMON from those\l"
+	.string "by disasters even worse than Ecodia.\l"
+	.string "It seems that Pokémon from those\l"
 	.string "regions have migrated here, and there\l"
 	.string "are people who dedicate their lives to\l"
 	.string "their conservation.\p"

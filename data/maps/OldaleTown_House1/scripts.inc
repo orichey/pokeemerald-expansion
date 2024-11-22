@@ -37,9 +37,9 @@ OldaleTown_House1_Text_Woman_Text_0:
 
 OldaleTown_House1_Text_Man_Text_0:
 	.string "Believe it or not, many people used to\n"
-	.string "live in DESOLA TOWN. However, a lack of\l"
+	.string "live in Desola Town. However, a lack of\l"
 	.string "economic opportunities drove many\l"
 	.string "people out.\p"
 	.string "Now, we just serve as a rest stop for\n"
-	.string "travelers between TREEFALL WOODS and\l"
+	.string "travelers between Treefall Woods and\l"
 	.string "the mountains.$"

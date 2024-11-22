@@ -256,18 +256,18 @@ PetalburgCity_Gym_Text_GymGuideAdvice:
 	.string "Yo! Do I see before me a new\n"
 	.string "champ in the making?\p"
 	.string "{PLAYER}, is it?\p"
-	.string "MUNDUNGUS told me about you, he\n"
+	.string "Mundungus told me about you, he\n"
 	.string "thought you might challenge the\l"
-	.string "POKéMON league!\p"
+	.string "Pokémon League!\p"
 	.string "I see he was right!\p"
-	.string "Looks like the TREEFALL CITY gym\n"
+	.string "Looks like the Treefall City gym\n"
 	.string "will be your first challenge.\p"
 	.string "This gym used to be a warehouse,\n"
 	.string "storing the tools and machinery\l"
-	.string "used to chop down TREEFALL WOODS!\p"
+	.string "used to chop down Treefall Woods!\p"
 	.string "It has been turned into a nursery,\n"
-	.string "but trainers here still use STEEL\l"
-	.string "POKéMON. Watch out for their edge!\p"
+	.string "but trainers here still use Steel\l"
+	.string "Pokémon. Watch out for their edge!\p"
 	.string "It seems as if Paul, the leader,\n"
 	.string "is having trouble with growing\l"
 	.string "his plants. Maybe you could help\l"
@@ -280,15 +280,15 @@ PetalburgCity_Gym_Text_GymGuidePostVictory:
 	.string "What will you do next?$"
 
 PetalburgCity_Gym_Text_TakaoIntro:
-	.string "I caught my POKéMON while\n"
-	.string "cutting down TREEFALL WOODS!$"
+	.string "I caught my Pokémon while\n"
+	.string "cutting down Treefall Woods!$"
 
 PetalburgCity_Gym_Text_TakaoDefeat:
 	.string "You're tough!$"
 
 PetalburgCity_Gym_Text_TakaoPostBattle:
 	.string "My tree-falling skills have not\n"
-	.string "translated to POKéMON training\l"
+	.string "translated to Pokémon training\l"
 	.string "skills.\p"
 	.string "Maybe they will help with my\n"
 	.string "tree-planting skills?$"
@@ -304,7 +304,7 @@ PetalburgCity_Gym_Text_JocelynDefeat:
 PetalburgCity_Gym_Text_JocelynPostBattle:
 	.string "Anthrotech has tasked us with\n"
 	.string "studying the best trees to use to\l"
-	.string "plant in TREEFALL WOODS.\p"
+	.string "plant in Treefall Woods.\p"
 	.string "They plan on using our findings\n"
 	.string "to regrow it entirely!$"
 
@@ -330,7 +330,7 @@ PetalburgCity_Gym_Text_BrawlyIntro:
 	.string "be swinging my axe.\p"
 	.string "Anyways, I'm Paul!\n"
 	.string "Lumberjack, er, arborist, of\l"
-	.string "TREEFALL CITY!\p"
+	.string "Treefall City!\p"
 	.string "I take it you want to challenge\n"
 	.string "me? Let's see what you're made of!$"
 
@@ -339,21 +339,21 @@ PetalburgCity_Gym_Text_BrawlyDefeat:
 	.string "I've rusted away!\p"
 	.string "It's been a long time since\n"
 	.string "anyone has withstood my might,\l"
-	.string "take this GYM BADGE!$"
+	.string "take this Gym Badge!$"
 
 PetalburgCity_Gym_Text_ReceivedKnuckleBadge:
-	.string "{PLAYER} received the AXE BADGE\n"
+	.string "{PLAYER} received the Axe Badge\n"
 	.string "from Paul.$"
 
 PetalburgCity_Gym_Text_KnuckleBadgeInfoTakeThis:
-	.string "The AXE BADGE makes all POKéMON\n"
+	.string "The Axe Badge makes all Pokémon\n"
 	.string "have a stronger attack, as if they\l"
 	.string "were wielding a blade!\p"
 	.string "Here, take this TM, and see the\n"
 	.string "power of an unrelenting attack!$"
 
 PetalburgCity_Gym_Text_ExplainBulkUp:
-	.string "That TM contains STEEL WING.\p"
+	.string "That TM contains Steel Wing.\p"
 	.string "Use it to soar above your rivals\n"
 	.string "and strike them down!$"
 
@@ -367,11 +367,11 @@ PetalburgCity_Gym_Text_BrawlyPostBattle:
 	.string "Brace yourself, and face it head on!$"
 
 PetalburgCity_Gym_Text_GymStatue:
-	.string "TREEFALL CITY POKéMON GYM$"
+	.string "Treefall City Pokémon Gym$"
 
 PetalburgCity_Gym_Text_GymStatueCertified:
-	.string "TREEFALL CITY POKéMON GYM\p"
-	.string "PAUL'S CERTIFIED TRAINERS:\n"
+	.string "Treefall City Pokémon Gym\p"
+	.string "Paul's Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 PetalburgCity_Gym_Text_BrawlyPreRematch:
