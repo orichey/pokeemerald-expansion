@@ -2099,3 +2099,6 @@ const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icon
 
 const u32 gItemIcon_Kayak[] = INCBIN_U32("graphics/items/icons/kayak.4bpp.lz");
 const u32 gItemIconPalette_Kayak[] = INCBIN_U32("graphics/items/icon_palettes/kayak.gbapal.lz");
+
+const u32 gItemIcon_PokeHM[] = INCBIN_U32("graphics/items/icons/poke_hm.4bpp.lz");
+const u32 gItemIconPalette_PokeHM[] = INCBIN_U32("graphics/items/icon_palettes/exp_share.gbapal.lz");

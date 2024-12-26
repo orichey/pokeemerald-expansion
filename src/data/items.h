@@ -14083,4 +14083,19 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Kayak,
         .iconPalette = gItemIconPalette_Kayak,
     },
+    [ITEM_POKEHM] =
+    {
+        .name = _("Poké HM"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "This device allows\n"
+            "any Pokémon to use\n"
+            "any obtained HM."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PokeHM,
+        .iconPalette = gItemIconPalette_PokeHM,
+    },
 };

@@ -915,6 +915,7 @@ gSongTable::
 	song mus_stardew_cloud_country, 0, 0
 	song mus_stardew_cloth, 0, 0
 	song mus_big_yellow_taxi, 0, 0
+	song mus_minecraft_alpha, 0, 0
 
 	.align 2
 dummy_song_header:

@@ -913,3 +913,36 @@ const struct Tileset gTileset_PorytilesSecondaryTutorial =
     .metatileAttributes = gMetatileAttributes_PorytilesSecondaryTutorial,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PorytilesPrimaryTest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PorytilesPrimaryTest,
+    .palettes = gTilesetPalettes_PorytilesPrimaryTest,
+    .metatiles = gMetatiles_PorytilesPrimaryTest,
+    .metatileAttributes = gMetatileAttributes_PorytilesPrimaryTest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PorytilesSecondaryTest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PorytilesSecondaryTest,
+    .palettes = gTilesetPalettes_PorytilesSecondaryTest,
+    .metatiles = gMetatiles_PorytilesSecondaryTest,
+    .metatileAttributes = gMetatileAttributes_PorytilesSecondaryTest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_TreefallWoods =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_TreefallWoods,
+    .palettes = gTilesetPalettes_TreefallWoods,
+    .metatiles = gMetatiles_TreefallWoods,
+    .metatileAttributes = gMetatileAttributes_TreefallWoods,
+    .callback = NULL,
+};

@@ -1,4 +1,70 @@
 raw`PetalburgCity_GrassHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_GrassHouse_EventScript_GrassDefault
 	.byte 0
 `
 
+script PetalburgCity_GrassHouse_EventScript_Girl {
+	lock
+	faceplayer
+	msgbox(format("Paul and his crew of lumberjacks cleared much of Treefall Woods to build this city. \pOur little sanctuary is all that remains of native flora and fauna within city limits."))
+	release
+}
+
+script PetalburgCity_GrassHouse_EventScript_Girl2 {
+	lock
+	faceplayer
+	msgbox(format("The reforestation effort is focused on planting a monoculture. \pRows and rows of spruce trees will never come close to the vibrant ecological community that once thrived in Treefall Woods!"))
+	release
+}
+
+script PetalburgCity_GrassHouse_EventScript_GrassDefault{
+    if(!(flag(FLAG_UNUSED_0x035))){
+        setobjectxy(1,3,2)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
+        return
+    }
+    else{
+        setobjectxyperm(1,4,2)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_LEFT)
+        return
+    }
+}
+
+script PetalburgCity_GrassHouse_GrassBattle {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_4, Lily_Intro, Lily_Outro, Lily_Leave)
+	waitmessage
+    msgbox(Lily_Overworld, MSGBOX_AUTOCLOSE)
+    end
+}
+ 
+script Lily_Leave{
+    setflag(FLAG_UNUSED_0x035)
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    msgbox(PostBattle_Lily, MSGBOX_AUTOCLOSE) 
+    call(LilyMove)
+}
+
+text Lily_Intro{
+    format("This town is here as a result of environmental destruction of the forest. \pI have protected what I can, and I won't let any harm come to my native plants!")
+}
+ 
+text Lily_Outro{
+    format("...do you care about the environment?")
+}
+ 
+text PostBattle_Lily{
+    format("If you promise not to harm my sanctuary, I will let you in.\pYou can find lots of Grass Pokémon!")
+}
+
+text Lily_Overworld{
+    format("Native plants are critical to healthy ecosystems. \pI believe Paul is well-intentioned, but the species he plants are not native to this area.")
+}
+
+script LilyMove {
+    applymovement(1, LilyRight)
+}
+
+movement LilyRight{
+    walk_right
+    face_left
+}

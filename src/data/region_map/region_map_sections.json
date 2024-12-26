@@ -3,40 +3,40 @@
     {
       "map_section": "MAPSEC_LITTLEROOT_TOWN",
       "name": "Anthroh Town",
-      "x": 4,
-      "y": 11,
+      "x": 26,
+      "y": 4,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_OLDALE_TOWN",
       "name": "Desola Town",
-      "x": 4,
-      "y": 9,
+      "x": 22,
+      "y": 4,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_DEWFORD_TOWN",
       "name": "Seaspray Town",
-      "x": 2,
-      "y": 14,
+      "x": 24,
+      "y": 11,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_LAVARIDGE_TOWN",
       "name": "LAVARIDGE TOWN",
-      "x": 5,
-      "y": 3,
+      "x": 20,
+      "y": 6,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_FALLARBOR_TOWN",
       "name": "FALLARBOR TOWN",
-      "x": 3,
-      "y": 0,
+      "x": 20,
+      "y": 1,
       "width": 1,
       "height": 1
     },
@@ -51,242 +51,234 @@
     {
       "map_section": "MAPSEC_PACIFIDLOG_TOWN",
       "name": "PACIFIDLOG TOWN",
-      "x": 17,
-      "y": 10,
+      "x": 16,
+      "y": 1,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_PETALBURG_CITY",
-      "name": "PETALBURG CITY",
-      "x": 1,
-      "y": 9,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_SLATEPORT_CITY",
-      "name": "SLATEPORT CITY",
-      "x": 8,
-      "y": 10,
+      "name": "Treefall City",
+      "x": 24,
+      "y": 7,
       "width": 1,
       "height": 2
     },
     {
+      "map_section": "MAPSEC_SLATEPORT_CITY",
+      "name": "SLATEPORT CITY",
+      "x": 16,
+      "y": 5,
+      "width": 2,
+      "height": 1
+    },
+    {
       "map_section": "MAPSEC_MAUVILLE_CITY",
       "name": "MAUVILLE CITY",
-      "x": 8,
-      "y": 6,
-      "width": 2,
+      "x": 15,
+      "y": 8,
+      "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_RUSTBORO_CITY",
       "name": "RUSTBORO CITY",
-      "x": 0,
-      "y": 5,
+      "x": 11,
+      "y": 7,
       "width": 1,
-      "height": 2
+      "height": 1
     },
     {
       "map_section": "MAPSEC_FORTREE_CITY",
       "name": "FORTREE CITY",
       "x": 12,
-      "y": 0,
+      "y": 2,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_LILYCOVE_CITY",
       "name": "LILYCOVE CITY",
-      "x": 18,
-      "y": 3,
-      "width": 2,
+      "x": 5,
+      "y": 1,
+      "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_MOSSDEEP_CITY",
       "name": "MOSSDEEP CITY",
-      "x": 24,
-      "y": 5,
+      "x": 4,
+      "y": 10,
       "width": 2,
       "height": 1
     },
     {
       "map_section": "MAPSEC_SOOTOPOLIS_CITY",
       "name": "SOOTOPOLIS CITY",
-      "x": 21,
-      "y": 7,
+      "x": 3,
+      "y": 13,
       "width": 1,
       "height": 1
     },
     {
-      "map_section": "MAPSEC_EVER_GRANDE_CITY",
-      "name": "EVER GRANDE CITY",
-      "x": 27,
-      "y": 8,
-      "width": 1,
-      "height": 2
-    },
-    {
       "map_section": "MAPSEC_ROUTE_101",
       "name": "ROUTE 101",
-      "x": 4,
-      "y": 10,
-      "width": 1,
+      "x": 23,
+      "y": 4,
+      "width": 3,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_102",
       "name": "ROUTE 102",
-      "x": 2,
-      "y": 9,
-      "width": 2,
-      "height": 1
+      "x": 22,
+      "y": 5,
+      "width": 1,
+      "height": 2
     },
     {
       "map_section": "MAPSEC_ROUTE_103",
       "name": "ROUTE 103",
-      "x": 4,
-      "y": 8,
-      "width": 4,
+      "x": 23,
+      "y": 7,
+      "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_104",
       "name": "ROUTE 104",
-      "x": 0,
-      "y": 7,
+      "x": 24,
+      "y": 9,
       "width": 1,
-      "height": 3
+      "height": 2
     },
     {
       "map_section": "MAPSEC_ROUTE_105",
       "name": "ROUTE 105",
-      "x": 0,
-      "y": 10,
+      "x": 23,
+      "y": 9,
       "width": 1,
       "height": 3
     },
     {
       "map_section": "MAPSEC_ROUTE_106",
       "name": "ROUTE 106",
-      "x": 0,
-      "y": 13,
-      "width": 2,
-      "height": 1
+      "x": 20,
+      "y": 7,
+      "width": 1,
+      "height": 2
     },
     {
       "map_section": "MAPSEC_ROUTE_107",
       "name": "ROUTE 107",
-      "x": 3,
-      "y": 14,
-      "width": 3,
+      "x": 21,
+      "y": 7,
+      "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_108",
       "name": "ROUTE 108",
-      "x": 6,
-      "y": 14,
-      "width": 2,
+      "x": 19,
+      "y": 4,
+      "width": 3,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_109",
       "name": "ROUTE 109",
-      "x": 8,
-      "y": 12,
+      "x": 20,
+      "y": 2,
       "width": 1,
-      "height": 3
+      "height": 2
     },
     {
       "map_section": "MAPSEC_ROUTE_110",
       "name": "ROUTE 110",
-      "x": 8,
-      "y": 7,
-      "width": 1,
-      "height": 3
+      "x": 17,
+      "y": 1,
+      "width": 3,
+      "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_111",
       "name": "ROUTE 111",
-      "x": 8,
-      "y": 0,
+      "x": 18,
+      "y": 2,
       "width": 1,
-      "height": 6
+      "height": 4
     },
     {
       "map_section": "MAPSEC_ROUTE_112",
       "name": "ROUTE 112",
-      "x": 6,
-      "y": 3,
-      "width": 2,
-      "height": 1
+      "x": 16,
+      "y": 6,
+      "width": 1,
+      "height": 3
     },
     {
       "map_section": "MAPSEC_ROUTE_113",
       "name": "ROUTE 113",
-      "x": 4,
-      "y": 0,
+      "x": 12,
+      "y": 6,
       "width": 4,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_114",
       "name": "ROUTE 114",
-      "x": 1,
-      "y": 0,
-      "width": 2,
+      "x": 12,
+      "y": 3,
+      "width": 1,
       "height": 3
     },
     {
       "map_section": "MAPSEC_ROUTE_115",
       "name": "ROUTE 115",
-      "x": 0,
-      "y": 2,
-      "width": 1,
-      "height": 3
+      "x": 12,
+      "y": 7,
+      "width": 2,
+      "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_116",
       "name": "ROUTE 116",
-      "x": 1,
-      "y": 5,
-      "width": 4,
+      "x": 8,
+      "y": 7,
+      "width": 3,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_117",
       "name": "ROUTE 117",
-      "x": 5,
-      "y": 6,
-      "width": 3,
-      "height": 1
+      "x": 7,
+      "y": 3,
+      "width": 1,
+      "height": 7
     },
     {
       "map_section": "MAPSEC_ROUTE_118",
       "name": "ROUTE 118",
-      "x": 10,
-      "y": 6,
-      "width": 2,
+      "x": 5,
+      "y": 2,
+      "width": 3,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_119",
       "name": "ROUTE 119",
-      "x": 11,
-      "y": 0,
-      "width": 1,
-      "height": 6
+      "x": 6,
+      "y": 10,
+      "width": 2,
+      "height": 1
     },
     {
       "map_section": "MAPSEC_ROUTE_120",
       "name": "ROUTE 120",
-      "x": 13,
-      "y": 0,
+      "x": 3,
+      "y": 10,
       "width": 1,
-      "height": 4
+      "height": 3
     },
     {
       "map_section": "MAPSEC_ROUTE_121",
@@ -474,9 +466,9 @@
     },
     {
       "map_section": "MAPSEC_PETALBURG_WOODS",
-      "name": "TREEFALL FOREST",
-      "x": 0,
-      "y": 8,
+      "name": "Treefall Woods",
+      "x": 22,
+      "y": 7,
       "width": 1,
       "height": 1
     },
@@ -499,24 +491,24 @@
     {
       "map_section": "MAPSEC_NEW_MAUVILLE",
       "name": "NEW MAUVILLE",
-      "x": 8,
-      "y": 7,
+      "x": 20,
+      "y": 9,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_METEOR_FALLS",
       "name": "METEOR FALLS",
-      "x": 0,
-      "y": 3,
+      "x": 22,
+      "y": 9,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_METEOR_FALLS2",
       "name": "METEOR FALLS",
-      "x": 1,
-      "y": 2,
+      "x": 21,
+      "y": 9,
       "width": 1,
       "height": 1
     },
@@ -531,7 +523,6 @@
     {
       "map_section": "MAPSEC_AQUA_HIDEOUT_OLD",
       "name": "{AQUA} HIDEOUT",
-      "name_clone": true,
       "x": 19,
       "y": 3,
       "width": 1,
@@ -796,7 +787,6 @@
     {
       "map_section": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -805,7 +795,6 @@
     {
       "map_section": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1046,7 +1035,6 @@
     {
       "map_section": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1063,7 +1051,6 @@
     {
       "map_section": "MAPSEC_KANTO_VICTORY_ROAD",
       "name": "VICTORY ROAD",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1096,7 +1083,6 @@
     {
       "map_section": "MAPSEC_KANTO_SAFARI_ZONE",
       "name": "SAFARI ZONE",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1441,7 +1427,6 @@
     {
       "map_section": "MAPSEC_TRAINER_TOWER_2",
       "name": "TRAINER TOWER",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,

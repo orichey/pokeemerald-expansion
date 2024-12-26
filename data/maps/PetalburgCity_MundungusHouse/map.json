@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_CITY_MUNDUNGUS_HOUSE",
   "name": "PetalburgCity_MundungusHouse",
   "layout": "LAYOUT_PETALBURG_CITY_MUNDUNGUS_HOUSE",
-  "music": "MUS_PETALBURG",
+  "music": "MUS_BIG_YELLOW_TAXI",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,7 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgCity_MundungusHouse_EventScript_MrStone",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {

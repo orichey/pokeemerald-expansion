@@ -2,23 +2,30 @@ PetalburgCity_House2_MapScripts::
 	.byte 0
 
 PetalburgCity_House2_EventScript_Woman::
-	msgbox PetalburgCity_House2_Text_NormanBecameGymLeader, MSGBOX_NPC
+	lockall
+	faceplayer
+	msgbox PetalburgCity_House2_EventScript_Woman_Text_0
+	releaseall
 	end
+
 
 PetalburgCity_House2_EventScript_SchoolKid::
-	msgbox PetalburgCity_House2_Text_BattledNormanOnce, MSGBOX_NPC
+	lockall
+	faceplayer
+	msgbox PetalburgCity_House2_EventScript_SchoolKid_Text_0
+	releaseall
 	end
 
-PetalburgCity_House2_Text_NormanBecameGymLeader:
-	.string "NORMAN became our town's new\n"
-	.string "GYM LEADER.\p"
-	.string "I think he called his family over from\n"
-	.string "somewhere far away.$"
 
-PetalburgCity_House2_Text_BattledNormanOnce:
-	.string "I battled NORMAN once, but, whew,\n"
-	.string "he was way too strong.\p"
-	.string "How would I put it?\p"
-	.string "I just got the feeling that he\n"
-	.string "lives for POKéMON.$"
+PetalburgCity_House2_EventScript_Woman_Text_0:
+	.string "My son has such silly ideas!$"
 
+PetalburgCity_House2_EventScript_SchoolKid_Text_0:
+	.string "I read a book once that told me Treefall\n"
+	.string "Woods used to be full of strong, large\l"
+	.string "oak trees.\p"
+	.string "It seems it would make sense to\n"
+	.string "reforest with native species, but we\l"
+	.string "seem insistent upon planting spruce.\p"
+	.string "How does that impact the ecology of\n"
+	.string "the forest?$"

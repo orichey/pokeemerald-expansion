@@ -171,7 +171,8 @@
     "PetalburgCity_Mart",
     "PetalburgCity_House2_2",
     "PetalburgCity_GrassHouse",
-    "PetalburgCity_MundungusHouse"
+    "PetalburgCity_MundungusHouse",
+    "PorytilesTestMap"
   ],
   "gMapGroup_IndoorSlateport": [
     "SlateportCity_SternsShipyard_1F",
@@ -438,7 +439,8 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "TreefallWoods"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

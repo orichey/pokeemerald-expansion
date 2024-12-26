@@ -142,6 +142,7 @@
 #define MAP_PETALBURG_CITY_HOUSE2_2          (7 | (8 << 8))
 #define MAP_PETALBURG_CITY_GRASS_HOUSE       (8 | (8 << 8))
 #define MAP_PETALBURG_CITY_MUNDUNGUS_HOUSE   (9 | (8 << 8))
+#define MAP_PORYTILES_TEST_MAP               (10 | (8 << 8))
 
 // gMapGroup_IndoorSlateport
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))
@@ -409,6 +410,7 @@
 #define MAP_TERRA_CAVE_END                           (105 | (24 << 8))
 #define MAP_ALTERING_CAVE                            (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
+#define MAP_TREEFALL_WOODS                           (108 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

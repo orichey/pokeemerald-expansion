@@ -231,3 +231,12 @@ const u16 gMetatileAttributes_PorytilesPrimaryTutorialTwo[] = INCBIN_U16("data/t
 
 const u16 gMetatiles_PorytilesSecondaryTutorial[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_tutorial/metatiles.bin");
 const u16 gMetatileAttributes_PorytilesSecondaryTutorial[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_tutorial/metatile_attributes.bin");
+
+const u16 gMetatiles_PorytilesPrimaryTest[] = INCBIN_U16("data/tilesets/primary/porytiles_primary_test/metatiles.bin");
+const u16 gMetatileAttributes_PorytilesPrimaryTest[] = INCBIN_U16("data/tilesets/primary/porytiles_primary_test/metatile_attributes.bin");
+
+const u16 gMetatiles_PorytilesSecondaryTest[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/metatiles.bin");
+const u16 gMetatileAttributes_PorytilesSecondaryTest[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/metatile_attributes.bin");
+
+const u16 gMetatiles_TreefallWoods[] = INCBIN_U16("data/tilesets/primary/treefall_woods/metatiles.bin");
+const u16 gMetatileAttributes_TreefallWoods[] = INCBIN_U16("data/tilesets/primary/treefall_woods/metatile_attributes.bin");

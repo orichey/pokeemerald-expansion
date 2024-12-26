@@ -1092,3 +1092,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DewfordTown_House3/scripts.inc"
 
 	.include "data/maps/DewfordTown_House4/scripts.inc"
+
+	.include "data/maps/PorytilesTestMap/scripts.inc"
+
+	.include "data/maps/TreefallWoods/scripts.inc"

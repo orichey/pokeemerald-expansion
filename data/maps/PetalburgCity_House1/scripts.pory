@@ -1,0 +1,20 @@
+raw`
+PetalburgCity_House1_MapScripts::
+	.byte 0
+`
+
+script PetalburgCity_House1_EventScript_Man{
+    lockall
+    faceplayer
+    msgbox(format("I made a living working as a logger.\pIt's heartbreaking to know that future generations won't have the same economic opportunities I had."))
+    releaseall
+    end
+}
+
+script PetalburgCity_House1_EventScript_Woman{
+    lockall
+    faceplayer
+    msgbox(format("My biggest concern with the reforestation project is that the new trees are all so ugly!\pWhy did Anthrotech decide to plant nothing but spruce?"))
+    releaseall
+    end
+}

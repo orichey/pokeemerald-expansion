@@ -370,6 +370,28 @@ Route103_EventScript_HappyFisher::
 	end
 
 
+Route103_EventScript_ItemLooker::
+	lock
+	faceplayer
+	msgbox Route103_EventScript_ItemLooker_Text_0
+	closemessage
+	applymovement 10, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
+Route103_EventScript_RunningGirl::
+	lock
+	faceplayer
+	msgbox Route103_EventScript_RunningGirl_Text_0
+	closemessage
+	applymovement 11, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
 Route103_EventScript_DoubleBattlePartOne::
 	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_1, IntroText_Francis, LoseText_Francis
 	msgbox PostBattle_OldCouple1, MSGBOX_AUTOCLOSE
@@ -398,6 +420,13 @@ Route103_EventScript_KingTrainer::
 	end
 
 
+Route103_EventScript_ScaryFlooding::
+	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_2, IntroText_Terry, LoseText_Terry
+	msgbox PostBattle_Terry, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
 Route103_EventScript_WalkingYoungster_Text_0:
 	.string "I was hoping to visit my friends in\n"
 	.string "Seaspray Town, but I don't know that I\l"
@@ -407,12 +436,19 @@ Route103_EventScript_HappyFisher_Text_0:
 	.string "The sea levels have risen.\n"
 	.string "More fish for me!$"
 
+Route103_EventScript_ItemLooker_Text_0:
+	.string "That item seems important, but I can't\n"
+	.string "reach it!/pIf only I could Surf...$"
+
+Route103_EventScript_RunningGirl_Text_0:
+	.string "I can't get back home!$"
+
 IntroText_Kingston::
 	.string "My Pokémon are strong against water. I\n"
 	.string "feel like I'm the king of the hill!$"
 
 LoseText_Kingston::
-	.string "You've unseated me!$"
+	.string "You've dethroned me!$"
 
 PostBattle_Kingston::
 	.string "Even though my Pokémon are successful,\n"
@@ -420,6 +456,18 @@ PostBattle_Kingston::
 	.string "good thing.\p"
 	.string "The environment that was here\n"
 	.string "previously has been destroyed!$"
+
+IntroText_Terry::
+	.string "This flooding is scary!$"
+
+LoseText_Terry::
+	.string "You're strong!$"
+
+PostBattle_Terry::
+	.string "Even I can remember a time when I could\n"
+	.string "walk from Treefall City to Seaspray\l"
+	.string "Town./pThat doesn't seem possible any\l"
+	.string "more!$"
 
 IntroText_Jonny::
 	.string "Hah!\n"

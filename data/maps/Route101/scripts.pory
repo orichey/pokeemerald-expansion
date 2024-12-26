@@ -338,7 +338,7 @@ script Route101_EventScript_Balls {
         setflag(FLAG_UNUSED_0x029)
     }
     if(flag(FLAG_UNUSED_0x029) == TRUE) {
-        msgbox(format("Other Pokémon Marts throughout the region are open, but these might be the only supplies you can find before Treefall Town.\pI may have dropped some other items around here too..."))
+        msgbox(format("Other Pokémon Marts throughout the region are open, but these might be the only supplies you can find before Treefall City.\pI may have dropped some other items around here too..."))
     }
     release
 }

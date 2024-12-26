@@ -964,6 +964,7 @@
 #define MUS_STARDEW_CLOUD_COUNTRY         911 // Cloud Country
 #define MUS_STARDEW_CLOTH                 912 // Cloth
 #define MUS_BIG_YELLOW_TAXI               913 // Big Yellow Taxi
+#define MUS_MINECRAFT_ALPHA               914 // Minecraft Alpha
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 

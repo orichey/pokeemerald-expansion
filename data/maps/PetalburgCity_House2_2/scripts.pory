@@ -1,0 +1,13 @@
+raw`
+PetalburgCity_House2_2_MapScripts::
+	.byte 0
+`
+
+script PetalburgCity_House2_2_EventScript_Cut{
+    lockall
+    faceplayer
+    msgbox(format("Are you here for Cut too?\pArgh, I'd give you one, but one of those goons in orange stole my whole stock!\pThis whole city used to rely on me for my HMs, but I can't be of use any more.\pI'm sorry, kid. I don't know where that hooligan got off to."))
+    applymovement(1, Common_Movement_FaceOriginalDirection)
+    releaseall
+    end
+}

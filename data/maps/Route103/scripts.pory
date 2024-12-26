@@ -371,6 +371,27 @@ script Route103_EventScript_HappyFisher{
 	end
 }
 
+script Route103_EventScript_ItemLooker{
+	lock
+	faceplayer
+	msgbox(format("That item seems important, but I can't reach it!\pIf only I could Surf..."))
+	closemessage
+	applymovement(10, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Route103_EventScript_RunningGirl{
+	lock
+	faceplayer
+	msgbox(format("I can't get back home!"))
+	closemessage
+	applymovement(11, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
 
 script Route103_EventScript_DoubleBattlePartOne {
     trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_1, IntroText_Francis, LoseText_Francis)
@@ -405,11 +426,30 @@ text IntroText_Kingston{
 }
 
 text LoseText_Kingston{
-	format("You've unseated me!")
+	format("You've dethroned me!")
 }
 
 text PostBattle_Kingston{
 	format("Even though my Pokémon are successful, this sea level rise can't possibly be a good thing.\pThe environment that was here previously has been destroyed!")
+}
+
+script Route103_EventScript_ScaryFlooding {
+	trainerbattle_single(TRAINER_GRUNT_SEAFLOOR_CAVERN_2, IntroText_Terry, LoseText_Terry)
+	msgbox(PostBattle_Terry, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text IntroText_Terry{
+	format("This flooding is scary!")
+}
+
+text LoseText_Terry{
+	format("You're strong!")
+}
+
+text PostBattle_Terry{
+	format("Even I can remember a time when I could walk from Treefall City to Seaspray Town./pThat doesn't seem possible any more!")
 }
 
 text IntroText_Jonny{

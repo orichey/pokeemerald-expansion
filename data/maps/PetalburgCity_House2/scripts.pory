@@ -1,0 +1,21 @@
+raw`
+PetalburgCity_House2_MapScripts::
+	.byte 0
+
+`
+
+script PetalburgCity_House2_EventScript_Woman{
+    lockall
+    faceplayer
+    msgbox(format("My son has such silly ideas!"))
+    releaseall
+    end
+}
+
+script PetalburgCity_House2_EventScript_SchoolKid{
+    lockall
+    faceplayer
+    msgbox(format("I read a book once that told me Treefall Woods used to be full of strong, large oak trees.\pIt seems it would make sense to reforest with native species, but we seem insistent upon planting spruce.\pHow does that impact the ecology of the forest?"))
+    releaseall
+    end
+}

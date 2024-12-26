@@ -2,27 +2,30 @@ PetalburgCity_House1_MapScripts::
 	.byte 0
 
 PetalburgCity_House1_EventScript_Man::
-	msgbox PetalburgCity_House1_Text_TravelingIsWonderful, MSGBOX_NPC
+	lockall
+	faceplayer
+	msgbox PetalburgCity_House1_EventScript_Man_Text_0
+	releaseall
 	end
+
 
 PetalburgCity_House1_EventScript_Woman::
-	msgbox PetalburgCity_House1_Text_GoOnAdventure, MSGBOX_NPC
+	lockall
+	faceplayer
+	msgbox PetalburgCity_House1_EventScript_Woman_Text_0
+	releaseall
 	end
 
-PetalburgCity_House1_Text_TravelingIsWonderful:
-	.string "Traveling is wonderful!\p"
-	.string "When I was young, I roamed the seas\n"
-	.string "and the mountains!$"
 
-PetalburgCity_House1_Text_GoOnAdventure:
-	.string "Sigh…\p"
-	.string "I wish I could go on an adventure\n"
-	.string "with some POKéMON…\p"
-	.string "Crawl through some damp grass…\n"
-	.string "Climb rocky, rugged mountains…\p"
-	.string "Cross the raging seas…\n"
-	.string "Wander about in dark caves…\p"
-	.string "And, sometimes, even get a little\n"
-	.string "homesick…\p"
-	.string "It must be fabulous to travel!$"
+PetalburgCity_House1_EventScript_Man_Text_0:
+	.string "I made a living working as a logger.\p"
+	.string "It's heartbreaking to know that future\n"
+	.string "generations won't have the same\l"
+	.string "economic opportunities I had.$"
 
+PetalburgCity_House1_EventScript_Woman_Text_0:
+	.string "My biggest concern with the\n"
+	.string "reforestation project is that the new\l"
+	.string "trees are all so ugly!\p"
+	.string "Why did Anthrotech decide to plant\n"
+	.string "nothing but spruce?$"

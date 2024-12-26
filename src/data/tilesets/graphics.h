@@ -1786,3 +1786,60 @@ const u16 gTilesetPalettes_PorytilesSecondaryTutorial[][16] =
 };
 
 const u32 gTilesetTiles_PorytilesSecondaryTutorial[] = INCBIN_U32("data/tilesets/secondary/porytiles_secondary_tutorial/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PorytilesPrimaryTest[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiles_primary_test/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PorytilesPrimaryTest[] = INCBIN_U32("data/tilesets/primary/porytiles_primary_test/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PorytilesSecondaryTest[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porytiles_secondary_test/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PorytilesSecondaryTest[] = INCBIN_U32("data/tilesets/secondary/porytiles_secondary_test/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_TreefallWoods[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/treefall_woods/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_TreefallWoods[] = INCBIN_U32("data/tilesets/primary/treefall_woods/tiles.4bpp.lz");

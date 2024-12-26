@@ -739,7 +739,7 @@ OldaleTown_EventScript_OldWoman_Text_0:
 OldaleTown_EventScript_LittleBoy_Text_0:
 	.string "Mommy says Desola Town is one of the\n"
 	.string "last safe places in Ecodia.\p"
-	.string "Even Treefall Forest is scary!$"
+	.string "Even Treefall Woods is scary!$"
 
 OldaleTown_EventScript_ScholarBoy_Text_0:
 	.string "This house has been abandoned for a\n"

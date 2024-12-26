@@ -432,7 +432,7 @@ script OldaleTown_EventScript_LittleBoy {
 	faceplayer
 	msgbox("Mommy says Desola Town is one of the\n"
 	"last safe places in Ecodia.\p"
-	"Even Treefall Forest is scary!")
+	"Even Treefall Woods is scary!")
 	release
 }
 

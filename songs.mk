@@ -2390,3 +2390,6 @@ $(MID_SUBDIR)/mus_stardew_cloth.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_big_yellow_taxi.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_minecraft_alpha.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090

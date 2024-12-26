@@ -339,7 +339,7 @@ Route101_EventScript_Balls_Text_1:
 	.string "Other Pokémon Marts throughout the\n"
 	.string "region are open, but these might be the\l"
 	.string "only supplies you can find before\l"
-	.string "Treefall Town.\p"
+	.string "Treefall City.\p"
 	.string "I may have dropped some other items\n"
 	.string "around here too...$"
 

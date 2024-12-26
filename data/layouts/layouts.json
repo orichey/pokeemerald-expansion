@@ -584,8 +584,8 @@
     {
       "id": "LAYOUT_HOUSE1",
       "name": "House1_Layout",
-      "width": 10,
-      "height": 9,
+      "width": 13,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House1/border.bin",
@@ -4500,6 +4500,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/DewfordTown_House4/border.bin",
       "blockdata_filepath": "data/layouts/DewfordTown_House4/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORYTILES_TEST_MAP",
+      "name": "PorytilesTestMap_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PorytilesPrimaryTest",
+      "secondary_tileset": "gTileset_PorytilesSecondaryTest",
+      "border_filepath": "data/layouts/PorytilesTestMap/border.bin",
+      "blockdata_filepath": "data/layouts/PorytilesTestMap/map.bin"
+    },
+    {
+      "id": "LAYOUT_TREEFALL_WOODS",
+      "name": "TreefallWoods_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_TreefallWoods",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TreefallWoods/border.bin",
+      "blockdata_filepath": "data/layouts/TreefallWoods/map.bin"
     }
   ]
 }

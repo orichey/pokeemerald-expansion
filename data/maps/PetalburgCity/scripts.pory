@@ -240,10 +240,6 @@ PetalburgCity_EventScript_CitySign::
 	msgbox PetalburgCity_Text_CitySign, MSGBOX_SIGN
 	end
 
-PetalburgCity_EventScript_Gentleman::
-	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
-	end
-
 PetalburgCity_EventScript_WallyHouseSign::
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
 	end
@@ -708,20 +704,12 @@ PetalburgCity_Movement_PlayerWatchScottExit3:
 	walk_in_place_faster_left
 	step_end
 
-PetalburgCity_EventScript_GymBoy::
-	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
-	end
-
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
-	.string "do when they reach a new town?\p"
 	.string "They first check what kind of GYM\n"
 	.string "is in the town.$"
 
@@ -738,12 +726,6 @@ PetalburgCity_Text_WaterReflection:
 	.string "Or it could be a look of somber silence\n"
 	.string "struggling with fear…\p"
 	.string "What do you see reflected in your face?$"
-
-PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
 
 PetalburgCity_Text_GymSign:
 	.string "PETALBURG CITY POKéMON GYM\n"
@@ -776,7 +758,7 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 `
 script PetalburgCity_EventScript_GrassSign {
     lockall
-    msgbox(format("Welcome to the grassy sanctuary. I need to think this through a little more."))
+    msgbox(format("These trees are the last remnants of the natural landscape in Treefall City.\pPlease treat them with respect."))
     releaseall
 }
 
@@ -799,8 +781,124 @@ script PetalburgCity_EventScript_JSOGirl {
 	}
 }
 
+script PetalburgCity_EventScript_Gentleman{
+	lock
+	faceplayer
+	msgbox(format("I remember when Treefall City was just a small town. Thanks to the lumber industry, we quickly grew.\pMuch of Ecodia was built with trees we exported."))
+	release
+}
+
+script PetalburgCity_EventScript_GymBoy{
+	lock
+	faceplayer
+	msgbox(format("Apparently Treefall City is going to start planting trees, instead of cutting them down.\pMaybe we should be called Treeplant City!"))
+	release
+}
+
+script PetalburgCity_EventScript_Woman{
+	lock
+	faceplayer
+	msgbox(format("I'm all for nature and everything, but won't our local economy be impacted by halting lumber exports?\pDoesn't anyone care about us?"))
+	release
+}
+
+script PetalburgCity_EventScript_Boy2{
+	lock
+	faceplayer
+	msgbox(format("I've practiced cutting down trees my whole life. \pIt's all been a waste!"))
+	release
+}
+
+script PetalburgCity_EventScript_Man{
+	lock
+	faceplayer
+	msgbox(format("It's nice to feel important. I'm glad Treefall City has such a strong Anthrotech presence!"))
+	release
+}
+
+script PetalburgCity_EventScript_LittleGirl{
+	lock
+	faceplayer
+	msgbox(format("I love seeing the little Grass Pokémon running around behind the fence!\pI wish there were more..."))
+	closemessage
+	applymovement(10, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+}
+
+script PetalburgCity_EventScript_ScytherTrainer{
+	lock
+	faceplayer
+	msgbox(format("My Scyther helped produce great quantities of lumber, thanks in part to the Cut HM!\pI know Anthrotech has a tool that allows any Pokémon to use any HM, but it just seemed right to teach Scyther Cut.\pI got the HM from someone in town!"))
+	closemessage
+	applymovement(12, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+}
+
+script PetalburgCity_EventScript_Scyther{
+	lock
+	faceplayer
+	playmoncry(SPECIES_SCYTHER, CRY_MODE_NORMAL)
+	waitmoncry
+	msgbox(format("The Scyther looks anxious!"))
+	applymovement(13, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script PetalburgCity_EventScript_Oddish{
+	lock
+	faceplayer
+	playmoncry(SPECIES_ODDISH, CRY_MODE_NORMAL)
+	waitmoncry
+	msgbox(format("Oddish wants to play!"))
+	applymovement(13, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script PetalburgCity_EventScript_Budew{
+	lock
+	faceplayer
+	playmoncry(SPECIES_BUDEW, CRY_MODE_NORMAL)
+	waitmoncry
+	msgbox(format("Budew seems content."))
+	applymovement(13, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script PetalburgCity_EventScript_JSOBoyBlock1 {
+	if(flag(FLAG_BADGE01_GET) == FALSE) {
+		lock
+		faceplayer
+		msgbox(format("We aren't leaving until we speak with Mundungus."))
+		closemessage
+		applymovement(6, Common_Movement_FaceOriginalDirection)
+		waitmovement(0)
+		release
+	}
+}
+
+script PetalburgCity_EventScript_JSOBoyBlock2 {
+	if(flag(FLAG_BADGE01_GET) == FALSE) {
+		lock
+		faceplayer
+		msgbox(format("Anthrotech is the cause of everything that is wrong in Ecodia."))
+		closemessage
+		applymovement(7, Common_Movement_FaceOriginalDirection)
+		waitmovement(0)
+		release
+	}
+}
+
 script PetalburgCity_EventScript_JSOFight {
 	lockall
+	setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 	playbgm(MUS_DP_ENCOUNTER_SUSPICIOUS, FALSE)
 	applymovement(OBJ_EVENT_ID_PLAYER, LookRight)
 	waitmovement(0)
@@ -808,6 +906,7 @@ script PetalburgCity_EventScript_JSOFight {
 	waitmovement(0)
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, CameraRightSeven)
+	delay(15)
 	waitmovement(0)
 	applymovement(LOCALID_Mundungus, WalkInPlaceUp)
 	waitmovement(0)
@@ -819,7 +918,9 @@ script PetalburgCity_EventScript_JSOFight {
 	waitmovement(0)
 	applymovement(LOCALID_Mundungus, Common_Movement_ExclamationMark)
 	waitmovement(0)
+	delay(15)
 	msgbox(format("Mundungus: Oh, {PLAYER}! Will you come give me a hand?"))
+	closemessage
 	applymovement(OBJ_EVENT_ID_CAMERA, CameraLeftSeven)
 	waitmovement(0)
 	special(RemoveCameraObject)
@@ -829,17 +930,34 @@ script PetalburgCity_EventScript_JSOFight {
 	applymovement(OBJ_EVENT_ID_PLAYER, LookUp)
 	waitmovement(0)
 	delay(60)
-	trainerbattle_no_intro(TRAINER_THALIA_4, Jeremy_Outro)
+	trainerbattle_no_intro(TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Jeremy_Outro)
 	setvar(VAR_PETALBURG_CITY_STATE, 3)
+	delay(15)
 	applymovement(LOCALID_JSOGIRL, LookLeft)
 	applymovement(LOCALID_JSOBOY, WalkInPlaceRight)
 	msgbox(format("I suppose not battling all-out is one of the principles of non-violent resistance.\pWe'd better get out of here before anything worse happens."))
+	closemessage
+	applymovement(LOCALID_JSOGIRL, Common_Movement_FaceDown)
+	applymovement(LOCALID_JSOBOY, Common_Movement_FaceDown)
+	waitmovement(0)
+	delay(15)
+	applymovement(LOCALID_JSOBOY, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	msgbox(format("We'll be seeing you again, {PLAYER}."))
+	closemessage
+	delay(15)
 	fadescreen(FADE_TO_BLACK)
 	removeobject(3)
+	waitmovement(0)
 	removeobject(4)
+	waitmovement(0)
+	removeobject(6)
+	waitmovement(0)
+	removeobject(7)
+	waitmovement(0)
 	setflag(FLAG_UNUSED_0x02A)
 	setvar(VAR_PETALBURG_CITY_STATE, 3)
-	playse(SE_WARP_OUT)
+	playse(SE_EXIT)
 	delay(60)
 	fadescreen(FADE_FROM_BLACK)
 	applymovement(OBJ_EVENT_ID_PLAYER, LookRight)
@@ -857,13 +975,13 @@ script PetalburgCity_EventScript_JSOFight {
 	removeobject(LOCALID_Mundungus)
 	applymovement(OBJ_EVENT_ID_PLAYER, PlayerUpTwo)
 	waitmovement(0)
-	warp(MAP_PETALBURG_CITY_Mundungus_HOUSE, 1)
+	warp(MAP_PETALBURG_CITY_MUNDUNGUS_HOUSE, 9, 8)
 	releaseall
 	end
 }
 
 script PetalburgCity_EventScript_JSOBoyFight {
-	trainerbattle_single(TRAINER_THALIA_4, Jeremy_Intro, Jeremy_Outro, PetalburgCity_EventScript_JSOLeave)
+	trainerbattle_single(TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Jeremy_Intro, Jeremy_Outro, PetalburgCity_EventScript_JSOLeave)
 	msgbox(PostBattle_Jeremy, MSGBOX_AUTOCLOSE) 
 	waitmessage
     end
