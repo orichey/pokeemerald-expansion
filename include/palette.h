@@ -66,7 +66,7 @@ void LoadCompressedPalette(const u32 *src, u32 offset, u32 size);
 void LoadPalette(const void *src, u32 offset, u32 size);
 void FillPalette(u32 value, u32 offset, u32 size);
 void TransferPlttBuffer(void);
-u8 UpdatePaletteFade(void);
+u32 UpdatePaletteFade(void);
 u32 PrevPaletteFadeResult(void); // Battle Speed Up
 void ResetPaletteFade(void);
 bool32 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, u32 blendColor);

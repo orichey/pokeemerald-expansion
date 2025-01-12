@@ -2039,7 +2039,7 @@ static const struct TrainerMon sParty_Takao[] = {
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 11,
-    .species = SPECIES_WORMADAM_TRASH_CLOAK,
+    .species = SPECIES_WORMADAM_TRASH,
     }
 };
 

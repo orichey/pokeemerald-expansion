@@ -8486,8 +8486,6 @@ u8 GetAttackerObedienceForAction()
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return OBEYS;
 
-        obedienceLevel = 100;
-
         if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
             obedienceLevel = 100;
         if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
@@ -8502,7 +8500,7 @@ u8 GetAttackerObedienceForAction()
             obedienceLevel = 100;
         if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
             obedienceLevel = 100;
-    }
+    
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
