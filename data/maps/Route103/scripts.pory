@@ -385,9 +385,20 @@ script Route103_EventScript_ItemLooker{
 script Route103_EventScript_RunningGirl{
 	lock
 	faceplayer
-	msgbox(format("I can't get back home!"))
+	msgbox(format("I can't get to my boyfriend!"))
 	closemessage
 	applymovement(11, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Route103_EventScript_RunningBoy{
+	lock
+	faceplayer
+	msgbox(format("I can't get to my girlfriend!"))
+	closemessage
+	applymovement(8, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
 	release
 	end
@@ -481,4 +492,80 @@ text PostBattle_OldCouple1{
 }
 text PostBattle_OldCouple2{
     format("I've never seen such stormy conditions. Hopefully the rain lets up soon.")
+}
+
+script Route103_EventScript_Hiker1 {
+	trainerbattle_single(TRAINER_GRUNT_SEAFLOOR_CAVERN_3, IntroText_Mark, LoseText_Mark)
+	msgbox(PostBattle_Mark, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text IntroText_Mark{
+	format("These cliffs are steep!")
+}
+
+text LoseText_Mark{
+	format("Wahahaha!")
+}
+
+text PostBattle_Mark{
+	format("Not many are able to scale these mountains.\pPeople are trapped in Seaspray Town!")
+}
+
+script Route103_EventScript_Camper1 {
+	trainerbattle_single(TRAINER_GABRIELLE_1, IntroText_Anna, LoseText_Anna)
+	msgbox(PostBattle_Anna, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text IntroText_Anna{
+	format("Did you try to sneak by me?")
+}
+
+text LoseText_Anna{
+	format("I should have let you pass...")
+}
+
+text PostBattle_Anna{
+	format("I hear rumbling from the cave down there.\pI wonder what it could be?")
+}
+
+script Route103_EventScript_Camper2 {
+	trainerbattle_single(TRAINER_GRUNT_PETALBURG_WOODS, IntroText_Alec, LoseText_Alec)
+	msgbox(PostBattle_Alec, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text IntroText_Alec{
+	format("I saw you heading my way!")
+}
+
+text LoseText_Alec{
+	format("Are you going to Seaspray Town?")
+}
+
+text PostBattle_Alec{
+	format("I don't like the rain.")
+}
+
+script Route103_EventScript_Hiker2 {
+	trainerbattle_single(TRAINER_MARCEL, IntroText_Roger, LoseText_Roger)
+	msgbox(PostBattle_Roger, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+
+text IntroText_Roger{
+	format("This rain is rough!")
+}
+
+text LoseText_Roger{
+	format("You were tougher!")
+}
+
+text PostBattle_Roger{
+	format("This weather along with the rising seas make for a bad combination.")
 }

@@ -1622,6 +1622,39 @@ DewfordTown_EventScript_FamilyMan::
 	end
 
 
+DewfordTown_EventScript_Scientist::
+	lock
+	faceplayer
+	msgbox DewfordTown_EventScript_Scientist_Text_0
+	closemessage
+	applymovement 45, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
+DewfordTown_EventScript_Anthrotech::
+	lock
+	faceplayer
+	msgbox DewfordTown_EventScript_Anthrotech_Text_0
+	closemessage
+	applymovement 44, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
+DewfordTown_EventScript_PokecenterWoman::
+	lock
+	faceplayer
+	msgbox DewfordTown_EventScript_PokecenterWoman_Text_0
+	closemessage
+	applymovement 42, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
 DewfordTown_EventScript_Beauty::
 	lock
 	faceplayer
@@ -1863,6 +1896,28 @@ DewfordTown_EventScript_FamilyMan_Text_0:
 	.string "only take three of us.\p"
 	.string "I opted to stay behind, but now I don't\n"
 	.string "know when I'll see them again.$"
+
+DewfordTown_EventScript_Scientist_Text_0:
+	.string "As the atmosphere warms, the oceans\n"
+	.string "heat up as well.\p"
+	.string "When water warms up, it expands. This,\n"
+	.string "along with melting polar ice, is a\l"
+	.string "primary reason for sea level rise.\p"
+	.string "A warmer ocean climate means more\n"
+	.string "severe storms, too!$"
+
+DewfordTown_EventScript_Anthrotech_Text_0:
+	.string "I work with Anthrotech and was sent\n"
+	.string "here to workshop solutions for the\l"
+	.string "flooding.\p"
+	.string "If we just put down a seawall, Seaspray\n"
+	.string "Town should be looking good as new!$"
+
+DewfordTown_EventScript_PokecenterWoman_Text_0:
+	.string "The ocean has almost risen to flood our\n"
+	.string "PokéCenter!\p"
+	.string "How will our town survive without\n"
+	.string "healthcare?$"
 
 DewfordTown_EventScript_Beauty_Text_0:
 	.string "Seaspray Town used to have the most\n"

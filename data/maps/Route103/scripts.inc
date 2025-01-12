@@ -392,6 +392,17 @@ Route103_EventScript_RunningGirl::
 	end
 
 
+Route103_EventScript_RunningBoy::
+	lock
+	faceplayer
+	msgbox Route103_EventScript_RunningBoy_Text_0
+	closemessage
+	applymovement 8, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+
 Route103_EventScript_DoubleBattlePartOne::
 	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_1, IntroText_Francis, LoseText_Francis
 	msgbox PostBattle_OldCouple1, MSGBOX_AUTOCLOSE
@@ -427,6 +438,34 @@ Route103_EventScript_ScaryFlooding::
 	end
 
 
+Route103_EventScript_Hiker1::
+	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_3, IntroText_Mark, LoseText_Mark
+	msgbox PostBattle_Mark, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+Route103_EventScript_Camper1::
+	trainerbattle_single TRAINER_GABRIELLE_1, IntroText_Anna, LoseText_Anna
+	msgbox PostBattle_Anna, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+Route103_EventScript_Camper2::
+	trainerbattle_single TRAINER_GRUNT_PETALBURG_WOODS, IntroText_Alec, LoseText_Alec
+	msgbox PostBattle_Alec, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
+Route103_EventScript_Hiker2::
+	trainerbattle_single TRAINER_MARCEL, IntroText_Roger, LoseText_Roger
+	msgbox PostBattle_Roger, MSGBOX_AUTOCLOSE
+	waitmessage
+	end
+
+
 Route103_EventScript_WalkingYoungster_Text_0:
 	.string "I was hoping to visit my friends in\n"
 	.string "Seaspray Town, but I don't know that I\l"
@@ -438,10 +477,14 @@ Route103_EventScript_HappyFisher_Text_0:
 
 Route103_EventScript_ItemLooker_Text_0:
 	.string "That item seems important, but I can't\n"
-	.string "reach it!/pIf only I could Surf...$"
+	.string "reach it!\p"
+	.string "If only I could Surf...$"
 
 Route103_EventScript_RunningGirl_Text_0:
-	.string "I can't get back home!$"
+	.string "I can't get to my boyfriend!$"
+
+Route103_EventScript_RunningBoy_Text_0:
+	.string "I can't get to my girlfriend!$"
 
 IntroText_Kingston::
 	.string "My Pokémon are strong against water. I\n"
@@ -499,3 +542,44 @@ PostBattle_OldCouple1::
 PostBattle_OldCouple2::
 	.string "I've never seen such stormy conditions.\n"
 	.string "Hopefully the rain lets up soon.$"
+
+IntroText_Mark::
+	.string "These cliffs are steep!$"
+
+LoseText_Mark::
+	.string "Wahahaha!$"
+
+PostBattle_Mark::
+	.string "Not many are able to scale these\n"
+	.string "mountains.\p"
+	.string "People are trapped in Seaspray Town!$"
+
+IntroText_Anna::
+	.string "Did you try to sneak by me?$"
+
+LoseText_Anna::
+	.string "I should have let you pass...$"
+
+PostBattle_Anna::
+	.string "I hear rumbling from the cave down\n"
+	.string "there.\p"
+	.string "I wonder what it could be?$"
+
+IntroText_Alec::
+	.string "I saw you heading my way!$"
+
+LoseText_Alec::
+	.string "Are you going to Seaspray Town?$"
+
+PostBattle_Alec::
+	.string "I don't like the rain.$"
+
+IntroText_Roger::
+	.string "This rain is rough!$"
+
+LoseText_Roger::
+	.string "You were tougher!$"
+
+PostBattle_Roger::
+	.string "This weather along with the rising seas\n"
+	.string "make for a bad combination.$"

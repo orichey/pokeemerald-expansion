@@ -1050,7 +1050,7 @@
 #define FLAG_ITEM_ROUTE_101_PARALYZE_HEAL                           0x3E9
 #define FLAG_ITEM_DESOLA_TOWN_GREAT_BALL                            0x3EA
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
+#define FLAG_ITEM_ROUTE_103_SUPER_POTION                            0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
 #define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
 #define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF

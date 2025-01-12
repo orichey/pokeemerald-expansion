@@ -948,7 +948,7 @@ PetalburgCity_EventScript_JSOFight::
 	applymovement OBJ_EVENT_ID_PLAYER, LookUp
 	waitmovement 0
 	delay 60
-	trainerbattle_no_intro TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Jeremy_Outro
+	trainerbattle_no_intro_no_whiteout TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Jeremy_Outro
 	setvar VAR_PETALBURG_CITY_STATE, 3
 	delay 15
 	applymovement LOCALID_JSOGIRL, LookLeft
@@ -1191,7 +1191,7 @@ PetalburgCity_EventScript_JSOFight_Text_6:
 	.string "were quite the nuisance. I haven't the\l"
 	.string "faintest clue what they were talking\l"
 	.string "about, Anthrotech is dedicated to\l"
-	.string "improving the lives of those living in\l"
+	.string "improving the lives of everyone in\l"
 	.string "Ecodia!$"
 
 PetalburgCity_EventScript_JSOFight_Text_7:

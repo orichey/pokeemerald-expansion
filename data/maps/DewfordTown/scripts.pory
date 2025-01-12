@@ -1568,6 +1568,39 @@ script DewfordTown_EventScript_FamilyMan{
 	end
 }
 
+script DewfordTown_EventScript_Scientist{
+	lock
+	faceplayer
+	msgbox(format("As the atmosphere warms, the oceans heat up as well.\pWhen water warms up, it expands. This, along with melting polar ice, is a primary reason for sea level rise.\pA warmer ocean climate means more severe storms, too!"))
+	closemessage
+	applymovement(45, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script DewfordTown_EventScript_Anthrotech{
+	lock
+	faceplayer
+	msgbox(format("I work with Anthrotech and was sent here to workshop solutions for the flooding.\pIf we just put down a seawall, Seaspray Town should be looking good as new!"))
+	closemessage
+	applymovement(44, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script DewfordTown_EventScript_PokecenterWoman{
+	lock
+	faceplayer
+	msgbox(format("The ocean has almost risen to flood our PokéCenter!\pHow will our town survive without healthcare?"))
+	closemessage
+	applymovement(42, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
 script DewfordTown_EventScript_Beauty{
 	lock
 	faceplayer
