@@ -8489,7 +8489,7 @@ u8 GetAttackerObedienceForAction()
 {
     s32 rnd;
     s32 calc;
-    u8 obedienceLevel = 0;
+    u8 obedienceLevel = 100;
     u8 levelReferenced;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))

@@ -946,3 +946,80 @@ const struct Tileset gTileset_TreefallWoods =
     .metatileAttributes = gMetatileAttributes_TreefallWoods,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Gen_4_Cave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Gen_4_Cave,
+    .palettes = gTilesetPalettes_Gen_4_Cave,
+    .metatiles = gMetatiles_Gen_4_Cave,
+    .metatileAttributes = gMetatileAttributes_Gen_4_Cave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Pawkkie_Snowy =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Pawkkie_Snowy,
+    .palettes = gTilesetPalettes_Pawkkie_Snowy,
+    .metatiles = gMetatiles_Pawkkie_Snowy,
+    .metatileAttributes = gMetatileAttributes_Pawkkie_Snowy,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_ChaoticCherryCakeGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_ChaoticCherryCakeGeneral,
+    .palettes = gTilesetPalettes_ChaoticCherryCakeGeneral,
+    .metatiles = gMetatiles_ChaoticCherryCakeGeneral,
+    .metatileAttributes = gMetatileAttributes_ChaoticCherryCakeGeneral,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_porytilestutorialfebthree =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_porytilestutorialfebthree,
+    .palettes = gTilesetPalettes_porytilestutorialfebthree,
+    .metatiles = gMetatiles_porytilestutorialfebthree,
+    .metatileAttributes = gMetatileAttributes_porytilestutorialfebthree,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Anthroh =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Anthroh,
+    .palettes = gTilesetPalettes_Anthroh,
+    .metatiles = gMetatiles_Anthroh,
+    .metatileAttributes = gMetatileAttributes_Anthroh,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_treefallwoods =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_treefallwoods,
+    .palettes = gTilesetPalettes_treefallwoods,
+    .metatiles = gMetatiles_treefallwoods,
+    .metatileAttributes = gMetatileAttributes_treefallwoods,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_treefallcity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_treefallcity,
+    .palettes = gTilesetPalettes_treefallcity,
+    .metatiles = gMetatiles_treefallcity,
+    .metatileAttributes = gMetatileAttributes_treefallcity,
+    .callback = NULL,
+};

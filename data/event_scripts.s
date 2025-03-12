@@ -1173,3 +1173,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PorytilesTestMap/scripts.inc"
 
 	.include "data/maps/TreefallWoods/scripts.inc"
+
+	.include "data/maps/TestMap/scripts.inc"

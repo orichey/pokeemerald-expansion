@@ -1306,6 +1306,7 @@ SECTIONS {
         sound/songs/midi/mus_stardew_cloth.o(.rodata);
         sound/songs/midi/mus_big_yellow_taxi.o(.rodata);
         sound/songs/midi/mus_minecraft_alpha.o(.rodata);
+        sound/songs/midi/mus_kiki_town_with_ocean_view.o(.rodata);
     } > ROM =0
 
     lib_rodata :

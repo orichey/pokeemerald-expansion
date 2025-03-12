@@ -90,7 +90,8 @@ u32 UpdatePaletteFade(void)
         result = UpdateHardwarePaletteFade();
 
     sPlttBufferTransferPending = gPaletteFade.multipurpose1;
-
+    sPlttPreviousUpdateResult = result;
+    
     return result;
 }
 

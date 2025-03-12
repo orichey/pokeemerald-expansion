@@ -2553,3 +2553,10 @@ bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 
     return FALSE;
 }
+
+void ScrCmd_safefollow()
+{
+    FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
+    UpdateFollowingPokemon();
+    gObjectEvents[gPlayerAvatar.objectEventId].playerCopyableMovement = COPY_MOVE_WALK;
+}

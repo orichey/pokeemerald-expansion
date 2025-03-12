@@ -471,8 +471,9 @@ script OldaleTown_EventScript_CantPass {
 
 script OldaleTown_EventScript_EnterTop {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
-		lockall
+		lock
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+		safefollow()
 		applymovement(OBJ_EVENT_ID_PLAYER,EnterTop)
 		waitmovement(0)
 		applymovement(5,AnthrotechWalkLeft)
@@ -523,8 +524,9 @@ script OldaleTown_EventScript_EnterTop {
 
 script OldaleTown_EventScript_EnterMid {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
-		lockall
+		lock
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+		safefollow()
 		applymovement(OBJ_EVENT_ID_PLAYER,EnterMid)
 		waitmovement(0)
 		applymovement(5,AnthrotechWalkLeft)
@@ -575,8 +577,9 @@ script OldaleTown_EventScript_EnterMid {
 
 script OldaleTown_EventScript_EnterBottom {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
-		lockall
+		lock
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+		safefollow()
 		applymovement(OBJ_EVENT_ID_PLAYER,EnterBottom)
 		waitmovement(0)
 		applymovement(5,AnthrotechWalkLeft)
@@ -641,6 +644,7 @@ movement EnterTop{
 	walk_left*8
 }
 
+
 movement EnterMid{
 	walk_left*3
 	walk_up
@@ -651,6 +655,22 @@ movement EnterBottom{
 	walk_left*3
 	walk_up*2
 	walk_left*5
+}
+
+movement PEnterTop{
+	walk_left*8
+}
+
+movement PEnterMid{
+	walk_left*4
+	walk_up
+	walk_left*4
+}
+
+movement PEnterBottom{
+	walk_left*4
+	walk_up*2
+	walk_left*4
 }
 
 movement AnthrotechWalkLeft{

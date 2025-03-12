@@ -962,6 +962,7 @@ script PetalburgCity_EventScript_JSOFight {
 	fadescreen(FADE_FROM_BLACK)
 	applymovement(OBJ_EVENT_ID_PLAYER, LookRight)
 	applymovement(LOCALID_Mundungus, LookLeft)
+	waitmovement(0)
 	applymovement(LOCALID_Mundungus, WalkInPlaceLeft)
 	msgbox(format("Mundungus: Thank you, {PLAYER}.\pI am still not quite sure who those people dressed in orange are, but they were quite the nuisance. I haven't the faintest clue what they were talking about, Anthrotech is dedicated to improving the lives of everyone in Ecodia!"))
 	applymovement(LOCALID_Mundungus, LookDown)

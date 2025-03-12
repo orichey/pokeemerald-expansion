@@ -22,8 +22,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 9,
-      "y": 14,
+      "x": 7,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -35,8 +35,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 22,
-      "y": 12,
+      "x": 20,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -48,8 +48,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-      "x": 14,
-      "y": 11,
+      "x": 11,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -62,29 +62,29 @@
   ],
   "warp_events": [
     {
-      "x": 16,
-      "y": 7,
+      "x": 13,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
       "x": 23,
-      "y": 16,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_STARTING_HOUSE",
       "dest_warp_id": "1"
     },
     {
-      "x": 8,
-      "y": 11,
+      "x": 4,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_SMALL_HOUSE",
       "dest_warp_id": "0"
     },
     {
-      "x": 24,
-      "y": 6,
+      "x": 21,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_NEW_HOUSE",
       "dest_warp_id": "0"
@@ -93,7 +93,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 4,
+      "x": 0,
       "y": 12,
       "elevation": 0,
       "var": "VAR_UNUSED_0x40F9",
@@ -102,8 +102,17 @@
     },
     {
       "type": "trigger",
-      "x": 4,
+      "x": 0,
       "y": 13,
+      "elevation": 0,
+      "var": "VAR_UNUSED_0x40F9",
+      "var_value": "0",
+      "script": "LittlerootTown_EventScript_ShouldGetPokemon"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 14,
       "elevation": 0,
       "var": "VAR_UNUSED_0x40F9",
       "var_value": "0",
@@ -113,24 +122,24 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 20,
-      "y": 8,
+      "x": 17,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_EventScript_TownSign"
     },
     {
       "type": "sign",
-      "x": 22,
-      "y": 7,
+      "x": 19,
+      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_EventScript_SprucesLabSign"
     },
     {
       "type": "sign",
-      "x": 26,
-      "y": 16,
+      "x": 21,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_EventScript_PlayerHouseSign"

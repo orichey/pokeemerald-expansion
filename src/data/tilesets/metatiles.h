@@ -240,3 +240,24 @@ const u16 gMetatileAttributes_PorytilesSecondaryTest[] = INCBIN_U16("data/tilese
 
 const u16 gMetatiles_TreefallWoods[] = INCBIN_U16("data/tilesets/primary/treefall_woods/metatiles.bin");
 const u16 gMetatileAttributes_TreefallWoods[] = INCBIN_U16("data/tilesets/primary/treefall_woods/metatile_attributes.bin");
+
+const u16 gMetatiles_Gen_4_Cave[] = INCBIN_U16("data/tilesets/secondary/gen_4_cave/metatiles.bin");
+const u16 gMetatileAttributes_Gen_4_Cave[] = INCBIN_U16("data/tilesets/secondary/gen_4_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_Pawkkie_Snowy[] = INCBIN_U16("data/tilesets/primary/pawkkie_snowy/metatiles.bin");
+const u16 gMetatileAttributes_Pawkkie_Snowy[] = INCBIN_U16("data/tilesets/primary/pawkkie_snowy/metatile_attributes.bin");
+
+const u16 gMetatiles_ChaoticCherryCakeGeneral[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/metatiles.bin");
+const u16 gMetatileAttributes_ChaoticCherryCakeGeneral[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/metatile_attributes.bin");
+
+const u16 gMetatiles_porytilestutorialfebthree[] = INCBIN_U16("data/tilesets/primary/porytilestutorialfebthree/metatiles.bin");
+const u16 gMetatileAttributes_porytilestutorialfebthree[] = INCBIN_U16("data/tilesets/primary/porytilestutorialfebthree/metatile_attributes.bin");
+
+const u16 gMetatiles_Anthroh[] = INCBIN_U16("data/tilesets/secondary/anthroh/metatiles.bin");
+const u16 gMetatileAttributes_Anthroh[] = INCBIN_U16("data/tilesets/secondary/anthroh/metatile_attributes.bin");
+
+const u16 gMetatiles_treefallwoods[] = INCBIN_U16("data/tilesets/secondary/treefallwoods/metatiles.bin");
+const u16 gMetatileAttributes_treefallwoods[] = INCBIN_U16("data/tilesets/secondary/treefallwoods/metatile_attributes.bin");
+
+const u16 gMetatiles_treefallcity[] = INCBIN_U16("data/tilesets/secondary/treefallcity/metatiles.bin");
+const u16 gMetatileAttributes_treefallcity[] = INCBIN_U16("data/tilesets/secondary/treefallcity/metatile_attributes.bin");

@@ -2454,3 +2454,8 @@
 	.2byte \dest
 	.endm
 
+	@Kasen safefollow
+	.macro safefollow
+	callnative ScrCmd_safefollow
+	.endm
+	

@@ -965,6 +965,7 @@
 #define MUS_STARDEW_CLOTH                 912 // Cloth
 #define MUS_BIG_YELLOW_TAXI               913 // Big Yellow Taxi
 #define MUS_MINECRAFT_ALPHA               914 // Minecraft Alpha
+#define MUS_KIKI_TOWN_WITH_OCEAN_VIEW     915 // A Town with an Ocean View
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 
