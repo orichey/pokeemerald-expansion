@@ -473,16 +473,15 @@ script OldaleTown_EventScript_EnterTop {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
 		lock
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-		safefollow()
-		applymovement(OBJ_EVENT_ID_PLAYER,EnterTop)
+		safefollow
+		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
-		applymovement(5,AnthrotechWalkLeft)
+		applymovement(5,Common_Movement_WalkUp)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
 		closemessage
-		applymovement(5,PlayerUp)
 		delay(60)
-		applymovement(5,HikerDown)
+		applymovement(5,Common_Movement_WalkDown2)
 		msgbox(format("???: I see..."))
 		closemessage
 		applymovement(5,LookLeft)
@@ -493,7 +492,7 @@ script OldaleTown_EventScript_EnterTop {
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
 		closemessage
-		applymovement(5,WalkToPlayer)
+		applymovement(5,WalkToPlayerTop)
 		waitmovement(0)
 		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local about the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
 		closemessage
@@ -526,16 +525,15 @@ script OldaleTown_EventScript_EnterMid {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
 		lock
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-		safefollow()
-		applymovement(OBJ_EVENT_ID_PLAYER,EnterMid)
+		safefollow
+		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
-		applymovement(5,AnthrotechWalkLeft)
+		applymovement(5,Common_Movement_WalkUp)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
 		closemessage
-		applymovement(5,PlayerUp)
 		delay(60)
-		applymovement(5,HikerDown)
+		applymovement(5,Common_Movement_WalkDown2)
 		msgbox(format("???: I see..."))
 		closemessage
 		applymovement(5,LookLeft)
@@ -546,7 +544,7 @@ script OldaleTown_EventScript_EnterMid {
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
 		closemessage
-		applymovement(5,WalkToPlayer)
+		applymovement(5,WalkToPlayerMid)
 		waitmovement(0)
 		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
 		closemessage
@@ -579,16 +577,15 @@ script OldaleTown_EventScript_EnterBottom {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
 		lock
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-		safefollow()
-		applymovement(OBJ_EVENT_ID_PLAYER,EnterBottom)
+		safefollow
+		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
-		applymovement(5,AnthrotechWalkLeft)
+		applymovement(5,Common_Movement_WalkUp)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
 		closemessage
-		applymovement(5,PlayerUp)
 		delay(60)
-		applymovement(5,HikerDown)
+		applymovement(5,Common_Movement_WalkDown2)
 		msgbox(format("???: I see..."))
 		closemessage
 		applymovement(5,LookLeft)
@@ -599,7 +596,7 @@ script OldaleTown_EventScript_EnterBottom {
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
 		closemessage
-		applymovement(5,WalkToPlayer)
+		applymovement(5,WalkToPlayerBottom)
 		waitmovement(0)
 		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
 		closemessage
@@ -645,36 +642,28 @@ movement EnterTop{
 }
 
 
-movement EnterMid{
-	walk_left*3
+movement AnthrotechWalkRight4{
+	walk_right*4
+}
+
+movement AnthrotechWalkUp{
 	walk_up
-	walk_left*5
 }
 
-movement EnterBottom{
-	walk_left*3
-	walk_up*2
-	walk_left*5
-}
-
-movement PEnterTop{
-	walk_left*8
-}
-
-movement PEnterMid{
-	walk_left*4
+movement WalkToPlayerTop{
+	walk_right*2
 	walk_up
-	walk_left*4
+	walk_right*2
 }
 
-movement PEnterBottom{
-	walk_left*4
-	walk_up*2
-	walk_left*4
+movement WalkToPlayerMid{
+	walk_right*4
 }
 
-movement AnthrotechWalkLeft{
-	walk_left
+movement WalkToPlayerBottom{
+	walk_right*2
+	walk_down
+	walk_right*2
 }
 
 movement LookLeft{
