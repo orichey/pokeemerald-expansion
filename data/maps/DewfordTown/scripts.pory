@@ -1083,7 +1083,7 @@ script DewfordTown_EventScript_PushyMan {
 	waitdooranim
 	msgbox(format("You want me? Here I am!"))
 	closemessage
-	playbgm(MUS_DP_ENCOUNTER_INTENSE, FALSE)
+	playbgm(MUS_ENCOUNTER_AQUA, FALSE)
 	applymovement(16, WalkLeft)
 	waitmovement(0)
 	applymovement(16, FaceRight)

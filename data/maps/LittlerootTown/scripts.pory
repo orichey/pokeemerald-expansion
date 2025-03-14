@@ -1007,7 +1007,7 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 script LittlerootTown_EventScript_PlayerHouseSign {
     lockall
-    msgbox("{PLAYER}'s House$")
+    msgbox("{PLAYER}'s TEST!!!!!!$")
     releaseall
 }
 

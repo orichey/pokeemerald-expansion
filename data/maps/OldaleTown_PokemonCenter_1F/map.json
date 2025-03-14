@@ -2,7 +2,7 @@
   "id": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
   "name": "OldaleTown_PokemonCenter_1F",
   "layout": "LAYOUT_POKEMON_CENTER_1F",
-  "music": "MUS_DP_POKE_CENTER_NIGHT",
+  "music": "MUS_STARDEW_CLOUD_COUNTRY",
   "region_map_section": "MAPSEC_OLDALE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

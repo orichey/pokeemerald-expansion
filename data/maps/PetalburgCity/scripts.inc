@@ -917,7 +917,7 @@ PetalburgCity_EventScript_JSOBoyBlock2_1:
 PetalburgCity_EventScript_JSOFight::
 	lockall
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, FALSE
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement OBJ_EVENT_ID_PLAYER, LookRight
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
@@ -932,7 +932,7 @@ PetalburgCity_EventScript_JSOFight::
 	applymovement LOCALID_JSOGIRL, WalkInPlaceDown
 	waitmovement 0
 	msgbox PetalburgCity_EventScript_JSOFight_Text_1
-	applymovement LOCALID_Mundungus, LookLeft
+	applymovement LOCALID_Mundungus, Common_Movement_FaceLeft
 	waitmovement 0
 	applymovement LOCALID_Mundungus, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -951,7 +951,7 @@ PetalburgCity_EventScript_JSOFight::
 	trainerbattle_no_intro_no_whiteout TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Jeremy_Outro
 	setvar VAR_PETALBURG_CITY_STATE, 3
 	delay 15
-	applymovement LOCALID_JSOGIRL, LookLeft
+	applymovement LOCALID_JSOGIRL, Common_Movement_FaceLeft
 	applymovement LOCALID_JSOBOY, WalkInPlaceRight
 	msgbox PetalburgCity_EventScript_JSOFight_Text_4
 	closemessage
@@ -979,13 +979,13 @@ PetalburgCity_EventScript_JSOFight::
 	delay 60
 	fadescreen FADE_FROM_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, LookRight
-	applymovement LOCALID_Mundungus, LookLeft
+	applymovement LOCALID_Mundungus, Common_Movement_FaceLeft
 	applymovement LOCALID_Mundungus, WalkInPlaceLeft
 	msgbox PetalburgCity_EventScript_JSOFight_Text_6
 	applymovement LOCALID_Mundungus, LookDown
 	delay 30
 	msgbox PetalburgCity_EventScript_JSOFight_Text_7
-	applymovement LOCALID_Mundungus, LookLeft
+	applymovement LOCALID_Mundungus, Common_Movement_FaceLeft
 	msgbox PetalburgCity_EventScript_JSOFight_Text_8
 	applymovement LOCALID_Mundungus, WalkUpTwo
 	waitmovement 0

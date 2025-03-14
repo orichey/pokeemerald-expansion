@@ -471,9 +471,8 @@ script OldaleTown_EventScript_CantPass {
 
 script OldaleTown_EventScript_EnterTop {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
-		lock
+		lockall
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-		safefollow
 		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
 		applymovement(5,Common_Movement_WalkUp)
@@ -484,7 +483,7 @@ script OldaleTown_EventScript_EnterTop {
 		applymovement(5,Common_Movement_WalkDown2)
 		msgbox(format("???: I see..."))
 		closemessage
-		applymovement(5,LookLeft)
+		applymovement(5,Common_Movement_FaceLeft)
 		waitmovement(0)
 		delay(35)
 		applymovement(5,AnthroLookRight)
@@ -523,9 +522,8 @@ script OldaleTown_EventScript_EnterTop {
 
 script OldaleTown_EventScript_EnterMid {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
-		lock
+		lockall
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-		safefollow
 		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
 		applymovement(5,Common_Movement_WalkUp)
@@ -536,7 +534,7 @@ script OldaleTown_EventScript_EnterMid {
 		applymovement(5,Common_Movement_WalkDown2)
 		msgbox(format("???: I see..."))
 		closemessage
-		applymovement(5,LookLeft)
+		applymovement(5,Common_Movement_FaceLeft)
 		waitmovement(0)
 		delay(35)
 		applymovement(5,AnthroLookRight)
@@ -575,9 +573,8 @@ script OldaleTown_EventScript_EnterMid {
 
 script OldaleTown_EventScript_EnterBottom {
 	if(flag(FLAG_UNUSED_0x028) == FALSE) {
-		lock
+		lockall
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-		safefollow
 		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
 		applymovement(5,Common_Movement_WalkUp)
@@ -588,7 +585,7 @@ script OldaleTown_EventScript_EnterBottom {
 		applymovement(5,Common_Movement_WalkDown2)
 		msgbox(format("???: I see..."))
 		closemessage
-		applymovement(5,LookLeft)
+		applymovement(5,Common_Movement_FaceLeft)
 		waitmovement(0)
 		delay(35)
 		applymovement(5,AnthroLookRight)
@@ -664,10 +661,6 @@ movement WalkToPlayerBottom{
 	walk_right*2
 	walk_down
 	walk_right*2
-}
-
-movement LookLeft{
-	face_left
 }
 
 movement AnthroLookRight{
