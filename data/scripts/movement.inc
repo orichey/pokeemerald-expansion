@@ -111,5 +111,6 @@ Common_Movement_WalkDown::
 	step_end
 
 Common_Movement_WalkDown2::
-	walk_in_place_down
+	walk_down
+	walk_down
 	step_end

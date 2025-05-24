@@ -1175,3 +1175,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/TreefallWoods/scripts.inc"
 
 	.include "data/maps/TestMap/scripts.inc"
+
+	.include "data/maps/MtBoone/scripts.inc"
+
+	.include "data/maps/Route105_Cave1/scripts.inc"
+
+	.include "data/maps/Route105_Cave2/scripts.inc"
+
+	.include "data/maps/Route106_Cave1/scripts.inc"
+
+	.include "data/maps/Route106_Cave2/scripts.inc"

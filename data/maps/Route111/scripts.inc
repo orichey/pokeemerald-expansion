@@ -86,7 +86,6 @@ Route111_EventScript_SetWinstratesNotDefeated::
 	clearflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
 	setflag FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE
 	setflag FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE
-	setflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
 	cleartrainerflag TRAINER_VICTOR
 	cleartrainerflag TRAINER_VICTORIA
 	cleartrainerflag TRAINER_VIVI

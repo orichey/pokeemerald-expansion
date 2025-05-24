@@ -1289,3 +1289,6 @@ $(MID_SUBDIR)/mus_minecraft_alpha.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_kiki_town_with_ocean_view.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_spirited_one_summers_day.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090

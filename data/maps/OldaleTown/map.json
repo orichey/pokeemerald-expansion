@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE102",
       "offset": 12,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE106",
+      "offset": -10,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -151,7 +156,7 @@
     {
       "type": "trigger",
       "x": 0,
-      "y": 16,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -162,7 +167,7 @@
       "x": 33,
       "y": 20,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "FLAG_UNUSED_0x028",
       "var_value": "0",
       "script": "OldaleTown_EventScript_EnterBottom"
     },
@@ -171,7 +176,7 @@
       "x": 33,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "FLAG_UNUSED_0x028",
       "var_value": "0",
       "script": "OldaleTown_EventScript_EnterMid"
     },
@@ -180,9 +185,18 @@
       "x": 33,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "FLAG_UNUSED_0x028",
       "var_value": "0",
       "script": "OldaleTown_EventScript_EnterTop"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 21,
+      "elevation": 0,
+      "var": "FLAG_UNUSED_0x028",
+      "var_value": "0",
+      "script": "OldaleTown_EventScript_EnterSuperBottom"
     }
   ],
   "bg_events": [

@@ -475,18 +475,19 @@ script OldaleTown_EventScript_EnterTop {
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
-		applymovement(5,Common_Movement_WalkUp)
+		applymovement(5,Common_Movement_WalkDown2)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
 		closemessage
 		delay(60)
-		applymovement(5,Common_Movement_WalkDown2)
+		applymovement(5,Common_Movement_WalkUp)
 		msgbox(format("???: I see..."))
 		closemessage
 		applymovement(5,Common_Movement_FaceLeft)
 		waitmovement(0)
 		delay(35)
 		applymovement(5,AnthroLookRight)
+		waitmovement(0)
 		applymovement(5,Common_Movement_ExclamationMark)
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
@@ -526,18 +527,19 @@ script OldaleTown_EventScript_EnterMid {
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
-		applymovement(5,Common_Movement_WalkUp)
+		applymovement(5,Common_Movement_WalkDown2)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
 		closemessage
 		delay(60)
-		applymovement(5,Common_Movement_WalkDown2)
+		applymovement(5,Common_Movement_WalkUp)
 		msgbox(format("???: I see..."))
 		closemessage
 		applymovement(5,Common_Movement_FaceLeft)
 		waitmovement(0)
 		delay(35)
 		applymovement(5,AnthroLookRight)
+		waitmovement(0)
 		applymovement(5,Common_Movement_ExclamationMark)
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
@@ -577,23 +579,76 @@ script OldaleTown_EventScript_EnterBottom {
 		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 		applymovement(5,AnthrotechWalkRight4)
 		waitmovement(0)
-		applymovement(5,Common_Movement_WalkUp)
+		applymovement(5,Common_Movement_WalkDown2)
 		waitmovement(0)
 		msgbox(format("???: Hmmm..."))
 		closemessage
 		delay(60)
-		applymovement(5,Common_Movement_WalkDown2)
+		applymovement(5,Common_Movement_WalkUp)
 		msgbox(format("???: I see..."))
 		closemessage
 		applymovement(5,Common_Movement_FaceLeft)
 		waitmovement(0)
 		delay(35)
 		applymovement(5,AnthroLookRight)
+		waitmovement(0)
 		applymovement(5,Common_Movement_ExclamationMark)
 		waitmovement(0)
 		msgbox(format("???: Oh! Hello there!"))
 		closemessage
 		applymovement(5,WalkToPlayerBottom)
+		waitmovement(0)
+		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
+		closemessage
+		applymovement(5,HikerDown)
+		waitmovement(0)
+		msgbox(format("Mundungus: For example, Desola Town seems a little empty, but I'm certain Anthrotech can work to bring some economic revitalization! Perhaps reopening the Pokémon Mart or constructing a resort for travelers?"))
+		closemessage
+		applymovement(5,AnthroLookRight)
+		msgbox(format("Mundungus: In any case, what is your name? \p{PLAYER}? From Anthroh Town? Why, you and I have the same roots!\pMundungus: I would love to hear about your ideas on how to make Ecodia a more resilient and sustainable region, how about you come talk to me later, in Treefall City?\pMundungus: Here, take one of our innovations, the Pokédex!"))
+		setflag(FLAG_SYS_POKEDEX_GET)
+		special(SetUnlockedPokedexFlags)
+		setflag(FLAG_SYS_NATIONAL_DEX)
+		special(EnableNationalPokedex)
+		setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+		setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("{PLAYER} received the Pokédex!$"))
+		waitfanfare
+		msgbox(format("Mundungus: I'll see you soon, {PLAYER}!"))
+		closemessage
+		applymovement(5,AnthroLeaves)
+		waitmovement(0)
+		setflag(FLAG_UNUSED_0x028)
+		removeobject(5)
+	}
+	release
+}
+
+script OldaleTown_EventScript_EnterSuperBottom {
+	if(flag(FLAG_UNUSED_0x028) == FALSE) {
+		lockall
+		setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+		applymovement(5,AnthrotechWalkRight4)
+		waitmovement(0)
+		applymovement(5,Common_Movement_WalkDown2)
+		waitmovement(0)
+		msgbox(format("???: Hmmm..."))
+		closemessage
+		delay(60)
+		applymovement(5,Common_Movement_WalkUp)
+		msgbox(format("???: I see..."))
+		closemessage
+		applymovement(5,Common_Movement_FaceLeft)
+		waitmovement(0)
+		delay(35)
+		applymovement(5,AnthroLookRight)
+		waitmovement(0)
+		applymovement(5,Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("???: Oh! Hello there!"))
+		closemessage
+		applymovement(5,WalkToPlayerSuperBottom)
 		waitmovement(0)
 		msgbox(format("???: Are you a resident of Desola Town?\p???: You're not? That's too bad. I was hoping to talk to a local and get their opinion on the state of the town.\p???: How rude, I didn't introduce myself! I am Mundungus, the founder and president of Anthrotech!\pMundungus: I'm going around Ecodia, learning about the problems our cities face and how I can help solve them!"))
 		closemessage
@@ -663,6 +718,12 @@ movement WalkToPlayerBottom{
 	walk_right*2
 }
 
+movement WalkToPlayerSuperBottom{
+	walk_right*2
+	walk_down*2
+	walk_right*2
+}
+
 movement AnthroLookRight{
 	face_right
 }
@@ -672,8 +733,5 @@ movement WalkToPlayer{
 }
 
 movement AnthroLeaves{
-	walk_left*3
-	walk_down*5
-	walk_right
-	walk_down*5
+	walk_left*10
 }

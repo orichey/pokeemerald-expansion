@@ -568,25 +568,26 @@
 #define EM_MUSIC_END                      MUS_B_DOME_LOBBY
 
 
-#define MUS_PMD_SKY_DONT_EVER_FORGET      899 // Don't Ever Forget
-#define MUS_SECRET_TUNNEL                 900 // Secret Tunnel
-#define MUS_SECRET_TUNNEL_TWO             901 // Secret Tunnel Two
-#define MUS_LEAVES_FROM_THE_VINE          902 // Leaves From The Vine
-#define MUS_PMD_RESCUETEAM_AWAKENING      903 // Awakening
-#define MUS_PMD_RESCUETEAM_MT_THUN        904 // Mt. Thunder
-#define MUS_PMD_RESCUETEAM_QUIZ           905 // Personality Quiz
-#define MUS_PMD_RESCUETEAM_FILE_SELECT    906 // File Select
-#define MUS_PMD_RESCUETEAM_FAREWELL       907 // Farewell
-#define MUS_PMD_RESCUETEAM_PEANUT_SWAMP   908 // Peanut Swamp
-#define MUS_PMD_RESCUETEAM_OCEANIC        909 // Friend Area Oceanic
-#define MUS_STARDEW_THE_STARDROP_SALOON   910 // The Stardrop Saloon
-#define MUS_STARDEW_CLOUD_COUNTRY         911 // Cloud Country
-#define MUS_STARDEW_CLOTH                 912 // Cloth
-#define MUS_BIG_YELLOW_TAXI               913 // Big Yellow Taxi
-#define MUS_MINECRAFT_ALPHA               914 // Minecraft Alpha
-#define MUS_KIKI_TOWN_WITH_OCEAN_VIEW     915 // A Town with an Ocean View
+#define MUS_PMD_SKY_DONT_EVER_FORGET      532 // Don't Ever Forget
+#define MUS_SECRET_TUNNEL                 533 // Secret Tunnel
+#define MUS_SECRET_TUNNEL_TWO             534 // Secret Tunnel Two
+#define MUS_LEAVES_FROM_THE_VINE          535 // Leaves From The Vine
+#define MUS_PMD_RESCUETEAM_AWAKENING      536 // Awakening
+#define MUS_PMD_RESCUETEAM_MT_THUN        537 // Mt. Thunder
+#define MUS_PMD_RESCUETEAM_QUIZ           538 // Personality Quiz
+#define MUS_PMD_RESCUETEAM_FILE_SELECT    539 // File Select
+#define MUS_PMD_RESCUETEAM_FAREWELL       540 // Farewell
+#define MUS_PMD_RESCUETEAM_PEANUT_SWAMP   541 // Peanut Swamp
+#define MUS_PMD_RESCUETEAM_OCEANIC        542 // Friend Area Oceanic
+#define MUS_STARDEW_THE_STARDROP_SALOON   543 // The Stardrop Saloon
+#define MUS_STARDEW_CLOUD_COUNTRY         544 // Cloud Country
+#define MUS_STARDEW_CLOTH                 545 // Cloth
+#define MUS_BIG_YELLOW_TAXI               546 // Big Yellow Taxi
+#define MUS_MINECRAFT_ALPHA               547 // Minecraft Alpha
+#define MUS_KIKI_TOWN_WITH_OCEAN_VIEW     548 // A Town with an Ocean View
+#define MUS_SPIRITED_ONE_SUMMERS_DAY      549 // One Summers Day
 
-#define EXTRA_MUSIC_END                   MUS_KIKI_TOWN_WITH_OCEAN_VIEW
+#define EXTRA_MUSIC_END                   MUS_SPIRITED_ONE_SUMMERS_DAY
 
 #define SONGS_END                         EXTRA_MUSIC_END
 #define END_MUS                           SONGS_END

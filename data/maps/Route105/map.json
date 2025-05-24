@@ -2,10 +2,10 @@
   "id": "MAP_ROUTE105",
   "name": "Route105",
   "layout": "LAYOUT_ROUTE105",
-  "music": "MUS_PMD_RESCUETEAM_PEANUT_SWAMP",
-  "region_map_section": "MAPSEC_DEWFORD_TOWN",
+  "music": "MUS_ROUTE104",
+  "region_map_section": "MAPSEC_ROUTE_105",
   "requires_flash": false,
-  "weather": "WEATHER_DOWNPOUR",
+  "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -14,9 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_UNDERWATER_ROUTE105",
-      "offset": 0,
-      "direction": "dive"
+      "map": "MAP_ROUTE104",
+      "offset": 4,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE102",
+      "offset": 29,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -114,11 +119,39 @@
   ],
   "warp_events": [
     {
-      "x": 38,
-      "y": 17,
+      "x": 12,
+      "y": 33,
       "elevation": 0,
-      "dest_map": "MAP_ISLAND_CAVE",
+      "dest_map": "MAP_ROUTE105_CAVE1",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE105_CAVE2",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 39,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 40,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 41,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [

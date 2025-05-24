@@ -261,3 +261,18 @@ const u16 gMetatileAttributes_treefallwoods[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_treefallcity[] = INCBIN_U16("data/tilesets/secondary/treefallcity/metatiles.bin");
 const u16 gMetatileAttributes_treefallcity[] = INCBIN_U16("data/tilesets/secondary/treefallcity/metatile_attributes.bin");
+
+const u16 gMetatiles_seaspraytown[] = INCBIN_U16("data/tilesets/secondary/seaspraytown/metatiles.bin");
+const u16 gMetatileAttributes_seaspraytown[] = INCBIN_U16("data/tilesets/secondary/seaspraytown/metatile_attributes.bin");
+
+const u16 gMetatiles_caves[] = INCBIN_U16("data/tilesets/secondary/caves/metatiles.bin");
+const u16 gMetatileAttributes_caves[] = INCBIN_U16("data/tilesets/secondary/caves/metatile_attributes.bin");
+
+const u16 gMetatiles_tsisqua[] = INCBIN_U16("data/tilesets/secondary/tsisqua/metatiles.bin");
+const u16 gMetatileAttributes_tsisqua[] = INCBIN_U16("data/tilesets/secondary/tsisqua/metatile_attributes.bin");
+
+const u16 gMetatiles_newsnowy[] = INCBIN_U16("data/tilesets/secondary/newsnowy/metatiles.bin");
+const u16 gMetatileAttributes_newsnowy[] = INCBIN_U16("data/tilesets/secondary/newsnowy/metatile_attributes.bin");
+
+const u16 gMetatiles_snowytrees[] = INCBIN_U16("data/tilesets/primary/snowytrees/metatiles.bin");
+const u16 gMetatileAttributes_snowytrees[] = INCBIN_U16("data/tilesets/primary/snowytrees/metatile_attributes.bin");

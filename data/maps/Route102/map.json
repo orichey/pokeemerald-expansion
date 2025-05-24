@@ -27,6 +27,11 @@
       "map": "MAP_PETALBURG_CITY",
       "offset": 20,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE105",
+      "offset": -29,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -138,6 +143,27 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": "9"
+    },
+    {
+      "x": 10,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 11,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 12,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [

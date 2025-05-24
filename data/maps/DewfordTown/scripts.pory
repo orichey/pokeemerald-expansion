@@ -25,11 +25,12 @@ DewfordTown_MapScripts::
 DewfordTown_OnTransition:
 	setflag FLAG_VISITED_DEWFORD_TOWN
 	call_if_eq VAR_DEWFORD_TOWN_STATE, 1, DewfordTown_EventScript_StormyInFront
+	goto_if_not_defeated TRAINER_ROXANNE_1, DewfordTown_EventScript_SetWinstratesNotDefeated
+	goto_if_defeated TRAINER_ROXANNE_1, DewfordTown_EventScript_RemoveEveryWinstrate
 	end
 
 DewfordTown_OnResume:
-	goto_if_not_defeated TRAINER_VICKY, DewfordTown_EventScript_SetWinstratesNotDefeated
-	goto_if_defeated TRAINER_VICKY, DewfordTown_EventScript_SetWinstratesDefeated
+	call_if_eq VAR_DEWFORD_TOWN_STATE, 4, DewfordTown_EventScript_SetWinstratesDefeated
 	end
 
 DewfordTown_OnFrame:
@@ -54,6 +55,11 @@ DewfordTown_EventScript_SetWinstratesDefeated::
 	clearflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
 	setflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
 	setobjectxyperm LOCALID_VICKY, 13, 17
+	end
+
+DewfordTown_EventScript_RemoveEveryWinstrate::
+	setflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
+	setflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
 	end
 
 DewfordTown_EventScript_StormyInFront::
@@ -133,6 +139,7 @@ DewfordTown_EventScript_BattleWinstrates::
 	giveitem ITEM_AIR_BALLOON
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox DewfordTown_Text_VickyPostBattle, MSGBOX_DEFAULT
+	setvar 	VAR_DEWFORD_TOWN_STATE 4
 	closemessage
 	release
 	end
@@ -1699,10 +1706,9 @@ script DewfordTown_EventScript_RemoveWinstrate{
 	delay(30)
 	waitmovement(0)
 	setvar(VAR_0x8004, 13)
-	setvar(VAR_0x8005, 17)
+	setvar(VAR_0x8005, 16)
 	special(TeleportCamera)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-	fadedefaultbgm
 	waitmovement(0)
 	delay(60)
 	setfieldeffectargument(0, 1)
@@ -1714,9 +1720,14 @@ script DewfordTown_EventScript_RemoveWinstrate{
 	setvar(VAR_DEWFORD_TOWN_STATE, 3)
 	delay(60)
 	fadescreenswapbuffers(FADE_TO_BLACK)
-	special(ReturnCameraToPlayer)
-	fadescreenswapbuffers(FADE_FROM_BLACK)
+	delay(30)
+	//special(ReturnCameraToPlayer)
+	setvar(VAR_0x8004, 42)
+	setvar(VAR_0x8005, 42)
+	special(TeleportCamera)
+	fadescreen(FADE_FROM_BLACK)
 	special(RemoveCameraObject)
+	setflag(FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE)
 	releaseall
 	end
 }

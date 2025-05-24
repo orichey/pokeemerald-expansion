@@ -1307,6 +1307,7 @@ SECTIONS {
         sound/songs/midi/mus_big_yellow_taxi.o(.rodata);
         sound/songs/midi/mus_minecraft_alpha.o(.rodata);
         sound/songs/midi/mus_kiki_town_with_ocean_view.o(.rodata);
+        sound/songs/midi/mus_spirited_one_summers_day.o(.rodata);
     } > ROM =0
 
     lib_rodata :

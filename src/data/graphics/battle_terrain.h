@@ -88,3 +88,16 @@ const u32 gBattleTerrainAnimTilemap_Building[] = INCBIN_U32("graphics/battle_ter
 
 const u32 gBattleTerrainAnimTiles_Rayquaza[] = INCBIN_U32("graphics/battle_terrain/sky/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_Rayquaza[] = INCBIN_U32("graphics/battle_terrain/sky/anim_map.bin.lz");
+
+
+const u32 gBattleTerrainTiles_Route[] = INCBIN_U32("graphics/battle_terrain/route/tiles.4bpp.lz");
+const u32 gBattleTerrainTilemap_Route[] = INCBIN_U32("graphics/battle_terrain/route/map.bin.lz");
+const u32 gBattleTerrainPalette_Route[] = INCBIN_U32("graphics/battle_terrain/route/palette.gbapal.lz");
+
+const u32 gBattleTerrainTiles_Desert[] = INCBIN_U32("graphics/battle_terrain/desert/tiles.4bpp.lz");
+const u32 gBattleTerrainTilemap_Desert[] = INCBIN_U32("graphics/battle_terrain/desert/map.bin.lz");
+const u32 gBattleTerrainPalette_Desert[] = INCBIN_U32("graphics/battle_terrain/desert/palette.gbapal.lz");
+
+const u32 gBattleTerrainTiles_NewCave[] = INCBIN_U32("graphics/battle_terrain/newcave/tiles.4bpp.lz");
+const u32 gBattleTerrainTilemap_NewCave[] = INCBIN_U32("graphics/battle_terrain/newcave/map.bin.lz");
+const u32 gBattleTerrainPalette_NewCave[] = INCBIN_U32("graphics/battle_terrain/newcave/palette.gbapal.lz");

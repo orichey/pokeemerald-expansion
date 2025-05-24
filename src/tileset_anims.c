@@ -733,6 +733,8 @@ static void QueueAnimTiles_Secondary_Palm(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_Secondary_Palm[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(720)), 0x100);
 }
 
+
+
 void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -1247,4 +1249,646 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
         if (!--sSecondaryTilesetAnimCounterMax)
             sSecondaryTilesetAnimCallback = NULL;
     }
+}
+
+// ### src/tileset_anims.c ###
+// Our custom animation code:
+
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun1_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun1/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun1[] = {
+    gTilesetAnims_Tsisqua_Sun1_Frame0,
+    gTilesetAnims_Tsisqua_Sun1_Frame1,
+    gTilesetAnims_Tsisqua_Sun1_Frame2,
+    gTilesetAnims_Tsisqua_Sun1_Frame3,
+    gTilesetAnims_Tsisqua_Sun1_Frame4,
+    gTilesetAnims_Tsisqua_Sun1_Frame5,
+    gTilesetAnims_Tsisqua_Sun1_Frame6,
+    gTilesetAnims_Tsisqua_Sun1_Frame7,
+    gTilesetAnims_Tsisqua_Sun1_Frame8,
+    gTilesetAnims_Tsisqua_Sun1_Frame9,
+    gTilesetAnims_Tsisqua_Sun1_Frame10,
+    gTilesetAnims_Tsisqua_Sun1_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(512)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun2_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun2/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun2[] = {
+    gTilesetAnims_Tsisqua_Sun2_Frame0,
+    gTilesetAnims_Tsisqua_Sun2_Frame1,
+    gTilesetAnims_Tsisqua_Sun2_Frame2,
+    gTilesetAnims_Tsisqua_Sun2_Frame3,
+    gTilesetAnims_Tsisqua_Sun2_Frame4,
+    gTilesetAnims_Tsisqua_Sun2_Frame5,
+    gTilesetAnims_Tsisqua_Sun2_Frame6,
+    gTilesetAnims_Tsisqua_Sun2_Frame7,
+    gTilesetAnims_Tsisqua_Sun2_Frame8,
+    gTilesetAnims_Tsisqua_Sun2_Frame9,
+    gTilesetAnims_Tsisqua_Sun2_Frame10,
+    gTilesetAnims_Tsisqua_Sun2_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun2(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(536)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun3_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun3/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun3[] = {
+    gTilesetAnims_Tsisqua_Sun3_Frame0,
+    gTilesetAnims_Tsisqua_Sun3_Frame1,
+    gTilesetAnims_Tsisqua_Sun3_Frame2,
+    gTilesetAnims_Tsisqua_Sun3_Frame3,
+    gTilesetAnims_Tsisqua_Sun3_Frame4,
+    gTilesetAnims_Tsisqua_Sun3_Frame5,
+    gTilesetAnims_Tsisqua_Sun3_Frame6,
+    gTilesetAnims_Tsisqua_Sun3_Frame7,
+    gTilesetAnims_Tsisqua_Sun3_Frame8,
+    gTilesetAnims_Tsisqua_Sun3_Frame9,
+    gTilesetAnims_Tsisqua_Sun3_Frame10,
+    gTilesetAnims_Tsisqua_Sun3_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun3(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun3);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun3[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(540)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun4_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun4/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun4[] = {
+    gTilesetAnims_Tsisqua_Sun4_Frame0,
+    gTilesetAnims_Tsisqua_Sun4_Frame1,
+    gTilesetAnims_Tsisqua_Sun4_Frame2,
+    gTilesetAnims_Tsisqua_Sun4_Frame3,
+    gTilesetAnims_Tsisqua_Sun4_Frame4,
+    gTilesetAnims_Tsisqua_Sun4_Frame5,
+    gTilesetAnims_Tsisqua_Sun4_Frame6,
+    gTilesetAnims_Tsisqua_Sun4_Frame7,
+    gTilesetAnims_Tsisqua_Sun4_Frame8,
+    gTilesetAnims_Tsisqua_Sun4_Frame9,
+    gTilesetAnims_Tsisqua_Sun4_Frame10,
+    gTilesetAnims_Tsisqua_Sun4_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun4(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun4);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun4[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(544)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun5_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun5/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun5[] = {
+    gTilesetAnims_Tsisqua_Sun5_Frame0,
+    gTilesetAnims_Tsisqua_Sun5_Frame1,
+    gTilesetAnims_Tsisqua_Sun5_Frame2,
+    gTilesetAnims_Tsisqua_Sun5_Frame3,
+    gTilesetAnims_Tsisqua_Sun5_Frame4,
+    gTilesetAnims_Tsisqua_Sun5_Frame5,
+    gTilesetAnims_Tsisqua_Sun5_Frame6,
+    gTilesetAnims_Tsisqua_Sun5_Frame7,
+    gTilesetAnims_Tsisqua_Sun5_Frame8,
+    gTilesetAnims_Tsisqua_Sun5_Frame9,
+    gTilesetAnims_Tsisqua_Sun5_Frame10,
+    gTilesetAnims_Tsisqua_Sun5_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun5(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun5);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun5[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(548)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun6_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun6/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun6[] = {
+    gTilesetAnims_Tsisqua_Sun6_Frame0,
+    gTilesetAnims_Tsisqua_Sun6_Frame1,
+    gTilesetAnims_Tsisqua_Sun6_Frame2,
+    gTilesetAnims_Tsisqua_Sun6_Frame3,
+    gTilesetAnims_Tsisqua_Sun6_Frame4,
+    gTilesetAnims_Tsisqua_Sun6_Frame5,
+    gTilesetAnims_Tsisqua_Sun6_Frame6,
+    gTilesetAnims_Tsisqua_Sun6_Frame7,
+    gTilesetAnims_Tsisqua_Sun6_Frame8,
+    gTilesetAnims_Tsisqua_Sun6_Frame9,
+    gTilesetAnims_Tsisqua_Sun6_Frame10,
+    gTilesetAnims_Tsisqua_Sun6_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun6(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun6);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun6[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(552)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun7_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun7/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun7[] = {
+    gTilesetAnims_Tsisqua_Sun7_Frame0,
+    gTilesetAnims_Tsisqua_Sun7_Frame1,
+    gTilesetAnims_Tsisqua_Sun7_Frame2,
+    gTilesetAnims_Tsisqua_Sun7_Frame3,
+    gTilesetAnims_Tsisqua_Sun7_Frame4,
+    gTilesetAnims_Tsisqua_Sun7_Frame5,
+    gTilesetAnims_Tsisqua_Sun7_Frame6,
+    gTilesetAnims_Tsisqua_Sun7_Frame7,
+    gTilesetAnims_Tsisqua_Sun7_Frame8,
+    gTilesetAnims_Tsisqua_Sun7_Frame9,
+    gTilesetAnims_Tsisqua_Sun7_Frame10,
+    gTilesetAnims_Tsisqua_Sun7_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun7(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun7);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun7[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(556)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun8_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun8/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun8[] = {
+    gTilesetAnims_Tsisqua_Sun8_Frame0,
+    gTilesetAnims_Tsisqua_Sun8_Frame1,
+    gTilesetAnims_Tsisqua_Sun8_Frame2,
+    gTilesetAnims_Tsisqua_Sun8_Frame3,
+    gTilesetAnims_Tsisqua_Sun8_Frame4,
+    gTilesetAnims_Tsisqua_Sun8_Frame5,
+    gTilesetAnims_Tsisqua_Sun8_Frame6,
+    gTilesetAnims_Tsisqua_Sun8_Frame7,
+    gTilesetAnims_Tsisqua_Sun8_Frame8,
+    gTilesetAnims_Tsisqua_Sun8_Frame9,
+    gTilesetAnims_Tsisqua_Sun8_Frame10,
+    gTilesetAnims_Tsisqua_Sun8_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun8(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun8);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun8[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(560)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun9_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun9/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun9[] = {
+    gTilesetAnims_Tsisqua_Sun9_Frame0,
+    gTilesetAnims_Tsisqua_Sun9_Frame1,
+    gTilesetAnims_Tsisqua_Sun9_Frame2,
+    gTilesetAnims_Tsisqua_Sun9_Frame3,
+    gTilesetAnims_Tsisqua_Sun9_Frame4,
+    gTilesetAnims_Tsisqua_Sun9_Frame5,
+    gTilesetAnims_Tsisqua_Sun9_Frame6,
+    gTilesetAnims_Tsisqua_Sun9_Frame7,
+    gTilesetAnims_Tsisqua_Sun9_Frame8,
+    gTilesetAnims_Tsisqua_Sun9_Frame9,
+    gTilesetAnims_Tsisqua_Sun9_Frame10,
+    gTilesetAnims_Tsisqua_Sun9_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun9(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun9);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun9[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(564)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun10_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun10/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun10[] = {
+    gTilesetAnims_Tsisqua_Sun10_Frame0,
+    gTilesetAnims_Tsisqua_Sun10_Frame1,
+    gTilesetAnims_Tsisqua_Sun10_Frame2,
+    gTilesetAnims_Tsisqua_Sun10_Frame3,
+    gTilesetAnims_Tsisqua_Sun10_Frame4,
+    gTilesetAnims_Tsisqua_Sun10_Frame5,
+    gTilesetAnims_Tsisqua_Sun10_Frame6,
+    gTilesetAnims_Tsisqua_Sun10_Frame7,
+    gTilesetAnims_Tsisqua_Sun10_Frame8,
+    gTilesetAnims_Tsisqua_Sun10_Frame9,
+    gTilesetAnims_Tsisqua_Sun10_Frame10,
+    gTilesetAnims_Tsisqua_Sun10_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun10(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun10);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun10[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(516)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun11_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun11/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun11[] = {
+    gTilesetAnims_Tsisqua_Sun11_Frame0,
+    gTilesetAnims_Tsisqua_Sun11_Frame1,
+    gTilesetAnims_Tsisqua_Sun11_Frame2,
+    gTilesetAnims_Tsisqua_Sun11_Frame3,
+    gTilesetAnims_Tsisqua_Sun11_Frame4,
+    gTilesetAnims_Tsisqua_Sun11_Frame5,
+    gTilesetAnims_Tsisqua_Sun11_Frame6,
+    gTilesetAnims_Tsisqua_Sun11_Frame7,
+    gTilesetAnims_Tsisqua_Sun11_Frame8,
+    gTilesetAnims_Tsisqua_Sun11_Frame9,
+    gTilesetAnims_Tsisqua_Sun11_Frame10,
+    gTilesetAnims_Tsisqua_Sun11_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun11(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun11);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun11[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(520)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun12_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun12/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun12[] = {
+    gTilesetAnims_Tsisqua_Sun12_Frame0,
+    gTilesetAnims_Tsisqua_Sun12_Frame1,
+    gTilesetAnims_Tsisqua_Sun12_Frame2,
+    gTilesetAnims_Tsisqua_Sun12_Frame3,
+    gTilesetAnims_Tsisqua_Sun12_Frame4,
+    gTilesetAnims_Tsisqua_Sun12_Frame5,
+    gTilesetAnims_Tsisqua_Sun12_Frame6,
+    gTilesetAnims_Tsisqua_Sun12_Frame7,
+    gTilesetAnims_Tsisqua_Sun12_Frame8,
+    gTilesetAnims_Tsisqua_Sun12_Frame9,
+    gTilesetAnims_Tsisqua_Sun12_Frame10,
+    gTilesetAnims_Tsisqua_Sun12_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun12(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun12);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun12[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(524)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun13_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun13/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun13[] = {
+    gTilesetAnims_Tsisqua_Sun13_Frame0,
+    gTilesetAnims_Tsisqua_Sun13_Frame1,
+    gTilesetAnims_Tsisqua_Sun13_Frame2,
+    gTilesetAnims_Tsisqua_Sun13_Frame3,
+    gTilesetAnims_Tsisqua_Sun13_Frame4,
+    gTilesetAnims_Tsisqua_Sun13_Frame5,
+    gTilesetAnims_Tsisqua_Sun13_Frame6,
+    gTilesetAnims_Tsisqua_Sun13_Frame7,
+    gTilesetAnims_Tsisqua_Sun13_Frame8,
+    gTilesetAnims_Tsisqua_Sun13_Frame9,
+    gTilesetAnims_Tsisqua_Sun13_Frame10,
+    gTilesetAnims_Tsisqua_Sun13_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun13(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun13);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun13[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(528)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame0[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/00.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame1[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/01.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame2[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/02.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame3[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/03.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame4[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/04.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame5[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/05.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame6[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/06.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame7[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/07.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame8[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/08.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame9[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/09.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame10[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/10.4bpp");
+const u16 gTilesetAnims_Tsisqua_Sun14_Frame11[] = INCBIN_U16("data/tilesets/secondary/tsisqua/anim/sun14/11.4bpp");
+
+const u16 *const gTilesetAnims_Tsisqua_Sun14[] = {
+    gTilesetAnims_Tsisqua_Sun14_Frame0,
+    gTilesetAnims_Tsisqua_Sun14_Frame1,
+    gTilesetAnims_Tsisqua_Sun14_Frame2,
+    gTilesetAnims_Tsisqua_Sun14_Frame3,
+    gTilesetAnims_Tsisqua_Sun14_Frame4,
+    gTilesetAnims_Tsisqua_Sun14_Frame5,
+    gTilesetAnims_Tsisqua_Sun14_Frame6,
+    gTilesetAnims_Tsisqua_Sun14_Frame7,
+    gTilesetAnims_Tsisqua_Sun14_Frame8,
+    gTilesetAnims_Tsisqua_Sun14_Frame9,
+    gTilesetAnims_Tsisqua_Sun14_Frame10,
+    gTilesetAnims_Tsisqua_Sun14_Frame11,
+};
+
+static void QueueAnimTiles_Tsisqua_Sun14(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Tsisqua_Sun14);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Tsisqua_Sun14[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(532)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void TilesetAnim_Tsisqua(u16 timer)
+{
+    if (timer % 32 == 0) {
+        QueueAnimTiles_Tsisqua_Sun1(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun2(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun3(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun4(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun5(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun6(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun7(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun8(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun9(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun10(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun11(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun12(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun13(timer / 32);
+        QueueAnimTiles_Tsisqua_Sun14(timer / 32);
+    }
+}
+
+void InitTilesetAnim_Tsisqua(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Tsisqua;
+}
+
+// ### src/tileset_anims.c ###
+// Our custom animation code for snowytrees:
+
+const u16 gTilesetAnims_snowytrees_WaterfallRight_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallRight/00.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallRight_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallRight/01.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallRight_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallRight/02.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallRight_Frame3[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallRight/03.4bpp");
+
+const u16 *const gTilesetAnims_snowytrees_WaterfallRight[] = {
+    gTilesetAnims_snowytrees_WaterfallRight_Frame0,
+    gTilesetAnims_snowytrees_WaterfallRight_Frame1,
+    gTilesetAnims_snowytrees_WaterfallRight_Frame2,
+    gTilesetAnims_snowytrees_WaterfallRight_Frame3
+};
+
+static void QueueAnimTiles_snowytrees_WaterfallRight(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytrees_WaterfallRight);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytrees_WaterfallRight[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(15)), 4 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytrees_WaterfallMiddle_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallMiddle/00.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallMiddle_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallMiddle/01.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallMiddle_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallMiddle/02.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallMiddle_Frame3[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallMiddle/03.4bpp");
+
+const u16 *const gTilesetAnims_snowytrees_WaterfallMiddle[] = {
+    gTilesetAnims_snowytrees_WaterfallMiddle_Frame0,
+    gTilesetAnims_snowytrees_WaterfallMiddle_Frame1,
+    gTilesetAnims_snowytrees_WaterfallMiddle_Frame2,
+    gTilesetAnims_snowytrees_WaterfallMiddle_Frame3
+};
+
+static void QueueAnimTiles_snowytrees_WaterfallMiddle(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytrees_WaterfallMiddle);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytrees_WaterfallMiddle[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(13)), 2 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytrees_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/Water/00.4bpp");
+const u16 gTilesetAnims_snowytrees_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/Water/01.4bpp");
+const u16 gTilesetAnims_snowytrees_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/Water/02.4bpp");
+
+const u16 *const gTilesetAnims_snowytrees_Water[] = {
+    gTilesetAnims_snowytrees_Water_Frame0,
+    gTilesetAnims_snowytrees_Water_Frame1,
+    gTilesetAnims_snowytrees_Water_Frame0,
+    gTilesetAnims_snowytrees_Water_Frame2
+};
+
+static void QueueAnimTiles_snowytrees_Water(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytrees_Water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytrees_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_snowytrees_WaterEdgeTop_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterEdgeTop/00.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterEdgeTop_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterEdgeTop/01.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterEdgeTop_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterEdgeTop/02.4bpp");
+
+const u16 *const gTilesetAnims_snowytrees_WaterEdgeTop[] = {
+    gTilesetAnims_snowytrees_WaterEdgeTop_Frame0,
+    gTilesetAnims_snowytrees_WaterEdgeTop_Frame1,
+    gTilesetAnims_snowytrees_WaterEdgeTop_Frame0,
+    gTilesetAnims_snowytrees_WaterEdgeTop_Frame2
+};
+
+static void QueueAnimTiles_snowytrees_WaterEdgeTop(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytrees_WaterEdgeTop);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytrees_WaterEdgeTop[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(7)), 2 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytrees_WaterEdgeBottom_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterEdgeBottom/00.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterEdgeBottom_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterEdgeBottom/01.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterEdgeBottom_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterEdgeBottom/02.4bpp");
+
+const u16 *const gTilesetAnims_snowytrees_WaterEdgeBottom[] = {
+    gTilesetAnims_snowytrees_WaterEdgeBottom_Frame0,
+    gTilesetAnims_snowytrees_WaterEdgeBottom_Frame1,
+    gTilesetAnims_snowytrees_WaterEdgeBottom_Frame0,
+    gTilesetAnims_snowytrees_WaterEdgeBottom_Frame2
+};
+
+static void QueueAnimTiles_snowytrees_WaterEdgeBottom(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytrees_WaterEdgeBottom);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytrees_WaterEdgeBottom[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(5)), 2 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallBottomLeft/00.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallBottomLeft/01.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallBottomLeft/02.4bpp");
+const u16 gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame3[] = INCBIN_U16("data/tilesets/primary/snowytrees/anim/WaterfallBottomLeft/03.4bpp");
+
+const u16 *const gTilesetAnims_snowytrees_WaterfallBottomLeft[] = {
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame0,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame1,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame2,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame3,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame2,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame3,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame2,
+    gTilesetAnims_snowytrees_WaterfallBottomLeft_Frame1
+};
+
+static void QueueAnimTiles_snowytrees_WaterfallBottomLeft(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytrees_WaterfallBottomLeft);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytrees_WaterfallBottomLeft[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(9)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_snowytrees(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_snowytrees_WaterfallRight(timer / 16);
+        QueueAnimTiles_snowytrees_WaterfallMiddle(timer / 16);
+        QueueAnimTiles_snowytrees_Water(timer / 32);
+        QueueAnimTiles_snowytrees_WaterEdgeBottom(timer / 32);
+        QueueAnimTiles_snowytrees_WaterEdgeTop(timer / 32);
+        QueueAnimTiles_snowytrees_WaterfallBottomLeft(timer / 16);
+    }
+}
+
+void InitTilesetAnim_snowytrees(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_snowytrees;
 }

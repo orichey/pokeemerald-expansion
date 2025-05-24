@@ -4,7 +4,7 @@
   "layout": "LAYOUT_GRANITE_CAVE_B1F",
   "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_GRANITE_CAVE",
-  "requires_flash": true,
+  "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 15,
-      "y": 20,
+      "x": 16,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -81,6 +81,27 @@
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_B2F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_GRANITE_CAVE_B2F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_GRANITE_CAVE_STEVENS_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_GRANITE_CAVE_STEVENS_ROOM",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

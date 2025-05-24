@@ -21,7 +21,7 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_SetAnthroLocation::
-	setobjectxyperm LOCALID_Mundungus, 25, 8
+	setobjectxyperm LOCALID_Mundungus, 34, 11
 	setobjectmovementtype LOCALID_Mundungus, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -933,6 +933,7 @@ script PetalburgCity_EventScript_JSOFight {
 	trainerbattle_no_intro_no_whiteout(TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Jeremy_Outro)
 	setvar(VAR_PETALBURG_CITY_STATE, 3)
 	delay(15)
+	applymovement(LOCALID_Mundungus, Common_Movement_FaceUp)
 	applymovement(LOCALID_JSOGIRL, Common_Movement_FaceLeft)
 	applymovement(LOCALID_JSOBOY, WalkInPlaceRight)
 	msgbox(format("I suppose not battling all-out is one of the principles of non-violent resistance.\pWe'd better get out of here before anything worse happens."))
@@ -1002,7 +1003,10 @@ script PetalburgCity_EventScript_JSOLeave {
 }
 
 movement WalkToDung {
-	walk_right*7
+	walk_down*2
+	walk_right*9
+	walk_up
+	face_right
 }
 
 movement LookUp {
@@ -1039,11 +1043,13 @@ movement PlayerUpTwo {
 }
 
 movement CameraRightSeven {
-	walk_fast_right*7
+	walk_diag_southeast*2
+	walk_fast_right*8
 }
 
 movement CameraLeftSeven {
-	walk_fast_left*7
+	walk_diag_northwest*2
+	walk_fast_left*8
 }
 
 movement WalkUpTwo {
