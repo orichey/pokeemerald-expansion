@@ -726,6 +726,70 @@ const struct BattleBackground sBattleTerrainTable[] =
         .entryTilemap = gBattleTerrainAnimTilemap_Building,
         .palette = gBattleTerrainPalette_NewCave,
     },
+    [BATTLE_TERRAIN_BEACH] =
+    {
+        .tileset = gBattleTerrainTiles_Beach,
+        .tilemap = gBattleTerrainTilemap_Beach,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Beach,
+    },
+    [BATTLE_TERRAIN_FOREST] =
+    {
+        .tileset = gBattleTerrainTiles_Forest,
+        .tilemap = gBattleTerrainTilemap_Forest,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Forest,
+    },
+    [BATTLE_TERRAIN_LAKE] =
+    {
+        .tileset = gBattleTerrainTiles_Lake,
+        .tilemap = gBattleTerrainTilemap_Lake,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Lake,
+    },
+    [BATTLE_TERRAIN_ROCKY] =
+    {
+        .tileset = gBattleTerrainTiles_Rocky,
+        .tilemap = gBattleTerrainTilemap_Rocky,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Rocky,
+    },
+    [BATTLE_TERRAIN_SEA] =
+    {
+        .tileset = gBattleTerrainTiles_Sea,
+        .tilemap = gBattleTerrainTilemap_Sea,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Sea,
+    },
+    [BATTLE_TERRAIN_SNOWCAVE] =
+    {
+        .tileset = gBattleTerrainTiles_SnowCave,
+        .tilemap = gBattleTerrainTilemap_SnowCave,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_SnowCave,
+    },
+    [BATTLE_TERRAIN_SNOWMOUNTAIN] =
+    {
+        .tileset = gBattleTerrainTiles_SnowMountain,
+        .tilemap = gBattleTerrainTilemap_SnowMountain,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_SnowMountain,
+    },
+    [BATTLE_TERRAIN_SNOWY] =
+    {
+        .tileset = gBattleTerrainTiles_Snowy,
+        .tilemap = gBattleTerrainTilemap_Snowy,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Snowy,
+    },
 };
 
 //static void UNUSED CB2_UnusedBattleInit(void);

@@ -37,6 +37,15 @@ static const TaskFunc sBattleIntroSlideFuncs[] =
     [BATTLE_TERRAIN_ROUTE]      = BattleIntroSlide3,
     [BATTLE_TERRAIN_DESERT]     = BattleIntroSlide3,
     [BATTLE_TERRAIN_NEWCAVE]    = BattleIntroSlide3,
+    [BATTLE_TERRAIN_BEACH]      = BattleIntroSlide3,
+    [BATTLE_TERRAIN_FOREST]     = BattleIntroSlide3,
+    [BATTLE_TERRAIN_LAKE]       = BattleIntroSlide3,
+    [BATTLE_TERRAIN_ROCKY]      = BattleIntroSlide3,
+    [BATTLE_TERRAIN_SEA]        = BattleIntroSlide3,
+    [BATTLE_TERRAIN_SNOWCAVE]   = BattleIntroSlide3,
+    [BATTLE_TERRAIN_SNOWMOUNTAIN]   = BattleIntroSlide3,
+    [BATTLE_TERRAIN_SNOWY]      = BattleIntroSlide3,
+
 };
 
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)

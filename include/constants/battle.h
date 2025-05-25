@@ -452,8 +452,16 @@
 #define BATTLE_TERRAIN_ROUTE            22
 #define BATTLE_TERRAIN_DESERT           23
 #define BATTLE_TERRAIN_NEWCAVE          24
+#define BATTLE_TERRAIN_BEACH            25
+#define BATTLE_TERRAIN_FOREST           26
+#define BATTLE_TERRAIN_LAKE             27
+#define BATTLE_TERRAIN_ROCKY            28
+#define BATTLE_TERRAIN_SEA              29
+#define BATTLE_TERRAIN_SNOWCAVE         30
+#define BATTLE_TERRAIN_SNOWMOUNTAIN     31
+#define BATTLE_TERRAIN_SNOWY            32
 
-#define BATTLE_TERRAIN_COUNT            25
+#define BATTLE_TERRAIN_COUNT            33
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)

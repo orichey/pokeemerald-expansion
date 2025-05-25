@@ -301,6 +301,38 @@ extern const u32 gBattleTerrainAnimTiles_NewCave[];
 extern const u32 gBattleTerrainAnimTilemap_NewCave[];
 extern const u32 gBattleTerrainPalette_NewCave[];
 
+extern const u32 gBattleTerrainTiles_Beach[];
+extern const u32 gBattleTerrainTilemap_Beach[];
+extern const u32 gBattleTerrainPalette_Beach[];
+
+extern const u32 gBattleTerrainTiles_Forest[];
+extern const u32 gBattleTerrainTilemap_Forest[];
+extern const u32 gBattleTerrainPalette_Forest[];
+
+extern const u32 gBattleTerrainTiles_Lake[];
+extern const u32 gBattleTerrainTilemap_Lake[];
+extern const u32 gBattleTerrainPalette_Lake[];
+
+extern const u32 gBattleTerrainTiles_Rocky[];
+extern const u32 gBattleTerrainTilemap_Rocky[];
+extern const u32 gBattleTerrainPalette_Rocky[];
+
+extern const u32 gBattleTerrainTiles_Sea[];
+extern const u32 gBattleTerrainTilemap_Sea[];
+extern const u32 gBattleTerrainPalette_Sea[];
+
+extern const u32 gBattleTerrainTiles_SnowCave[];
+extern const u32 gBattleTerrainTilemap_SnowCave[];
+extern const u32 gBattleTerrainPalette_SnowCave[];
+
+extern const u32 gBattleTerrainTiles_SnowMountain[];
+extern const u32 gBattleTerrainTilemap_SnowMountain[];
+extern const u32 gBattleTerrainPalette_SnowMountain[];
+
+extern const u32 gBattleTerrainTiles_Snowy[];
+extern const u32 gBattleTerrainTilemap_Snowy[];
+extern const u32 gBattleTerrainPalette_Snowy[];
+
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
 extern const u16 gPokedexBgHoenn_Pal[];

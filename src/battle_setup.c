@@ -754,57 +754,65 @@ u8 BattleSetup_GetTerrainId(void)
     PlayerGetDestCoords(&x, &y);
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (MetatileBehavior_IsTallGrass(tileBehavior))
-        return BATTLE_TERRAIN_DESERT;
+    //if (MetatileBehavior_IsTallGrass(tileBehavior))
+        //return BATTLE_TERRAIN_SNOWMOUNTAIN;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
-        return BATTLE_TERRAIN_LONG_GRASS;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
-        return BATTLE_TERRAIN_SAND;
-
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
+    if (gMapHeader.regionMapSectionId == MAPSEC_ROUTE_107)      //THIS SYNTAX WORKS, will also have to do something with metatiles for different backgrounds in the same route
+        return BATTLE_TERRAIN_BEACH;
+    if (gMapHeader.regionMapSectionId == MAPSEC_ROUTE_101 || gMapHeader.regionMapSectionId == MAPSEC_OLDALE_TOWN || gMapHeader.regionMapSectionId == MAPSEC_ROUTE_102 || gMapHeader.regionMapSectionId == MAPSEC_PETALBURG_CITY)
+        return BATTLE_TERRAIN_ROUTE;
+    if (gMapHeader.regionMapSectionId == MAPSEC_PETALBURG_WOODS)
+        return BATTLE_TERRAIN_FOREST;
+    if (gMapHeader.regionMapSectionId == MAPSEC_ROUTE_103)
+        return BATTLE_TERRAIN_LAKE;
     switch (gMapHeader.mapType)
     {
     case MAP_TYPE_TOWN:
     case MAP_TYPE_CITY:
     case MAP_TYPE_ROUTE:
-        return BATTLE_TERRAIN_DESERT;
-        break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
-            return BATTLE_TERRAIN_BUILDING;
+            return BATTLE_TERRAIN_SNOWMOUNTAIN;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-            return BATTLE_TERRAIN_POND;
-        return BATTLE_TERRAIN_CAVE;
+            return BATTLE_TERRAIN_SNOWMOUNTAIN;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
-        return BATTLE_TERRAIN_BUILDING;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     case MAP_TYPE_UNDERWATER:
-        return BATTLE_TERRAIN_UNDERWATER;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     case MAP_TYPE_OCEAN_ROUTE:
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-            return BATTLE_TERRAIN_WATER;
-        return BATTLE_TERRAIN_PLAIN;
+            return BATTLE_TERRAIN_SNOWMOUNTAIN;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
-        return BATTLE_TERRAIN_WATER;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-        return BATTLE_TERRAIN_POND;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     if (MetatileBehavior_IsMountain(tileBehavior))
-        return BATTLE_TERRAIN_MOUNTAIN;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         // Is BRIDGE_TYPE_POND_*?
         if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
-            return BATTLE_TERRAIN_POND;
+            return BATTLE_TERRAIN_SNOWMOUNTAIN;
 
         if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
-            return BATTLE_TERRAIN_WATER;
+            return BATTLE_TERRAIN_SNOWMOUNTAIN;
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE113))
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE106) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE106))
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE107) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE107))
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_TERRAIN_SNOWMOUNTAIN;
 
-    return BATTLE_TERRAIN_DESERT;
+    return BATTLE_TERRAIN_SNOWMOUNTAIN;
 }
 
 static u8 GetBattleTransitionTypeByMap(void)
