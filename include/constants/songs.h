@@ -586,8 +586,10 @@
 #define MUS_MINECRAFT_ALPHA               547 // Minecraft Alpha
 #define MUS_KIKI_TOWN_WITH_OCEAN_VIEW     548 // A Town with an Ocean View
 #define MUS_SPIRITED_ONE_SUMMERS_DAY      549 // One Summers Day
+#define MUS_CASTLE_CARRYING_YOU           550 // Carrying You
+#define MUS_TOTORO_MEI_IS_MISSING         551 // Mei is Missing
 
-#define EXTRA_MUSIC_END                   MUS_SPIRITED_ONE_SUMMERS_DAY
+#define EXTRA_MUSIC_END                   MUS_TOTORO_MEI_IS_MISSING
 
 #define SONGS_END                         EXTRA_MUSIC_END
 #define END_MUS                           SONGS_END

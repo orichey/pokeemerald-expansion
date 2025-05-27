@@ -1308,6 +1308,8 @@ SECTIONS {
         sound/songs/midi/mus_minecraft_alpha.o(.rodata);
         sound/songs/midi/mus_kiki_town_with_ocean_view.o(.rodata);
         sound/songs/midi/mus_spirited_one_summers_day.o(.rodata);
+        sound/songs/midi/mus_castle_carrying_you.o(.rodata);
+        sound/songs/midi/mus_totoro_mei_is_missing.o(.rodata);
     } > ROM =0
 
     lib_rodata :

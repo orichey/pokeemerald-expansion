@@ -2962,6 +2962,71 @@
         {
           "map": "MAP_ROUTE106",
           "base_label": "gRoute106",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TORTERRA"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -3046,76 +3111,76 @@
                 "species": "SPECIES_WAILMER"
               }
             ]
-          },
+          }
+        },
+        {
+          "map": "MAP_ROUTE107",
+          "base_label": "gRoute107",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORTERRA"
+                "species": "SPECIES_ABOMASNOW"
               }
             ]
-          }
-        },
-        {
-          "map": "MAP_ROUTE107",
-          "base_label": "gRoute107",
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -3198,71 +3263,6 @@
                 "min_level": 40,
                 "max_level": 45,
                 "species": "SPECIES_WAILMER"
-              }
-            ]
-          },
-          "land_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_ABOMASNOW"
               }
             ]
           }
