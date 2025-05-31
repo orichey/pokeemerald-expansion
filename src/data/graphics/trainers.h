@@ -216,6 +216,7 @@ const u32 gTrainerPalette_Wally[] = INCBIN_U32("graphics/trainers/palettes/wally
 
 const u32 gTrainerFrontPic_Brendan[] = INCBIN_U32("graphics/trainers/front_pics/brendan.4bpp.lz");
 const u32 gTrainerPalette_Brendan[] = INCBIN_U32("graphics/trainers/palettes/brendan.gbapal.lz");
+const u32 gTrainerPalette_BrendanFront[] = INCBIN_U32("graphics/trainers/front_pics/brendan.gbapal.lz");
 
 const u32 gTrainerFrontPic_May[] = INCBIN_U32("graphics/trainers/front_pics/may.4bpp.lz");
 const u32 gTrainerPalette_May[] = INCBIN_U32("graphics/trainers/palettes/may.gbapal.lz");
@@ -385,7 +386,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_SAILOR, gTrainerFrontPic_Sailor, gTrainerPalette_Sailor),
     TRAINER_SPRITE(TRAINER_PIC_MAGMA_ADMIN, gTrainerFrontPic_MagmaAdmin, gTrainerPalette_MagmaAdmin),
     TRAINER_SPRITE(TRAINER_PIC_WALLY, gTrainerFrontPic_Wally, gTrainerPalette_Wally),
-    TRAINER_SPRITE(TRAINER_PIC_BRENDAN, gTrainerFrontPic_Brendan, gTrainerPalette_Brendan),
+    TRAINER_SPRITE(TRAINER_PIC_BRENDAN, gTrainerFrontPic_Brendan, gTrainerPalette_BrendanFront),
     TRAINER_SPRITE(TRAINER_PIC_MAY, gTrainerFrontPic_May, gTrainerPalette_May),
     TRAINER_SPRITE(TRAINER_PIC_BUG_CATCHER, gTrainerFrontPic_BugCatcher, gTrainerPalette_BugCatcher),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_RANGER_M, gTrainerFrontPic_PokemonRangerM, gTrainerPalette_PokemonRangerM),

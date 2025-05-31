@@ -222,9 +222,9 @@ NewHouse_EventScript_Articuno::
 # 114 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NewHouse_EventScript_Articuno_1
-# 140 "data/maps/NewHouse/scripts.pory"
+# 142 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 141 "data/maps/NewHouse/scripts.pory"
+# 143 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_NotChosen
 	return
 
@@ -234,12 +234,12 @@ NewHouse_EventScript_Articuno_1:
 # 116 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewHouse_EventScript_Articuno_4
-# 125 "data/maps/NewHouse/scripts.pory"
+# 126 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq NewHouse_EventScript_Articuno_5
-# 135 "data/maps/NewHouse/scripts.pory"
+# 137 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 136 "data/maps/NewHouse/scripts.pory"
+# 138 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_EventScript_Articuno_Text_2
 	return
 
@@ -255,214 +255,226 @@ NewHouse_EventScript_Articuno_4:
 # 121 "data/maps/NewHouse/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 122 "data/maps/NewHouse/scripts.pory"
-	call NicknamePartyMon
+	setflag FLAG_SYS_POKENAV_GET
 # 123 "data/maps/NewHouse/scripts.pory"
+	call NicknamePartyMon
+# 124 "data/maps/NewHouse/scripts.pory"
 	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 NewHouse_EventScript_Articuno_5:
-# 126 "data/maps/NewHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 127 "data/maps/NewHouse/scripts.pory"
-	msgbox NewHouse_EventScript_Articuno_Text_1
+	playfanfare MUS_OBTAIN_ITEM
 # 128 "data/maps/NewHouse/scripts.pory"
-	removeobject 2
+	msgbox NewHouse_EventScript_Articuno_Text_1
 # 129 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_UNUSED_0x020
+	removeobject 2
 # 130 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_UNUSED_0x020
 # 131 "data/maps/NewHouse/scripts.pory"
-	call NicknameBoxMon
+	setflag FLAG_SYS_POKEMON_GET
 # 132 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_SYS_POKENAV_GET
+# 133 "data/maps/NewHouse/scripts.pory"
+	call NicknameBoxMon
+# 134 "data/maps/NewHouse/scripts.pory"
 	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 
 NewHouse_EventScript_Zapdos::
-# 147 "data/maps/NewHouse/scripts.pory"
+# 149 "data/maps/NewHouse/scripts.pory"
 	showmonpic SPECIES_MUDKIP, 10, 3
-# 148 "data/maps/NewHouse/scripts.pory"
-	msgbox NewHouse_EventScript_Zapdos_Text_0, MSGBOX_YESNO
 # 150 "data/maps/NewHouse/scripts.pory"
+	msgbox NewHouse_EventScript_Zapdos_Text_0, MSGBOX_YESNO
+# 152 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NewHouse_EventScript_Zapdos_1
-# 176 "data/maps/NewHouse/scripts.pory"
+# 180 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 177 "data/maps/NewHouse/scripts.pory"
+# 181 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_NotChosen
 	return
 
 NewHouse_EventScript_Zapdos_1:
-# 151 "data/maps/NewHouse/scripts.pory"
+# 153 "data/maps/NewHouse/scripts.pory"
 	givemon SPECIES_MUDKIP, 5
-# 152 "data/maps/NewHouse/scripts.pory"
+# 154 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewHouse_EventScript_Zapdos_4
-# 161 "data/maps/NewHouse/scripts.pory"
+# 164 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq NewHouse_EventScript_Zapdos_5
-# 171 "data/maps/NewHouse/scripts.pory"
+# 175 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 172 "data/maps/NewHouse/scripts.pory"
+# 176 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_EventScript_Articuno_Text_2
 	return
 
 NewHouse_EventScript_Zapdos_4:
-# 153 "data/maps/NewHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 154 "data/maps/NewHouse/scripts.pory"
-	msgbox NewHouse_EventScript_Zapdos_Text_1
 # 155 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	playfanfare MUS_OBTAIN_ITEM
 # 156 "data/maps/NewHouse/scripts.pory"
-	removeobject 3
+	msgbox NewHouse_EventScript_Zapdos_Text_1
 # 157 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_UNUSED_0x021
+	setflag FLAG_SYS_POKEMON_GET
 # 158 "data/maps/NewHouse/scripts.pory"
-	call NicknamePartyMon
+	setflag FLAG_SYS_POKENAV_GET
 # 159 "data/maps/NewHouse/scripts.pory"
+	removeobject 3
+# 160 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_UNUSED_0x021
+# 161 "data/maps/NewHouse/scripts.pory"
+	call NicknamePartyMon
+# 162 "data/maps/NewHouse/scripts.pory"
 	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 NewHouse_EventScript_Zapdos_5:
-# 162 "data/maps/NewHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 163 "data/maps/NewHouse/scripts.pory"
-	msgbox NewHouse_EventScript_Zapdos_Text_1
-# 164 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
 # 165 "data/maps/NewHouse/scripts.pory"
-	removeobject 3
+	playfanfare MUS_OBTAIN_ITEM
 # 166 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_UNUSED_0x021
+	msgbox NewHouse_EventScript_Zapdos_Text_1
 # 167 "data/maps/NewHouse/scripts.pory"
-	call NicknameBoxMon
+	setflag FLAG_SYS_POKEMON_GET
 # 168 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_SYS_POKENAV_GET
+# 169 "data/maps/NewHouse/scripts.pory"
+	removeobject 3
+# 170 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_UNUSED_0x021
+# 171 "data/maps/NewHouse/scripts.pory"
+	call NicknameBoxMon
+# 172 "data/maps/NewHouse/scripts.pory"
 	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 
 NewHouse_EventScript_Moltres::
-# 183 "data/maps/NewHouse/scripts.pory"
+# 187 "data/maps/NewHouse/scripts.pory"
 	showmonpic SPECIES_TURTWIG, 10, 3
-# 184 "data/maps/NewHouse/scripts.pory"
+# 188 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_EventScript_Moltres_Text_0, MSGBOX_YESNO
-# 186 "data/maps/NewHouse/scripts.pory"
+# 190 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NewHouse_EventScript_Moltres_1
-# 212 "data/maps/NewHouse/scripts.pory"
+# 218 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 213 "data/maps/NewHouse/scripts.pory"
+# 219 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_NotChosen
 	return
 
 NewHouse_EventScript_Moltres_1:
-# 187 "data/maps/NewHouse/scripts.pory"
+# 191 "data/maps/NewHouse/scripts.pory"
 	givemon SPECIES_TURTWIG, 5
-# 188 "data/maps/NewHouse/scripts.pory"
+# 192 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq NewHouse_EventScript_Moltres_4
-# 197 "data/maps/NewHouse/scripts.pory"
+# 202 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq NewHouse_EventScript_Moltres_5
-# 207 "data/maps/NewHouse/scripts.pory"
+# 213 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 208 "data/maps/NewHouse/scripts.pory"
+# 214 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_EventScript_Articuno_Text_2
 	return
 
 NewHouse_EventScript_Moltres_4:
-# 189 "data/maps/NewHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 190 "data/maps/NewHouse/scripts.pory"
-	msgbox NewHouse_EventScript_Moltres_Text_1
-# 191 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 192 "data/maps/NewHouse/scripts.pory"
-	removeobject 4
 # 193 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_UNUSED_0x022
+	playfanfare MUS_OBTAIN_ITEM
 # 194 "data/maps/NewHouse/scripts.pory"
-	call NicknamePartyMon
+	msgbox NewHouse_EventScript_Moltres_Text_1
 # 195 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 196 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_SYS_POKENAV_GET
+# 197 "data/maps/NewHouse/scripts.pory"
+	removeobject 4
+# 198 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_UNUSED_0x022
+# 199 "data/maps/NewHouse/scripts.pory"
+	call NicknamePartyMon
+# 200 "data/maps/NewHouse/scripts.pory"
 	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 NewHouse_EventScript_Moltres_5:
-# 198 "data/maps/NewHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 199 "data/maps/NewHouse/scripts.pory"
-	msgbox NewHouse_EventScript_Moltres_Text_1
-# 200 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 201 "data/maps/NewHouse/scripts.pory"
-	removeobject 4
-# 202 "data/maps/NewHouse/scripts.pory"
-	setflag FLAG_UNUSED_0x022
 # 203 "data/maps/NewHouse/scripts.pory"
-	call NicknameBoxMon
+	playfanfare MUS_OBTAIN_ITEM
 # 204 "data/maps/NewHouse/scripts.pory"
+	msgbox NewHouse_EventScript_Moltres_Text_1
+# 205 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 206 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_SYS_POKENAV_GET
+# 207 "data/maps/NewHouse/scripts.pory"
+	removeobject 4
+# 208 "data/maps/NewHouse/scripts.pory"
+	setflag FLAG_UNUSED_0x022
+# 209 "data/maps/NewHouse/scripts.pory"
+	call NicknameBoxMon
+# 210 "data/maps/NewHouse/scripts.pory"
 	setvar VAR_UNUSED_0x40F9, 1
 	return
 
 
 NicknamePartyMon::
-# 219 "data/maps/NewHouse/scripts.pory"
+# 225 "data/maps/NewHouse/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 220 "data/maps/NewHouse/scripts.pory"
+# 226 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 221 "data/maps/NewHouse/scripts.pory"
+# 227 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 222 "data/maps/NewHouse/scripts.pory"
+# 228 "data/maps/NewHouse/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 223 "data/maps/NewHouse/scripts.pory"
+# 229 "data/maps/NewHouse/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 230 "data/maps/NewHouse/scripts.pory"
+# 236 "data/maps/NewHouse/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 231 "data/maps/NewHouse/scripts.pory"
+# 237 "data/maps/NewHouse/scripts.pory"
 	hidemonpic
-# 232 "data/maps/NewHouse/scripts.pory"
+# 238 "data/maps/NewHouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 235 "data/maps/NewHouse/scripts.pory"
+# 241 "data/maps/NewHouse/scripts.pory"
 	msgbox NicknameBoxMon_Text_0
 	return
 
 NicknameBoxMon_2:
-# 233 "data/maps/NewHouse/scripts.pory"
+# 239 "data/maps/NewHouse/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
 
-# 242 "data/maps/NewHouse/scripts.pory"
+# 248 "data/maps/NewHouse/scripts.pory"
 FaceLeft:
-# 243 "data/maps/NewHouse/scripts.pory"
+# 249 "data/maps/NewHouse/scripts.pory"
 	face_left
 	step_end
 
-# 246 "data/maps/NewHouse/scripts.pory"
+# 252 "data/maps/NewHouse/scripts.pory"
 FacePlayer:
-# 247 "data/maps/NewHouse/scripts.pory"
+# 253 "data/maps/NewHouse/scripts.pory"
 	face_player
 	step_end
 
 NewHouse_EventScript_Text_Scientist::
-# 251 "data/maps/NewHouse/scripts.pory"
+# 257 "data/maps/NewHouse/scripts.pory"
 	lock
-# 252 "data/maps/NewHouse/scripts.pory"
+# 258 "data/maps/NewHouse/scripts.pory"
 	faceplayer
-# 253 "data/maps/NewHouse/scripts.pory"
+# 259 "data/maps/NewHouse/scripts.pory"
 	msgbox NewHouse_EventScript_Text_Scientist_Text_0
-# 254 "data/maps/NewHouse/scripts.pory"
+# 260 "data/maps/NewHouse/scripts.pory"
 	release
 	return
 
@@ -525,37 +537,37 @@ NewHouse_EventScript_Articuno_Text_1:
 	.string "Recieved Charmander!$"
 
 NewHouse_EventScript_Articuno_Text_2:
-# 136 "data/maps/NewHouse/scripts.pory"
+# 138 "data/maps/NewHouse/scripts.pory"
 	.string "No more room.$"
 
 NewHouse_EventScript_Zapdos_Text_0:
-# 148 "data/maps/NewHouse/scripts.pory"
+# 150 "data/maps/NewHouse/scripts.pory"
 	.string "It's a Mudkip!\l"
 	.string "Do you want to choose Mudkip?$"
 
 NewHouse_EventScript_Zapdos_Text_1:
-# 154 "data/maps/NewHouse/scripts.pory"
+# 156 "data/maps/NewHouse/scripts.pory"
 	.string "Recieved Mudkip!$"
 
 NewHouse_EventScript_Moltres_Text_0:
-# 184 "data/maps/NewHouse/scripts.pory"
+# 188 "data/maps/NewHouse/scripts.pory"
 	.string "It's a Turtwig!\l"
 	.string "Do you want to choose Turtwig?$"
 
 NewHouse_EventScript_Moltres_Text_1:
-# 190 "data/maps/NewHouse/scripts.pory"
+# 194 "data/maps/NewHouse/scripts.pory"
 	.string "Recieved Turtwig!$"
 
 NicknamePartyMon_Text_0:
-# 219 "data/maps/NewHouse/scripts.pory"
+# 225 "data/maps/NewHouse/scripts.pory"
 	.string "Give a nickname?$"
 
 NicknameBoxMon_Text_0:
-# 235 "data/maps/NewHouse/scripts.pory"
+# 241 "data/maps/NewHouse/scripts.pory"
 	.string "Transferred to PC$"
 
 NewHouse_EventScript_Text_Scientist_Text_0:
-# 253 "data/maps/NewHouse/scripts.pory"
+# 259 "data/maps/NewHouse/scripts.pory"
 	.string "The species of Pokémon Professor\n"
 	.string "Spruce is offering have been critical\l"
 	.string "to his research.\p"
@@ -573,5 +585,5 @@ NewHouse_EventScript_Text_Scientist_Text_0:
 	.string "the way to a more sustainable future!$"
 
 NewHouse_NotChosen::
-# 238 "data/maps/NewHouse/scripts.pory"
+# 244 "data/maps/NewHouse/scripts.pory"
 	.string "You did not choose the Pokémon.$"
