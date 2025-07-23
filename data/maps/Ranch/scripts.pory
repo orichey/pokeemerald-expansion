@@ -1,0 +1,4048 @@
+raw`
+Ranch_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, Ranch_OnTransition
+	.byte 0
+
+Ranch_OnTransition:
+	call_if_set FLAG_FARMER_SPEECH, Ranch_EventScript_RelocateEveryone
+    call_if_set FLAG_TORCHIC_RESCUE, Ranch_EventScript_SetUpFirstBattle
+    call_if_set FLAG_PROTEST_WIN_1, Ranch_EventScript_ProtestWin1
+    call_if_set FLAG_FARMER_WIN_1, Ranch_EventScript_FarmerWin1
+    call_if_set FLAG_PROTEST_WIN_2, Ranch_EventScript_ProtestWin2
+    call_if_set FLAG_FARMER_WIN_2, Ranch_EventScript_FarmerWin2
+    call_if_set FLAG_PROTEST_WIN_3, Ranch_EventScript_ProtestWin3
+    call_if_set FLAG_FARMER_WIN_3, Ranch_EventScript_FarmerWin3
+    call_if_set FLAG_PROTEST_WIN_4, Ranch_EventScript_ProtestWin4
+    call_if_set FLAG_FARMER_WIN_4, Ranch_EventScript_FarmerWin4
+    call_if_set FLAG_PROTEST_WIN_5, Ranch_EventScript_ProtestWin5
+    call_if_set FLAG_FARMER_WIN_5, Ranch_EventScript_FarmerWin5
+    call_if_set FLAG_PROTEST_WIN_6, Ranch_EventScript_ProtestWin6
+    call_if_set FLAG_FARMER_WIN_6, Ranch_EventScript_FarmerWin6
+    call_if_set FLAG_PROTEST_WIN_7, Ranch_EventScript_ProtestWin7
+    call_if_set FLAG_FARMER_WIN_7, Ranch_EventScript_FarmerWin7
+	end
+`
+script Ranch_EventScript_ProtestWin1{
+    setobjectxyperm(29, 18, 66)
+    SetObjectMovementType(29, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(29)
+}
+
+script Ranch_EventScript_FarmerWin1{
+    setobjectxyperm(30, 19, 66)
+    SetObjectMovementType(30, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(30)
+}
+
+script Ranch_EventScript_ProtestWin2{
+    setobjectxyperm(35, 57, 59)
+    SetObjectMovementType(35, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(35)
+}
+
+script Ranch_EventScript_FarmerWin2{
+    setobjectxyperm(34, 56, 59)
+    SetObjectMovementType(34, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(34)
+}
+
+script Ranch_EventScript_ProtestWin3{
+    setobjectxyperm(18, 36, 50)
+    SetObjectMovementType(18, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(18)
+}
+
+script Ranch_EventScript_FarmerWin3{
+    setobjectxyperm(17, 36, 49)
+    SetObjectMovementType(17, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(17)
+}
+
+script Ranch_EventScript_ProtestWin4{
+    setobjectxyperm(20, 66, 38)
+    SetObjectMovementType(20, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(20)
+}
+
+script Ranch_EventScript_FarmerWin4{
+    setobjectxyperm(19, 66, 37)
+    SetObjectMovementType(19, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(19)
+}
+
+script Ranch_EventScript_ProtestWin5{
+    setobjectxyperm(41, 67, 31)
+    SetObjectMovementType(41, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(41)
+}
+
+script Ranch_EventScript_FarmerWin5{
+    setobjectxyperm(40, 68, 31)
+    SetObjectMovementType(40, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(40)
+}
+
+script Ranch_EventScript_ProtestWin6{
+    setobjectxyperm(26, 58, 18)
+    SetObjectMovementType(26, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(26)
+}
+
+script Ranch_EventScript_FarmerWin6{
+    setobjectxyperm(25, 59, 18)
+    SetObjectMovementType(25, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(25)
+}
+
+script Ranch_EventScript_ProtestWin7{
+    setobjectxyperm(28, 27, 48)
+    SetObjectMovementType(28, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(28)
+}
+
+script Ranch_EventScript_FarmerWin7{
+    setobjectxyperm(27, 26, 48)
+    SetObjectMovementType(27, MOVEMENT_TYPE_WANDER_AROUND)
+    addobject(27)
+}
+
+script Ranch_EventScript_EnterTop {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+		applymovement(1,AbsolDownTop)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_FaceRight)
+		waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is sniffing at you urgently..."))
+        closemessage
+        delay(30)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("It is insistent on joining you!"))
+        closemessage
+        delay(15)
+        givemon(SPECIES_ABSOL, 20, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        setvar(VAR_RANCH_STATE, 1)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script Ranch_EventScript_EnterTopMiddle {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+		applymovement(1,AbsolDownTopMiddle)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_FaceRight)
+		waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is sniffing at you urgently..."))
+        closemessage
+        delay(30)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("It is insistent on joining you!"))
+        closemessage
+        delay(15)
+		givemon(SPECIES_ABSOL, 20, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        setvar(VAR_RANCH_STATE, 0)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script Ranch_EventScript_EnterBottomMiddle {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+        addobject(1)
+        waitmovement(0)
+        setobjectxy(1, 66,66)
+        waitmovement(0)
+		applymovement(1,AbsolDownTop)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_FaceRight)
+		waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is sniffing at you urgently..."))
+        closemessage
+        delay(30)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("It is insistent on joining you!"))
+        closemessage
+        delay(15)
+		givemon(SPECIES_ABSOL, 20, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        setvar(VAR_RANCH_STATE, 1)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script Ranch_EventScript_EnterBottom {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+        addobject(1)
+        waitmovement(0)
+		setobjectxy(1, 66, 67)
+        waitmovement(0)
+		applymovement(1,AbsolDownTop)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkUp)
+        waitmovement(0)
+        applymovement(1,Common_Movement_FaceRight)
+		waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is sniffing at you urgently..."))
+        closemessage
+        delay(30)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("It is insistent on joining you!"))
+        closemessage
+        delay(15)
+		givemon(SPECIES_ABSOL, 20, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        setvar(VAR_RANCH_STATE, 1)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+movement AbsolDownTop{
+	walk_fast_down*3
+    jump_2_down
+    walk_fast_down*3
+}
+
+movement AbsolDownTopMiddle{
+	walk_fast_down*3
+    jump_2_down
+    walk_fast_down*4
+}
+
+movement AbsolDownBottomMiddle{
+	walk_fast_down*3
+    jump_2_down
+    walk_fast_down*5
+}
+
+movement AbsolDownBottom{
+	walk_fast_down*3
+    jump_2_down
+    walk_fast_down*6
+}
+
+movement AbsolJump{
+	jump_in_place_right*2
+}
+
+script Ranch_EventScript_ThirstyBoy{
+	lock
+	faceplayer
+	msgbox(format("Water...\nDo you have water?\pI haven't had a drink in ages..."))
+	closemessage
+	applymovement(5, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_FarmerSpeechTop{
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement(0)
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToFarmerFirst)
+    waitmovement(0)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Ahem, excuse me, everybody."))
+    waitmovement(0)
+	closemessage
+    delay(10)
+    applymovement(9, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(10)
+    applymovement(11, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(10)
+    applymovement(16, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Erm... I know today was supposed to be our annual Harvest Festival."))
+    waitmovement(0)
+	closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("A day to celebrate the work we put in all year, with dancing, singing, and, of course, our feast."))
+    waitmovement(0)
+    closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Unfortunately, the ceremony has been cancelled this year."))
+    waitmovement(0)
+    closemessage
+    applymovement(16, Common_Movement_ExclamationMark)
+	applymovement(9, Common_Movement_ExclamationMark)
+	applymovement(11, Common_Movement_ExclamationMark)
+    applymovement(12, Common_Movement_ExclamationMark)
+	applymovement(15, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(16, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(11, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(9, Common_Movement_FaceRight)
+    waitmovement(0)
+	applymovement(12, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(15, Common_Movement_FaceLeft)
+	waitmovement(0)
+    playse(SE_PIN)
+    waitse
+	delay(120)
+	applymovement(16, Common_Movement_FaceUp)
+	applymovement(11, Common_Movement_FaceUp)
+	applymovement(9, Common_Movement_FaceUp)
+    applymovement(12, Common_Movement_FaceUp)
+	applymovement(15, Common_Movement_FaceUp)
+	waitmovement(0)
+    delay(60)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Believe me, I am just as disappointed as the rest of you.\pThe truth is, our farm has not had access to water over the past year.\pNo rain, the river hasn't flowed in years, and our wells appear to have dried up."))
+    waitmovement(0)
+	closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("If things don't change, this might be our last time gathering like this...\pI'm sorry I failed you."))
+    closemessage
+    waitmovement(0)
+    delay(60)
+    waitmovement(0)
+    msgbox(format("I hear this farm has been experiencing a drought?"))
+    closemessage
+    applymovement(6, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(10, Common_Movement_FaceRight)
+    applymovement(9, Common_Movement_FaceRight)
+    applymovement(16, Common_Movement_FaceRight)
+    applymovement(8, Common_Movement_FaceRight)
+    applymovement(11, Common_Movement_FaceRight)
+    applymovement(12, Common_Movement_FaceRight)
+    applymovement(15, Common_Movement_FaceRight)
+    applymovement(14, Common_Movement_FaceRight)
+    applymovement(6, Common_Movement_FaceRight)
+    applymovement(7, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(30)
+    waitmovement(0)
+    addobject(39)
+    waitmovement(0)
+	setobjectxy(39, 56, 67)
+    waitmovement(0)
+    applymovement(39, GentlemanToScene)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToGentleman)
+    waitmovement(0)
+    msgbox(format("My best scientists and engineers have been studying the hydrology of this area, and we know how to bring back prosperity.\pFarmers, if you implement our technological solutions, your harvest will be more abundant than ever next year."))
+    closemessage
+    waitmovement(0)
+    delay(60)
+    waitmovement(0)
+	setobjectxy(36, 52, 74)
+    waitmovement(0)
+    setobjectxy(37, 53, 74)
+    waitmovement(0)
+    setobjectxy(38, 54, 74)
+    waitmovement(0)
+    msgbox(format("Your technology will never work!"))
+    closemessage
+    waitmovement(0)
+    applymovement(36, ConfrontGentleman1)
+    applymovement(37, ConfrontGentleman1)
+    applymovement(38, ConfrontGentleman2)
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceDown)
+    applymovement(39, Common_Movement_ExclamationMark)
+    delay(15)
+    waitmovement(0)
+    applymovement(37, Common_Movement_WalkInPlaceFasterUp)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("We've heard what you're planning!\nYour ideas will just make matters worse!"))
+    closemessage
+    waitmovement(0)
+    delay(30)
+    applymovement(39, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(60)
+    applymovement(39, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(90)
+    applymovement(39, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("I assure you, my solutions are sound. However, if you are so concerned, I implore you to look at who has joined us today."))
+    closemessage
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_CAMERA, ToAbsolTop)
+    waitmovement(0)
+    msgbox(format("As I'm sure you are aware, Absol has foresight of disasters, including those plaguing this region. This particular Absol seems to be united with this trainer. \pWhy don't we take their input into account?"))
+    closemessage
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FromAbsolTop)
+    waitmovement(0)
+    applymovement(39, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("I will tell all the farmers of my plans. Of course, they may consult with the Absol and this trainer, as well as with you hooligans."))
+    closemessage
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    delay(60)
+    msgbox(format("You may take my help, or leave it. The choice is yours."))
+    closemessage
+    waitmovement(0)
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+	playse(SE_EXIT)
+    applymovement(OBJ_EVENT_ID_CAMERA, ToPlayerTop)
+    waitmovement(0)
+    delay(90)
+    special(RemoveCameraObject)
+    waitmovement(0)
+    removeobject(36)
+    removeobject(37)
+    removeobject(38)
+    removeobject(32)
+    removeobject(33)
+    removeobject(34)
+    removeobject(35)
+    removeobject(39)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceOriginalDirection)
+    applymovement(11, Common_Movement_FaceOriginalDirection)
+    applymovement(9, Common_Movement_FaceOriginalDirection)
+    applymovement(16, Common_Movement_FaceOriginalDirection)
+    applymovement(12, Common_Movement_FaceOriginalDirection)
+    applymovement(15, Common_Movement_FaceOriginalDirection)
+    applymovement(7, Common_Movement_FaceOriginalDirection)
+    setobjectxyperm(39, 58, 68)
+    addobject(39)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setflag(FLAG_FARMER_SPEECH)
+    setrespawn(HEAL_LOCATION_RANCH)
+    releaseall
+    end
+}
+
+
+script Ranch_EventScript_FarmerSpeechMiddle{
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement(0)
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToFarmerFirstMiddle)
+    waitmovement(0)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Ahem, excuse me, everybody."))
+    waitmovement(0)
+	closemessage
+    delay(10)
+    applymovement(9, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(10)
+    applymovement(11, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(10)
+    applymovement(16, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Erm... I know today was supposed to be our annual Harvest Festival."))
+    waitmovement(0)
+	closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("A day to celebrate the work we put in all year, with dancing, singing, and, of course, our feast."))
+    waitmovement(0)
+    closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Unfortunately, the ceremony has been cancelled this year."))
+    waitmovement(0)
+    closemessage
+    applymovement(16, Common_Movement_ExclamationMark)
+	applymovement(9, Common_Movement_ExclamationMark)
+	applymovement(11, Common_Movement_ExclamationMark)
+    applymovement(12, Common_Movement_ExclamationMark)
+	applymovement(15, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(16, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(11, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(9, Common_Movement_FaceRight)
+    waitmovement(0)
+	applymovement(12, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(15, Common_Movement_FaceLeft)
+	waitmovement(0)
+    playse(SE_PIN)
+    waitse
+	delay(120)
+	applymovement(16, Common_Movement_FaceUp)
+	applymovement(11, Common_Movement_FaceUp)
+	applymovement(9, Common_Movement_FaceUp)
+    applymovement(12, Common_Movement_FaceUp)
+	applymovement(15, Common_Movement_FaceUp)
+	waitmovement(0)
+    delay(60)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Believe me, I am just as disappointed as the rest of you.\pThe truth is, our farm has not had access to water over the past year.\pNo rain, the river hasn't flowed in years, and our wells appear to have dried up."))
+    waitmovement(0)
+	closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("If things don't change, this might be our last time gathering like this...\pI'm sorry I failed you."))
+    closemessage
+    waitmovement(0)
+    delay(60)
+    waitmovement(0)
+    msgbox(format("I hear this farm has been experiencing a drought?"))
+    closemessage
+    applymovement(6, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(10, Common_Movement_FaceRight)
+    applymovement(9, Common_Movement_FaceRight)
+    applymovement(16, Common_Movement_FaceRight)
+    applymovement(8, Common_Movement_FaceRight)
+    applymovement(11, Common_Movement_FaceRight)
+    applymovement(12, Common_Movement_FaceRight)
+    applymovement(15, Common_Movement_FaceRight)
+    applymovement(14, Common_Movement_FaceRight)
+    applymovement(6, Common_Movement_FaceRight)
+    applymovement(7, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(30)
+    waitmovement(0)
+    addobject(39)
+    waitmovement(0)
+	setobjectxy(39, 56, 67)
+    waitmovement(0)
+    applymovement(39, GentlemanToScene)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToGentleman)
+    waitmovement(0)
+    msgbox(format("My best scientists and engineers have been studying the hydrology of this area, and we know how to bring back prosperity.\pFarmers, if you implement our technological solutions, your harvest will be more abundant than ever next year."))
+    closemessage
+    waitmovement(0)
+    delay(60)
+    waitmovement(0)
+	setobjectxy(36, 52, 74)
+    waitmovement(0)
+    setobjectxy(37, 53, 74)
+    waitmovement(0)
+    setobjectxy(38, 54, 74)
+    waitmovement(0)
+    msgbox(format("Your technology will never work!"))
+    closemessage
+    waitmovement(0)
+    applymovement(36, ConfrontGentleman1)
+    applymovement(37, ConfrontGentleman1)
+    applymovement(38, ConfrontGentleman2)
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceDown)
+    applymovement(39, Common_Movement_ExclamationMark)
+    delay(15)
+    waitmovement(0)
+    applymovement(37, Common_Movement_WalkInPlaceFasterUp)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("We've heard what you're planning!\nYour ideas will just make matters worse!"))
+    closemessage
+    waitmovement(0)
+    delay(30)
+    applymovement(39, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(60)
+    applymovement(39, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(90)
+    applymovement(39, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("I assure you, my solutions are sound. However, if you are so concerned, I implore you to look at who has joined us today."))
+    closemessage
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_CAMERA, ToAbsolMiddle)
+    waitmovement(0)
+    msgbox(format("As I'm sure you are aware, Absol has foresight of disasters, including those plaguing this region. This particular Absol seems to be united with this trainer. \pWhy don't we take their input into account?"))
+    closemessage
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FromAbsolMiddle)
+    waitmovement(0)
+    applymovement(39, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("I will tell all the farmers of my plans. Of course, they may consult with the Absol and this trainer, as well as with you hooligans."))
+    closemessage
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    delay(60)
+    msgbox(format("You may take my help, or leave it. The choice is yours."))
+    closemessage
+    waitmovement(0)
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+	playse(SE_EXIT)
+    applymovement(OBJ_EVENT_ID_CAMERA, ToPlayerMiddle)
+    waitmovement(0)
+    delay(90)
+    special(RemoveCameraObject)
+    waitmovement(0)
+    removeobject(36)
+    removeobject(37)
+    removeobject(38)
+    removeobject(32)
+    removeobject(33)
+    removeobject(34)
+    removeobject(35)
+    removeobject(39)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceOriginalDirection)
+    applymovement(11, Common_Movement_FaceOriginalDirection)
+    applymovement(9, Common_Movement_FaceOriginalDirection)
+    applymovement(16, Common_Movement_FaceOriginalDirection)
+    applymovement(12, Common_Movement_FaceOriginalDirection)
+    applymovement(15, Common_Movement_FaceOriginalDirection)
+    applymovement(7, Common_Movement_FaceOriginalDirection)
+    setobjectxyperm(39, 58, 68)
+    addobject(39)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setflag(FLAG_FARMER_SPEECH)
+    setrespawn(HEAL_LOCATION_RANCH)
+    releaseall
+    end
+}
+
+script Ranch_EventScript_FarmerSpeechBottom{
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement(0)
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToFarmerFirstBottom)
+    waitmovement(0)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Ahem, excuse me, everybody."))
+    waitmovement(0)
+	closemessage
+    delay(10)
+    applymovement(9, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(10)
+    applymovement(11, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(10)
+    applymovement(16, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Erm... I know today was supposed to be our annual Harvest Festival."))
+    waitmovement(0)
+	closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("A day to celebrate the work we put in all year, with dancing, singing, and, of course, our feast."))
+    waitmovement(0)
+    closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Unfortunately, the ceremony has been cancelled this year."))
+    waitmovement(0)
+    closemessage
+    applymovement(16, Common_Movement_ExclamationMark)
+	applymovement(9, Common_Movement_ExclamationMark)
+	applymovement(11, Common_Movement_ExclamationMark)
+    applymovement(12, Common_Movement_ExclamationMark)
+	applymovement(15, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(16, Common_Movement_FaceLeft)
+	waitmovement(0)
+	applymovement(11, Common_Movement_FaceDown)
+	waitmovement(0)
+	applymovement(9, Common_Movement_FaceRight)
+    waitmovement(0)
+	applymovement(12, Common_Movement_FaceRight)
+	waitmovement(0)
+	applymovement(15, Common_Movement_FaceLeft)
+	waitmovement(0)
+    playse(SE_PIN)
+    waitse
+	delay(120)
+	applymovement(16, Common_Movement_FaceUp)
+	applymovement(11, Common_Movement_FaceUp)
+	applymovement(9, Common_Movement_FaceUp)
+    applymovement(12, Common_Movement_FaceUp)
+	applymovement(15, Common_Movement_FaceUp)
+	waitmovement(0)
+    delay(60)
+    applymovement(6, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Believe me, I am just as disappointed as the rest of you.\pThe truth is, our farm has not had access to water over the past year.\pNo rain, the river hasn't flowed in years, and our wells appear to have dried up."))
+    waitmovement(0)
+	closemessage
+    delay(30)
+    applymovement(6, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("If things don't change, this might be our last time gathering like this...\pI'm sorry I failed you."))
+    closemessage
+    waitmovement(0)
+    delay(60)
+    waitmovement(0)
+    msgbox(format("I hear this farm has been experiencing a drought?"))
+    closemessage
+    applymovement(6, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(10, Common_Movement_FaceRight)
+    applymovement(9, Common_Movement_FaceRight)
+    applymovement(16, Common_Movement_FaceRight)
+    applymovement(8, Common_Movement_FaceRight)
+    applymovement(11, Common_Movement_FaceRight)
+    applymovement(12, Common_Movement_FaceRight)
+    applymovement(15, Common_Movement_FaceRight)
+    applymovement(14, Common_Movement_FaceRight)
+    applymovement(6, Common_Movement_FaceRight)
+    applymovement(7, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(30)
+    waitmovement(0)
+    addobject(39)
+    waitmovement(0)
+	setobjectxy(39, 56, 67)
+    waitmovement(0)
+    applymovement(39, GentlemanToScene)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToGentleman)
+    waitmovement(0)
+    msgbox(format("My best scientists and engineers have been studying the hydrology of this area, and we know how to bring back prosperity.\pFarmers, if you implement our technological solutions, your harvest will be more abundant than ever next year."))
+    closemessage
+    waitmovement(0)
+    delay(60)
+    waitmovement(0)
+	setobjectxy(36, 52, 74)
+    waitmovement(0)
+    setobjectxy(37, 53, 74)
+    waitmovement(0)
+    setobjectxy(38, 54, 74)
+    waitmovement(0)
+    msgbox(format("Your technology will never work!"))
+    closemessage
+    waitmovement(0)
+    applymovement(36, ConfrontGentleman1)
+    applymovement(37, ConfrontGentleman1)
+    applymovement(38, ConfrontGentleman2)
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceDown)
+    applymovement(39, Common_Movement_ExclamationMark)
+    delay(15)
+    waitmovement(0)
+    applymovement(37, Common_Movement_WalkInPlaceFasterUp)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("We've heard what you're planning!\nYour ideas will just make matters worse!"))
+    closemessage
+    waitmovement(0)
+    delay(30)
+    applymovement(39, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(60)
+    applymovement(39, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(90)
+    applymovement(39, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("I assure you, my solutions are sound. However, if you are so concerned, I implore you to look at who has joined us today."))
+    closemessage
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_CAMERA, ToAbsolBottom)
+    waitmovement(0)
+    msgbox(format("As I'm sure you are aware, Absol has foresight of disasters, including those plaguing this region. This particular Absol seems to be united with this trainer. \pWhy don't we take their input into account?"))
+    closemessage
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FromAbsolBottom)
+    waitmovement(0)
+    applymovement(39, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("I will tell all the farmers of my plans. Of course, they may consult with the Absol and this trainer, as well as with you hooligans."))
+    closemessage
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    delay(60)
+    msgbox(format("You may take my help, or leave it. The choice is yours."))
+    closemessage
+    waitmovement(0)
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+	playse(SE_EXIT)
+    applymovement(OBJ_EVENT_ID_CAMERA, ToPlayerBottom)
+    waitmovement(0)
+    delay(90)
+    special(RemoveCameraObject)
+    waitmovement(0)
+    removeobject(36)
+    removeobject(37)
+    removeobject(38)
+    removeobject(32)
+    removeobject(33)
+    removeobject(34)
+    removeobject(35)
+    removeobject(39)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceOriginalDirection)
+    applymovement(11, Common_Movement_FaceOriginalDirection)
+    applymovement(9, Common_Movement_FaceOriginalDirection)
+    applymovement(16, Common_Movement_FaceOriginalDirection)
+    applymovement(12, Common_Movement_FaceOriginalDirection)
+    applymovement(15, Common_Movement_FaceOriginalDirection)
+    applymovement(7, Common_Movement_FaceOriginalDirection)
+    setobjectxyperm(39, 58, 68)
+    addobject(39)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    setflag(FLAG_FARMER_SPEECH)
+    setrespawn(HEAL_LOCATION_RANCH)
+    releaseall
+    end
+}
+
+script Ranch_EventScript_RelocateEveryone{
+    setobjectxyperm(13, 53, 67)
+    addobject(13)
+    setobjectxyperm(15, 49, 61)
+    addobject(15)
+    SetObjectMovementType(15, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectxyperm(14, 53, 64)
+    addobject(14)
+    SetObjectMovementType(12, MOVEMENT_TYPE_FACE_RIGHT)
+    setobjectxyperm(12, 44, 75)
+    addobject(12)
+    SetObjectMovementType(11, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT)
+    setobjectxyperm(11, 45, 75)
+    addobject(11)
+    SetObjectMovementType(16, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectxyperm(16, 54, 73)
+    addobject(16)
+    SetObjectMovementType(9, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectxyperm(9, 55, 70)
+    addobject(9)
+    setflag(FLAG_RELOCATE)
+}
+
+script Ranch_EventScript_SetUpFirstBattle{
+    setobjectxyperm(39, 58, 68)
+    addobject(39)
+    setobjectxyperm(29, 18, 66)
+    addobject(29)
+    setobjectmovementtype(29, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+    setobjectxyperm(30, 19, 66)
+    addobject(30)
+    setobjectmovementtype(30, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    setobjectxyperm(34, 56, 59)
+    addobject(34)
+    setobjectmovementtype(34, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+    setobjectxyperm(35, 57, 59)
+    addobject(35)
+}
+
+script Ranch_EventScript_FarmerBattle {
+	lock
+    if(flag(FLAG_FARMER1_BATTLE) != TRUE || flag(FLAG_FARMER2_BATTLE) != TRUE || flag(FLAG_FARMER3_BATTLE) != TRUE || flag(FLAG_FARMER4_BATTLE) != TRUE || flag(FLAG_FARMER5_BATTLE) != TRUE || flag(FLAG_FARMER6_BATTLE) != TRUE || flag(FLAG_FARMER7_BATTLE) != TRUE){
+        faceplayer
+        msgbox(format("This kind gentleman spoke to my farmers about his technology.\pSounds like they're being harrassed by these protestors. Could you help them out?"))
+        if(flag(FLAG_FARMER1_BATTLE) == FALSE){
+            msgbox(format("I saw one of those kids in orange head west. Maybe check the barns?"))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER2_BATTLE) == FALSE){
+            msgbox(format("One of my farmers is having an issue by the well."))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER3_BATTLE) == FALSE || flag(FLAG_FARMER4_BATTLE) == FALSE){
+            msgbox(format("I heard something happening in the fields. Can you take a look?"))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER5_BATTLE) == FALSE){
+            msgbox(format("I think I saw a protestor head to the northeast, near where we used to farm."))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER6_BATTLE) == FALSE || flag(FLAG_FARMER7_BATTLE) == FALSE){
+            msgbox(format("A few scientist were heading to the riverbed. Maybe something is happening there?"))
+            closemessage
+            releaseall
+            end
+        }
+    }
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        goto(Ranch_EventScript_FinalEncounter)
+        releaseall
+        end
+    }
+    releaseall
+    end
+}
+
+
+movement GentlemanToScene{
+    walk_left*4
+}
+
+movement CameraToGentleman{
+    walk_diag_southeast
+    walk_right*4
+}
+
+movement ConfrontGentleman1{
+    walk_fast_up*5
+}
+
+movement ConfrontGentleman2{
+    walk_fast_up*6
+    face_left
+}
+
+movement ToAbsolTop{
+    walk_left
+    walk_diag_northwest
+}
+
+movement FromAbsolTop{
+    walk_diag_southeast
+    walk_right
+}
+
+movement ToPlayerTop{
+    walk_left*2
+    walk_diag_northwest
+}
+
+movement ToAbsolMiddle{
+    walk_left*2
+}
+
+movement FromAbsolMiddle{
+    walk_right*2
+}
+
+movement ToPlayerMiddle{
+    walk_left*3
+}
+
+movement ToAbsolBottom{
+    walk_diag_southwest
+    walk_left
+}
+
+movement FromAbsolBottom{
+    walk_diag_northeast
+    walk_right
+}
+
+movement ToPlayerBottom{
+    walk_diag_southwest
+    walk_left*2
+}
+
+movement CameraToFarmerFirst{
+    walk_left*2
+}
+
+movement CameraToFarmerFirstMiddle{
+    walk_diag_northwest
+    walk_left
+}
+
+movement CameraToFarmerFirstBottom{
+    walk_diag_northwest*2
+}
+
+script Ranch_EventScript_Man1{
+	lock
+	faceplayer
+    if(flag(FLAG_FARMER_SPEECH) == FALSE){
+	    msgbox(format("I was excited for our annual feast.\nHowever, I should not have expected much, after this past year."))
+    }
+    if(flag(FLAG_FARMER_SPEECH) == TRUE){
+        msgbox(format("I sure hope we have a better feast next year..."))
+    }
+	closemessage
+	applymovement(12, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_OldWoman1{
+	lock
+	faceplayer
+    if(flag(FLAG_FARMER_SPEECH) == FALSE){
+	    msgbox(format("When I was a young woman, we always had a full table after harvest! \pWhat happened?"))
+    }
+    if(flag(FLAG_FARMER_SPEECH) == TRUE){
+        msgbox(format("I'm not changing my ways like those children dressed in orange want.\pI like what that other gentleman was suggesting, though."))
+    }
+	closemessage
+	applymovement(15, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_Woman1{
+	lock
+	faceplayer
+    if(flag(FLAG_FARMER_SPEECH) == FALSE){
+	    msgbox(format("We have to be grateful for what we have. Many have it worse than we do."))
+    }
+    if(flag(FLAG_FARMER_SPEECH) == TRUE){
+        msgbox(format("I have to keep a smile on my face for my daughter. \pWhether we choose to make scientific improvements or alter our lifestyle, I just hope we can survive."))
+    }
+	closemessage
+	applymovement(16, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_Protestor1{
+	lock
+    applymovement(36, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(15)
+	msgbox(format("You're right, we have to put a stop to this..."))
+	closemessage
+    faceplayer
+    waitmovement(0)
+    applymovement(36, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    playse(SE_PIN)
+    waitse
+    delay(15)
+    msgbox(format("Are you eavesdropping?"))
+    closemessage
+	applymovement(36, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_Protestor2{
+	lock
+    applymovement(38, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    delay(15)
+	msgbox(format("I just can't stand it..."))
+	closemessage
+    faceplayer
+    waitmovement(0)
+    applymovement(38, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    playse(SE_PIN)
+    waitse
+    delay(15)
+    msgbox(format("Hey, mind your business!"))
+    closemessage
+	applymovement(38, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_LittleBoy1{
+	lock
+    faceplayer
+	msgbox(format("What do they mean we don't have water?!"))
+	closemessage
+	applymovement(11, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_LittleGirl1{
+	lock
+    faceplayer
+	msgbox(format("Change is scary!"))
+	closemessage
+	applymovement(9, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_Nurse{
+    lock
+    faceplayer
+    if(flag(FLAG_RANCH_NURSE) == TRUE){
+        msgbox(format("Would you like me to heal your Pokémon?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            special(HealPlayerParty)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            msgbox(format("Let me know if you need my services again."))
+            waitmessage
+        }
+        else{
+            msgbox(format("Let me know if you need my services."))
+        }
+    }
+    if(flag(FLAG_RANCH_NURSE) == FALSE){
+        msgbox(format("Sigh... I was appointed to this post at the ranch. \pI miss my PokéCenter, the farmers are... smelly. \pAnyway...\pWould you like me to heal your Pokémon?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            special(HealPlayerParty)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            msgbox(format("Let me know if you need my services again."))
+            waitmessage
+            setflag(FLAG_RANCH_NURSE)
+        }
+        else{
+            msgbox(format("Let me know if you need my services."))
+            waitmessage
+            setflag(FLAG_RANCH_NURSE)
+        }
+    }
+    applymovement(13, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    callnative(UpdateFollowingPokemon)
+    release
+    end
+}
+
+script Ranch_EventScript_Gentleman{
+	lock
+    faceplayer
+	msgbox(format("I spoke with the farmers, and they are enthused by my proposal. \pMy technology will bring water back to this land, and they can continue to farm as they have for generations!"))
+	closemessage
+	applymovement(39, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_LiberateBattleProtestor{
+    if(flag(FLAG_FARMER1_BATTLE) == FALSE){
+        lock
+        applymovement(30, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("I don't care what your reason is! You can't just go around stealing my chickens!"))
+        closemessage
+        delay(15)
+        applymovement(29, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("Those are sentient beings who are crammed in a barn all day! They deserve to be free!"))
+        closemessage
+        delay(15)
+        applymovement(30, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("We can't free them, that's crazy! If we did, what would we eat?"))
+        closemessage
+        delay(15)
+        applymovement(29, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("You could grow different crops! You aren't eating that hay, you would save so much water if you grew plants that you could eat, instead of wasting it on animal farming."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What do you think? Should we liberate the animals, or continue to eat them?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Liberate!", "Eat!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(29, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(30, FarmerFreakOut)
+            playse(SE_BIKE_HOP)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Dadgummit! I can't believe you agree with this city slicker!\pThis will end our lifestyle as we know it!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 66){
+                applymovement(30, FarmerToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 65){
+                applymovement(30, FarmerToTopLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 67){
+                applymovement(30, FarmerToBottomLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 65){
+                applymovement(30, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 20 && var(VAR_TEMP_1) == 66){
+                applymovement(30, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 67){
+                applymovement(30, Common_Movement_FacePlayer)
+            }
+            waitmovement(0)
+            applymovement(29, Common_Movement_FaceRight)
+            waitmovement(0)
+            trainerbattle_single(TRAINER_ALBERTO, "I won't let you do this!", "Gah! How could you?", Ranch_EventScript_FirstFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(30, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(29, FarmerFreakOut)
+            playse(SE_BIKE_HOP)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Are you crazy? How can you let this atrocity continue?"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 66){
+                applymovement(29, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 65){
+                applymovement(29, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 67){
+                applymovement(29, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 65){
+                applymovement(29, ProtestorToTopRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            if (var(VAR_TEMP_0) == 20 && var(VAR_TEMP_1) == 66){
+                applymovement(29, ProtestorToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 67){
+                applymovement(29, ProtestorToBottomRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            applymovement(30, Common_Movement_FaceLeft)
+            waitmovement(0)
+            trainerbattle_single(TRAINER_ED, "This can't happen!", "Have you no morals?", Ranch_EventScript_FirstProtesterLeave)
+
+        }
+    }
+    if (flag(FLAG_FARMER1_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("Thank you for siding with me. You have saved countless animals from a life of misery.\pAdditionally, the farmers can use their precious water on food they can eat.\pThis is better for everyone."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_LiberateBattleFarmer{
+    if(flag(FLAG_FARMER1_BATTLE) == FALSE){
+        lock
+        applymovement(30, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("I don't care what your reason is! You can't just go around stealing my chickens!"))
+        closemessage
+        delay(15)
+        applymovement(29, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("Those are sentient beings who are crammed in a barn all day! They deserve to be free!"))
+        closemessage
+        delay(15)
+        applymovement(30, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("We can't free them, that's crazy! If we did, what would we eat?"))
+        closemessage
+        delay(15)
+        applymovement(29, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("You could grow different crops! You aren't eating that hay, you would save so much water if you grew plants that you could eat, instead of wasting it on animal farming."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What do you think? Should we liberate the animals, or continue to eat them?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Liberate!", "Eat!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(29, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(30, FarmerFreakOut)
+            playse(SE_BIKE_HOP)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Dadgummit! I can't believe you agree with this city slicker!\pThis will end our lifestyle as we know it!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 66){
+                applymovement(30, FarmerToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 65){
+                applymovement(30, FarmerToTopLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 67){
+                applymovement(30, FarmerToBottomLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 65){
+                applymovement(30, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 20 && var(VAR_TEMP_1) == 66){
+                applymovement(30, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 67){
+                applymovement(30, Common_Movement_FacePlayer)
+            }
+            waitmovement(0)
+            applymovement(29, Common_Movement_FaceRight)
+            waitmovement(0)
+            trainerbattle_single(TRAINER_ALBERTO, "I won't let you do this!", "Gah! How could you?", Ranch_EventScript_FirstFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(30, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(29, FarmerFreakOut)
+            playse(SE_BIKE_HOP)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Are you crazy? How can you let this atrocity continue?"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 17 && var(VAR_TEMP_1) == 66){
+                applymovement(29, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 65){
+                applymovement(29, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 18 && var(VAR_TEMP_1) == 67){
+                applymovement(29, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 65){
+                applymovement(29, ProtestorToTopRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            if (var(VAR_TEMP_0) == 20 && var(VAR_TEMP_1) == 66){
+                applymovement(29, ProtestorToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 19 && var(VAR_TEMP_1) == 67){
+                applymovement(29, ProtestorToBottomRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            applymovement(30, Common_Movement_FaceLeft)
+            waitmovement(0)
+            trainerbattle_single(TRAINER_ED, "This can't happen!", "Have you no morals?", Ranch_EventScript_FirstProtesterLeave)
+
+        }
+    }
+    if (flag(FLAG_FARMER1_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("Thank you for siding with me. Our ranch will not starve, and we can continue to farm like we have for generations."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_FirstFarmerLeave{
+    lock
+    delay(15)
+    applymovement(30, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("...\pWithout our animals, we will starve."))
+    closemessage
+    delay(15)
+    applymovement(30, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(30, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("This is all your fault!"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(30)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_1)
+    setflag(FLAG_FARMER1_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(29, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(29, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(29, 18, 66)
+    addobject(29)
+    waitmovement(0)
+    delay(15)
+    removeobject(2)
+    removeobject(3)
+    waitmovement(0)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin1)
+    release
+    end
+}
+
+script Ranch_EventScript_FirstProtesterLeave{
+    lock
+    delay(15)
+    applymovement(29, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("...\pThese animals will continue to suffer, and water will continue to be wasted."))
+    closemessage
+    delay(15)
+    applymovement(29, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(29, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("This is all your fault!"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(29)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_1)
+    setflag(FLAG_FARMER1_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(30, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(30, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(30, 19, 66)
+    addobject(30)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin1)
+    release
+    end
+}
+
+movement FarmerFreakOut{
+    jump_in_place_left
+    walk_in_place_fast_down
+    walk_in_place_fast_right
+    walk_in_place_fast_up
+    walk_in_place_fast_left*3
+    walk_in_place_fast_right
+}
+
+movement FarmerToLeft{
+    walk_fast_up
+    walk_fast_left*2
+    face_down
+}
+
+movement FarmerToTopLeft{
+    walk_fast_up
+    face_left
+}
+
+movement FarmerToBottomLeft{
+    walk_fast_down
+    face_left
+}
+
+movement ProtestorToTopRight{
+    walk_fast_up
+    face_right
+}
+
+movement ProtestorToBottomRight{
+    walk_fast_down
+    face_right
+}
+
+movement ProtestorToRight{
+    walk_fast_up
+    walk_fast_right*2
+    face_down
+}
+
+script Ranch_EventScript_BlockingFarmer1{
+    lock
+    faceplayer
+	msgbox(format("It's been months since it last rained. I'm not sure how much longer we can last."))
+	closemessage
+	applymovement(32, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_BlockingFarmer2{
+    lock
+    faceplayer
+	msgbox(format("We've been trucking in water for our last crop of hay. We can't afford to buy more for next year."))
+	closemessage
+	applymovement(33, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_WellEncounterFarmer{
+    if(flag(FLAG_FARMER2_BATTLE) == FALSE){
+        lock
+        applymovement(35, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Your practices are sucking this ranch dry. You're already running out of water, you can't just keep drilling for more!"))
+        closemessage
+        delay(15)
+        applymovement(34, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("This well has sustained us for as long as I've been here. I know there's more water down there, we just have to get it!"))
+        closemessage
+        delay(15)
+        applymovement(35, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Water is pumped out thousands of times faster than it replenishes. Eventually you'll run out!\pWhat then?"))
+        closemessage
+        delay(15)
+        applymovement(34, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("That's a problem for the future! For now, we need this water."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("How do you see it? Should we shut down the well, or drill deeper?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Stop the well!", "Keep drilling!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(35, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(34, FarmerMadInPlaceRight)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("How do you suppose we water our crops without our well?"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 55 && var(VAR_TEMP_1) == 59){
+                applymovement(34, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 56 && var(VAR_TEMP_1) == 60){
+                applymovement(34, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 57 && var(VAR_TEMP_1) == 60){
+                applymovement(34, Farmer2ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_SEAFLOOR_CAVERN_4, "We will keep using this well!", "Do you want us to starve?", Ranch_EventScript_SecondFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(34, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(35, ProtestorMadInPlaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("I'm trying to help you! You will draw all of the groundwater out of the earth!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 55 && var(VAR_TEMP_1) == 59){
+                applymovement(35, Protestor2ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            }
+            if (var(VAR_TEMP_0) == 56 && var(VAR_TEMP_1) == 60){
+                applymovement(35, Protestor2Down)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 57 && var(VAR_TEMP_1) == 60){
+                applymovement(35, Common_Movement_FacePlayer)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_DECLAN, "Why do you support this?", "Did you listen to me?", Ranch_EventScript_SecondProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER2_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("Thanks for the hand. I know the well is running low, but we'll just drill deeper and get more water."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_WellEncounterProtestor{
+    if(flag(FLAG_FARMER2_BATTLE) == FALSE){
+        lock
+        applymovement(35, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Your practices are sucking this ranch dry. You're already running out of water, you can't just keep drilling for more!"))
+        closemessage
+        delay(15)
+        applymovement(34, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("This well has sustained us for as long as I've been here. I know there's more water down there, we just have to get it!"))
+        closemessage
+        delay(15)
+        applymovement(35, Common_Movement_WalkInPlaceFastLeft)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Water is pumped out thousands of times faster than it replenishes. Eventually you'll run out!\pWhat then?"))
+        closemessage
+        delay(15)
+        applymovement(34, Common_Movement_WalkInPlaceFastRight)
+        delay(15)
+        msgbox(format("That's a problem for the future! For now, we need this water."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("How do you see it? Should we shut down the well, or drill deeper?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Stop the well!", "Keep drilling!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(35, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(34, FarmerMadInPlaceRight)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("How do you suppose we water our crops without our well?"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 55 && var(VAR_TEMP_1) == 59){
+                applymovement(34, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 56 && var(VAR_TEMP_1) == 60){
+                applymovement(34, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 57 && var(VAR_TEMP_1) == 60){
+                applymovement(34, Farmer2ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_SEAFLOOR_CAVERN_4, "We will keep using this well!", "Do you want us to starve?", Ranch_EventScript_SecondFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(34, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(35, ProtestorMadInPlaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("I'm trying to help you! You will draw all of the groundwater out of the earth!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 55 && var(VAR_TEMP_1) == 59){
+                applymovement(35, Protestor2ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            }
+            if (var(VAR_TEMP_0) == 56 && var(VAR_TEMP_1) == 60){
+                applymovement(35, Protestor2Down)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 57 && var(VAR_TEMP_1) == 60){
+                applymovement(35, Common_Movement_FacePlayer)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_DECLAN, "Why do you support this?", "Did you listen to me?", Ranch_EventScript_SecondProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER2_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("This was the right decision. If the farmers continued to pump at unsustainable rates, this ranch would continue to sink, and they would run out of water."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_SecondFarmerLeave{
+    lock
+    delay(15)
+    applymovement(34, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Don't you get it? This is our only source of water!"))
+    closemessage
+    delay(15)
+    applymovement(34, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(34, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("We're all going to die!"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(34)
+    removeobject(32)
+    removeobject(33)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_2)
+    setflag(FLAG_FARMER2_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    //applymovement(35, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(35, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(35, 57, 59)
+    addobject(35)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin2)
+    release
+    end
+}
+
+script Ranch_EventScript_SecondProtestorLeave{
+    lock
+    delay(15)
+    applymovement(35, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Well, I guess you got your wish."))
+    closemessage
+    delay(15)
+    applymovement(35, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(35, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("This ranch will not last."))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(35)
+    removeobject(32)
+    removeobject(33)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_2)
+    setflag(FLAG_FARMER2_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(34, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(34, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(34, 56, 59)
+    addobject(34)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin2)
+    release
+    end
+}
+
+movement FarmerMadInPlaceRight{
+    walk_in_place_fast_right*3
+    walk_in_place_faster_right*5
+}
+
+movement ProtestorMadInPlaceLeft{
+    walk_in_place_fast_left*3
+    walk_in_place_faster_left*5
+}
+
+movement Farmer2ToRight{
+    walk_fast_down
+    face_right
+}
+
+movement Protestor2ToLeft{
+    walk_fast_down
+    walk_fast_left*2
+    face_up
+}
+
+movement Protestor2Down{
+    walk_fast_down
+    face_left
+}
+
+script Ranch_EventScript_NativeEncounterFarmer{
+    if(flag(FLAG_FARMER3_BATTLE) == FALSE){
+        lock
+        applymovement(17, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("We've farmed hay here for decades. You kids aren't gonna change that now!"))
+        closemessage
+        delay(15)
+        applymovement(18, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("I understand, but your practices aren't sustainable. There are other methods that have worked here for millenia that don't require irrigation!"))
+        closemessage
+        delay(15)
+        applymovement(17, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("That's crazy talk. Who could grow without water?"))
+        closemessage
+        delay(15)
+        applymovement(18, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("The native people who have been here long before your people. Why don't you give their practices a shot?"))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What makes sense to you? Traditional farming, or irrigated farming?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Traditional!", "Irrigated!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(18, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(17, FarmerMadInPlaceDown)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Why are you trying to make us change?"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 48){
+                applymovement(17, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 49){
+                applymovement(17, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 50){
+                applymovement(17, Farmer3ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 51){
+                applymovement(17, Farmer3ToBottom)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_RUSTURF_TUNNEL, "We know what works!", "How are we supposed to farm without\nwatering our crops?", Ranch_EventScript_ThirdFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(17, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(18, ProtestorMadInPlaceUp)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("I know it seems hard to believe, but people have thrived for thousands of years without irrigation!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 51){
+                applymovement(18, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 50){
+                applymovement(18, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 49){
+                applymovement(18, Protestor3ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            }
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 48){
+                applymovement(18, Protestor3ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_1, "Why can't you give it a shot?", "Don't you see the current method \ndoesn't work?", Ranch_EventScript_ThirdProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER3_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("What was that crazy guy on about, anyway? Crops without water?\pThese city folk think they know everything."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_NativeEncounterProtestor{
+    if(flag(FLAG_FARMER3_BATTLE) == FALSE){
+        lock
+        applymovement(17, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("We've farmed hay here for decades. You kids aren't gonna change that now!"))
+        closemessage
+        delay(15)
+        applymovement(18, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("I understand, but your practices aren't sustainable. There are other methods that have worked here for millenia that don't require irrigation!"))
+        closemessage
+        delay(15)
+        applymovement(17, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("That's crazy talk. Who could grow without water?"))
+        closemessage
+        delay(15)
+        applymovement(18, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("The native people who have been here long before your people. Why don't you give their practices a shot?"))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What makes sense to you? Traditional farming, or irrigated farming?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Traditional!", "Irrigated!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(18, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(17, FarmerMadInPlaceDown)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Why are you trying to make us change?"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 48){
+                applymovement(17, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 49){
+                applymovement(17, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 50){
+                applymovement(17, Farmer3ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 51){
+                applymovement(17, Farmer3ToBottom)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_RUSTURF_TUNNEL, "We know what works!", "How are we supposed to farm without\nwatering our crops?", Ranch_EventScript_ThirdFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(17, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(18, ProtestorMadInPlaceUp)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("I know it seems hard to believe, but people have thrived for thousands of years without irrigation!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 51){
+                applymovement(18, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 50){
+                applymovement(18, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 37 && var(VAR_TEMP_1) == 49){
+                applymovement(18, Protestor3ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            }
+            if (var(VAR_TEMP_0) == 36 && var(VAR_TEMP_1) == 48){
+                applymovement(18, Protestor3ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_1, "Why can't you give it a shot?", "Don't you see the current method \ndoesn't work?", Ranch_EventScript_ThirdProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER3_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("Thank you for trusting me. Native people have demonstrated a sustainable practice, and we should follow them."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_ThirdFarmerLeave{
+    lock
+    delay(15)
+    applymovement(17, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I truly don't understand. How have people been growing crops without irrigation?"))
+    closemessage
+    delay(15)
+    applymovement(17, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("It simply won't work!"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(17)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_3)
+    setflag(FLAG_FARMER3_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(18, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(18, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(18, 36, 50)
+    addobject(18)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin3)
+    release
+    end
+}
+
+script Ranch_EventScript_ThirdProtestorLeave{
+    lock
+    delay(15)
+    applymovement(18, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I just thought you would hear me out."))
+    closemessage
+    delay(15)
+    applymovement(18, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(18, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("These practices can not last."))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(18)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_3)
+    setflag(FLAG_FARMER3_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(17, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(17, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(17, 36, 49)
+    addobject(17)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin3)
+    release
+    end
+}
+
+movement FarmerMadInPlaceDown{
+    walk_in_place_fast_down*3
+    walk_in_place_faster_down*5
+}
+
+movement ProtestorMadInPlaceUp{
+    walk_in_place_fast_up*3
+    walk_in_place_faster_up*5
+}
+
+movement Farmer3ToRight{
+    walk_fast_right
+    face_down
+}
+
+movement Farmer3ToBottom{
+    walk_fast_right
+    walk_fast_down*2
+    face_left
+}
+
+movement Protestor3ToRight{
+    walk_fast_right
+    face_up
+}
+
+movement Protestor3ToTop{
+    walk_fast_right
+    walk_fast_up*2
+    face_left
+}
+
+script Ranch_EventScript_DroughtResistantEncounterFarmer{
+    if(flag(FLAG_FARMER4_BATTLE) == FALSE){
+        lock
+        applymovement(19, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("This hay represents our entire economy! Who cares how much water it uses, we ain't changing!"))
+        closemessage
+        delay(15)
+        applymovement(20, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("You can't even eat it! You ship all this hay overseas anyways, it's like you're throwing away your last bits of water. Why not grow food for yourselves that doesn't demand as much water?"))
+        closemessage
+        delay(15)
+        applymovement(19, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("You're not listening! What about the economy?"))
+        closemessage
+        delay(15)
+        applymovement(20, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("Isn't your life more important than money?"))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What should we grow? Drought-resistant food crops, or hay?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Drought-resistant!", "Hay!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(20, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(19, FarmerMadInPlaceDown)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("All I know is hay! I can't change to your weird plants!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 36){
+                applymovement(19, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 37){
+                applymovement(19, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 38){
+                applymovement(19, Farmer4ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 39){
+                applymovement(19, Farmer4ToBottom)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_2, "Just leave us be!", "How are we supposed to make any \nmoney?", Ranch_EventScript_FourthFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(19, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(20, ProtestorMadInPlaceUp)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Isn't eating more important than your economy? You're so short-sighted!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 39){
+                applymovement(20, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 38){
+                applymovement(20, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 37){
+                applymovement(20, Protestor4ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 36){
+                applymovement(20, Protestor4ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_3, "Stop growing hay!", "Why should we continue to waste water?", Ranch_EventScript_FourthProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER4_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("I don't understand why these protestors want us to change our ways. This is the way we've always done things around here, they can't just expect us to learn a new way of life!"))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_DroughtResistantEncounterProtestor{
+    if(flag(FLAG_FARMER4_BATTLE) == FALSE){
+        lock
+        applymovement(19, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("This hay represents our entire economy! Who cares how much water it uses, we ain't changing!"))
+        closemessage
+        delay(15)
+        applymovement(20, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("You can't even eat it! You ship all this hay overseas anyways, it's like you're throwing away your last bits of water. Why not grow food for yourselves that doesn't demand as much water?"))
+        closemessage
+        delay(15)
+        applymovement(19, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("You're not listening! What about the economy?"))
+        closemessage
+        delay(15)
+        applymovement(20, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("Isn't your life more important than money?"))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What should we grow? Drought-resistant food crops, or hay?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Drought-resistant!", "Hay!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(20, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(19, FarmerMadInPlaceDown)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("All I know is hay! I can't change to your weird plants!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 36){
+                applymovement(19, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 37){
+                applymovement(19, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 38){
+                applymovement(19, Farmer4ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 39){
+                applymovement(19, Farmer4ToBottom)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_2, "Just leave us be!", "How are we supposed to make any \nmoney?", Ranch_EventScript_FourthFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(19, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(20, ProtestorMadInPlaceUp)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Isn't eating more important than your economy? You're so short-sighted!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 39){
+                applymovement(20, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 38){
+                applymovement(20, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 65 && var(VAR_TEMP_1) == 37){
+                applymovement(20, Protestor4ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 36){
+                applymovement(20, Protestor4ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_3, "Stop growing hay!", "Why should we continue to waste water?", Ranch_EventScript_FourthProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER4_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("No more sending precious water overseas. Growing native food crops will guarantee a sustainable food source for years to come."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_FourthFarmerLeave{
+    lock
+    delay(15)
+    applymovement(19, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Our ranch will go into ruin! Without hay, what can we export?"))
+    closemessage
+    delay(15)
+    applymovement(19, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("We'll go broke!"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(19)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_4)
+    setflag(FLAG_FARMER4_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(20, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(20, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(20, 66, 38)
+    addobject(20)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin4)
+    release
+    end
+}
+
+script Ranch_EventScript_FourthProtestorLeave{
+    lock
+    delay(15)
+    applymovement(20, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("You can sustainably grow food here."))
+    closemessage
+    delay(15)
+    applymovement(20, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(20, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("Why not give it a chance?"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(20)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_4)
+    setflag(FLAG_FARMER4_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(19, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(19, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(19, 66, 37)
+    addobject(19)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin4)
+    release
+    end
+}
+
+movement Farmer4ToLeft{
+    walk_fast_left
+    face_down
+}
+
+movement Farmer4ToBottom{
+    walk_fast_left
+    walk_fast_down*2
+    face_right
+}
+
+movement Protestor4ToLeft{
+    walk_fast_left
+    face_up
+}
+
+movement Protestor4ToTop{
+    walk_fast_left
+    walk_fast_up*2
+    face_right
+}
+
+script Ranch_EventScript_SoilDepletionEncounterFarmer{
+    if(flag(FLAG_FARMER5_BATTLE) == FALSE){
+        lock
+        applymovement(41, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Don't you wonder why this area has become a desert? Repeatedly growing hay has depleted the soil of all the nutrients!"))
+        closemessage
+        delay(15)
+        applymovement(40, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("What are we supposed to do about that? We have to grow something!"))
+        closemessage
+        delay(15)
+        applymovement(41, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Some plants can add nutrients to the soil, and if you have a diverse selection of crops, you'll have healthier soil.\pIt won't all blow away in the wind, too."))
+        closemessage
+        delay(15)
+        applymovement(40, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("Don't lecture me! Why do you think you know more about soil health than I do?"))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("We need to grow something! Should we diversify, or keep growing hay?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Diversify!", "Hay!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(41, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(40, FarmerFreakOut)
+            waitmovement(0)
+            applymovement(40, Common_Movement_FaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("What would we even diversify with? All I've ever grown is hay!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 69 && var(VAR_TEMP_1) == 31){
+                applymovement(40, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 68 && var(VAR_TEMP_1) == 30){
+                applymovement(40, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 67 && var(VAR_TEMP_1) == 30){
+                applymovement(40, Farmer5ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 31){
+                applymovement(40, Farmer5ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MUSEUM_1, "I can't grow anything else!", "How am I supposed to learn anything\nelse?", Ranch_EventScript_FifthFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(40, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(41, FarmerFreakOut)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("This soil is already unusable, the rest of your farmland will soon be desert too!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 31){
+                applymovement(41, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 67 && var(VAR_TEMP_1) == 30){
+                applymovement(41, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 68 && var(VAR_TEMP_1) == 30){
+                applymovement(41, Protestor5ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            if (var(VAR_TEMP_0) == 69 && var(VAR_TEMP_1) == 31){
+                applymovement(41, Protestor5ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MUSEUM_2, "We need to grow other crops!", "Everything is going to get so much \nworse.", Ranch_EventScript_FifthProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER5_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("Thanks for not forcing us to change our ways."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_SoilDepletionEncounterProtestor{
+    if(flag(FLAG_FARMER5_BATTLE) == FALSE){
+        lock
+        applymovement(41, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Don't you wonder why this area has become a desert? Repeatedly growing hay has depleted the soil of all the nutrients!"))
+        closemessage
+        delay(15)
+        applymovement(40, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("What are we supposed to do about that? We have to grow something!"))
+        closemessage
+        delay(15)
+        applymovement(41, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Some plants can add nutrients to the soil, and if you have a diverse selection of crops, you'll have healthier soil.\pIt won't all blow away in the wind, too."))
+        closemessage
+        delay(15)
+        applymovement(40, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("Don't lecture me! Why do you think you know more about soil health than I do?"))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("We need to grow something! Should we diversify, or keep growing hay?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Diversify!", "Hay!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(41, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(40, FarmerFreakOut)
+            waitmovement(0)
+            applymovement(40, Common_Movement_FaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("What would we even diversify with? All I've ever grown is hay!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 69 && var(VAR_TEMP_1) == 31){
+                applymovement(40, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 68 && var(VAR_TEMP_1) == 30){
+                applymovement(40, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 67 && var(VAR_TEMP_1) == 30){
+                applymovement(40, Farmer5ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 31){
+                applymovement(40, Farmer5ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MUSEUM_1, "I can't grow anything else!", "How am I supposed to learn anything\nelse?", Ranch_EventScript_FifthFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(40, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(41, FarmerFreakOut)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("This soil is already unusable, the rest of your farmland will soon be desert too!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 66 && var(VAR_TEMP_1) == 31){
+                applymovement(41, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 67 && var(VAR_TEMP_1) == 30){
+                applymovement(41, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 68 && var(VAR_TEMP_1) == 30){
+                applymovement(41, Protestor5ToTop)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            if (var(VAR_TEMP_0) == 69 && var(VAR_TEMP_1) == 31){
+                applymovement(41, Protestor5ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MUSEUM_2, "We need to grow other crops!", "Everything is going to get so much \nworse.", Ranch_EventScript_FifthProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER5_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("By growing other plants, the soil will naturally get healthier. \pSoon, these dusty conditions will cease to exist, even without the addition of water."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_FifthFarmerLeave{
+    lock
+    delay(15)
+    applymovement(40, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("The only thing us farmers know is hay. Asking us to grow anything else is like asking us to learn a new language."))
+    closemessage
+    delay(15)
+    applymovement(40, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("It just won't happen."))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(40)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_5)
+    setflag(FLAG_FARMER5_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(41, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(41, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(41, 67, 31)
+    addobject(41)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin5)
+    release
+    end
+}
+
+script Ranch_EventScript_FifthProtestorLeave{
+    lock
+    delay(15)
+    applymovement(41, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("It hurts to see the landscape turn to this."))
+    closemessage
+    delay(15)
+    applymovement(41, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(41, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("You are the reason this ranch has turned into a desert."))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(41)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_5)
+    setflag(FLAG_FARMER5_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(40, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(40, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(40, 68, 31)
+    addobject(40)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin5)
+    release
+    end
+}
+
+movement Farmer5ToTop{
+    walk_fast_up
+    face_left
+}
+
+movement Farmer5ToLeft{
+    walk_fast_up
+    walk_fast_left*2
+    face_down
+}
+
+movement Protestor5ToTop{
+    walk_fast_up
+    face_right
+}
+
+movement Protestor5ToRight{
+    walk_fast_up
+    walk_fast_right*2
+    face_down
+}
+
+script Ranch_EventScript_PesticideEncounterFarmer{
+    if(flag(FLAG_FARMER6_BATTLE) == FALSE){
+        lock
+        applymovement(26, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("I understand the riverbed has run dry and there's less risk of water contamination, but you can't recommend these pesticides to the farmers any more!\pYou're slowly killing entire ecosystems!"))
+        closemessage
+        delay(15)
+        applymovement(25, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("The farmers need to protect their plants from Bug-Type Pokémon. How else do you recommend they do so?"))
+        closemessage
+        delay(15)
+        applymovement(26, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Encouraging the presence of native predators, like local Flying-Type Pokémon, can help deal with the problems.\pIn any case, spreading carcinogens on their fields is not good for anyone's health."))
+        closemessage
+        delay(15)
+        applymovement(25, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("Natural predators? What are you talking about?\pWe have developed a potent solution for this issue. Farmers would be fools not to use it."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("How should pests be dealt with? Natural solutions, or pesticides?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Natural!", "Pesticides!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(26, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(25, FarmerFreakOut)
+            waitmovement(0)
+            applymovement(25, Common_Movement_FaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Farmers have always had to deal with issues when it comes to nature.\pUsing our technology can solve those problems!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 59 && var(VAR_TEMP_1) == 19){
+                applymovement(25, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 58 && var(VAR_TEMP_1) == 19){
+                applymovement(25, Farmer6ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_SPACE_CENTER_1, "We have to use the best tools science\nhas to offer!", "Why wouldn't we use technology?", Ranch_EventScript_SixthFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(25, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(26, FarmerFreakOut)
+            waitmovement(0)
+            applymovement(26, Common_Movement_FaceRight)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("You are spreading death! Groundwater, air, soil, everything is being contaminated!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 58 && var(VAR_TEMP_1) == 19){
+                applymovement(26, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 59 && var(VAR_TEMP_1) == 19){
+                applymovement(26, Protestor6ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MT_PYRE_1, "I can't stand by and let this happen!", "You are killing the planet.", Ranch_EventScript_SixthProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER6_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("We need pesticides to ensure a healthy harvest. Thank you for seeing reason."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_PesticideEncounterProtestor{
+    if(flag(FLAG_FARMER6_BATTLE) == FALSE){
+        lock
+        applymovement(26, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("I understand the riverbed has run dry and there's less risk of water contamination, but you can't recommend these pesticides to the farmers any more!\pYou're slowly killing entire ecosystems!"))
+        closemessage
+        delay(15)
+        applymovement(25, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("The farmers need to protect their plants from Bug-Type Pokémon. How else do you recommend they do so?"))
+        closemessage
+        delay(15)
+        applymovement(26, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Encouraging the presence of native predators, like local Flying-Type Pokémon, can help deal with the problems.\pIn any case, spreading carcinogens on their fields is not good for anyone's health."))
+        closemessage
+        delay(15)
+        applymovement(25, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("Natural predators? What are you talking about?\pWe have developed a potent solution for this issue. Farmers would be fools not to use it."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("How should pests be dealt with? Natural solutions, or pesticides?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Natural!", "Pesticides!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(26, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(25, FarmerFreakOut)
+            waitmovement(0)
+            applymovement(25, Common_Movement_FaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Farmers have always had to deal with issues when it comes to nature.\pUsing our technology can solve those problems!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 59 && var(VAR_TEMP_1) == 19){
+                applymovement(25, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 58 && var(VAR_TEMP_1) == 19){
+                applymovement(25, Farmer6ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_SPACE_CENTER_1, "We have to use the best tools science\nhas to offer!", "Why wouldn't we use technology?", Ranch_EventScript_SixthFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(25, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(26, FarmerFreakOut)
+            waitmovement(0)
+            applymovement(26, Common_Movement_FaceRight)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("You are spreading death! Groundwater, air, soil, everything is being contaminated!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 58 && var(VAR_TEMP_1) == 19){
+                applymovement(26, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 59 && var(VAR_TEMP_1) == 19){
+                applymovement(26, Protestor6ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MT_PYRE_1, "I can't stand by and let this happen!", "You are killing the planet.", Ranch_EventScript_SixthProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER6_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("The chemicals that have already been applied will persist for centuries.\pHowever, stopping now will reduce the risk of cancer, as well as slow the killing of ecosystems. This had to be done."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_SixthFarmerLeave{
+    lock
+    delay(15)
+    applymovement(25, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Pests will have free rein over any crops the farmers attempt to plant."))
+    closemessage
+    delay(15)
+    applymovement(25, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("Nothing will thrive."))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(25)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_6)
+    setflag(FLAG_FARMER6_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(26, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(26, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(26, 58, 18)
+    addobject(26)
+    waitmovement(0)
+    SetObjectMovementType(26, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin6)
+    release
+    end
+}
+
+script Ranch_EventScript_SixthProtestorLeave{
+    lock
+    delay(15)
+    applymovement(26, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I thought these chemicals would have been outlawed decades ago."))
+    closemessage
+    delay(15)
+    applymovement(26, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(26, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("How can you let this happen?"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(26)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_6)
+    setflag(FLAG_FARMER6_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(25, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(25, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(25, 59, 18)
+    addobject(25)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin6)
+    release
+    end
+}
+
+movement Farmer6ToLeft{
+    walk_fast_down
+    face_left
+}
+
+movement Protestor6ToRight{
+    walk_fast_down
+    face_right
+}
+
+
+
+
+
+
+
+
+
+script Ranch_EventScript_FertilizerEncounterFarmer{
+    if(flag(FLAG_FARMER7_BATTLE) == FALSE){
+        lock
+        applymovement(27, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Chemical fertilizers greatly increases the agricultural potential of a plot of land.\pIt would be silly not to use it!"))
+        closemessage
+        delay(15)
+        applymovement(28, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("Maybe so, but they also pollute water, air, and soil. They can also cause ecological disasters, like algal blooms. We can use alternatives!"))
+        closemessage
+        delay(15)
+        applymovement(27, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Oh, really? What alternatives do you propose?"))
+        closemessage
+        delay(15)
+        applymovement(28, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("There are natural soil amendments we can use, like compost. If other sustainable practices are used, we won't need fertilizers at all."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What do you think we should use? Natural solutions, or fertilizers?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Natural!", "Fertilizers!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(28, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(27, FarmerMadInPlaceRight)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("We have developed solutions for our world's greatest problems. They must be used!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 26 && var(VAR_TEMP_1) == 49){
+                applymovement(27, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 27 && var(VAR_TEMP_1) == 49){
+                applymovement(27, Farmer7ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MT_PYRE_2, "I will fight for science!", "Chemicals cause no harm.", Ranch_EventScript_SeventhFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(27, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(28, ProtestorMadInPlaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Fertilizers lead us down a path to ruin."))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 27 && var(VAR_TEMP_1) == 49){
+                applymovement(28, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 26 && var(VAR_TEMP_1) == 49){
+                applymovement(28, Protestor7ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MT_PYRE_3, "We will all suffer because of this!", "Why do you insist upon using \nchemicals?", Ranch_EventScript_SeventhProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER7_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("Fertilizer is a scientific miracle that has saved millions, if not billions, of lives.\pIt must be used."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_FertilizerEncounterProtestor{
+    if(flag(FLAG_FARMER7_BATTLE) == FALSE){
+        lock
+        applymovement(27, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Chemical fertilizers greatly increases the agricultural potential of a plot of land.\pIt would be silly not to use it!"))
+        closemessage
+        delay(15)
+        applymovement(28, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("Maybe so, but they also pollute water, air, and soil. They can also cause ecological disasters, like algal blooms. We can use alternatives!"))
+        closemessage
+        delay(15)
+        applymovement(27, Common_Movement_WalkInPlaceFastRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Oh, really? What alternatives do you propose?"))
+        closemessage
+        delay(15)
+        applymovement(28, Common_Movement_WalkInPlaceFastLeft)
+        delay(15)
+        msgbox(format("There are natural soil amendments we can use, like compost. If other sustainable practices are used, we won't need fertilizers at all."))
+        closemessage
+        delay(15)
+        faceplayer
+        msgbox(format("What do you think we should use? Natural solutions, or fertilizers?"))
+        dynmultichoice(0, 0, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "Natural!", "Fertilizers!")
+        if (var(VAR_RESULT) == 0){
+            applymovement(28, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(27, FarmerMadInPlaceRight)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("We have developed solutions for our world's greatest problems. They must be used!"))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 26 && var(VAR_TEMP_1) == 49){
+                applymovement(27, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 27 && var(VAR_TEMP_1) == 49){
+                applymovement(27, Farmer7ToRight)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MT_PYRE_2, "I will fight for science!", "Chemicals cause no harm.", Ranch_EventScript_SeventhFarmerLeave)
+        }
+        if (var(VAR_RESULT) == 1){
+            applymovement(27, Common_Movement_LockFacingDirection)
+            waitmovement(0)
+            applymovement(28, ProtestorMadInPlaceLeft)
+            waitmovement(0)
+            delay(15)
+            msgbox(format("Fertilizers lead us down a path to ruin."))
+            closemessage
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            if (var(VAR_TEMP_0) == 27 && var(VAR_TEMP_1) == 49){
+                applymovement(28, Common_Movement_FacePlayer)
+            }
+            if (var(VAR_TEMP_0) == 26 && var(VAR_TEMP_1) == 49){
+                applymovement(28, Protestor7ToLeft)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            }
+            waitmovement(0)
+            trainerbattle_single(TRAINER_GRUNT_MT_PYRE_3, "We will all suffer because of this!", "Why do you insist upon using \nchemicals?", Ranch_EventScript_SeventhProtestorLeave)
+        }
+    }
+    if(flag(FLAG_FARMER7_BATTLE) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("We simply do not need to be using synthetic fertilizers. Thank you for understanding."))
+        closemessage
+    }
+    release
+    end
+}
+
+script Ranch_EventScript_SeventhFarmerLeave{
+    lock
+    delay(15)
+    applymovement(27, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Without fertilizers, we will see widespread famine."))
+    closemessage
+    delay(15)
+    applymovement(27, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("This ranch will fail."))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(27)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_PROTEST_WIN_7)
+    setflag(FLAG_FARMER7_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    addvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(28, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(28, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(28, 27, 48)
+    addobject(28)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_ProtestWin7)
+    release
+    end
+}
+
+script Ranch_EventScript_SeventhProtestorLeave{
+    lock
+    delay(15)
+    applymovement(28, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Chemicals on our food should be cause for concern."))
+    closemessage
+    delay(15)
+    applymovement(28, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(28, Common_Movement_FacePlayer)
+    delay(15)
+    msgbox(format("This is ridiculous!"))
+    closemessage
+    delay(15)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(28)
+    playse(SE_EXIT)
+    waitse
+    setflag(FLAG_FARMER_WIN_7)
+    setflag(FLAG_FARMER7_BATTLE)
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        setflag(FLAG_READY_FINAL_RANCH_BATTLE)
+        setvar(VAR_RANCH_STATE, 2)
+    }
+    subvar(VAR_RANCH_MORALITY_SYSTEM, 1)
+    applymovement(27, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    SetObjectMovementType(27, MOVEMENT_TYPE_WANDER_AROUND)
+    waitmovement(0)
+    setobjectxyperm(27, 26, 48)
+    addobject(27)
+    waitmovement(0)
+    delay(15)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    goto(Ranch_EventScript_FarmerWin7)
+    release
+    end
+}
+
+movement Protestor7ToLeft{
+    walk_fast_down
+    face_left
+}
+
+movement Farmer7ToRight{
+    walk_fast_down
+    face_right
+}
+
+movement FinalProtestorToScene{
+    walk_fast_right*5
+    walk_fast_up*2
+    walk_fast_right*3
+    face_up
+}
+
+movement LastProtestorFromScene{
+    walk_fast_left*3
+    walk_fast_down*2
+    walk_fast_left*5
+}
+
+
+
+script Ranch_EventScript_FinalEncounter{
+    lock
+    msgbox(format("Hey! Are you the one running this place?"))
+    closemessage
+    applymovement(6, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceLeft)
+    waitmovement(0)
+    getplayerxy(VAR_TEMP_2, VAR_TEMP_3)
+        if (var(VAR_TEMP_2) == 47 && var(VAR_TEMP_3) == 67){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        }
+    addobject(42)
+    waitmovement(0)
+	setobjectxy(42, 39, 69)
+    waitmovement(0)
+    delay(15)
+    applymovement(42, FinalProtestorToScene)
+    waitmovement(0)
+    delay(30)
+    if(var(VAR_RANCH_MORALITY_SYSTEM) > 10){
+        applymovement(6, Common_Movement_FaceDown)
+        waitmovement(0)
+        delay(10)
+        applymovement(6, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("You vandals need to mind your own business! You've been spreading lies to my farmers and forcing them to abandon our practices. \pWhy do you think you know better than us?"))
+        closemessage
+        delay(15)
+        applymovement(42, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("We've been trying to help you, your people, and the environment! All we want is what's best, and the way you've been working the land has not been sustainable."))
+        closemessage
+        delay(15)
+        applymovement(6, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(6, Common_Movement_FacePlayer)
+        applymovement(42, Common_Movement_FacePlayer)
+        applymovement(7, Common_Movement_FacePlayer)
+        waitmovement(0)
+        msgbox(format("And you!\pYou just waltzed into my ranch with that Absol of yours and thought you could tell us what to do!\pI won't stand for it!"))
+        closemessage
+        delay(15)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 48 && var(VAR_TEMP_1) == 66){
+            applymovement(6, Common_Movement_FacePlayer)
+        }
+        if (var(VAR_TEMP_0) == 48 && var(VAR_TEMP_1) == 67){
+            applymovement(6, MainFarmerToRight)
+            applymovement(7, MainFarmerToRight)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        if (var(VAR_TEMP_0) == 47 && var(VAR_TEMP_1) == 68){
+            applymovement(6, MainFarmerToBottom)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        if (var(VAR_TEMP_0) == 46 && var(VAR_TEMP_1) == 67){
+            applymovement(6, MainFarmerToLeft)
+            applymovement(7, MainFarmerToLeft)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        waitmovement(0)
+        trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_4, "I'll fight for my farm!", "You've forced my hand.", Ranch_EventScript_AfterFinalFarmerBattle)
+    }
+    if(var(VAR_RANCH_MORALITY_SYSTEM) < 10){
+        applymovement(6, Common_Movement_FaceDown)
+        waitmovement(0)
+        delay(10)
+        applymovement(6, Common_Movement_WalkInPlaceFastDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Hah! Despite your best efforts, my farmers will continue with our ways. We know how to use our resources, and won't answer to vandals like you!"))
+        closemessage
+        delay(15)
+        applymovement(42, Common_Movement_WalkInPlaceFastUp)
+        delay(15)
+        msgbox(format("We've just been trying to help you, your people, and the environment! All we want is what's best, and the way you've been working the land has not been sustainable. Your ranch will collapse!"))
+        closemessage
+        delay(15)
+        applymovement(42, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(6, Common_Movement_FacePlayer)
+        applymovement(42, Common_Movement_FacePlayer)
+        applymovement(7, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(6, Common_Movement_LockFacingDirection)
+        waitmovement(0)
+        msgbox(format("And you!\pWhy do you stand with technology? That Absol of yours should know that disaster lies ahead for this ranch!"))
+        closemessage
+        delay(15)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 48 && var(VAR_TEMP_1) == 66){
+            applymovement(42, FinalProtestorToRight)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+        }
+        if (var(VAR_TEMP_0) == 48 && var(VAR_TEMP_1) == 67){
+            applymovement(42, Common_Movement_FacePlayer)
+        }
+        if (var(VAR_TEMP_0) == 47 && var(VAR_TEMP_1) == 68){
+            applymovement(42, Common_Movement_FacePlayer)
+        }
+        if (var(VAR_TEMP_0) == 46 && var(VAR_TEMP_1) == 67){
+            applymovement(42, Common_Movement_FacePlayer)
+        }
+        waitmovement(0)
+        trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_5, "I'll fight for sustainability!", "Well, there's nothing else we can do.", Ranch_EventScript_AfterFinalProtestorBattle)
+    }
+}
+
+movement MainFarmerToRight{
+    walk_fast_right
+    face_down
+}
+
+movement MainFarmerToBottom{
+    walk_fast_right
+    walk_fast_down*2
+    face_left
+}
+
+movement MainFarmerToLeft{
+    walk_fast_left
+    face_down
+}
+
+movement FinalProtestorToRight{
+    walk_fast_right
+    face_up
+}
+
+script Ranch_EventScript_AfterFinalFarmerBattle{
+    setflag(FLAG_RANCH_COMPLETE)
+    applymovement(6, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    applymovement(6, ProtestorMadInPlaceUp)
+    waitmovement(0)
+    msgbox(format("You've left me with no choice."))
+    closemessage
+    delay(30)
+    applymovement(6, Common_Movement_FacePlayer)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("We will try the methods you have introduced today. I must admit, we are obviously struggling. I hope your plan can get us out of this mess."))
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    waitse
+    msgbox("Wait!")
+    closemessage
+    addobject(39)
+    waitmovement(0)
+	setobjectxyperm(39, 57, 67)
+    waitmovement(0)
+    delay(15)
+    applymovement(6, Common_Movement_FaceRight)
+    applymovement(7, Common_Movement_FaceRight)
+    applymovement(42, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(6, Common_Movement_ExclamationMark)
+    applymovement(7, Common_Movement_ExclamationMark)
+    applymovement(42, Common_Movement_ExclamationMark)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(39, TechBroToScene)
+    waitmovement(0)
+    msgbox(format("What about our technology? I can bring back the water, and the crops, and the prosperity!\pTrust me and my science!"))
+    closemessage
+    delay(15)
+    applymovement(42, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Your technology is unproven! It could lead to more destruction and pain!\pBesides, we already know what to do to live sustainably. We just have to do it!"))
+    closemessage
+    delay(30)
+    applymovement(39, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(39, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Unbelievable! You are doomed!"))
+    closemessage
+    delay(10)
+    applymovement(39, TechBroFromScene)
+    waitmovement(0)
+    delay(120)
+    fadenewbgm(MUS_DUMMY)
+    fadescreenspeed(FADE_TO_BLACK, 8)
+    delay(30)
+    msgbox(format("One year later...$"))
+    closemessage
+    delay(120)
+    warpcontinuescript(MAP_RANCH_GOOD_ENDING, 40, 28, GoodEnding_EventScript)
+    end
+}
+
+movement TechBroToScene{
+    walk_faster_up*2
+    walk_faster_left*7
+}
+
+movement TechBroFromScene{
+    walk_faster_right*7
+    walk_faster_down*2
+}
+
+script Ranch_EventScript_AfterFinalProtestorBattle{
+    setflag(FLAG_RANCH_COMPLETE)
+    applymovement(42, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(30)
+    applymovement(42, FarmerMadInPlaceDown)
+    waitmovement(0)
+    msgbox(format("You win."))
+    closemessage
+    delay(30)
+    applymovement(42, Common_Movement_FacePlayer)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("We've tried everything. No matter what we do, you are unwilling to accept the truth.\pHave fun with your technology, I give up."))
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    waitse
+    msgbox("Excellent choice!")
+    closemessage
+    addobject(39)
+    waitmovement(0)
+	setobjectxyperm(39, 57, 67)
+    waitmovement(0)
+    applymovement(6, Common_Movement_UnlockFacingDirection)
+    waitmovement(0)
+    delay(15)
+    applymovement(6, Common_Movement_FaceRight)
+    applymovement(7, Common_Movement_FaceRight)
+    applymovement(42, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(6, Common_Movement_ExclamationMark)
+    applymovement(7, Common_Movement_ExclamationMark)
+    applymovement(42, Common_Movement_ExclamationMark)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(39, TechBroToScene)
+    waitmovement(0)
+    msgbox(format("I'm so glad you have seen the light! My scientific discoveries will make this ranch thrive once more!"))
+    closemessage
+    delay(15)
+    applymovement(42, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("You fool! Your technology is unproven! We know how to live sustainably, and we don't need you!"))
+    closemessage
+    delay(30)
+    applymovement(39, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("That's not how the farmers see it."))
+    closemessage
+    delay(10)
+    applymovement(42, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I can't believe you all!"))
+    closemessage
+    applymovement(42, LastProtestorFromScene)
+    waitmovement(0)
+    delay(120)
+    fadenewbgm(MUS_DUMMY)
+    fadescreenspeed(FADE_TO_BLACK, 8)
+    delay(30)
+    msgbox(format("One year later...$"))
+    closemessage
+    delay(120)
+    warpcontinuescript(MAP_RANCH_BAD_ENDING, 40, 28, BadEnding_EventScript)
+    end
+}
+
+script GoodEnding_EventScript{
+    lock
+    hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_RANCH_GOOD_ENDING)
+    waitmovement(0)
+    //playbgm(MUS_STARDEW_OVERTURE, FALSE)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, RightPan)
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FirstOffScreenCam)
+    //setvar(VAR_0x8004, 61)
+    //setvar(VAR_0x8005, 44)
+    //special(TeleportCamera)
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, LeftPan)
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, SecondOffScreenCam)
+    //setvar(VAR_0x8004, 25)
+    //setvar(VAR_0x8005, 63)
+    //special(TeleportCamera)
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraLastMovement)
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Thank you for joining me for our annual Harvest Festival.\pI'm sure you have all noticed our harvest is more abundant than last year, by far."))
+    closemessage
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceLeft)
+    waitmovement(15)
+    msgbox(format("To the surprise of many of us, the sustainability initiatives have paid off!\pWho knew that the cacti surrounding us could provide us with both fruit and fresh water?"))
+    closemessage
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("And we are already healthier after ditching those chemical pesticides and fertilizers."))
+    closemessage
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Our life is still difficult. We will struggle with droughts, and living in harsh conditions will not be easy.\pHowever, after taking the advice of those meddling protestors, we will be able to survive.\pEnough out of me, dig in!"))
+    closemessage
+    delay(15)
+    playse(SE_APPLAUSE)
+    applymovement(3, moves(jump_in_place_down*5))
+    applymovement(5, moves(jump_in_place_down*5))
+    applymovement(9, moves(jump_in_place_up*3))
+    applymovement(10, EatUp)
+    applymovement(8, EatUp)
+    applymovement(6, EatUp)
+    applymovement(7, EatUp)
+    applymovement(2, EatDown)
+    applymovement(4, EatDown)
+    waitmovement(0)
+    waitse
+    fadescreenspeed(FADE_TO_BLACK,6)
+    delay(30)
+    fadeoutbgm(0)
+    callnative(StartCredits)
+    release
+    end
+}
+
+movement RightPan{
+    walk_right*20
+}
+
+movement LeftPan{
+    walk_left*20
+}
+
+movement CameraLastMovement{
+    walk_right*15
+    walk_diag_southeast*8
+}
+
+movement FirstOffScreenCam{
+    walk_diag_southeast
+    walk_faster_down*15
+}
+
+movement SecondOffScreenCam{
+    walk_diag_southwest*16
+    walk_faster_down*3
+}
+
+movement EatUp{
+    walk_in_place_fast_up*24
+}
+
+movement EatDown{
+    walk_in_place_fast_down*24
+}
+
+script BadEnding_EventScript{
+    lock
+    hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_RANCH_BAD_ENDING)
+    waitmovement(0)
+    //playbgm(MUS_STARDEW_CLOTH, FALSE)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, RightPan)
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FirstOffScreenCam)
+    //setvar(VAR_0x8004, 61)
+    //setvar(VAR_0x8005, 44)
+    //special(TeleportCamera)
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, LeftPan)
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, SecondOffScreenCam)
+    //setvar(VAR_0x8004, 25)
+    //setvar(VAR_0x8005, 63)
+    //special(TeleportCamera)
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraLastMovement)
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Well, thank you, both of you. \pNot only for attending the annual Harvest Festival, but also for staying on the farm this past year.\pI know it's been difficult, given the people we've lost and the fact that the water did not come back."))
+    closemessage
+    delay(15)
+    applymovement(2, Common_Movement_WalkInPlaceUp)
+    waitmovement(15)
+    msgbox(format("About that, boss...\pWe've decided to leave too."))
+    closemessage
+    delay(15)
+    applymovement(1, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    waitse
+    delay(15)
+    msgbox(format("What?!"))
+    closemessage
+    delay(45)
+    applymovement(3, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("That's right. There just isn't anything left for us. We need to move on to greener pastures."))
+    closemessage
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("I understand. We were all let down by those promises, huh?"))
+    closemessage
+    delay(15)
+    playse(SE_PIN)
+    waitse
+    msgbox(format("No need to worry! I'm back!"))
+    closemessage
+    applymovement(1, Common_Movement_FaceRight)
+    applymovement(2, Common_Movement_FaceRight)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(1, Common_Movement_ExclamationMark)
+    applymovement(2, Common_Movement_ExclamationMark)
+    applymovement(3, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(4, moves(walk_left*3))
+    waitmovement(0)
+    msgbox(format("My scientists have come up with all sorts of new solutions!\pI understand that these new wells didn't bring forth any water, but that's why we have planned a pipeline to bring in ocean water!\pIt'll take a lot of energy, but we can take out the salt, converting it to freshwater!\pDoesn't that sound grand?"))
+    closemessage
+    delay(15)
+    applymovement(3, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    applymovement(3, Common_Movement_WalkInPlaceRight)
+    applymovement(1, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("We're not interested. Your technological solutions didn't work last year, and we have no faith in them working this year."))
+    closemessage
+    applymovement(3, moves(walk_fast_right*10))
+    applymovement(2, moves(walk_fast_right*10))
+    waitmovement(0)
+    applymovement(1, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(15)
+    playse(SE_EXIT)
+    waitse
+    delay(30)
+    applymovement(4, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Well? What do you think?"))
+    closemessage
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I'm out too. We should've listened to those kids."))
+    closemessage
+    applymovement(1, moves(walk_fast_right*4))
+    waitmovement(0)
+    applymovement(1, moves(walk_fast_right*2))
+    waitmovement(0)
+    applymovement(4, Common_Movement_FaceUp)
+    applymovement(1, moves(walk_fast_right*4))
+    waitmovement(0)
+    applymovement(4, Common_Movement_FaceRight)
+    waitmovement(0)
+    playse(SE_EXIT)
+    waitse
+    delay(15)
+    applymovement(4, FarmerFreakOut)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(4, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format("Wait!"))
+    closemessage
+    applymovement(4, moves(walk_faster_right*4))
+    waitmovement(0)
+    fadescreenspeed(FADE_TO_BLACK,6)
+    delay(30)
+    fadeoutbgm(0)
+    callnative(StartCredits)
+    release
+    end
+}
+
+script Ranch_EventScript_TrampleBattle {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_6, Jerry_Intro, Jerry_Outro)
+	msgbox(PostBattle_Jerry, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+text Jerry_Intro{
+    format("Hey kid! Quit trampling my crops!")
+}
+text Jerry_Outro{
+    format("Watch your step, why don't ya?")
+}
+text PostBattle_Jerry{
+    format("I've been doin' everything I can to grow this hay.\pIt's been real tough this year.")
+}
+
+script Ranch_EventScript_BugBattle {
+	trainerbattle_single(TRAINER_FREDRICK, Andrew_Intro, Andrew_Outro)
+	msgbox(PostBattle_Andrew, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+text Andrew_Intro{
+    format("These farmers are killing all the bugs!")
+}
+text Andrew_Outro{
+    format("I might have the last few bugs on the ranch. I need to protect them!")
+}
+text PostBattle_Andrew{
+    format("Stop killing the bugs!")
+}
+
+script Ranch_EventScript_CacturneBattle {
+	trainerbattle_single(TRAINER_MATT, Matt_Intro, Matt_Outro)
+	msgbox(PostBattle_Matt, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+text Matt_Intro{
+    format("Pests keep attacking my crops!")
+}
+text Matt_Outro{
+    format("My Cacnea does a good job of preventing more damage.")
+}
+text PostBattle_Matt{
+    format("I wish other Pokémon would stop eating my crops!")
+}
+
+script Ranch_EventScript_HayFarmer{
+	lock
+	faceplayer
+	msgbox(format("I'm taking stock of our hay supply. Looks like we'll have just enough for this year, but not enough for next."))
+	closemessage
+	applymovement(31, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_OldMan{
+	lock
+	faceplayer
+	msgbox(format("When I was a boy, this area was on the same level as the rest of the ranch.\pHowever, due to the use of this well, the land has sunk!\pThe power of technology is amazing!"))
+	closemessage
+	applymovement(14, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_Text_BarnSign{
+    lock
+    msgbox(format("Free-Range Lechonk and Torchic raised here!"))
+    release
+}
+
+script Ranch_EventScript_Boy{
+	lock
+	faceplayer
+	msgbox(format("I've never seen water in this riverbed.\pMy parents tell me it used to run full every year. I guess we used up all the water!"))
+	closemessage
+	applymovement(48, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script Ranch_EventScript_TruckMan{
+	lock
+	faceplayer
+	msgbox(format("Trucks have delivered us water to grow our crops. This can't be a sustainable practice, but it's gotten us through a few rough years."))
+	closemessage
+	applymovement(49, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}

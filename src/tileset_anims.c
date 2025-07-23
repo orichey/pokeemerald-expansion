@@ -1892,3 +1892,91 @@ void InitTilesetAnim_snowytrees(void)
     sPrimaryTilesetAnimCounterMax = 256;
     sPrimaryTilesetAnimCallback = TilesetAnim_snowytrees;
 }
+
+
+
+
+const u16 gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame0[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/anim/grass_sprouts/00.4bpp");
+const u16 gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame1[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/anim/grass_sprouts/01.4bpp");
+const u16 gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame2[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/anim/grass_sprouts/02.4bpp");
+
+const u16 gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame0[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/anim/plant/00.4bpp");
+const u16 gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame1[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/anim/plant/01.4bpp");
+const u16 gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame2[] = INCBIN_U16("data/tilesets/primary/chaotic_cherry_cake_general/anim/plant/02.4bpp");
+
+const u16 *const gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts[] = {
+    gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame0,
+    gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame1,
+    gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame0,
+    gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts_Frame2
+};
+
+const u16 *const gTilesetAnims_ChaoticCherryCakeGeneral_Plant[] = {
+    gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame0,
+    gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame1,
+    gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame0,
+    gTilesetAnims_ChaoticCherryCakeGeneral_Plant_Frame2
+};
+
+static void QueueAnimTiles_ChaoticCherryCakeGeneral_GrassSprouts(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts);
+    AppendTilesetAnimToBuffer(gTilesetAnims_ChaoticCherryCakeGeneral_GrassSprouts[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void QueueAnimTiles_ChaoticCherryCakeGeneral_Plant(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_ChaoticCherryCakeGeneral_Plant);
+    AppendTilesetAnimToBuffer(gTilesetAnims_ChaoticCherryCakeGeneral_Plant[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(5)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_ChaoticCherryCakeGeneral(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_ChaoticCherryCakeGeneral_GrassSprouts(timer / 16);
+        QueueAnimTiles_ChaoticCherryCakeGeneral_Plant(timer / 16);
+    }
+}
+
+void InitTilesetAnim_ChaoticCherryCakeGeneral(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_ChaoticCherryCakeGeneral;
+}
+
+
+const u16 gTilesetAnims_desert_WavyGrass_Frame0[] = INCBIN_U16("data/tilesets/secondary/desert/anim/wavy_grass/00.4bpp");
+const u16 gTilesetAnims_desert_WavyGrass_Frame1[] = INCBIN_U16("data/tilesets/secondary/desert/anim/wavy_grass/01.4bpp");
+const u16 gTilesetAnims_desert_WavyGrass_Frame2[] = INCBIN_U16("data/tilesets/secondary/desert/anim/wavy_grass/02.4bpp");
+
+
+const u16 *const gTilesetAnims_desert_WavyGrass[] = {
+    gTilesetAnims_desert_WavyGrass_Frame0,
+    gTilesetAnims_desert_WavyGrass_Frame1,
+    gTilesetAnims_desert_WavyGrass_Frame2,
+    gTilesetAnims_desert_WavyGrass_Frame1
+};
+
+static void QueueAnimTiles_desert_WavyGrass(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_desert_WavyGrass);
+    AppendTilesetAnimToBuffer(gTilesetAnims_desert_WavyGrass[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(512)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_desert(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_desert_WavyGrass(timer / 16);
+        QueueAnimTiles_ChaoticCherryCakeGeneral_GrassSprouts(timer / 16);
+        QueueAnimTiles_ChaoticCherryCakeGeneral_Plant(timer / 16);
+    }
+}
+
+void InitTilesetAnim_desert(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_desert;
+}

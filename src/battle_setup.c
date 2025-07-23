@@ -768,6 +768,8 @@ u8 BattleSetup_GetTerrainId(void)
         return BATTLE_TERRAIN_FOREST;
     if (gMapHeader.regionMapSectionId == MAPSEC_ROUTE_103)
         return BATTLE_TERRAIN_LAKE;
+    if (gMapHeader.regionMapSectionId == MAPSEC_MAUVILLE_CITY)
+        return BATTLE_TERRAIN_DESERT;
     switch (gMapHeader.mapType)
     {
     case MAP_TYPE_TOWN:

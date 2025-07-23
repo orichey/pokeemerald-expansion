@@ -1312,6 +1312,9 @@ SECTIONS {
         sound/songs/midi/mus_spirited_one_summers_day.o(.rodata);
         sound/songs/midi/mus_castle_carrying_you.o(.rodata);
         sound/songs/midi/mus_totoro_mei_is_missing.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_great_canyon.o(.rodata);
+        sound/songs/midi/mus_stardew_overture.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_escapethroughsnow.o(.rodata);
     } > ROM =0
 
     lib_rodata :

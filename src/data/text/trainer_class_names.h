@@ -6,7 +6,7 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_PKMN_BREEDER] = _("{PKMN} Breeder"),
     [TRAINER_CLASS_COOLTRAINER] = _("CoolTrainer"),
     [TRAINER_CLASS_BIRD_KEEPER] = _("Bird Keeper"),
-    [TRAINER_CLASS_COLLECTOR] = _("Collector"),
+    [TRAINER_CLASS_COLLECTOR] = _("Scientist"),
     [TRAINER_CLASS_SWIMMER_M] = _("Swimmer♂"),
     [TRAINER_CLASS_TEAM_MAGMA] = _("Team Magma"),
     [TRAINER_CLASS_EXPERT] = _("Expert"),
@@ -66,4 +66,5 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_PYRAMID_KING] = _("Pyramid King"),
     [TRAINER_CLASS_RS_PROTAG] = _("{PKMN} Trainer"),
     [TRAINER_CLASS_JSOBOY] = _("Protestor"),
+    [TRAINER_CLASS_FARMER] = _("Farmer"),
 };

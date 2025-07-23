@@ -1,0 +1,128 @@
+raw`
+
+`
+
+mapscripts RanchBarn1_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        FLAG_TORCHIC_RESCUE, FALSE: RanchBarn1_EventScript_TorchicRescue
+    ]
+}
+
+script RanchBarn1_EventScript_TorchicRescue{
+    lock
+    delay(10)
+    applymovement(1, Common_Movement_FaceUp)
+    applymovement(2, Common_Movement_FaceLeft)
+    applymovement(3, Common_Movement_FaceRight)
+    applymovement(4, Common_Movement_FaceDown)
+    applymovement(5, Common_Movement_FaceUp)
+    applymovement(6, Common_Movement_FaceLeft)
+    applymovement(7, Common_Movement_FaceRight)
+    applymovement(9, Common_Movement_FaceDown)
+    waitmovement(0)
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToRescue)
+    waitmovement(0)
+    applymovement(10, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("It's ok, little guy. I'll get you out soon!"))
+    closemessage
+    delay(30)
+    applymovement(8, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    playmoncry(SPECIES_TORCHIC, CRY_MODE_NORMAL)
+    msgbox(format("Tor tor!"))
+    closemessage
+    delay(30)
+    applymovement(10, Common_Movement_Shove)
+    waitmovement(0)
+    playse(SE_DOOR)
+    waitse
+    delay(15)
+    applymovement(10, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("Come on out, buddy!"))
+    closemessage
+    delay(15)
+    applymovement(10, Common_Movement_WalkUp)
+    waitmovement(0)
+    applymovement(10, Common_Movement_FaceDown)
+    applymovement(8, Common_Movement_WalkLeft2)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("That's better, right?\nNow, let me free the rest of your friends!"))
+    closemessage
+    delay(15)
+    playse(SE_BANG)
+    waitse
+    applymovement(10, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    msgbox(format("QUIT MESSIN' WITH MY CHICKENS!"))
+    closemessage
+    applymovement(10, Common_Movement_JumpInPlaceDown)
+    waitmovement(0)
+    delay(15)
+    applymovement(10, ProtestorOutDoor)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraFromRescue)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    waitmovement(0)
+    delay(10)
+    msgbox(format("Excuse me! I need to go deal with this farmer!"))
+    closemessage
+    delay(15)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+    waitmovement(0)
+    applymovement(10, Common_Movement_WalkDownFast)
+    waitmovement(0)
+    removeobject(10)
+    playse(SE_EXIT)
+    waitse
+    delay(30)
+    applymovement(8, TorchicToPlayer)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    applymovement(8, Common_Movement_WalkDown)
+    waitmovement(0)
+    delay(10)
+    removeobject(8)
+    delay(5)
+    playse(SE_BALL)
+    msgbox(format("The freed Torchic joined you!"))
+    waitse()
+    closemessage
+    givemon(SPECIES_TORCHIC, 15, 0, ITEM_POKE_BALL, NATURE_MODEST, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_SAND_ATTACK, MOVE_FLAME_CHARGE)
+    setflag(FLAG_TORCHIC_RESCUE)
+    release
+    end
+}
+
+movement CameraToRescue{
+    walk_up
+    walk_diag_northwest*3
+}
+
+movement CameraFromRescue{
+    walk_down
+    walk_diag_southeast*3
+}
+
+movement ProtestorOutDoor{
+    walk_fast_left
+    walk_fast_down*4
+    walk_fast_right*4
+    face_down
+}
+
+movement TorchicToPlayer{
+    walk_down*3
+    walk_right*2
+    face_down
+}
+
+movement TorchicJump{
+    jump_in_place_down*2
+}

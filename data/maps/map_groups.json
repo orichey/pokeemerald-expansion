@@ -446,7 +446,14 @@
     "Route105_Cave1",
     "Route105_Cave2",
     "Route106_Cave1",
-    "Route106_Cave2"
+    "Route106_Cave2",
+    "Ranch",
+    "RanchBarn1",
+    "RanchBarn2",
+    "Ranch_GoodEnding",
+    "RanchBadEnding",
+    "MeltingSnowTown",
+    "MeltingSnowForest"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

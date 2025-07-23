@@ -387,6 +387,9 @@ const u32 gObjectEventPic_JSOGirl[] = INCBIN_U32("graphics/object_events/pics/pe
 const u16 gObjectEventPalette_JSOGirl[] = INCBIN_U16("graphics/object_events/pics/people/jsogirl.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 
+const u32 gObjectEventPic_Farmer[] = INCBIN_U32("graphics/object_events/pics/people/farmer.4bpp");
+const u16 gObjectEventPalette_Farmer[] = INCBIN_U16("graphics/object_events/pics/people/farmer.gbapal");
+
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_mark/overworld.gbapal");
 
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");

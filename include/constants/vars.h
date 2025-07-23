@@ -267,9 +267,9 @@
 #define VAR_UNUSED_0x40F7                                0x40F7 // Used in littleroot now
 #define VAR_UNUSED_0x40F8                                0x40F8 // Used in dewford now
 #define VAR_UNUSED_0x40F9                                0x40F9 // Used in littleroot now
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_MAP_SCENE_RANCH                              0x40FA // Used in Ranch
+#define VAR_RANCH_MORALITY_SYSTEM                        0x40FB // Used in Ranch for Morality System
+#define VAR_RANCH_STATE                                  0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var

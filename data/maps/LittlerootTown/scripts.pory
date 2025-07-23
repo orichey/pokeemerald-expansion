@@ -1035,6 +1035,7 @@ script LittlerootTown_EventScript_ShouldGetPokemon {
 	release
 }
 
+
 movement NoPokemon {
 	walk_right
 }

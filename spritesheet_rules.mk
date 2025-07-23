@@ -4778,3 +4778,6 @@ $(OBJEVENTGFXDIR)/people/jsoboy_1.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/jsogirl.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/farmer.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

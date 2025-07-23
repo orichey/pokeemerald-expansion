@@ -43,6 +43,22 @@ Common_Movement_WalkInPlaceFasterDown:
 	walk_in_place_faster_down
 	step_end
 
+Common_Movement_WalkInPlaceFastRight:
+	walk_in_place_fast_right
+	step_end
+
+Common_Movement_WalkInPlaceFastLeft:
+	walk_in_place_fast_left
+	step_end
+
+Common_Movement_WalkInPlaceFastUp:
+	walk_in_place_fast_up
+	step_end
+
+Common_Movement_WalkInPlaceFastDown:
+	walk_in_place_fast_down
+	step_end
+
 Common_Movement_FaceRight:
 	face_right
 	step_end
@@ -69,6 +85,10 @@ Common_Movement_WalkInPlaceLeft:
 
 Common_Movement_WalkInPlaceRight:
 	walk_in_place_right
+	step_end
+
+Common_Movement_WalkInPlaceUp:
+	walk_in_place_up
 	step_end
 
 @ End of follower-safe movements
@@ -113,4 +133,54 @@ Common_Movement_WalkDown::
 Common_Movement_WalkDown2::
 	walk_down
 	walk_down
+	step_end
+
+Common_Movement_WalkDownFast::
+	walk_fast_down
+	step_end
+
+Common_Movement_WalkRight::
+	walk_right
+	step_end
+
+Common_Movement_WalkLeft::
+	walk_left
+	step_end
+
+Common_Movement_WalkLeft2::
+	walk_left
+	walk_left
+	step_end
+
+Common_Movement_Shove::
+	lock_anim
+	lock_facing_direction
+	walk_faster_right
+	walk_faster_left
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpInPlaceDown::
+	jump_in_place_down
+	step_end
+
+Common_Movement_JumpInPlaceRight::
+	jump_in_place_right
+	step_end
+
+Common_Movement_JumpInPlaceUp::
+	jump_in_place_up
+	step_end
+
+Common_Movement_JumpInPlaceLeft::
+	jump_in_place_left
+	step_end
+
+Common_Movement_LockFacingDirection::
+	lock_facing_direction
+	step_end
+
+Common_Movement_UnlockFacingDirection::
+	unlock_facing_direction
 	step_end

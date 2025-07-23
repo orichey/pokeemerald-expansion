@@ -417,6 +417,13 @@
 #define MAP_ROUTE105_CAVE2                           (111 | (24 << 8))
 #define MAP_ROUTE106_CAVE1                           (112 | (24 << 8))
 #define MAP_ROUTE106_CAVE2                           (113 | (24 << 8))
+#define MAP_RANCH                                    (114 | (24 << 8))
+#define MAP_RANCH_BARN1                              (115 | (24 << 8))
+#define MAP_RANCH_BARN2                              (116 | (24 << 8))
+#define MAP_RANCH_GOOD_ENDING                        (117 | (24 << 8))
+#define MAP_RANCH_BAD_ENDING                         (118 | (24 << 8))
+#define MAP_MELTING_SNOW_TOWN                        (119 | (24 << 8))
+#define MAP_MELTING_SNOW_FOREST                      (120 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

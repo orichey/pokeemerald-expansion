@@ -1,0 +1,4 @@
+raw`
+Ranch_GoodEnding_MapScripts::
+	.byte 0
+`

@@ -4524,10 +4524,10 @@
     {
       "id": "LAYOUT_TEST_MAP",
       "name": "TestMap_Layout",
-      "width": 53,
-      "height": 87,
+      "width": 80,
+      "height": 84,
       "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
-      "secondary_tileset": "gTileset_caves",
+      "secondary_tileset": "gTileset_desert",
       "border_filepath": "data/layouts/TestMap/border.bin",
       "blockdata_filepath": "data/layouts/TestMap/map.bin"
     },
@@ -4580,6 +4580,76 @@
       "secondary_tileset": "gTileset_caves",
       "border_filepath": "data/layouts/Route106_Cave2/border.bin",
       "blockdata_filepath": "data/layouts/Route106_Cave2/map.bin"
+    },
+    {
+      "id": "LAYOUT_RANCH",
+      "name": "Ranch_Layout",
+      "width": 86,
+      "height": 84,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_desert",
+      "border_filepath": "data/layouts/Ranch/border.bin",
+      "blockdata_filepath": "data/layouts/Ranch/map.bin"
+    },
+    {
+      "id": "LAYOUT_RANCH_BARN1",
+      "name": "RanchBarn1_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_indoorbarn",
+      "border_filepath": "data/layouts/RanchBarn1/border.bin",
+      "blockdata_filepath": "data/layouts/RanchBarn1/map.bin"
+    },
+    {
+      "id": "LAYOUT_RANCH_BARN2",
+      "name": "RanchBarn2_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_indoorbarn",
+      "border_filepath": "data/layouts/RanchBarn2/border.bin",
+      "blockdata_filepath": "data/layouts/RanchBarn2/map.bin"
+    },
+    {
+      "id": "LAYOUT_RANCH_GOOD_ENDING",
+      "name": "Ranch_GoodEnding_Layout",
+      "width": 86,
+      "height": 84,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_desert",
+      "border_filepath": "data/layouts/Ranch_GoodEnding/border.bin",
+      "blockdata_filepath": "data/layouts/Ranch_GoodEnding/map.bin"
+    },
+    {
+      "id": "LAYOUT_RANCH_BAD_ENDING",
+      "name": "RanchBadEnding_Layout",
+      "width": 86,
+      "height": 84,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_desert",
+      "border_filepath": "data/layouts/RanchBadEnding/border.bin",
+      "blockdata_filepath": "data/layouts/RanchBadEnding/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELTING_SNOW_TOWN",
+      "name": "MeltingSnowTown_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_snowytrees",
+      "secondary_tileset": "gTileset_newsnowy",
+      "border_filepath": "data/layouts/MeltingSnowTown/border.bin",
+      "blockdata_filepath": "data/layouts/MeltingSnowTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELTING_SNOW_FOREST",
+      "name": "MeltingSnowForest_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_snowytrees",
+      "secondary_tileset": "gTileset_newsnowy",
+      "border_filepath": "data/layouts/MeltingSnowForest/border.bin",
+      "blockdata_filepath": "data/layouts/MeltingSnowForest/map.bin"
     }
   ]
 }

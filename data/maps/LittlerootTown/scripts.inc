@@ -2059,9 +2059,9 @@ LittlerootTown_EventScript_ShouldGetPokemon_2:
 	goto LittlerootTown_EventScript_ShouldGetPokemon_1
 
 
-# 1038 "data/maps/LittlerootTown/scripts.pory"
-NoPokemon:
 # 1039 "data/maps/LittlerootTown/scripts.pory"
+NoPokemon:
+# 1040 "data/maps/LittlerootTown/scripts.pory"
 	walk_right
 	step_end
 

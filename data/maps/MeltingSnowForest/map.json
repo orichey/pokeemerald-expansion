@@ -1,0 +1,55 @@
+{
+  "id": "MAP_MELTING_SNOW_FOREST",
+  "name": "MeltingSnowForest",
+  "layout": "LAYOUT_MELTING_SNOW_FOREST",
+  "music": "MUS_TOTORO_MEI_IS_MISSING",
+  "region_map_section": "MAPSEC_FORTREE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SNOW",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 58,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_MELTING_SNOW_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 58,
+      "y": 46,
+      "elevation": 0,
+      "dest_map": "MAP_MELTING_SNOW_TOWN",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 58,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_MELTING_SNOW_TOWN",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 58,
+      "y": 44,
+      "elevation": 0,
+      "dest_map": "MAP_MELTING_SNOW_TOWN",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

@@ -1185,3 +1185,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route106_Cave1/scripts.inc"
 
 	.include "data/maps/Route106_Cave2/scripts.inc"
+
+	.include "data/maps/Ranch/scripts.inc"
+
+	.include "data/maps/RanchBarn1/scripts.inc"
+
+	.include "data/maps/RanchBarn2/scripts.inc"
+
+	.include "data/maps/Ranch_GoodEnding/scripts.inc"
+
+	.include "data/maps/RanchBadEnding/scripts.inc"
+
+	.include "data/maps/MeltingSnowTown/scripts.inc"
+
+	.include "data/maps/MeltingSnowForest/scripts.inc"

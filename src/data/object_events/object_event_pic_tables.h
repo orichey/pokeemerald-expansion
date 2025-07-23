@@ -1379,3 +1379,7 @@ const struct SpriteFrameImage gObjectEventPicTable_JSOGirl[] = {
     overworld_frame(gObjectEventPic_JSOGirl, 2, 4, 7),
     overworld_frame(gObjectEventPic_JSOGirl, 2, 4, 8),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Farmer[] = {
+    overworld_ascending_frames(gObjectEventPic_Farmer, 2, 4),
+};

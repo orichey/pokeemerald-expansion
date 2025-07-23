@@ -977,7 +977,7 @@ const struct Tileset gTileset_ChaoticCherryCakeGeneral =
     .palettes = gTilesetPalettes_ChaoticCherryCakeGeneral,
     .metatiles = gMetatiles_ChaoticCherryCakeGeneral,
     .metatileAttributes = gMetatileAttributes_ChaoticCherryCakeGeneral,
-    .callback = NULL,
+    .callback = InitTilesetAnim_ChaoticCherryCakeGeneral,
 };
 
 const struct Tileset gTileset_porytilestutorialfebthree =
@@ -1077,4 +1077,26 @@ const struct Tileset gTileset_snowytrees =
     .metatiles = gMetatiles_snowytrees,
     .metatileAttributes = gMetatileAttributes_snowytrees,
     .callback = InitTilesetAnim_snowytrees,
+};
+
+const struct Tileset gTileset_desert =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_desert,
+    .palettes = gTilesetPalettes_desert,
+    .metatiles = gMetatiles_desert,
+    .metatileAttributes = gMetatileAttributes_desert,
+    .callback = InitTilesetAnim_desert,
+};
+
+const struct Tileset gTileset_indoorbarn =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_indoorbarn,
+    .palettes = gTilesetPalettes_indoorbarn,
+    .metatiles = gMetatiles_indoorbarn,
+    .metatileAttributes = gMetatileAttributes_indoorbarn,
+    .callback = NULL,
 };

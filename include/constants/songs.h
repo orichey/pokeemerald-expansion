@@ -588,8 +588,11 @@
 #define MUS_SPIRITED_ONE_SUMMERS_DAY      549 // One Summers Day
 #define MUS_CASTLE_CARRYING_YOU           550 // Carrying You
 #define MUS_TOTORO_MEI_IS_MISSING         551 // Mei is Missing
+#define MUS_PMD_RESCUETEAM_GREAT_CANYON   552 // Great Canyon
+#define MUS_STARDEW_OVERTURE              553 // Stardew Overture
+#define MUS_PMD_RESCUETEAM_ESCAPETHROUGHSNOW    554 // Escape Through the Snow
 
-#define EXTRA_MUSIC_END                   MUS_TOTORO_MEI_IS_MISSING
+#define EXTRA_MUSIC_END                   MUS_PMD_RESCUETEAM_ESCAPETHROUGHSNOW
 
 #define SONGS_END                         EXTRA_MUSIC_END
 #define END_MUS                           SONGS_END

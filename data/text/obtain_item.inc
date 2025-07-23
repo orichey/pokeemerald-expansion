@@ -5,18 +5,18 @@ gText_TheBagIsFull::
 	.string "The Bag is full…$"
 
 gText_PutItemInPocket::
-	.string "{PLAYER} put away the {STR_VAR_2}\n"
+	.string "You put away the {STR_VAR_2}\n"
 	.string "in the {STR_VAR_3} Pocket.$"
 
 gText_PlayerFoundOneItem::
-	.string "{PLAYER} found one {STR_VAR_2}!$"
+	.string "You found one {STR_VAR_2}!$"
 
 gText_TooBadBagIsFull::
 	.string "Too bad!\n"
 	.string "The Bag is full…$"
 
 gText_PlayerPutItemInBag::
-	.string "{PLAYER} put away the {STR_VAR_2}\n"
+	.string "You put away the {STR_VAR_2}\n"
 	.string "in the Bag.$"
 
 gText_ObtainedTheDecor::
@@ -34,4 +34,4 @@ gText_ObtainedTheItems::
 	.string "Obtained {STR_VAR_1} {STR_VAR_2}!$"
 
 gText_PlayerFoundItems::
-	.string "{PLAYER} found {STR_VAR_1} {STR_VAR_2}!$"
+	.string "You found {STR_VAR_1} {STR_VAR_2}!$"

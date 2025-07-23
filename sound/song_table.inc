@@ -553,6 +553,9 @@ gSongTable::
 	song mus_spirited_one_summers_day, 0, 0
 	song mus_castle_carrying_you, 0, 0
 	song mus_totoro_mei_is_missing, 0, 0
+	song mus_pmd_rescueteam_great_canyon, 0, 0
+	song mus_stardew_overture, 0, 0
+	song mus_pmd_rescueteam_escapethroughsnow, 0, 0
 
 	.align 2
 dummy_song_header:

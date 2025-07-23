@@ -61,36 +61,36 @@
 #define FLAG_UNUSED_0x02F    0x2F // Used to remove gyarados, etc.
 #define FLAG_UNUSED_0x030    0x30 // Used to remove tropius
 #define FLAG_UNUSED_0x031    0x31 // Used for kayak
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_UNUSED_0x032    0x32 // Used to change text
+#define FLAG_UNUSED_0x033    0x33 // Used for mantine
 #define FLAG_UNUSED_0x034    0x34 // Used to remove stormy
 #define FLAG_UNUSED_0x035    0x35 // Used Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_ABSOL_ENTER     0x36 // Absol enter at ranch
+#define FLAG_FARMER_SPEECH   0x37 // After farmer speech
+#define FLAG_RELOCATE        0x38 // Relocating objects after speech
+#define FLAG_RANCH_NURSE     0x39 // After meeting nurse at ranch
+#define FLAG_TORCHIC_RESCUE  0x3A // Torchic rescue
+#define FLAG_FARMER1_BATTLE  0x3B // First farmer encounter
+#define FLAG_FARMER_WIN_1    0x3C // First farmer encounter, side with farmer
+#define FLAG_PROTEST_WIN_1   0x3D // First farmer encounter, side with protestor
+#define FLAG_FARMER2_BATTLE  0x3E // Second farmer encounter
+#define FLAG_FARMER_WIN_2    0x3F // Unused Flag
+#define FLAG_PROTEST_WIN_2   0x40 // Unused Flag
+#define FLAG_FARMER3_BATTLE  0x41 // Unused Flag
+#define FLAG_FARMER_WIN_3    0x42 // Unused Flag
+#define FLAG_PROTEST_WIN_3   0x43 // Unused Flag
+#define FLAG_FARMER4_BATTLE  0x44 // Unused Flag
+#define FLAG_FARMER_WIN_4    0x45 // Unused Flag
+#define FLAG_PROTEST_WIN_4   0x46 // Unused Flag
+#define FLAG_FARMER5_BATTLE  0x47 // Unused Flag
+#define FLAG_FARMER_WIN_5    0x48 // Unused Flag
+#define FLAG_PROTEST_WIN_5   0x49 // Unused Flag
+#define FLAG_FARMER6_BATTLE  0x4A // Unused Flag
+#define FLAG_FARMER_WIN_6    0x4B // Unused Flag
+#define FLAG_PROTEST_WIN_6   0x4C // Unused Flag
+#define FLAG_FARMER7_BATTLE  0x4D // Unused Flag
+#define FLAG_FARMER_WIN_7    0x4E // Unused Flag
+#define FLAG_PROTEST_WIN_7   0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -98,8 +98,8 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_RANCH_COMPLETE                  0x54  // Unused Flag
+#define FLAG_READY_FINAL_RANCH_BATTLE        0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -120,7 +120,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_UNUSED_0x068                    0x68  // unused
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
@@ -543,7 +543,7 @@
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_ROUTE_102_NET_BALL                  (FLAG_HIDDEN_ITEMS_START + 0x00)
+#define FLAG_HIDDEN_ITEM_RANCH_LEFTOVERS                     (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)

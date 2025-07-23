@@ -1298,3 +1298,12 @@ $(MID_SUBDIR)/mus_castle_carrying_you.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_totoro_mei_is_missing.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_great_canyon.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V080
+
+$(MID_SUBDIR)/mus_stardew_overture.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V095
+
+$(MID_SUBDIR)/mus_pmd_rescueteam_escapethroughsnow.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090
