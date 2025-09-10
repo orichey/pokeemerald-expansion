@@ -1,0 +1,1205 @@
+raw`
+MeltingSnowForest_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, MeltingSnowForest_OnTransition
+    .byte 0
+
+MeltingSnowForest_OnTransition:
+    call_if_set FLAG_HEAT_CUTSCENE, MeltingSnowForest_EventScript_HeatCutsceneDone
+    end
+`
+
+script MeltingSnowForest_EventScript_EnterTop {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+		applymovement(1,AbsolRightTop)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkRight)
+		waitmovement(0)
+        delay(30)
+        applymovement(1, Common_Movement_Shove)
+        playse(SE_SWITCH)
+        waitmovement(0)
+        delay(15)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is demanding to join you!"))
+        closemessage
+        delay(15)
+        givemon(SPECIES_ABSOL, 40, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script MeltingSnowForest_EventScript_EnterTopMid {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+		applymovement(1,AbsolRightTopMid)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkRight)
+		waitmovement(0)
+        delay(30)
+        applymovement(1, Common_Movement_Shove)
+        playse(SE_SWITCH)
+        waitmovement(0)
+        delay(15)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is demanding to join you!"))
+        closemessage
+        delay(15)
+        givemon(SPECIES_ABSOL, 40, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script MeltingSnowForest_EventScript_EnterBottomMid {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+		applymovement(1,AbsolRightBottomMid)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkRight)
+		waitmovement(0)
+        delay(30)
+        applymovement(1, Common_Movement_Shove)
+        playse(SE_SWITCH)
+        waitmovement(0)
+        delay(15)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is demanding to join you!"))
+        closemessage
+        delay(15)
+        givemon(SPECIES_ABSOL, 40, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script MeltingSnowForest_EventScript_EnterBottom {
+	if(flag(FLAG_ABSOL_ENTER) == FALSE) {
+		lockall
+		applymovement(1,AbsolRightBottom)
+		waitmovement(0)
+        delay(120)
+        playmoncry(SPECIES_ABSOL, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(60)
+        applymovement(1,Common_Movement_WalkRight)
+		waitmovement(0)
+        delay(30)
+        applymovement(1, Common_Movement_Shove)
+        playse(SE_SWITCH)
+        waitmovement(0)
+        delay(15)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        delay(30)
+        msgbox(format("The Absol is demanding to join you!"))
+        closemessage
+        delay(15)
+        givemon(SPECIES_ABSOL, 40, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+        applymovement(1,AbsolJump)
+        playse(SE_BIKE_HOP)
+        waitse()
+        playse(SE_BIKE_HOP)
+        waitse()
+        waitmovement(0)
+        applymovement(1,Common_Movement_WalkRight)
+        waitmovement(0)
+        delay(10)
+        removeobject(1)
+        delay(5)
+        playse(SE_BALL)
+        waitse()
+        setflag(FLAG_ABSOL_ENTER)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        setvar(VAR_RANCH_MORALITY_SYSTEM, 10)
+        callnative(UpdateFollowingPokemon)
+	}
+	release
+}
+
+script MeltingSnowForest_EventScript_Sawsbuck{
+	lock
+	faceplayer
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(22, Common_Movement_FacePlayer)
+    delay(30)
+	playmoncry(SPECIES_SAWSBUCK_WINTER, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    delay(15)
+    applymovement(21, Common_Movement_ShoveDown)
+    playse(SE_SWITCH)
+    waitmovement(0)
+    delay(15)
+	msgbox(format("The Pokémon attacked in a rage!"))
+	setwildbattle(SPECIES_SAWSBUCK_WINTER, 35, ITEM_NONE, SPECIES_SNEASEL, 35, ITEM_NONE)
+	dowildbattle
+	waitmovement(0)
+	delay(15)
+    clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    callnative(UpdateFollowingPokemon)
+    waitmovement(0)
+    applymovement(21, Common_Movement_FaceRight)
+    applymovement(22, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(15)
+    applymovement(21, Common_Movement_ShoveRight)
+    applymovement(22, Common_Movement_ShoveUp)
+    playse(SE_M_BITE)
+    waitmovement(0)
+    delay(15)
+    applymovement(22, SneaselExitLeft)
+    delay(15)
+    applymovement(20, moves(walk_up,face_down))
+    applymovement(21, SawsbuckExitLeft)
+    waitmovement(0)
+	playse(SE_EXIT)
+	waitse
+    delay(30)
+	applymovement(20, moves(walk_down*2,face_left))
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+	waitmovement(0)
+	playmoncry(SPECIES_PARASECT, CRY_MODE_NORMAL)
+	waitmoncry
+	msgbox(format("Parasect thanked you!"))
+	closemessage
+	applymovement(20, Common_Movement_ShoveLeft)
+    playse(SE_SWITCH)
+	waitmovement(0)
+    delay(15)
+    msgbox(format("It wants to join your team!"))
+    closemessage
+    delay(15)
+	applymovement(20,Common_Movement_WalkLeft)
+    waitmovement(0)
+    givemon(SPECIES_PARASECT, 20, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+    delay(10)
+    removeobject(20)
+    removeobject(21)
+    removeobject(22)
+    delay(5)
+    playse(SE_BALL)
+    waitse()
+	setflag(FLAG_PARASECT_DOUBLE_BATTLE)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+
+
+script MeltingSnowForest_EventScript_Sneasel{
+	lock
+	faceplayer
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(21, Common_Movement_FaceDown)
+    delay(30)
+	playmoncry(SPECIES_SNEASEL, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    delay(15)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) == 4){
+        applymovement(22, Common_Movement_ShoveDown)
+    }
+    if (var(VAR_TEMP_0) == 3){
+        applymovement(22, Common_Movement_ShoveLeft)
+    }
+    playse(SE_SWITCH)
+    waitmovement(0)
+    delay(15)
+	msgbox(format("The Pokémon attacked in a rage!"))
+	setwildbattle(SPECIES_SAWSBUCK_WINTER, 35, ITEM_NONE, SPECIES_SNEASEL, 35, ITEM_NONE)
+	dowildbattle
+	waitmovement(0)
+	delay(15)
+    clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    callnative(UpdateFollowingPokemon)
+    waitmovement(0)
+    applymovement(21, Common_Movement_FaceRight)
+    applymovement(22, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(15)
+    applymovement(21, Common_Movement_ShoveRight)
+    applymovement(22, Common_Movement_ShoveUp)
+    playse(SE_M_BITE)
+    waitmovement(0)
+    delay(15)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) == 4){
+        applymovement(22, SneaselExitRight)
+        delay(15)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        applymovement(21, SawsbuckExitRight)
+        waitmovement(0)
+    	playse(SE_EXIT)
+    	waitse
+        delay(30)
+    	applymovement(20, moves(walk_down))
+    	waitmovement(0)
+    	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    	waitmovement(0)
+    	playmoncry(SPECIES_PARASECT, CRY_MODE_NORMAL)
+    	waitmoncry
+    	msgbox(format("Parasect thanked you!"))
+    	closemessage
+    	applymovement(20, Common_Movement_ShoveDown)
+        playse(SE_SWITCH)
+    	waitmovement(0)
+        delay(15)
+        msgbox(format("It wants to join your team!"))
+        closemessage
+        delay(15)
+    	applymovement(20,Common_Movement_WalkDown)
+    }
+    if (var(VAR_TEMP_0) == 3){
+        applymovement(22, SneaselExitLeft)
+        delay(15)
+        applymovement(20, moves(walk_up,face_down))
+        applymovement(21, SawsbuckExitLeft)
+        waitmovement(0)
+    	playse(SE_EXIT)
+    	waitse
+        delay(30)
+    	applymovement(20, moves(walk_down*2,face_left))
+    	waitmovement(0)
+    	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    	waitmovement(0)
+    	playmoncry(SPECIES_PARASECT, CRY_MODE_NORMAL)
+    	waitmoncry
+    	msgbox(format("Parasect thanked you!"))
+    	closemessage
+    	applymovement(20, Common_Movement_ShoveLeft)
+        playse(SE_SWITCH)
+    	waitmovement(0)
+        delay(15)
+        msgbox(format("It wants to join your team!"))
+        closemessage
+        delay(15)
+	    applymovement(20,Common_Movement_WalkLeft)
+    }
+    waitmovement(0)
+    givemon(SPECIES_PARASECT, 20, 0, ITEM_POKE_BALL, NATURE_ADAMANT, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_DOUBLE_TEAM, MOVE_SWORDS_DANCE, MOVE_KNOCK_OFF, MOVE_DETECT)
+    delay(10)
+    removeobject(20)
+    removeobject(21)
+    removeobject(22)
+    delay(5)
+    playse(SE_BALL)
+    waitse()
+	setflag(FLAG_PARASECT_DOUBLE_BATTLE)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+
+
+movement SneaselExitLeft{
+    walk_fast_down*2
+    walk_fast_right*2
+    walk_fast_down
+    walk_fast_right*8
+}
+
+movement SawsbuckExitLeft{
+    walk_fast_right
+    walk_fast_down*3
+    walk_fast_right*2
+    walk_fast_down
+    walk_fast_right*8
+}
+
+movement SneaselExitRight{
+    walk_fast_left
+    walk_fast_down*3
+    walk_fast_right*10
+}
+
+movement SawsbuckExitRight{
+    walk_fast_down*4
+    walk_fast_right*10
+}
+
+movement AbsolRightTop{
+	walk_fast_right*4
+    walk_fast_up
+    walk_fast_right*3
+}
+
+movement AbsolRightTopMid{
+	walk_fast_right*7
+}
+
+movement AbsolRightBottomMid{
+	walk_fast_right*4
+    walk_fast_down
+    walk_fast_right*3
+}
+
+movement AbsolRightBottom{
+	walk_fast_right*4
+    walk_fast_down*2
+    walk_fast_right*3
+}
+
+script MeltingSnowForest_EventScript_Camper1{
+	faceplayer
+    if(flag(FLAG_PARASECT_DOUBLE_BATTLE) == FALSE){
+	    msgbox(format("There are some deranged Pokémon attacking that poor Parasect!\pI wish there was something I could do..."))
+    }
+    if(flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+        msgbox(format("On second thought, maybe that Parasect was infected by the spores the elder spoke of.\pPerhaps it wasn't a legend, after all..."))
+    }
+	closemessage
+	applymovement(24, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowForest_EventScript_StantlerHiker{
+	faceplayer
+	msgbox(format("Did you see what just happened?\pI've never seen a Pokémon willingly jump in freezing water like that!"))
+	closemessage
+	applymovement(34, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowForest_EventScript_HotStantler{
+	faceplayer
+	msgbox(format("The Stantler is panting uncontrollably!"))
+	closemessage
+	applymovement(33, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowForest_EventScript_Heat{
+    if(flag(FLAG_HEAT_CUTSCENE) == FALSE){
+        lock
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        special(SpawnCameraObject)
+        waitmovement(0)
+        applymovement(34, Common_Movement_FaceUp)
+        applymovement(33, StantlerMovement)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 20){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraToScene1)
+        }
+        if (var(VAR_TEMP_0) == 21){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraToScene2)
+        }
+        if (var(VAR_TEMP_0) == 22){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraToScene3)
+        }
+        if (var(VAR_TEMP_0) == 23){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraToScene4)
+        }
+        if (var(VAR_TEMP_0) == 24){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraToScene5)
+        }
+        waitmovement(33)
+        playmoncry(SPECIES_STANTLER, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(15)
+        applymovement(33, Common_Movement_JumpInPlaceLeft)
+        playse(SE_BIKE_HOP)
+        waitmovement(0)
+        applymovement(33, StantlerWater)
+        delay(28)
+        playse(SE_BIKE_HOP)
+        waitse
+        playse(SE_M_BUBBLE)
+        delay(35)
+        playse(SE_M_BUBBLE)
+        waitse
+        delay(30)
+        setobjectxy(33, 17, 35)
+        setobjectxyperm(33, 17, 35)
+        delay(30)
+        if (var(VAR_TEMP_0) == 20){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraReturn1)
+        }
+        if (var(VAR_TEMP_0) == 21){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraReturn2)
+        }
+        if (var(VAR_TEMP_0) == 22){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraReturn3)
+        }
+        if (var(VAR_TEMP_0) == 23){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraReturn4)
+        }
+        if (var(VAR_TEMP_0) == 24){
+            applymovement(OBJ_EVENT_ID_CAMERA, CameraReturn5)
+        }
+        waitmovement(0)
+        setflag(FLAG_HEAT_CUTSCENE)
+        special(RemoveCameraObject)
+        waitmovement(0)
+    }
+    releaseall
+    end
+}
+
+movement CameraToScene1{
+    walk_diag_northeast*3
+    walk_up
+}
+
+movement CameraToScene2{
+    walk_diag_northeast*2
+    walk_up*2
+}
+
+movement CameraToScene3{
+    walk_diag_northeast
+    walk_up*3
+}
+
+movement CameraToScene4{
+    walk_up*4
+}
+
+movement CameraToScene5{
+    walk_diag_northwest
+    walk_up*3
+}
+
+movement CameraReturn1{
+    walk_down
+    walk_diag_southwest*3
+}
+
+movement CameraReturn2{
+    walk_down*2
+    walk_diag_southwest*2
+}
+
+movement CameraReturn3{
+    walk_down*3
+    walk_diag_southwest
+}
+
+movement CameraReturn4{
+    walk_down*4
+}
+
+movement CameraReturn5{
+    walk_down*3
+    walk_diag_southeast
+}
+
+movement StantlerMovement{
+    walk_left*3
+    walk_right*3
+    walk_left*3
+    walk_right*3
+    face_left
+}
+
+movement StantlerWater{
+    walk_fast_left*3
+    jump_left
+    set_invisible
+    walk_fast_left*4
+    set_visible
+    jump_left
+}
+
+script MeltingSnowForest_EventScript_HeatCutsceneDone{
+    setobjectxyperm(33, 17, 35)
+    SetObjectMovementType(33, MOVEMENT_TYPE_FACE_UP_AND_LEFT)
+    addobject(33)
+}
+
+script MeltingSnowForest_EventScript_FirstScientist{
+	faceplayer
+	msgbox(format("I was supposed to do research on how the warmer environment has changed the forest, but a Pokémon attacked me!\pWhat other disasters could present themselves here?"))
+	closemessage
+	applymovement(25, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowForest_EventScript_BugCatcher {
+	trainerbattle_single(TRAINER_ZANDER, Timmy_Intro, Timmy_Outro)
+	msgbox(PostBattle_Timmy, MSGBOX_AUTOCLOSE) 
+	waitmessage
+    end
+}
+text Timmy_Intro{
+    format("Bugs have emerged from the frost!\nLook at mine!")
+}
+text Timmy_Outro{
+    format("I wonder how long my bugs were frozen for.")
+}
+text PostBattle_Timmy{
+    format("Why am I wearing shorts in the snow?")
+}
+
+
+script MeltingSnowForest_EventScript_Farmer{
+    lock
+    if(flag(FLAG_FIRE_FARMER) == FALSE){
+        delay(15)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        applymovement(28, Common_Movement_FaceUp)
+        waitmovement(0)
+        delay(60)
+        applymovement(28, Common_Movement_FaceLeft)
+        waitmovement(0)
+        delay(30)
+        applymovement(28, Common_Movement_ShoveLeft)
+        playse(SE_M_FIRE_PUNCH)
+        waitmovement(0)
+        delay(120)
+        faceplayer
+        msgbox(format("Well, howdy, partner! I hear that as the snow melts, there's some potential for some farming up here!\pSounds great to me, the economy will be booming!\pFigured I'd help heat things up."))
+        closemessage
+        applymovement(28, Common_Movement_FaceUp)
+        waitmovement(0)
+        delay(30)
+        applymovement(28, Common_Movement_ShoveUp)
+        playse(SE_M_FIRE_PUNCH)
+        waitmovement(0)
+        delay(60)
+        faceplayer
+        delay(30)
+        msgbox(format("There's nothing wrong with what I'm doing, I'm just trying to grow more crops!"))
+        trainerbattle_single(TRAINER_SHELLY_WEATHER_INSTITUTE, "Don't backtalk me!", "Dadgummit!", MeltingSnowForest_EventScript_AfterFarmer)
+    }
+    if(flag(FLAG_FIRE_FARMER) == TRUE){
+        lock
+        faceplayer
+        waitmovement(0)
+        msgbox(format("You can stop me, but you can't stop the forest from warming up.\pSoon enough, I'll be farming here!"))
+        closemessage
+        applymovement(28, Common_Movement_FaceOriginalDirection)
+        waitmovement(0)
+    }
+    release
+    end
+}
+
+script MeltingSnowForest_EventScript_AfterFarmer{
+    lock
+    delay(15)
+    applymovement(28, Common_Movement_FaceAwayPlayer)
+    waitmovement(0)
+    delay(60)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) == 4){
+        applymovement(28, Common_Movement_WalkInPlaceUp)
+    }
+    if (var(VAR_TEMP_0) == 5){
+        applymovement(28, Common_Movement_WalkInPlaceLeft)
+    }
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Why do you want to stop agriculture?\pWe can grow so much more food if we get rid of all this snow!"))
+    closemessage
+    delay(30)
+    applymovement(28, Common_Movement_FacePlayer)
+    waitmovement(0)
+    delay(30)
+    if (var(VAR_TEMP_0) == 4){
+        applymovement(28, Common_Movement_WalkInPlaceDown)
+    }
+    if (var(VAR_TEMP_0) == 5){
+        applymovement(28, Common_Movement_WalkInPlaceRight)
+    }
+    waitmovement(0)
+    delay(15)
+    msgbox(format("You know what? This forest is gonna warm up, no matter what.\pIt's inevitable, and I don't need to help speed it up.\pHere, you can even take this."))
+    giveitem(ITEM_FIRE_GEM_KEY)
+    setflag(FLAG_FIRE_FARMER)
+    release
+    end
+}
+
+script MeltingSnowForest_EventScript_Ursaring{
+    faceplayer
+    playmoncry(SPECIES_URSARING, CRY_MODE_NORMAL)
+    waitmoncry
+    msgbox(format("The Ursaring roared violently, better get away!"))
+    closemessage
+    applymovement(27, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+    end
+}
+
+script MeltingSnowForest_EventScript_FightingHiker{
+    if(flag(FLAG_FIRE_FARMER) == FALSE){
+        faceplayer
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 55){
+            applymovement(26, Common_Movement_JumpInPlaceLeft)
+        }
+        if (var(VAR_TEMP_0) == 56){
+            applymovement(26, Common_Movement_JumpInPlaceDown)
+        }
+        playse(SE_BIKE_HOP)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Help! I was going for a hike, and this Ursaring attacked me out of nowhere!\pI can't fend it off much longer, do you have anything that could ward it off?"))
+        closemessage
+        applymovement(26, Common_Movement_FaceOriginalDirection)
+    }
+    if(flag(FLAG_FIRE_FARMER) == TRUE && flag(FLAG_FIRE_HIKER) == FALSE){
+        setobjectmovementtype(26, MOVEMENT_TYPE_LOOK_AROUND)
+        faceplayer
+        msgbox(format("Oh, is that a fire gem? Here, give me that!"))
+        closemessage
+        removeitem(ITEM_FIRE_GEM_KEY)
+        applymovement(26, Common_Movement_FaceRight)
+        waitmovement(0)
+        delay(30)
+        applymovement(26, Common_Movement_WalkInPlaceRight)
+        waitmovement(0)
+        msgbox(format("Take this, Ursaring!"))
+        closemessage
+        applymovement(26, Common_Movement_ShoveRight)
+        playse(SE_M_FIRE_PUNCH)
+        waitmovement(0)
+        applymovement(27, Common_Movement_JumpInPlaceLeft)
+        playse(SE_BIKE_HOP)
+        waitmovement(0)
+        delay(20)
+        applymovement(27,moves(walk_fast_down*9))
+        delay(10)
+        applymovement(26, Common_Movement_FaceDown)
+        delay(5)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+        waitmovement(0)
+        waitmovement(27)
+        delay(30)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 55){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        }
+        if (var(VAR_TEMP_0) == 56){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        applymovement(27, Common_Movement_FacePlayer)
+        waitmovement(0)
+        delay(20)
+        if (var(VAR_TEMP_0) == 55){
+            applymovement(26, Common_Movement_WalkInPlaceLeft)
+        }
+        if (var(VAR_TEMP_0) == 56){
+            applymovement(26, Common_Movement_WalkInPlaceDown)
+        }
+        waitmovement(0)
+        delay(15)
+        msgbox(format("I can't believe that worked, you just saved my life!\pI wonder why that Ursaring was so persistent, maybe it was because of this!"))
+        closemessage
+        giveitem(ITEM_SITRUS_BERRY_KEY,1)
+        setflag(FLAG_FIRE_HIKER)
+        setobjectmovementtype(26, MOVEMENT_TYPE_LOOK_AROUND,FALSE)
+        addobject(26)
+        removeobject(27)
+    }
+    if(flag(FLAG_FIRE_HIKER) == TRUE){
+        faceplayer
+        msgbox(format("Hopefully you don't get any Pokémon smelling that berry in your bag and hunting you down!"))
+        closemessage
+    }
+    waitmovement(0)
+    release
+    end
+}
+
+script MeltingSnowForest_EventScript_OldWoman{      //Start here, do some if statements and variables and whatnot to collect three berries
+	faceplayer
+    if(flag(FLAG_OLD_WOMAN_BERRY_INTRO) == FALSE){
+        msgbox(format("Oh, these poor Pokémon. They seem to be starving!\pI think their food sources have disappeared as a result of climate change.\pWill you help me gather some food for them?"))
+        setflag(FLAG_OLD_WOMAN_BERRY_INTRO)
+    }
+    checkitem(ITEM_SITRUS_BERRY_KEY,1)
+    if(var(VAR_RESULT) == TRUE){
+        msgbox(format("Is that a Sitrus Berry? Where did you find it?\pHere, I'll give it to this poor little Teddiursa!"))
+        closemessage
+        removeitem(ITEM_SITRUS_BERRY_KEY,1)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(45, OldWomanToTeddiursaUp)
+        }
+        else{
+            applymovement(45, OldWomanToTeddiursaRight)
+        }
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        waitmovement(0)
+        delay(15)
+        applymovement(45, Common_Movement_WalkInPlaceRight)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Here you go, eat up!"))
+        closemessage
+        delay(15)
+        applymovement(45, Common_Movement_ShoveRightSlower)
+        playse(SE_PUDDLE)
+        waitmovement(0)
+        delay(30)
+        applymovement(43, Common_Movement_JumpInPlaceLeft)
+        playse(SE_BIKE_HOP)
+        waitmovement(0)
+        delay(15)
+        playmoncry(SPECIES_TEDDIURSA, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(30)
+        applymovement(43, Common_Movement_FaceOriginalDirection)
+        waitmovement(0)
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(45, OldWomanFromTeddiursaUp)
+        }
+        else{
+            applymovement(45, OldWomanFromTeddiursaRight)
+        }
+        waitmovement(0)
+        if (var(VAR_TEMP_0) == 36){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        }
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        }
+        if (var(VAR_TEMP_1) == 29){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+        }
+        if (var(VAR_TEMP_1) == 31){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        applymovement(45, Common_Movement_FacePlayer)
+        waitmovement(0)
+        addvar(VAR_SNOW_BERRY_WOMAN, 1)
+        setflag(FLAG_HUNGRY_TEDDIURSA)
+        msgbox(format("Thank you, dear!"))
+    }
+    checkitem(ITEM_ORAN_BERRY_KEY,1)
+    if(var(VAR_RESULT) == TRUE){
+        msgbox(format("That looks like an Oran Berry!\pI'm sure this hungry Swinub would love it."))
+        closemessage
+        removeitem(ITEM_ORAN_BERRY_KEY,1)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(45, OldWomanToTeddiursaUp)
+        }
+        else{
+            applymovement(45, OldWomanToTeddiursaRight)
+        }
+        waitmovement(0)
+        applymovement(45, Common_Movement_FaceUp)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        waitmovement(0)
+        delay(15)
+        applymovement(45, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("Enjoy, my friend!"))
+        closemessage
+        delay(15)
+        applymovement(45, Common_Movement_ShoveUpSlower)
+        playse(SE_PUDDLE)
+        waitmovement(0)
+        delay(30)
+        applymovement(42, Common_Movement_JumpInPlaceDown)
+        playse(SE_BIKE_HOP)
+        waitmovement(0)
+        delay(15)
+        playmoncry(SPECIES_SWINUB, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(30)
+        applymovement(42, Common_Movement_FaceOriginalDirection)
+        waitmovement(0)
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(45, OldWomanFromTeddiursaUp)
+        }
+        else{
+            applymovement(45, OldWomanFromTeddiursaRight)
+        }
+        waitmovement(0)
+        if (var(VAR_TEMP_0) == 36){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        }
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        }
+        if (var(VAR_TEMP_1) == 29){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+        }
+        if (var(VAR_TEMP_1) == 31){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        applymovement(45, Common_Movement_FacePlayer)
+        waitmovement(0)
+        addvar(VAR_SNOW_BERRY_WOMAN, 1)
+        setflag(FLAG_HUNGRY_SWINUB)
+        msgbox(format("That Swinub was so excited."))
+    }
+    checkitem(ITEM_CHERI_BERRY_KEY,1)
+    if(var(VAR_RESULT) == TRUE){
+        msgbox(format("Wow, a Cheri Berry!\pThis starving Sentret could certainly use this."))
+        closemessage
+        removeitem(ITEM_CHERI_BERRY_KEY,1)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(45, OldWomanToTeddiursaUp)
+        }
+        else{
+            applymovement(45, OldWomanToTeddiursaRight)
+        }
+        waitmovement(0)
+        applymovement(45, Common_Movement_FaceDown)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        waitmovement(0)
+        delay(15)
+        applymovement(45, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        delay(15)
+        msgbox(format("It's your lucky day!"))
+        closemessage
+        delay(15)
+        applymovement(45, Common_Movement_ShoveDownSlower)
+        playse(SE_PUDDLE)
+        waitmovement(0)
+        delay(30)
+        applymovement(44, Common_Movement_JumpInPlaceUp)
+        playse(SE_BIKE_HOP)
+        waitmovement(0)
+        delay(15)
+        playmoncry(SPECIES_SENTRET, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(30)
+        applymovement(44, Common_Movement_FaceOriginalDirection)
+        waitmovement(0)
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(45, OldWomanFromTeddiursaUp)
+        }
+        else{
+            applymovement(45, OldWomanFromTeddiursaRight)
+        }
+        waitmovement(0)
+        if (var(VAR_TEMP_0) == 36){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        }
+        if (var(VAR_TEMP_0) == 38){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        }
+        if (var(VAR_TEMP_1) == 29){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+        }
+        if (var(VAR_TEMP_1) == 31){
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        }
+        applymovement(45, Common_Movement_FacePlayer)
+        waitmovement(0)
+        addvar(VAR_SNOW_BERRY_WOMAN, 1)
+        setflag(FLAG_HUNGRY_SENTRET)
+        msgbox(format("The Sentret devoured the berry!"))
+    }
+    if(var(VAR_SNOW_BERRY_WOMAN) == 0){
+        msgbox(format("I'm sure you can find something these Pokémon could eat!"))
+    }
+    if(var(VAR_SNOW_BERRY_WOMAN) == 1){
+        msgbox(format("Do you think you could find food for these other two Pokémon?"))
+    }
+    if(var(VAR_SNOW_BERRY_WOMAN) == 2){
+        msgbox(format("Just one more hungry Pokémon!"))
+    }
+    if(var(VAR_SNOW_BERRY_WOMAN) == 3){
+        msgbox(format("Thank you for your help! I'm sure these Pokémon are very grateful."))
+    }
+	closemessage
+	waitmovement(0)
+	release
+	end
+}
+
+movement OldWomanToTeddiursaRight{
+    walk_right*2
+    walk_up
+    walk_right
+}
+
+movement OldWomanToTeddiursaUp{
+    walk_up
+    walk_right*3
+}
+
+movement OldWomanFromTeddiursaRight{
+    walk_left
+    walk_down
+    walk_left*2
+}
+
+movement OldWomanFromTeddiursaUp{
+    walk_left*3
+    walk_down
+}
+
+script MeltingSnowForest_EventScript_HungryTeddiursa{
+    faceplayer
+    if(flag(FLAG_HUNGRY_TEDDIURSA) == FALSE){
+        playmoncry(SPECIES_TEDDIURSA, CRY_MODE_FAINT)
+        waitmoncry
+        delay(15)
+        msgbox(format("Teddiursa seems weak."))
+    }
+    else{
+        playmoncry(SPECIES_TEDDIURSA, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(15)
+        msgbox(format("Teddiursa is happily eating!"))
+    }
+    closemessage
+    applymovement(43, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+    end
+}
+
+script MeltingSnowForest_EventScript_HungrySwinub{
+    faceplayer
+    if(flag(FLAG_HUNGRY_SWINUB) == FALSE){
+        playmoncry(SPECIES_SWINUB, CRY_MODE_FAINT)
+        waitmoncry
+        delay(15)
+        msgbox(format("It looks faint."))
+    }
+    else{
+        playmoncry(SPECIES_SWINUB, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(15)
+        msgbox(format("Swinub looks satisfied."))
+    }
+    closemessage
+    applymovement(42, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+    end
+}
+
+script MeltingSnowForest_EventScript_HungrySentret{
+    faceplayer
+    if(flag(FLAG_HUNGRY_SENTRET) == FALSE){
+        playmoncry(SPECIES_SENTRET, CRY_MODE_FAINT)
+        waitmoncry
+        delay(15)
+        msgbox(format("Sentret is swaying back and forth."))
+    }
+    else{
+        playmoncry(SPECIES_SENTRET, CRY_MODE_NORMAL)
+        waitmoncry
+        delay(15)
+        msgbox(format("Sentret happily licks berry juice off their fur!"))
+    }
+    closemessage
+    applymovement(44, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+    end
+}
+
+
+
+
+
+script MeltingSnowForest_EventScript_Froslass{
+	lock
+	faceplayer
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(48, Common_Movement_FacePlayer)
+    delay(30)
+	playmoncry(SPECIES_FROSLASS, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    delay(30)
+    applymovement(47, Common_Movement_ShoveRight)
+    playse(SE_SWITCH)
+    waitmovement(0)
+    delay(30)
+	msgbox(format("The Pokémon attacked in a rage!"))
+	setwildbattle(SPECIES_FROSLASS, 35, ITEM_NONE, SPECIES_GLALIE, 35, ITEM_NONE)
+	dowildbattle
+	waitmovement(0)
+	delay(15)
+    clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    callnative(UpdateFollowingPokemon)
+    waitmovement(0)
+    applymovement(48, Common_Movement_FaceUp)
+    applymovement(47, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(15)
+    applymovement(48, Common_Movement_ShoveUp)
+    applymovement(47, Common_Movement_ShoveDown)
+    playse(SE_M_BITE)
+    waitmovement(0)
+    delay(15)
+    applymovement(48, moves(walk_fast_right*9))
+    delay(15)
+    applymovement(47, moves(walk_fast_down,walk_fast_right*9))
+    waitmovement(0)
+	playse(SE_EXIT)
+	waitse
+    removeobject(48)
+    removeobject(47)
+	setflag(FLAG_GLALIE_FROSLASS_DOUBLE)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script MeltingSnowForest_EventScript_Glalie{
+	lock
+	faceplayer
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    applymovement(47, Common_Movement_FacePlayer)
+    delay(30)
+	playmoncry(SPECIES_GLALIE, CRY_MODE_ENCOUNTER)
+	waitmoncry
+    delay(30)
+    applymovement(48, Common_Movement_ShoveRight)
+    playse(SE_SWITCH)
+    waitmovement(0)
+    delay(30)
+	msgbox(format("The Pokémon attacked in a rage!"))
+	setwildbattle(SPECIES_FROSLASS, 35, ITEM_NONE, SPECIES_GLALIE, 35, ITEM_NONE)
+	dowildbattle
+	waitmovement(0)
+	delay(15)
+    clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+    callnative(UpdateFollowingPokemon)
+    waitmovement(0)
+    applymovement(48, Common_Movement_FaceUp)
+    applymovement(47, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(15)
+    applymovement(48, Common_Movement_ShoveUp)
+    applymovement(47, Common_Movement_ShoveDown)
+    playse(SE_M_BITE)
+    waitmovement(0)
+    delay(15)
+    applymovement(47, moves(walk_fast_right*9))
+    delay(15)
+    applymovement(48, moves(walk_fast_up,walk_fast_right*9))
+    waitmovement(0)
+	playse(SE_EXIT)
+	waitse
+    removeobject(48)
+    removeobject(47)
+	setflag(FLAG_GLALIE_FROSLASS_DOUBLE)
+	waitmovement(0)
+	releaseall
+	end
+}
+
+script MeltingSnowForest_EventScript_WaterWoman{
+    faceplayer
+    if(flag(FLAG_WATER_WOMAN_TALKED) == FALSE){
+        msgbox(format("I hear that new flora may be sprouting as the forest thaws, and I came here looking for flowers!\pHowever, those two Pokémon got into a fight, trapping me here.\pThank you for warding them off, you can have this!"))
+        giveitem(ITEM_WAILMER_PAIL)
+        setflag(FLAG_WATER_WOMAN_TALKED)
+    }
+    if(flag(FLAG_WATER_WOMAN_TALKED) == TRUE){
+        msgbox(format("No flowers, but I did come across a berry.\pThank you again for helping me out!"))
+    }
+    closemessage
+    applymovement(49, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+    end
+}

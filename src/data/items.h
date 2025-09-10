@@ -6087,6 +6087,71 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FireGem,
     },
 
+    [ITEM_FIRE_GEM_KEY] =
+    {
+        .name = _("Fire Gem"),
+        .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .holdEffect = HOLD_EFFECT_GEMS,
+        .holdEffectParam = GEM_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "Causes a burst\n"
+            "of flame when\n"
+            "used."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_FIRE,
+        .iconPic = gItemIcon_FireGem,
+        .iconPalette = gItemIconPalette_FireGem,
+    },
+
+    [ITEM_CHERI_BERRY_KEY] =
+    {
+        .name = _("Cheri Berry"),
+        .pluralName = _("Cheri Berries"),
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .description = COMPOUND_STRING(
+            "A Pokémon might\n"
+            "like this!"),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_CheriBerry,
+        .iconPalette = gItemIconPalette_CheriBerry,
+    },
+
+    [ITEM_ORAN_BERRY_KEY] =
+    {
+        .name = _("Oran Berry"),
+        .pluralName = _("Oran Berries"),
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .description = COMPOUND_STRING(
+            "A Pokémon might\n"
+            "like this!"),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_OranBerry,
+        .iconPalette = gItemIconPalette_OranBerry,
+    },
+
+    [ITEM_SITRUS_BERRY_KEY] =
+    {
+        .name = _("Sitrus Berry"),
+        .pluralName = _("Sitrus Berries"),
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 25,
+        .description = COMPOUND_STRING(
+            "A Pokémon might\n"
+            "like this!"),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SitrusBerry,
+        .iconPalette = gItemIconPalette_SitrusBerry,
+    },
+
     [ITEM_WATER_GEM] =
     {
         .name = _("Water Gem"),

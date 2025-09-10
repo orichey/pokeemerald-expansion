@@ -1199,3 +1199,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MeltingSnowTown/scripts.inc"
 
 	.include "data/maps/MeltingSnowForest/scripts.inc"
+
+	.include "data/maps/MeltingSnowForestFlashback/scripts.inc"

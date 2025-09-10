@@ -282,3 +282,9 @@ const u16 gMetatileAttributes_desert[] = INCBIN_U16("data/tilesets/secondary/des
 
 const u16 gMetatiles_indoorbarn[] = INCBIN_U16("data/tilesets/secondary/indoorbarn/metatiles.bin");
 const u16 gMetatileAttributes_indoorbarn[] = INCBIN_U16("data/tilesets/secondary/indoorbarn/metatile_attributes.bin");
+
+const u16 gMetatiles_snowytreesflashback[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/metatiles.bin");
+const u16 gMetatileAttributes_snowytreesflashback[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/metatile_attributes.bin");
+
+const u16 gMetatiles_newsnowyflashback[] = INCBIN_U16("data/tilesets/secondary/newsnowyflashback/metatiles.bin");
+const u16 gMetatileAttributes_newsnowyflashback[] = INCBIN_U16("data/tilesets/secondary/newsnowyflashback/metatile_attributes.bin");

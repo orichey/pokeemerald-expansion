@@ -1,0 +1,856 @@
+raw`
+MeltingSnowTown_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, MeltingSnowTown_OnTransition
+    .byte 0
+
+MeltingSnowTown_OnTransition:
+    call_if_set FLAG_MYTH_EXPLAINED, MeltingSnowTown_EventScript_RelocateEveryone
+    end
+`
+
+script MeltingSnowTown_EventScript_RelocateEveryone{
+    setobjectxyperm(10, 11, 12)
+    addobject(10)
+    SetObjectMovementType(10, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectxyperm(3, 15, 6)
+    addobject(3)
+    SetObjectMovementType(3, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectxyperm(4, 24, 10)
+    addobject(4)
+    SetObjectMovementType(4, MOVEMENT_TYPE_WANDER_AROUND)
+    setobjectxyperm(2, 24, 6)
+    addobject(2)
+    SetObjectMovementType(2, MOVEMENT_TYPE_WANDER_AROUND)
+    setflag(FLAG_RELOCATE)
+}
+
+script MeltingSnowTown_EventScript_MythTop{
+    lock
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Thank you all for gathering today."))
+    closemessage
+    delay(15)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(5, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(2, moves(walk_down,walk_down,face_left))
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    waitmovement(0)
+    msgbox(format("Come, listen to my story."))
+    closemessage
+    delay(15)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToMythTop)
+    waitmovement(0)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("For generations, the cold of our home has given us life. \pDeep in frozen ponds, fish have been plentiful.\pIn the thickness of the forests, game populations have been steady.\pOur people have lived healthy lives, despite the seemingly harsh environment in which we reside."))
+    closemessage
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("However, that has not always been the case."))
+    closemessage
+    fadenewbgm(MUS_DUMMY)
+    fadescreenspeed(FADE_TO_BLACK, 8)
+    delay(30)
+    msgbox(format("My grandmother once told me a story, passed down by her grandmother, and her grandmother before her.\pMany millenia ago, our world looked very different.\pThe forest, which has been frozen for as long as I can remember, began to defrost."))
+    closemessage
+    delay(60)
+    warpcontinuescript(MAP_MELTING_SNOW_FOREST_FLASHBACK, 9, 30, SnowForestFlashbackTop_EventScript)
+    end
+}
+
+script SnowForestFlashbackTop_EventScript{
+    lockall
+    hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_MELTING_SNOW_FOREST_FLASHBACK)
+    waitmovement(0)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, RightPan12)
+    waitmovement(0)
+    applymovement(5, moves(walk_right))
+    waitmovement(0)
+    delay(20)
+    applymovement(5, moves(walk_down))
+    waitmovement(0)
+    delay(40)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FirstOffScreenCamForest)
+    msgbox(format("Permafrost gave way to rivers and lakes, which carved gorges through the landscape."))
+    closemessage
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    setobjectxyperm(7, 32, 40)
+    setobjectxyperm(6, 38, 40)
+    setobjectxy(7, 32, 40)
+    setobjectxy(6, 38, 40)
+    addobject(6)
+    waitmovement(0)
+    addobject(7)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, LeftPan12)
+    waitmovement(0)
+    delay(60)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, SecondOffScreenCamForest)
+    msgbox(format("As the land changed and the world warmed, something more sinister emerged."))
+    closemessage
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraLastMovementForest)
+    waitmovement(0)
+    delay(60)
+    msgbox(format("Bacteria, viruses, and spores began to proliferate in the warmer climate."))
+    closemessage
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(8, StantlerToShroom)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    delay(30)
+    applymovement(8, Common_Movement_ShoveDown)
+    playse(SE_M_BITE)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Wildlife became infected and began to act erratically."))
+    closemessage
+    applymovement(8, StantlerLeft3)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveUp)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(10)
+    applymovement(8, Common_Movement_ShoveDown)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(30)
+    applymovement(8, StantlerLeft3)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveLeft)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveRight)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, StantlerLeft3)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveLeft)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveRight)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Pokémon quickly fell ill.\pIn their deteriorating state, they became far more aggressive than before exposure to the disease."))
+    closemessage
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    waitse
+    playmoncry(SPECIES_STANTLER, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(15)
+    applymovement(8, moves(walk_fast_down*3))
+    fadescreenspeed(FADE_TO_BLACK,1)
+    delay(30)
+    fadeoutbgm(0)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    warpcontinuescript(MAP_MELTING_SNOW_TOWN, 17, 9, MeltingSnowTown_EventScript_MythTopReturn)
+    release
+    end
+}
+
+script MeltingSnowTown_EventScript_MythTopReturn{
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(5, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(2, moves(walk_down,walk_down,face_left))
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToMythTop)
+    waitmovement(0)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    waitmovement(0)
+    delay(60)
+    msgbox(format("The Pokémon populations during this outbreak suffered immense losses.\pTheir numbers rebounded when the natural climatic cycles eventually brought the forest back to a frozen state."))
+    closemessage
+    applymovement(1, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceLeft)
+    msgbox(format("However, this story is no mere myth. The warming of our planet has caused the permafrost to thaw once more.\pThe spores have reappeared."))
+    closemessage
+    applymovement(6, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(3, Common_Movement_ExclamationMark)
+    applymovement(2, Common_Movement_ExclamationMark)
+    applymovement(6, Common_Movement_ExclamationMark)
+    applymovement(5, Common_Movement_JumpInPlaceLeft)
+    applymovement(4, Common_Movement_JumpInPlaceDown)
+    playse(SE_PIN)
+    waitse
+    waitmovement(0)
+    delay(120)
+    applymovement(6, Common_Movement_FaceUp)
+    applymovement(5, Common_Movement_FaceUp)
+    applymovement(2, Common_Movement_FaceLeft)
+    applymovement(4, Common_Movement_FaceLeft)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I beg of all of you, stay out of the forest."))
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    msgbox(format("Help!\pP-please, help me!"))
+    closemessage
+    applymovement(3, Common_Movement_FaceLeft)
+    applymovement(1, Common_Movement_FaceLeft)
+    applymovement(2, Common_Movement_FaceLeft)
+    applymovement(4, Common_Movement_FaceLeft)
+    applymovement(5, Common_Movement_FaceLeft)
+    applymovement(6, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement(0)
+    addobject(10)
+    waitmovement(0)
+    applymovement(10, WomanToSceneTop)
+    waitmovement(0)
+    delay(15)
+    applymovement(10, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    waitse
+    applymovement(10, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    waitse
+    delay(15)
+    msgbox(format("My daughter ran off! I can't find her!"))
+    closemessage
+    applymovement(10, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I can't go searching in the forest, I don't have any way to defend myself!"))
+    closemessage
+    applymovement(10, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Will anyone help me?"))
+    closemessage
+    delay(15)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraFromMythTop)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    waitmovement(0)
+    setobjectxyperm(10, 15, 10)
+    setobjectxy(10, 15, 10)
+    SetObjectMovementType(10, MOVEMENT_TYPE_LOOK_AROUND)
+    waitmovement(0)
+    setflag(FLAG_MYTH_EXPLAINED)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+    setrespawn(HEAL_LOCATION_MELTING_SNOW)
+    releaseall
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script MeltingSnowTown_EventScript_MythBottom{
+    lock
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Thank you all for gathering today."))
+    closemessage
+    delay(15)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(5, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(2, moves(walk_down,walk_down,face_left))
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    delay(30)
+    waitmovement(0)
+    msgbox(format("Come, listen to my story."))
+    closemessage
+    delay(15)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToMythBottom)
+    waitmovement(0)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("For generations, the cold of our home has given us life. \pDeep in frozen ponds, fish have been plentiful.\pIn the thickness of the forests, game populations have been steady.\pOur people have lived healthy lives, despite the seemingly harsh environment in which we reside."))
+    closemessage
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("However, that has not always been the case."))
+    closemessage
+    fadenewbgm(MUS_DUMMY)
+    fadescreenspeed(FADE_TO_BLACK, 8)
+    delay(30)
+    msgbox(format("My grandmother once told me a story, passed down by her grandmother, and her grandmother before her.\pMany millenia ago, our world looked very different.\pThe forest, which has been frozen for as long as I can remember, began to defrost."))
+    closemessage
+    delay(60)
+    warpcontinuescript(MAP_MELTING_SNOW_FOREST_FLASHBACK, 9, 30, SnowForestFlashbackBottom_EventScript)
+    end
+}
+
+script SnowForestFlashbackBottom_EventScript{
+    lockall
+    hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_MELTING_SNOW_FOREST_FLASHBACK)
+    waitmovement(0)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, RightPan12)
+    waitmovement(0)
+    applymovement(5, moves(walk_right))
+    waitmovement(0)
+    delay(20)
+    applymovement(5, moves(walk_down))
+    waitmovement(0)
+    delay(40)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, FirstOffScreenCamForest)
+    msgbox(format("Permafrost gave way to rivers and lakes, which carved gorges through the landscape."))
+    closemessage
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    setobjectxyperm(7, 32, 40)
+    setobjectxyperm(6, 38, 40)
+    setobjectxy(7, 32, 40)
+    setobjectxy(6, 38, 40)
+    addobject(6)
+    waitmovement(0)
+    addobject(7)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, LeftPan12)
+    waitmovement(0)
+    delay(60)
+    fadescreen(FADE_TO_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, SecondOffScreenCamForest)
+    msgbox(format("As the land changed and the world warmed, something more sinister emerged."))
+    closemessage
+    waitmovement(0)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraLastMovementForest)
+    waitmovement(0)
+    delay(60)
+    msgbox(format("Bacteria, viruses, and spores began to proliferate in the warmer climate."))
+    closemessage
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(8, StantlerToShroom)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    delay(30)
+    applymovement(8, Common_Movement_ShoveDown)
+    playse(SE_M_BITE)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Wildlife became infected and began to act erratically."))
+    closemessage
+    applymovement(8, StantlerLeft3)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveUp)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(10)
+    applymovement(8, Common_Movement_ShoveDown)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(30)
+    applymovement(8, StantlerLeft3)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveLeft)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveRight)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, StantlerLeft3)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveLeft)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_ShoveRight)
+    playse(SE_CONTEST_CONDITION_LOSE)
+    waitmovement(0)
+    delay(15)
+    applymovement(8, Common_Movement_FaceDown)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("Pokémon quickly fell ill.\pIn their deteriorating state, they became far more aggressive than before exposure to the disease."))
+    closemessage
+    applymovement(8, Common_Movement_JumpInPlaceDown)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    waitse
+    playmoncry(SPECIES_STANTLER, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(15)
+    applymovement(8, moves(walk_fast_down*3))
+    fadescreenspeed(FADE_TO_BLACK,1)
+    delay(30)
+    fadeoutbgm(0)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    warpcontinuescript(MAP_MELTING_SNOW_TOWN, 17, 10, MeltingSnowTown_EventScript_MythBottomReturn)
+    release
+    end
+}
+
+script MeltingSnowTown_EventScript_MythBottomReturn{
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(5, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(6, Common_Movement_FaceUp)
+    waitmovement(0)
+    applymovement(2, moves(walk_down,walk_down,face_left))
+    waitmovement(0)
+    special(SpawnCameraObject)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToMythBottom)
+    waitmovement(0)
+    fadescreenspeed(FADE_FROM_BLACK, 8)
+    waitmovement(0)
+    delay(60)
+    msgbox(format("The Pokémon populations during this outbreak suffered immense losses.\pTheir numbers rebounded when the natural climatic cycles eventually brought the forest back to a frozen state."))
+    closemessage
+    applymovement(1, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(30)
+    applymovement(1, Common_Movement_WalkInPlaceLeft)
+    msgbox(format("However, this story is no mere myth. The warming of our planet has caused the permafrost to thaw once more.\pThe spores have reappeared."))
+    closemessage
+    applymovement(6, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(3, Common_Movement_ExclamationMark)
+    applymovement(2, Common_Movement_ExclamationMark)
+    applymovement(6, Common_Movement_ExclamationMark)
+    applymovement(5, Common_Movement_JumpInPlaceLeft)
+    applymovement(4, Common_Movement_JumpInPlaceDown)
+    playse(SE_PIN)
+    waitse
+    waitmovement(0)
+    delay(120)
+    applymovement(6, Common_Movement_FaceUp)
+    applymovement(5, Common_Movement_FaceUp)
+    applymovement(2, Common_Movement_FaceLeft)
+    applymovement(4, Common_Movement_FaceLeft)
+    applymovement(3, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(15)
+    applymovement(1, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I beg of all of you, stay out of the forest."))
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    msgbox(format("Help!\pP-please, help me!"))
+    closemessage
+    applymovement(3, Common_Movement_FaceLeft)
+    applymovement(1, Common_Movement_FaceLeft)
+    applymovement(2, Common_Movement_FaceLeft)
+    applymovement(4, Common_Movement_FaceLeft)
+    applymovement(5, Common_Movement_FaceLeft)
+    applymovement(6, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement(0)
+    addobject(10)
+    waitmovement(0)
+    applymovement(10, WomanToSceneTop)
+    waitmovement(0)
+    delay(15)
+    applymovement(10, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    waitse
+    applymovement(10, Common_Movement_JumpInPlaceRight)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    waitse
+    delay(15)
+    msgbox(format("My daughter ran off! I can't find her!"))
+    closemessage
+    applymovement(10, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("I can't go searching in the forest, I don't have any way to defend myself!"))
+    closemessage
+    applymovement(10, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(15)
+    msgbox(format("Will anyone help me?"))
+    closemessage
+    delay(15)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraFromMythBottom)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    waitmovement(0)
+    setobjectxyperm(10, 15, 10)
+    setobjectxy(10, 15, 10)
+    SetObjectMovementType(10, MOVEMENT_TYPE_LOOK_AROUND)
+    waitmovement(0)
+    setflag(FLAG_MYTH_EXPLAINED)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+    setrespawn(HEAL_LOCATION_MELTING_SNOW)
+    releaseall
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+script MeltingSnowTown_EventScript_LittleBoy1{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("Our elder promised to tell us a story. I can't wait!"))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("I used to play in the forest all the time! I hope I don't get sick!"))
+    }
+	closemessage
+	applymovement(4, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_LittleBoy2{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("This pond used to be frozen over. I loved skating on the ice!"))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("If it keeps warming up, maybe this pond will become a hot spring!"))
+    }
+	closemessage
+	applymovement(5, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_Fisherman{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("Whenever I wanted to fish, I had to drill a hole in the ice.\pFor some reason, the ice is gone!"))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("After the water warmed up, I haven't had any success fishing. \pIt seems that aquatic Pokémon had adapted to their environment and couldn't survive the drastic change."))
+    }
+	closemessage
+	applymovement(9, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_Elder{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("Hello, child, welcome to our wintry oasis.\pYou are just in time to see the green grass emerge from the cold, which we haven't witnessed for generations."))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("Please, for your own safety, do not enter the forest."))
+    }
+	closemessage
+	applymovement(1, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_GreenWoman{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("Brrr... Why do I live here?\pIt's so cold!"))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("How can it be getting warmer? I'm still so chilly!"))
+    }
+	closemessage
+	applymovement(2, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_Girl{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("The grass and trees are shockingly green in contrast with the snow.\pI love the color!"))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("Although I like seeing the green, I wish the world wasn't warmer.\pI'd much prefer snow to cover everything."))
+    }
+	closemessage
+	applymovement(3, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_Man{
+	lock
+	faceplayer
+    if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
+	    msgbox(format("I still can't believe I'm seeing liquid water.\pIt doesn't seem natural."))
+    }
+    if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
+        msgbox(format("What a story. I hope the disease doesn't spread too far."))
+    }
+	closemessage
+	applymovement(6, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_MissingMother{
+	lock
+	faceplayer
+    msgbox(format("Please!\pPlease help me!\pI can't imagine my daughter being alone in that forest!"))
+	closemessage
+	release
+	end
+}
+
+script MeltingSnowTown_EventScript_Nurse{
+    lock
+    faceplayer
+    if(flag(FLAG_ABSOL_ENTER) == FALSE){
+        msgbox(format("Oh... you don't have a Pokémon?\pCome back if you need to heal a Pokémon."))
+        applymovement(8, Common_Movement_FaceOriginalDirection)
+        waitmovement(0)
+        release
+        end
+    }
+    if(flag(FLAG_MELTING_SNOW_TOWN_NURSE) == TRUE){
+        msgbox(format("Would you like me to heal your Pokémon?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            special(HealPlayerParty)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            msgbox(format("Let me know if you need my services again."))
+            waitmessage
+        }
+        else{
+            msgbox(format("Let me know if you need my services."))
+        }
+    }
+    if(flag(FLAG_MELTING_SNOW_TOWN_NURSE) == FALSE){
+        msgbox(format("Brr... I can't believe I was assigned this post. Why couldn't I have been sent to the beach?\pAnyway...\pWould you like me to heal your Pokémon?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            special(HealPlayerParty)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            msgbox(format("Let me know if you need my services again."))
+            waitmessage
+            setflag(FLAG_MELTING_SNOW_TOWN_NURSE)
+        }
+        else{
+            msgbox(format("Let me know if you need my services."))
+            waitmessage
+            setflag(FLAG_MELTING_SNOW_TOWN_NURSE)
+        }
+    }
+    applymovement(8, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    callnative(UpdateFollowingPokemon)
+    release
+    end
+}
+
+script MeltingSnowTown_EventScript_HouseWoman{
+	lock
+	faceplayer
+    if(flag(FLAG_SNOWY_ITEMS_GIVEN) == TRUE){
+        msgbox(format("That should be enough to get you started!"))
+    }
+    if(flag(FLAG_SNOWY_ITEMS_GIVEN) == FALSE){
+	    msgbox(format("Hello, traveler! You seem to have packed light.\pHere, take these!"))
+        giveitem(ITEM_ULTRA_BALL, 30)
+        setflag(FLAG_SNOWY_ITEMS_GIVEN)
+    }
+	closemessage
+	release
+	end
+}
+
+movement CameraToMythTop{
+    walk_right*3
+    walk_diag_northeast
+    step_end
+}
+
+movement CameraToMythBottom{
+    walk_right*2
+    walk_diag_northeast*2
+    step_end
+}
+
+movement CameraFromMythTop{
+    walk_diag_southwest
+    walk_left*3
+    step_end
+}
+
+movement CameraFromMythBottom{
+    walk_diag_southwest*2
+    walk_left*2
+    step_end
+}
+
+movement RightPan12{
+    walk_right*12
+}
+
+movement LeftPan12{
+    walk_left*12
+}
+
+movement CameraLastMovementForest{
+    walk_right*14
+}
+
+movement FirstOffScreenCamForest{
+    walk_diag_southeast*6
+    walk_faster_right*20
+}
+
+movement SecondOffScreenCamForest{
+    walk_diag_northwest*5
+    walk_faster_up*23
+}
+
+movement StantlerToShroom{
+    walk_fast_right*9
+    face_down
+}
+
+movement StantlerLeft3{
+    walk_slow_left*3
+}
+
+movement WomanToSceneTop{
+    walk_fast_right*6
+}

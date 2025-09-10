@@ -2109,3 +2109,41 @@ const u16 gTilesetPalettes_indoorbarn[][16] =
 };
 
 const u32 gTilesetTiles_indoorbarn[] = INCBIN_U32("data/tilesets/secondary/indoorbarn/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_snowytreesflashback[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/snowytreesflashback/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_snowytreesflashback[] = INCBIN_U32("data/tilesets/primary/snowytreesflashback/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_newsnowyflashback[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/newsnowyflashback/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_newsnowyflashback[] = INCBIN_U32("data/tilesets/secondary/newsnowyflashback/tiles.4bpp.lz");

@@ -390,6 +390,12 @@ const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_Farmer[] = INCBIN_U32("graphics/object_events/pics/people/farmer.4bpp");
 const u16 gObjectEventPalette_Farmer[] = INCBIN_U16("graphics/object_events/pics/people/farmer.gbapal");
 
+const u32 gObjectEventPic_StantlerFlashback[] = INCBIN_U32("graphics/object_events/pics/pokemon/stantlerflashback.4bpp");
+const u16 gObjectEventPalette_StantlerFlashback[] = INCBIN_U16("graphics/object_events/pics/pokemon/stantlerflashback.gbapal");
+
+const u32 gObjectEventPic_OldWomanSnow[] = INCBIN_U32("graphics/object_events/pics/people/old_woman_snow.4bpp");
+const u16 gObjectEventPalette_OldWomanSnow[] = INCBIN_U16("graphics/object_events/pics/people/old_woman_snow.gbapal");
+
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_mark/overworld.gbapal");
 
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");

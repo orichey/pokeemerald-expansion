@@ -37,6 +37,7 @@ void InitTilesetAnim_General_Flood(void);
 
 void InitTilesetAnim_Tsisqua(void);
 void InitTilesetAnim_snowytrees(void);
+void InitTilesetAnim_snowytreesflashback(void);
 void InitTilesetAnim_desert(void);
 void InitTilesetAnim_ChaoticCherryCakeGeneral(void);
 

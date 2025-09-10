@@ -2079,11 +2079,11 @@ s32 MoveBattleBar(u8 battlerId, u8 healthboxSpriteId, u8 whichBar, u8 unused)
         expFraction = abs(gBattleSpritesDataPtr->battleBars[battlerId].receivedValue / expFraction);
 
             if(gBattleSpritesDataPtr->battleBars[battlerId].oldValue == gBattleSpritesDataPtr->battleBars[battlerId].currValue)
-            {
-            u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
-                        gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
-                        gBattleSpritesDataPtr->battleBars[battlerId].maxValue, 8);
-            }
+            // {
+            // u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
+            //             gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
+            //             gBattleSpritesDataPtr->battleBars[battlerId].maxValue, 8);
+            // }
             if (expFraction == 0)
                 expFraction = 1;
             expFraction = abs(gBattleSpritesDataPtr->battleBars[battlerId].receivedValue / expFraction);

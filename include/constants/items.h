@@ -996,10 +996,15 @@
 #define ITEM_POKEHM 829
 #define ITEM_STRANGE_BALL 830
 
+#define ITEM_FIRE_GEM_KEY 831
+#define ITEM_CHERI_BERRY_KEY 832
+#define ITEM_ORAN_BERRY_KEY 833
+#define ITEM_SITRUS_BERRY_KEY 834
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 831
+#define ITEMS_COUNT 835
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

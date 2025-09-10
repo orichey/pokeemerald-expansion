@@ -4781,3 +4781,9 @@ $(OBJEVENTGFXDIR)/people/jsogirl.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/farmer.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/stantlerflashback.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/old_woman_snow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

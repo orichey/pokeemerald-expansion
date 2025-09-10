@@ -250,6 +250,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JSOBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JSOGirl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StantlerFlashback;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWomanSnow;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -496,6 +498,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_FARMER] =                   &gObjectEventGraphicsInfo_Farmer,
+    [OBJ_EVENT_GFX_STANTLERFLASHBACK] =        &gObjectEventGraphicsInfo_StantlerFlashback,
+    [OBJ_EVENT_GFX_OLDWOMANSNOW] =             &gObjectEventGraphicsInfo_OldWomanSnow,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

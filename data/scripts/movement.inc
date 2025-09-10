@@ -127,7 +127,7 @@ Common_Movement_WalkUp2::
 	step_end
 
 Common_Movement_WalkDown::
-	walk_in_place_down
+	walk_down
 	step_end
 
 Common_Movement_WalkDown2::
@@ -161,6 +161,114 @@ Common_Movement_Shove::
 	unlock_facing_direction
 	step_end
 
+Common_Movement_ShoveDown::
+	lock_anim
+	lock_facing_direction
+	walk_faster_down
+	walk_faster_up
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveLeft::
+	lock_anim
+	lock_facing_direction
+	walk_faster_left
+	walk_faster_right
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveRight::
+	lock_anim
+	lock_facing_direction
+	walk_faster_right
+	walk_faster_left
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveUp::
+	lock_anim
+	lock_facing_direction
+	walk_faster_up
+	walk_faster_down
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveDownSlower::
+	lock_anim
+	lock_facing_direction
+	walk_fast_down
+	walk_fast_up
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveLeftSlower::
+	lock_anim
+	lock_facing_direction
+	walk_fast_left
+	walk_fast_right
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveRightSlower::
+	lock_anim
+	lock_facing_direction
+	walk_fast_right
+	walk_fast_left
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveUpSlower::
+	lock_anim
+	lock_facing_direction
+	walk_fast_up
+	walk_fast_down
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveDownSlow::
+	lock_anim
+	lock_facing_direction
+	walk_down
+	walk_up
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveLeftSlow::
+	lock_anim
+	lock_facing_direction
+	walk_left
+	walk_right
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveRightSlow::
+	lock_anim
+	lock_facing_direction
+	walk_right
+	walk_left
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
+Common_Movement_ShoveUpSlow::
+	lock_anim
+	lock_facing_direction
+	walk_up
+	walk_down
+	unlock_anim
+	unlock_facing_direction
+	step_end
+
 Common_Movement_JumpInPlaceDown::
 	jump_in_place_down
 	step_end
@@ -183,4 +291,20 @@ Common_Movement_LockFacingDirection::
 
 Common_Movement_UnlockFacingDirection::
 	unlock_facing_direction
+	step_end
+
+Common_Movement_JumpLeft::
+	jump_left
+	step_end
+
+Common_Movement_JumpRight::
+	jump_right
+	step_end
+
+Common_Movement_JumpUp::
+	jump_up
+	step_end
+
+Common_Movement_JumpDown::
+	jump_down
 	step_end

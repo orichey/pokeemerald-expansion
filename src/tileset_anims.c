@@ -1980,3 +1980,123 @@ void InitTilesetAnim_desert(void)
     sPrimaryTilesetAnimCounterMax = 256;
     sPrimaryTilesetAnimCallback = TilesetAnim_desert;
 }
+
+
+
+
+
+
+// Our custom animation code for snowytreesflashback:
+
+const u16 gTilesetAnims_snowytreesflashback_WaterfallRight_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallRight/00.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallRight_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallRight/01.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallRight_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallRight/02.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallRight_Frame3[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallRight/03.4bpp");
+
+const u16 *const gTilesetAnims_snowytreesflashback_WaterfallRight[] = {
+    gTilesetAnims_snowytreesflashback_WaterfallRight_Frame0,
+    gTilesetAnims_snowytreesflashback_WaterfallRight_Frame1,
+    gTilesetAnims_snowytreesflashback_WaterfallRight_Frame2,
+    gTilesetAnims_snowytreesflashback_WaterfallRight_Frame3
+};
+
+static void QueueAnimTiles_snowytreesflashback_WaterfallRight(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytreesflashback_WaterfallRight);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytreesflashback_WaterfallRight[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(13)), 4 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallMiddle/00.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallMiddle/01.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallMiddle/02.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame3[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallMiddle/03.4bpp");
+
+const u16 *const gTilesetAnims_snowytreesflashback_WaterfallMiddle[] = {
+    gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame0,
+    gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame1,
+    gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame2,
+    gTilesetAnims_snowytreesflashback_WaterfallMiddle_Frame3
+};
+
+static void QueueAnimTiles_snowytreesflashback_WaterfallMiddle(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytreesflashback_WaterfallMiddle);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytreesflashback_WaterfallMiddle[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(11)), 2 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytreesflashback_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/Water/00.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/Water/01.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/Water/02.4bpp");
+
+const u16 *const gTilesetAnims_snowytreesflashback_Water[] = {
+    gTilesetAnims_snowytreesflashback_Water_Frame0,
+    gTilesetAnims_snowytreesflashback_Water_Frame1,
+    gTilesetAnims_snowytreesflashback_Water_Frame0,
+    gTilesetAnims_snowytreesflashback_Water_Frame2
+};
+
+static void QueueAnimTiles_snowytreesflashback_Water(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytreesflashback_Water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytreesflashback_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterEdgeBottom/00.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterEdgeBottom/01.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterEdgeBottom/02.4bpp");
+
+const u16 *const gTilesetAnims_snowytreesflashback_WaterEdgeBottom[] = {
+    gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame0,
+    gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame1,
+    gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame0,
+    gTilesetAnims_snowytreesflashback_WaterEdgeBottom_Frame2
+};
+
+static void QueueAnimTiles_snowytreesflashback_WaterEdgeBottom(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytreesflashback_WaterEdgeBottom);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytreesflashback_WaterEdgeBottom[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(5)), 2 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame0[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallBottomLeft/00.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame1[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallBottomLeft/01.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame2[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallBottomLeft/02.4bpp");
+const u16 gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame3[] = INCBIN_U16("data/tilesets/primary/snowytreesflashback/anim/WaterfallBottomLeft/03.4bpp");
+
+const u16 *const gTilesetAnims_snowytreesflashback_WaterfallBottomLeft[] = {
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame0,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame1,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame2,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame3,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame2,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame3,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame2,
+    gTilesetAnims_snowytreesflashback_WaterfallBottomLeft_Frame1
+};
+
+static void QueueAnimTiles_snowytreesflashback_WaterfallBottomLeft(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_snowytreesflashback_WaterfallBottomLeft);
+    AppendTilesetAnimToBuffer(gTilesetAnims_snowytreesflashback_WaterfallBottomLeft[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(7)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_snowytreesflashback(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_snowytreesflashback_WaterfallRight(timer / 16);
+        QueueAnimTiles_snowytreesflashback_WaterfallMiddle(timer / 16);
+        QueueAnimTiles_snowytreesflashback_Water(timer / 32);
+        QueueAnimTiles_snowytreesflashback_WaterEdgeBottom(timer / 32);
+        QueueAnimTiles_snowytreesflashback_WaterfallBottomLeft(timer / 16);
+    }
+}
+
+void InitTilesetAnim_snowytreesflashback(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_snowytreesflashback;
+}

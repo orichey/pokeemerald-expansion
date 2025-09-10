@@ -4650,6 +4650,16 @@
       "secondary_tileset": "gTileset_newsnowy",
       "border_filepath": "data/layouts/MeltingSnowForest/border.bin",
       "blockdata_filepath": "data/layouts/MeltingSnowForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELTING_SNOW_FOREST_FLASHBACK",
+      "name": "MeltingSnowForestFlashback_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_snowytreesflashback",
+      "secondary_tileset": "gTileset_newsnowyflashback",
+      "border_filepath": "data/layouts/MeltingSnowForestFlashback/border.bin",
+      "blockdata_filepath": "data/layouts/MeltingSnowForestFlashback/map.bin"
     }
   ]
 }

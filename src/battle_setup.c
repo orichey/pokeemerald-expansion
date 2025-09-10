@@ -764,6 +764,8 @@ u8 BattleSetup_GetTerrainId(void)
         return BATTLE_TERRAIN_BEACH;
     if (gMapHeader.regionMapSectionId == MAPSEC_ROUTE_101 || gMapHeader.regionMapSectionId == MAPSEC_OLDALE_TOWN || gMapHeader.regionMapSectionId == MAPSEC_ROUTE_102 || gMapHeader.regionMapSectionId == MAPSEC_PETALBURG_CITY)
         return BATTLE_TERRAIN_ROUTE;
+    if (gMapHeader.regionMapSectionId == MAPSEC_FORTREE_CITY)
+        return BATTLE_TERRAIN_SNOWY;
     if (gMapHeader.regionMapSectionId == MAPSEC_PETALBURG_WOODS)
         return BATTLE_TERRAIN_FOREST;
     if (gMapHeader.regionMapSectionId == MAPSEC_ROUTE_103)

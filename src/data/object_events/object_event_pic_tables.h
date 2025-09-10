@@ -1383,3 +1383,11 @@ const struct SpriteFrameImage gObjectEventPicTable_JSOGirl[] = {
 const struct SpriteFrameImage gObjectEventPicTable_Farmer[] = {
     overworld_ascending_frames(gObjectEventPic_Farmer, 2, 4),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_StantlerFlashback[] = {
+    overworld_ascending_frames(gObjectEventPic_StantlerFlashback, 4, 4),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_OldWomanSnow[] = {
+    overworld_ascending_frames(gObjectEventPic_OldWomanSnow, 2, 4),
+};

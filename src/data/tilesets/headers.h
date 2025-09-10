@@ -1100,3 +1100,25 @@ const struct Tileset gTileset_indoorbarn =
     .metatileAttributes = gMetatileAttributes_indoorbarn,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_snowytreesflashback =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_snowytreesflashback,
+    .palettes = gTilesetPalettes_snowytreesflashback,
+    .metatiles = gMetatiles_snowytreesflashback,
+    .metatileAttributes = gMetatileAttributes_snowytreesflashback,
+    .callback = InitTilesetAnim_snowytreesflashback,
+};
+
+const struct Tileset gTileset_newsnowyflashback =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_newsnowyflashback,
+    .palettes = gTilesetPalettes_newsnowyflashback,
+    .metatiles = gMetatiles_newsnowyflashback,
+    .metatileAttributes = gMetatileAttributes_newsnowyflashback,
+    .callback = NULL,
+};

@@ -147,6 +147,13 @@ static const struct HealLocation sHealLocationsPokemonCenter[HEAL_LOCATION_COUNT
         .x = 53,
         .y = 68,
     },
+    [HEAL_LOCATION_MELTING_SNOW - 1] =
+    {
+        .group = MAP_GROUP(MELTING_SNOW_TOWN),
+        .map = MAP_NUM(MELTING_SNOW_TOWN),
+        .x = 10,
+        .y = 10,
+    },
 };
 
 #undef DEFAULT_POKEMON_CENTER_COORDS
@@ -180,4 +187,5 @@ static const u8 sHealNpcLocalId[HEAL_LOCATION_COUNT - 1] =
     [HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR - 1] = 0, // no heal npc
     [HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST - 1] = 1,
     [HEAL_LOCATION_RANCH - 1] = 1,
+    [HEAL_LOCATION_MELTING_SNOW - 1] = 1,
 };

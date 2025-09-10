@@ -453,7 +453,8 @@
     "Ranch_GoodEnding",
     "RanchBadEnding",
     "MeltingSnowTown",
-    "MeltingSnowForest"
+    "MeltingSnowForest",
+    "MeltingSnowForestFlashback"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -723,7 +723,7 @@ static void Task_TitleScreenPhase1(u8 taskId)
         spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
         gSprites[spriteId].sParentTaskId = taskId;
 
-        gTasks[taskId].tCounter = 144;
+        gTasks[taskId].tCounter = 200;
         gTasks[taskId].func = Task_TitleScreenPhase2;
     }
 }
