@@ -1203,3 +1203,48 @@ script MeltingSnowForest_EventScript_WaterWoman{
     release
     end
 }
+
+script MeltingSnowForest_EventScript_LastScientist{
+	lock
+    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) != TRUE || flag(FLAG_FARMER2_BATTLE) != TRUE || flag(FLAG_FARMER3_BATTLE) != TRUE || flag(FLAG_FARMER4_BATTLE) != TRUE || flag(FLAG_FARMER5_BATTLE) != TRUE || flag(FLAG_FARMER6_BATTLE) != TRUE || flag(FLAG_FARMER7_BATTLE) != TRUE){
+        faceplayer
+        msgbox(format("This kind gentleman spoke to my farmers about his technology.\pSounds like they're being harrassed by these protestors. Could you help them out?"))
+        if(flag(FLAG_FARMER1_BATTLE) == FALSE){
+            msgbox(format("I saw one of those kids in orange head west. Maybe check the barns?"))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER2_BATTLE) == FALSE){
+            msgbox(format("One of my farmers is having an issue by the well."))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER3_BATTLE) == FALSE || flag(FLAG_FARMER4_BATTLE) == FALSE){
+            msgbox(format("I heard something happening in the fields. Can you take a look?"))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER5_BATTLE) == FALSE){
+            msgbox(format("I think I saw a protestor head to the northeast, near where we used to farm."))
+            closemessage
+            releaseall
+            end
+        }
+        if(flag(FLAG_FARMER6_BATTLE) == FALSE || flag(FLAG_FARMER7_BATTLE) == FALSE){
+            msgbox(format("A few scientist were heading to the riverbed. Maybe something is happening there?"))
+            closemessage
+            releaseall
+            end
+        }
+    }
+    if(flag(FLAG_FARMER1_BATTLE) == TRUE && flag(FLAG_FARMER2_BATTLE) == TRUE && flag(FLAG_FARMER3_BATTLE) == TRUE && flag(FLAG_FARMER4_BATTLE) == TRUE && flag(FLAG_FARMER5_BATTLE) == TRUE && flag(FLAG_FARMER6_BATTLE) == TRUE && flag(FLAG_FARMER7_BATTLE) == TRUE){
+        goto(Ranch_EventScript_FinalEncounter)
+        releaseall
+        end
+    }
+    releaseall
+    end
+}
