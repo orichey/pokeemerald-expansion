@@ -90,7 +90,7 @@
     },
     {
       "map_section": "MAPSEC_FORTREE_CITY",
-      "name": "Permafrost Town",
+      "name": "Frostbloom Town",
       "x": 12,
       "y": 2,
       "width": 1,
@@ -98,7 +98,7 @@
     },
     {
       "map_section": "MAPSEC_LILYCOVE_CITY",
-      "name": "LILYCOVE CITY",
+      "name": "Frostbloom Forest",
       "x": 5,
       "y": 1,
       "width": 1,
