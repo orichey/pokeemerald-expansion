@@ -31,10 +31,10 @@ script MeltingSnowForest_EventScript_EnterTop {
         waitse()
         waitmovement(0)
         delay(30)
-        msgbox(format("The Absol is demanding to join you!"))
+        msgbox(format("The Absol demands to join you!"))
         closemessage
         delay(15)
-        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
+        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
         applymovement(1,AbsolJump)
         playse(SE_BIKE_HOP)
         waitse()
@@ -80,10 +80,10 @@ script MeltingSnowForest_EventScript_EnterTopMid {
         waitse()
         waitmovement(0)
         delay(30)
-        msgbox(format("The Absol is demanding to join you!"))
+        msgbox(format("The Absol demands to join you!"))
         closemessage
         delay(15)
-        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
+        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
         applymovement(1,AbsolJump)
         playse(SE_BIKE_HOP)
         waitse()
@@ -129,10 +129,10 @@ script MeltingSnowForest_EventScript_EnterBottomMid {
         waitse()
         waitmovement(0)
         delay(30)
-        msgbox(format("The Absol is demanding to join you!"))
+        msgbox(format("The Absol demands to join you!"))
         closemessage
         delay(15)
-        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
+        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
         applymovement(1,AbsolJump)
         playse(SE_BIKE_HOP)
         waitse()
@@ -178,10 +178,10 @@ script MeltingSnowForest_EventScript_EnterBottom {
         waitse()
         waitmovement(0)
         delay(30)
-        msgbox(format("The Absol is demanding to join you!"))
+        msgbox(format("The Absol demands to join you!"))
         closemessage
         delay(15)
-        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
+        givemon(SPECIES_ABSOL, 35, 0, ITEM_POKE_BALL, NATURE_JOLLY, 1, 0, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_SWORDS_DANCE, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER, MOVE_SUBSTITUTE)
         applymovement(1,AbsolJump)
         playse(SE_BIKE_HOP)
         waitse()
@@ -218,7 +218,9 @@ script MeltingSnowForest_EventScript_Sawsbuck{
     waitmovement(0)
     delay(15)
 	msgbox(format("The Pokémon attacked in a rage!"))
-	setwildbattle(SPECIES_SAWSBUCK_WINTER, 35, ITEM_NONE, SPECIES_SNEASEL, 35, ITEM_NONE)
+    setflag(FLAG_UNUSED_0x8F7)
+    setflag(FLAG_UNUSED_0x8F8)
+	setwildbattle(SPECIES_SAWSBUCK_WINTER, 32, ITEM_NONE, SPECIES_SNEASEL, 29, ITEM_NONE)
 	dowildbattle
 	waitmovement(0)
 	delay(15)
@@ -268,15 +270,13 @@ script MeltingSnowForest_EventScript_Sawsbuck{
     playse(SE_BALL)
     waitse()
 	setflag(FLAG_PARASECT_DOUBLE_BATTLE)
-    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
         setflag(FLAG_CLEAR_STANTLERS)
     }
 	waitmovement(0)
 	releaseall
 	end
 }
-
-
 
 script MeltingSnowForest_EventScript_Sneasel{
 	lock
@@ -298,7 +298,9 @@ script MeltingSnowForest_EventScript_Sneasel{
     waitmovement(0)
     delay(15)
 	msgbox(format("The Pokémon attacked in a rage!"))
-	setwildbattle(SPECIES_SAWSBUCK_WINTER, 35, ITEM_NONE, SPECIES_SNEASEL, 35, ITEM_NONE)
+    setflag(FLAG_UNUSED_0x8F7)
+    setflag(FLAG_UNUSED_0x8F8)
+	setwildbattle(SPECIES_SAWSBUCK_WINTER, 32, ITEM_NONE, SPECIES_SNEASEL, 29, ITEM_NONE)
 	dowildbattle
 	waitmovement(0)
 	delay(15)
@@ -377,7 +379,7 @@ script MeltingSnowForest_EventScript_Sneasel{
     playse(SE_BALL)
     waitse()
 	setflag(FLAG_PARASECT_DOUBLE_BATTLE)
-    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
         setflag(FLAG_CLEAR_STANTLERS)
     }
 	waitmovement(0)
@@ -452,7 +454,7 @@ script MeltingSnowForest_EventScript_Camper1{
 
 script MeltingSnowForest_EventScript_StantlerHiker{
 	faceplayer
-	msgbox(format("Did you see what just happened?\pI've never seen a Pokémon willingly jump in freezing water like that!"))
+	msgbox(format("Did you see what just happened?\pI've never seen a Pokémon willingly jump in freezing water like that!\pI wonder what could have caused it to act out."))
 	closemessage
 	applymovement(34, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
@@ -463,6 +465,8 @@ script MeltingSnowForest_EventScript_StantlerHiker{
 script MeltingSnowForest_EventScript_HotStantler{
 	faceplayer
     if(flag(FLAG_WATER_WOMAN_TALKED) == FALSE){
+        playmoncry(SPECIES_STANTLER, CRY_MODE_NORMAL)
+        waitmoncry
 	    msgbox(format("The Stantler is panting uncontrollably!"))
     }
     if(flag(FLAG_WATER_WOMAN_TALKED) == TRUE){
@@ -479,7 +483,7 @@ script MeltingSnowForest_EventScript_HotStantler{
         waitmoncry
         delay(15)
         setflag(FLAG_STANTLER_WATERED)
-        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
             setflag(FLAG_CLEAR_STANTLERS)
         }
         msgbox(format("The Stantler thanked you!"))
@@ -494,10 +498,10 @@ script MeltingSnowForest_EventScript_HotStantler{
 script MeltingSnowForest_EventScript_PoorStantlerGirl{
     faceplayer
     if(flag(FLAG_STANTLER_WATERED) == FALSE){
-        msgbox(format("This poor Stantler just jumped in the frigid water to cool off...\pIt looks like it can't even drink...\pI wish I could help!"))
+        msgbox(format("This poor, feverish Stantler just jumped in the frigid water to cool off...\pIt looks like it isn't able to drink...\pI wish I could help!"))
     }
     if(flag(FLAG_STANTLER_WATERED) == TRUE){
-        msgbox(format("Stantler already looks better!\pI wonder if he wasn't able to drink because of the sickness that's spreading."))
+        msgbox(format("Stantler already looks better!\pI wonder if he wasn't able to drink because of the sickness that's spreading.\pI guess the stories I've heard were true."))
         if(flag(FLAG_ORAN_BERRY_KEY) == FALSE){
             msgbox(format("Here, you can have this!"))
             giveitem(ITEM_ORAN_BERRY_KEY)
@@ -658,7 +662,7 @@ script MeltingSnowForest_EventScript_HeatCutsceneDone{
 
 script MeltingSnowForest_EventScript_FirstScientist{
 	faceplayer
-	msgbox(format("I was supposed to do research on how the warmer environment has changed the forest, but a Pokémon attacked me!\pWhat other disasters could present themselves here?"))
+	msgbox(format("I was supposed to do research on how the warmer environment has changed the forest, but a vicious Pokémon attacked me!\pWhat other disasters could present themselves here?"))
 	closemessage
 	applymovement(25, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
@@ -676,10 +680,10 @@ text Timmy_Intro{
     format("Bugs have emerged from the frost!\nLook at mine!")
 }
 text Timmy_Outro{
-    format("I wonder how long my bugs were frozen for.")
+    format("I think my bugs were frozen for years!")
 }
 text PostBattle_Timmy{
-    format("Why am I wearing shorts in the snow?")
+    format("A little girl got lost? I hope someone can find her!")
 }
 
 
@@ -699,7 +703,7 @@ script MeltingSnowForest_EventScript_Farmer{
         waitmovement(0)
         delay(120)
         faceplayer
-        msgbox(format("Well, howdy, partner! I hear that as the snow melts, there's some potential for some farming up here!\pSounds great to me, the economy will be booming!\pFigured I'd help heat things up."))
+        msgbox(format("Well, howdy, partner! I hear that as the snow melts, there's potential for some farming up here!\pSounds great to me, the economy will be booming!\pFigured I'd help heat things up."))
         closemessage
         applymovement(28, Common_Movement_FaceUp)
         waitmovement(0)
@@ -710,14 +714,14 @@ script MeltingSnowForest_EventScript_Farmer{
         delay(60)
         faceplayer
         delay(30)
-        msgbox(format("There's nothing wrong with what I'm doing, I'm just trying to grow more crops!"))
+        msgbox(format("There's nothing wrong with what I'm doing, I just want to grow more crops!"))
         trainerbattle_single(TRAINER_SHELLY_WEATHER_INSTITUTE, "Don't backtalk me!", "Dadgummit!", MeltingSnowForest_EventScript_AfterFarmer)
     }
     if(flag(FLAG_FIRE_FARMER) == TRUE){
         lock
         faceplayer
         waitmovement(0)
-        msgbox(format("You can stop me, but you can't stop the forest from warming up.\pSoon enough, I'll be farming here!"))
+        msgbox(format("You can stop me now, but you can't stop the forest from warming up.\pSoon enough, I'll be farming here!"))
         closemessage
         applymovement(28, Common_Movement_FaceOriginalDirection)
         waitmovement(0)
@@ -755,7 +759,7 @@ script MeltingSnowForest_EventScript_AfterFarmer{
     }
     waitmovement(0)
     delay(15)
-    msgbox(format("You know what? This forest is gonna warm up, no matter what.\pIt's inevitable, and I don't need to help speed it up.\pHere, you can even take this."))
+    msgbox(format("You know what? This forest is gonna warm, no matter what.\pIt's inevitable, and I don't need to help speed it up.\pHere, you can even take this."))
     giveitem(ITEM_FIRE_GEM_KEY)
     setflag(FLAG_FIRE_FARMER)
     release
@@ -788,7 +792,7 @@ script MeltingSnowForest_EventScript_FightingHiker{
         playse(SE_BIKE_HOP)
         waitmovement(0)
         delay(15)
-        msgbox(format("Help! I was going for a hike, and this Ursaring attacked me out of nowhere!\pI can't fend it off much longer, do you have anything that could ward it off?"))
+        msgbox(format("Help! I was looking for that girl, and this Ursaring attacked me out of nowhere!\pI can't fend it off much longer, do you have anything that could ward it off?"))
         closemessage
         applymovement(26, Common_Movement_FaceOriginalDirection)
     }
@@ -856,7 +860,7 @@ script MeltingSnowForest_EventScript_FightingHiker{
     end
 }
 
-script MeltingSnowForest_EventScript_OldWoman{      //Start here, do some if statements and variables and whatnot to collect three berries
+script MeltingSnowForest_EventScript_OldWoman{
 	faceplayer
     if(flag(FLAG_OLD_WOMAN_BERRY_INTRO) == FALSE){
         msgbox(format("Oh, these poor Pokémon. They seem to be starving!\pI think their food sources have disappeared as a result of climate change.\pWill you help me gather some food for them?"))
@@ -920,7 +924,7 @@ script MeltingSnowForest_EventScript_OldWoman{      //Start here, do some if sta
         waitmovement(0)
         addvar(VAR_SNOW_BERRY_WOMAN, 1)
         setflag(FLAG_HUNGRY_TEDDIURSA)
-        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
             setflag(FLAG_CLEAR_STANTLERS)
         }
         msgbox(format("Thank you, dear!"))
@@ -985,7 +989,7 @@ script MeltingSnowForest_EventScript_OldWoman{      //Start here, do some if sta
         waitmovement(0)
         addvar(VAR_SNOW_BERRY_WOMAN, 1)
         setflag(FLAG_HUNGRY_SWINUB)
-        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
             setflag(FLAG_CLEAR_STANTLERS)
         }
         msgbox(format("That Swinub was so excited."))
@@ -1050,7 +1054,7 @@ script MeltingSnowForest_EventScript_OldWoman{      //Start here, do some if sta
         waitmovement(0)
         addvar(VAR_SNOW_BERRY_WOMAN, 1)
         setflag(FLAG_HUNGRY_SENTRET)
-        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+        if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
             setflag(FLAG_CLEAR_STANTLERS)
         }
         msgbox(format("The Sentret devoured the berry!"))
@@ -1149,7 +1153,7 @@ script MeltingSnowForest_EventScript_HungrySentret{
         playmoncry(SPECIES_SENTRET, CRY_MODE_NORMAL)
         waitmoncry
         delay(15)
-        msgbox(format("Sentret happily licks berry juice off their fur!"))
+        msgbox(format("Sentret happily licked berry juice off their fur!"))
     }
     closemessage
     applymovement(44, Common_Movement_FaceOriginalDirection)
@@ -1175,7 +1179,9 @@ script MeltingSnowForest_EventScript_Froslass{
     playse(SE_SWITCH)
     waitmovement(0)
     delay(30)
-	msgbox(format("The Pokémon attacked in a rage!"))
+	msgbox(format("The Pokémon furiously attacked!"))
+    setflag(FLAG_UNUSED_0x8F7)
+    setflag(FLAG_UNUSED_0x8F8)
 	setwildbattle(SPECIES_FROSLASS, 35, ITEM_NONE, SPECIES_GLALIE, 35, ITEM_NONE)
 	dowildbattle
 	waitmovement(0)
@@ -1201,7 +1207,7 @@ script MeltingSnowForest_EventScript_Froslass{
     removeobject(48)
     removeobject(47)
 	setflag(FLAG_GLALIE_FROSLASS_DOUBLE)
-    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
        setflag(FLAG_CLEAR_STANTLERS)
     }
 	waitmovement(0)
@@ -1222,7 +1228,9 @@ script MeltingSnowForest_EventScript_Glalie{
     playse(SE_SWITCH)
     waitmovement(0)
     delay(30)
-	msgbox(format("The Pokémon attacked in a rage!"))
+	msgbox(format("The Pokémon furiously attacked!"))
+    setflag(FLAG_UNUSED_0x8F7)
+    setflag(FLAG_UNUSED_0x8F8)
 	setwildbattle(SPECIES_FROSLASS, 35, ITEM_NONE, SPECIES_GLALIE, 35, ITEM_NONE)
 	dowildbattle
 	waitmovement(0)
@@ -1248,7 +1256,7 @@ script MeltingSnowForest_EventScript_Glalie{
     removeobject(48)
     removeobject(47)
 	setflag(FLAG_GLALIE_FROSLASS_DOUBLE)
-    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
         setflag(FLAG_CLEAR_STANTLERS)
     }
 	waitmovement(0)
@@ -1259,7 +1267,7 @@ script MeltingSnowForest_EventScript_Glalie{
 script MeltingSnowForest_EventScript_WaterWoman{
     faceplayer
     if(flag(FLAG_WATER_WOMAN_TALKED) == FALSE){
-        msgbox(format("I hear that new flora may be sprouting as the forest thaws, and I came here looking for flowers!\pHowever, those two Pokémon got into a fight, trapping me here.\pThank you for warding them off, you can have this!"))
+        msgbox(format("I hear that new flora may be sprouting as the forest thaws, and I came here looking for flowers!\pHowever, those two Pokémon got into a fight, trapping me here.\pThank you for scaring them off, you can have this!"))
         giveitem(ITEM_WAILMER_PAIL)
         setflag(FLAG_WATER_WOMAN_TALKED)
     }
@@ -1279,16 +1287,15 @@ script MeltingSnowForest_EventScript_WaterWoman{
 
 script MeltingSnowForest_EventScript_LastScientist{
 	lock
+    faceplayer
     if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) != TRUE || flag(FLAG_HUNGRY_SENTRET) != TRUE || flag(FLAG_HUNGRY_SWINUB) != TRUE || flag(FLAG_HUNGRY_TEDDIURSA) != TRUE || flag(FLAG_STANTLER_WATERED) != TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) != TRUE){
-        faceplayer
         if(flag(FLAG_LAST_SCIENTIST_FIRST_TALK) == FALSE){
-            msgbox(format("These Pokémon are displaying irregular, aggressive behavior.\pIt seems like they've been infected by something that emerged from the frost."))
+            msgbox(format("These Pokémon are displaying irregular, aggressive behavior.\pIt seems like they've been infected by something that emerged from the frost. Perhaps the legends were true."))
             setflag(FLAG_LAST_SCIENTIST_FIRST_TALK)
         }
         msgbox(format("The Stantler show no sign of budging."))
         if(flag(FLAG_PARASECT_DOUBLE_BATTLE) == FALSE){
-            faceplayer
-            msgbox(format("A pair of Pokémon were bullying a defenseless Parasect to the south.\pPerhaps the Mushroom Pokémon has something to do with this disease we're observing.\pCould you investigate?"))
+            msgbox(format("A pair of Pokémon were bullying a defenseless Parasect to the south.\pPerhaps the Mushroom Pokémon has something to do with this illness we're observing.\pCould you investigate?"))
             closemessage
             releaseall
             end
@@ -1300,7 +1307,7 @@ script MeltingSnowForest_EventScript_LastScientist{
             end
         }
         if(flag(FLAG_STANTLER_WATERED) == FALSE){
-            msgbox(format("Another Stantler appeared to be infected and was extremely feverish.\pCould you give it some water to see if that could cure the affliction?"))
+            msgbox(format("Another Stantler in this forest appeared to be infected and was extremely feverish.\pCould you give it some water to see if that could help it feel better?"))
             closemessage
             releaseall
             end
@@ -1312,7 +1319,7 @@ script MeltingSnowForest_EventScript_LastScientist{
             end
         }
     }
-    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE || flag(FLAG_HUNGRY_SENTRET) == TRUE || flag(FLAG_HUNGRY_SWINUB) == TRUE || flag(FLAG_HUNGRY_TEDDIURSA) == TRUE || flag(FLAG_STANTLER_WATERED) == TRUE || flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
+    if(flag(FLAG_GLALIE_FROSLASS_DOUBLE) == TRUE && flag(FLAG_HUNGRY_SENTRET) == TRUE && flag(FLAG_HUNGRY_SWINUB) == TRUE && flag(FLAG_HUNGRY_TEDDIURSA) == TRUE && flag(FLAG_STANTLER_WATERED) == TRUE && flag(FLAG_PARASECT_DOUBLE_BATTLE) == TRUE){
         msgbox(format("You investigated the whole forest? Wow!\pLucky for you, those Stantler appear to have left!"))
         closemessage
         releaseall
@@ -1362,10 +1369,10 @@ script MeltingSnowForest_EventScript_RisingTemps{
     end
 }
 text Anthony_Intro{
-    format("This forest has warmed three times faster than anywhere else!")
+    format("This forest has warmed three times faster than anywhere else in the world!")
 }
 text Anthony_Outro{
-    format("Drat! You've bested me!")
+    format("Ah! This battle was too hot!")
 }
 text PostBattle_Anthony{
     format("Polar regions like this have experienced rapid warming due to arctic amplification.\pI learned about that from a scientist!")
@@ -1373,7 +1380,7 @@ text PostBattle_Anthony{
 
 script MeltingSnowForest_EventScript_Decay{
 	faceplayer
-	msgbox(format("Decaying plant and animal matter from the past has been unearthed as the snow melts.\pAs this matter is exposed, methane is released, which increases the impact of the greenhouse effect.\pI don't see how this forest stands a chance of surviving much longer."))
+	msgbox(format("Decaying plant and animal matter from the past has been unearthed as the snow melts.\pAs this matter is exposed, methane is released, which increases the impact of the greenhouse effect.\pI don't see how this forest stands a chance of maintaining a natural equilibrium much longer."))
 	closemessage
 	applymovement(41, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
@@ -1454,8 +1461,8 @@ script MeltingSnowForest_EventScript_LittleGirl{
     waitmovement(0)
     applymovement(29, Common_Movement_FaceLeft)
     waitmovement(29)
-    applymovement(61, moves(walk_in_place_right*10))
-    applymovement(60, moves(walk_in_place_left*10))
+    applymovement(61, moves(walk_in_place_right*8))
+    applymovement(60, moves(walk_in_place_left*8))
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft)
     waitmovement(0)
     delay(30)
@@ -1467,7 +1474,9 @@ script MeltingSnowForest_EventScript_LittleGirl{
     playmoncry(SPECIES_STANTLER, CRY_MODE_ENCOUNTER)
     waitmoncry
     delay(15)
-    setwildbattle(SPECIES_STANTLER, 35, ITEM_NONE, SPECIES_STANTLER, 35, ITEM_NONE)
+    setflag(FLAG_UNUSED_0x8F7)
+    setflag(FLAG_UNUSED_0x8F8)
+    setwildbattle(SPECIES_STANTLER, 45, ITEM_NONE, SPECIES_STANTLER, 45, ITEM_NONE)
     applymovement(61, Common_Movement_ShoveRight)
     applymovement(60, Common_Movement_ShoveLeft)
     playse(SE_SWITCH)
@@ -1505,7 +1514,7 @@ script MeltingSnowForest_EventScript_LittleGirl{
     applymovement(29, Common_Movement_JumpInPlaceLeft)
     playse(SE_BIKE_HOP)
     waitmovement(0)
-    msgbox(format("You scared them off! Those Stantler were so mean!"))
+    msgbox(format("They ran away!\pThose Stantler were so scary!"))
     closemessage
     delay(15)
     applymovement(29, Common_Movement_WalkLeft)
@@ -1518,6 +1527,8 @@ script MeltingSnowForest_EventScript_LittleGirl{
     waitmovement(OBJ_EVENT_ID_PLAYER)
     delay(5)
     applymovement(29, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    applymovement(29, Common_Movement_FaceLeft)
     waitmovement(0)
     delay(5)
     playse(SE_PIN)
@@ -1568,4 +1579,23 @@ movement PlayerToLittleGirl{
 
 movement CameraFromLittleGirl{
     walk_left*2
+}
+
+script MeltingSnowForest_EventScript_Chansey{
+    lock
+    faceplayer
+    playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
+    msgbox(format("Chan Chan!"))
+    waitmoncry
+    closemessage
+    special(HealPlayerParty)
+    playfanfare(MUS_HEAL)
+    waitfanfare
+    msgbox(format("The Chansey healed your team!"))
+    waitmessage
+    applymovement(62, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    callnative(UpdateFollowingPokemon)
+    release
+    end
 }

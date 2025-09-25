@@ -90,7 +90,7 @@
     },
     {
       "map_section": "MAPSEC_FORTREE_CITY",
-      "name": "Frostbloom Town",
+      "name": "Frostborne Town",
       "x": 12,
       "y": 2,
       "width": 1,
@@ -98,7 +98,7 @@
     },
     {
       "map_section": "MAPSEC_LILYCOVE_CITY",
-      "name": "Frostbloom Forest",
+      "name": "Frostborne Forest",
       "x": 5,
       "y": 1,
       "width": 1,

@@ -293,7 +293,7 @@ SnowForestFlashbackTop_EventScript::
 # 152 "data/maps/MeltingSnowTown/scripts.pory"
 	delay 15
 # 153 "data/maps/MeltingSnowTown/scripts.pory"
-	applymovement 8, Common_Movement_ShoveUp
+	applymovement 8, Common_Movement_ShoveLeft
 # 154 "data/maps/MeltingSnowTown/scripts.pory"
 	playse SE_CONTEST_CONDITION_LOSE
 # 155 "data/maps/MeltingSnowTown/scripts.pory"
@@ -301,7 +301,7 @@ SnowForestFlashbackTop_EventScript::
 # 156 "data/maps/MeltingSnowTown/scripts.pory"
 	delay 10
 # 157 "data/maps/MeltingSnowTown/scripts.pory"
-	applymovement 8, Common_Movement_ShoveDown
+	applymovement 8, Common_Movement_ShoveRight
 # 158 "data/maps/MeltingSnowTown/scripts.pory"
 	playse SE_CONTEST_CONDITION_LOSE
 # 159 "data/maps/MeltingSnowTown/scripts.pory"
@@ -845,7 +845,7 @@ SnowForestFlashbackBottom_EventScript::
 # 447 "data/maps/MeltingSnowTown/scripts.pory"
 	delay 15
 # 448 "data/maps/MeltingSnowTown/scripts.pory"
-	applymovement 8, Common_Movement_ShoveUp
+	applymovement 8, Common_Movement_ShoveLeft
 # 449 "data/maps/MeltingSnowTown/scripts.pory"
 	playse SE_CONTEST_CONDITION_LOSE
 # 450 "data/maps/MeltingSnowTown/scripts.pory"
@@ -853,7 +853,7 @@ SnowForestFlashbackBottom_EventScript::
 # 451 "data/maps/MeltingSnowTown/scripts.pory"
 	delay 10
 # 452 "data/maps/MeltingSnowTown/scripts.pory"
-	applymovement 8, Common_Movement_ShoveDown
+	applymovement 8, Common_Movement_ShoveRight
 # 453 "data/maps/MeltingSnowTown/scripts.pory"
 	playse SE_CONTEST_CONDITION_LOSE
 # 454 "data/maps/MeltingSnowTown/scripts.pory"
@@ -1485,9 +1485,9 @@ MeltingSnowTown_EventScript_HouseWoman_1:
 # 789 "data/maps/MeltingSnowTown/scripts.pory"
 	goto_if_unset FLAG_SNOWY_ITEMS_GIVEN, MeltingSnowTown_EventScript_HouseWoman_5
 MeltingSnowTown_EventScript_HouseWoman_4:
-# 794 "data/maps/MeltingSnowTown/scripts.pory"
-	closemessage
 # 795 "data/maps/MeltingSnowTown/scripts.pory"
+	closemessage
+# 796 "data/maps/MeltingSnowTown/scripts.pory"
 	release
 	end
 
@@ -1500,315 +1500,317 @@ MeltingSnowTown_EventScript_HouseWoman_5:
 # 790 "data/maps/MeltingSnowTown/scripts.pory"
 	msgbox MeltingSnowTown_EventScript_HouseWoman_Text_1
 # 791 "data/maps/MeltingSnowTown/scripts.pory"
-	giveitem ITEM_ULTRA_BALL, 30
+	giveitem ITEM_POTION, 10
 # 792 "data/maps/MeltingSnowTown/scripts.pory"
+	giveitem ITEM_ETHER, 10
+# 793 "data/maps/MeltingSnowTown/scripts.pory"
 	setflag FLAG_SNOWY_ITEMS_GIVEN
 	goto MeltingSnowTown_EventScript_HouseWoman_4
 
 
-# 799 "data/maps/MeltingSnowTown/scripts.pory"
+# 800 "data/maps/MeltingSnowTown/scripts.pory"
 CameraToMythTop:
-# 800 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_right
-# 800 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_right
-# 800 "data/maps/MeltingSnowTown/scripts.pory"
+# 801 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
 # 801 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_northeast
+	walk_right
+# 801 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_right
 # 802 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_diag_northeast
+# 803 "data/maps/MeltingSnowTown/scripts.pory"
 	step_end
 
-# 805 "data/maps/MeltingSnowTown/scripts.pory"
+# 806 "data/maps/MeltingSnowTown/scripts.pory"
 CameraToMythBottom:
-# 806 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_right
-# 806 "data/maps/MeltingSnowTown/scripts.pory"
+# 807 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
 # 807 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_northeast
-# 807 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_right
+# 808 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_diag_northeast
 # 808 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_diag_northeast
+# 809 "data/maps/MeltingSnowTown/scripts.pory"
 	step_end
 
-# 811 "data/maps/MeltingSnowTown/scripts.pory"
-CameraFromMythTop:
 # 812 "data/maps/MeltingSnowTown/scripts.pory"
+CameraFromMythTop:
+# 813 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_diag_southwest
-# 813 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_left
-# 813 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_left
-# 813 "data/maps/MeltingSnowTown/scripts.pory"
+# 814 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
 # 814 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_left
+# 814 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_left
+# 815 "data/maps/MeltingSnowTown/scripts.pory"
 	step_end
 
-# 817 "data/maps/MeltingSnowTown/scripts.pory"
+# 818 "data/maps/MeltingSnowTown/scripts.pory"
 CameraFromMythBottom:
-# 818 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_southwest
-# 818 "data/maps/MeltingSnowTown/scripts.pory"
+# 819 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_diag_southwest
 # 819 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_left
-# 819 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_diag_southwest
+# 820 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
 # 820 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_left
+# 821 "data/maps/MeltingSnowTown/scripts.pory"
 	step_end
 
-# 823 "data/maps/MeltingSnowTown/scripts.pory"
+# 824 "data/maps/MeltingSnowTown/scripts.pory"
 RightPan12:
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 824 "data/maps/MeltingSnowTown/scripts.pory"
+# 825 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
 	step_end
 
-# 827 "data/maps/MeltingSnowTown/scripts.pory"
+# 828 "data/maps/MeltingSnowTown/scripts.pory"
 LeftPan12:
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
-# 828 "data/maps/MeltingSnowTown/scripts.pory"
+# 829 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_left
 	step_end
 
-# 831 "data/maps/MeltingSnowTown/scripts.pory"
+# 832 "data/maps/MeltingSnowTown/scripts.pory"
 CameraLastMovementForest:
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
-# 832 "data/maps/MeltingSnowTown/scripts.pory"
+# 833 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_right
 	step_end
 
-# 835 "data/maps/MeltingSnowTown/scripts.pory"
+# 836 "data/maps/MeltingSnowTown/scripts.pory"
 FirstOffScreenCamForest:
-# 836 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_southeast
-# 836 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_southeast
-# 836 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_southeast
-# 836 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_southeast
-# 836 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_southeast
-# 836 "data/maps/MeltingSnowTown/scripts.pory"
+# 837 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_diag_southeast
 # 837 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_right
+	walk_diag_southeast
 # 837 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_right
+	walk_diag_southeast
 # 837 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_right
+	walk_diag_southeast
 # 837 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_right
+	walk_diag_southeast
 # 837 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_diag_southeast
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
-# 837 "data/maps/MeltingSnowTown/scripts.pory"
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_right
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_right
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_right
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_right
+# 838 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_right
 	step_end
 
-# 840 "data/maps/MeltingSnowTown/scripts.pory"
+# 841 "data/maps/MeltingSnowTown/scripts.pory"
 SecondOffScreenCamForest:
-# 841 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_northwest
-# 841 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_northwest
-# 841 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_northwest
-# 841 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_diag_northwest
-# 841 "data/maps/MeltingSnowTown/scripts.pory"
+# 842 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_diag_northwest
 # 842 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_up
+	walk_diag_northwest
 # 842 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_up
+	walk_diag_northwest
 # 842 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_faster_up
+	walk_diag_northwest
 # 842 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_diag_northwest
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
-# 842 "data/maps/MeltingSnowTown/scripts.pory"
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_up
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_up
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_faster_up
+# 843 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_faster_up
 	step_end
 
-# 845 "data/maps/MeltingSnowTown/scripts.pory"
+# 846 "data/maps/MeltingSnowTown/scripts.pory"
 StantlerToShroom:
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
-	walk_fast_right
-# 846 "data/maps/MeltingSnowTown/scripts.pory"
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
 # 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 847 "data/maps/MeltingSnowTown/scripts.pory"
+	walk_fast_right
+# 848 "data/maps/MeltingSnowTown/scripts.pory"
 	face_down
 	step_end
 
-# 850 "data/maps/MeltingSnowTown/scripts.pory"
+# 851 "data/maps/MeltingSnowTown/scripts.pory"
 StantlerLeft3:
-# 851 "data/maps/MeltingSnowTown/scripts.pory"
+# 852 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_slow_left
-# 851 "data/maps/MeltingSnowTown/scripts.pory"
+# 852 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_slow_left
-# 851 "data/maps/MeltingSnowTown/scripts.pory"
+# 852 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 854 "data/maps/MeltingSnowTown/scripts.pory"
+# 855 "data/maps/MeltingSnowTown/scripts.pory"
 WomanToSceneTop:
-# 855 "data/maps/MeltingSnowTown/scripts.pory"
+# 856 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
-# 855 "data/maps/MeltingSnowTown/scripts.pory"
+# 856 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
-# 855 "data/maps/MeltingSnowTown/scripts.pory"
+# 856 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
-# 855 "data/maps/MeltingSnowTown/scripts.pory"
+# 856 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
-# 855 "data/maps/MeltingSnowTown/scripts.pory"
+# 856 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
-# 855 "data/maps/MeltingSnowTown/scripts.pory"
+# 856 "data/maps/MeltingSnowTown/scripts.pory"
 	walk_fast_right
 	step_end
 
@@ -1856,13 +1858,13 @@ MeltingSnowTown_EventScript_MythTop_Text_2:
 # 63 "data/maps/MeltingSnowTown/scripts.pory"
 	.string "For generations, the cold of our home\n"
 	.string "has given us life.\p"
-	.string "Deep in frozen ponds, fish have been\n"
+	.string "Deep in icy ponds, fish have been\n"
 	.string "plentiful.\p"
 	.string "In the thickness of the forests, game\n"
 	.string "populations have been steady.\p"
-	.string "Our people have lived healthy lives,\n"
-	.string "despite the seemingly harsh\l"
-	.string "environment in which we reside.$"
+	.string "Our people have lived fruitful lives,\n"
+	.string "despite the harsh environment in which\l"
+	.string "we reside.$"
 
 MeltingSnowTown_EventScript_MythTop_Text_3:
 # 69 "data/maps/MeltingSnowTown/scripts.pory"
@@ -1871,9 +1873,9 @@ MeltingSnowTown_EventScript_MythTop_Text_3:
 
 MeltingSnowTown_EventScript_MythTop_Text_4:
 # 74 "data/maps/MeltingSnowTown/scripts.pory"
-	.string "My grandmother once told me a story,\n"
-	.string "passed down by her grandmother, and\l"
-	.string "her grandmother before her.\p"
+	.string "My grandmother told me a story, passed\n"
+	.string "down by her grandmother, and her\l"
+	.string "grandmother before her.\p"
 	.string "Many millenia ago, our world looked very\n"
 	.string "different.\p"
 	.string "The forest, which has been frozen for\n"
@@ -1882,9 +1884,9 @@ MeltingSnowTown_EventScript_MythTop_Text_4:
 
 SnowForestFlashbackTop_EventScript_Text_0:
 # 100 "data/maps/MeltingSnowTown/scripts.pory"
-	.string "Permafrost gave way to rivers and\n"
-	.string "lakes, which carved gorges through the\l"
-	.string "landscape.$"
+	.string "Permafrost collapsed, giving way to\n"
+	.string "rivers and lakes, which carved gorges\l"
+	.string "through the landscape.$"
 
 SnowForestFlashbackTop_EventScript_Text_1:
 # 120 "data/maps/MeltingSnowTown/scripts.pory"
@@ -1921,8 +1923,9 @@ MeltingSnowTown_EventScript_MythTopReturn_Text_0:
 MeltingSnowTown_EventScript_MythTopReturn_Text_1:
 # 230 "data/maps/MeltingSnowTown/scripts.pory"
 	.string "However, this story is no mere myth. The\n"
-	.string "warming of our planet has caused the\l"
-	.string "permafrost to thaw once more.\p"
+	.string "anthropogenic warming of our planet\l"
+	.string "has caused the permafrost to thaw once\l"
+	.string "more.\p"
 	.string "The spores have reappeared.$"
 
 MeltingSnowTown_EventScript_MythTopReturn_Text_2:
@@ -1971,24 +1974,23 @@ MeltingSnowTown_EventScript_LittleBoy2_Text_1:
 MeltingSnowTown_EventScript_Fisherman_Text_0:
 # 652 "data/maps/MeltingSnowTown/scripts.pory"
 	.string "Whenever I wanted to fish, I had to\n"
-	.string "drill a hole in the ice.\p"
+	.string "drill a hole in the ice to access water.\p"
 	.string "For some reason, the ice is gone!$"
 
 MeltingSnowTown_EventScript_Fisherman_Text_1:
 # 655 "data/maps/MeltingSnowTown/scripts.pory"
 	.string "After the water warmed up, I haven't\n"
 	.string "had any success fishing.\p"
-	.string "It seems that aquatic Pokémon had\n"
-	.string "adapted to their environment and\l"
-	.string "couldn't survive the drastic change.$"
+	.string "It seems that aquatic Pokémon couldn't\n"
+	.string "survive the drastic change.$"
 
 MeltingSnowTown_EventScript_Elder_Text_0:
 # 668 "data/maps/MeltingSnowTown/scripts.pory"
 	.string "Hello, child, welcome to our wintry\n"
-	.string "oasis.\p"
-	.string "You are just in time to see the green\n"
+	.string "abode.\p"
+	.string "You are just in time to witness the\n"
 	.string "grass emerge from the cold, which we\l"
-	.string "haven't witnessed for generations.$"
+	.string "haven't seen for generations.$"
 
 MeltingSnowTown_EventScript_Elder_Text_1:
 # 671 "data/maps/MeltingSnowTown/scripts.pory"
@@ -2014,8 +2016,8 @@ MeltingSnowTown_EventScript_Girl_Text_0:
 MeltingSnowTown_EventScript_Girl_Text_1:
 # 703 "data/maps/MeltingSnowTown/scripts.pory"
 	.string "Although I like seeing the green, I wish\n"
-	.string "the world wasn't warmer.\p"
-	.string "I'd much prefer snow to cover\n"
+	.string "the world wasn't warming.\p"
+	.string "I'd much prefer snow to blanket\n"
 	.string "everything.$"
 
 MeltingSnowTown_EventScript_Man_Text_0:

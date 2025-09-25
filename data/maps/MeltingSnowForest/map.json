@@ -513,7 +513,7 @@
       "x": 26,
       "y": 47,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -530,7 +530,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
+      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD"
     },
@@ -740,7 +740,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_MAX_ELIXIR",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
@@ -806,6 +806,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_SNOW_GIRL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
+      "x": 30,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeltingSnowForest_EventScript_Chansey",
+      "flag": "0"
     }
   ],
   "warp_events": [

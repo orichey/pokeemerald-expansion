@@ -617,12 +617,12 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Dustox
-Level: 25
+Frosmoth
+Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Beautifly
-Level: 25
+Dustox
+Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SHELLY_WEATHER_INSTITUTE ===
@@ -633,6 +633,10 @@ Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
+
+Timburr
+Level: 34
+IVs: 10 HP / 10 Def / 10 SpA / 10 SpD / 10 Spe 
 
 Blaziken
 Level: 36
@@ -647,13 +651,20 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Machoke
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machoke  
+Ability: No Guard  
+Level: 32  
+IVs: 10 HP / 10 Def / 10 SpA / 10 SpD / 10 Spe  
+- Knock Off  
+- Vital Throw
 
-Graveler
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Graveler  
+Ability: Sturdy  
+Level: 32  
+IVs: 10 HP / 10 Atk / 20 Def / 10 SpA / 20 SpD / 10 Spe  
+- Defense Curl  
+- Smack Down  
+- Bulldoze  
 
 === TRAINER_ARCHIE ===
 Name: Anthony
@@ -664,9 +675,13 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Mightyena
-Level: 35
+Breloom
+Level: 32
+Hardy Nature
+Ability: Effect Spore
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Force Palm
+- Mega Drain
 
 === TRAINER_LEAH ===
 Name: LEAH

@@ -60,7 +60,7 @@ script MeltingSnowTown_EventScript_MythTop{
     applymovement(1, Common_Movement_WalkInPlaceDown)
     waitmovement(0)
     delay(30)
-    msgbox(format("For generations, the cold of our home has given us life. \pDeep in frozen ponds, fish have been plentiful.\pIn the thickness of the forests, game populations have been steady.\pOur people have lived healthy lives, despite the seemingly harsh environment in which we reside."))
+    msgbox(format("For generations, the cold of our home has given us life. \pDeep in icy ponds, fish have been plentiful.\pIn the thickness of the forests, game populations have been steady.\pOur people have lived fruitful lives, despite the harsh environment in which we reside."))
     closemessage
     delay(30)
     applymovement(1, Common_Movement_WalkInPlaceRight)
@@ -71,7 +71,7 @@ script MeltingSnowTown_EventScript_MythTop{
     fadenewbgm(MUS_DUMMY)
     fadescreenspeed(FADE_TO_BLACK, 8)
     delay(30)
-    msgbox(format("My grandmother once told me a story, passed down by her grandmother, and her grandmother before her.\pMany millenia ago, our world looked very different.\pThe forest, which has been frozen for as long as I can remember, began to defrost."))
+    msgbox(format("My grandmother told me a story, passed down by her grandmother, and her grandmother before her.\pMany millenia ago, our world looked very different.\pThe forest, which has been frozen for as long as I can remember, began to defrost."))
     closemessage
     delay(60)
     warpcontinuescript(MAP_MELTING_SNOW_FOREST_FLASHBACK, 9, 30, SnowForestFlashbackTop_EventScript)
@@ -97,7 +97,7 @@ script SnowForestFlashbackTop_EventScript{
     fadescreen(FADE_TO_BLACK)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_CAMERA, FirstOffScreenCamForest)
-    msgbox(format("Permafrost gave way to rivers and lakes, which carved gorges through the landscape."))
+    msgbox(format("Permafrost collapsed, giving way to rivers and lakes, which carved gorges through the landscape."))
     closemessage
     waitmovement(0)
     delay(15)
@@ -150,11 +150,11 @@ script SnowForestFlashbackTop_EventScript{
     applymovement(8, StantlerLeft3)
     waitmovement(0)
     delay(15)
-    applymovement(8, Common_Movement_ShoveUp)
+    applymovement(8, Common_Movement_ShoveLeft)
     playse(SE_CONTEST_CONDITION_LOSE)
     waitmovement(0)
     delay(10)
-    applymovement(8, Common_Movement_ShoveDown)
+    applymovement(8, Common_Movement_ShoveRight)
     playse(SE_CONTEST_CONDITION_LOSE)
     waitmovement(0)
     delay(30)
@@ -227,7 +227,7 @@ script MeltingSnowTown_EventScript_MythTopReturn{
     waitmovement(0)
     delay(30)
     applymovement(1, Common_Movement_WalkInPlaceLeft)
-    msgbox(format("However, this story is no mere myth. The warming of our planet has caused the permafrost to thaw once more.\pThe spores have reappeared."))
+    msgbox(format("However, this story is no mere myth. The anthropogenic warming of our planet has caused the permafrost to thaw once more.\pThe spores have reappeared."))
     closemessage
     applymovement(6, Common_Movement_FaceRight)
     waitmovement(0)
@@ -355,7 +355,7 @@ script MeltingSnowTown_EventScript_MythBottom{
     applymovement(1, Common_Movement_WalkInPlaceDown)
     waitmovement(0)
     delay(30)
-    msgbox(format("For generations, the cold of our home has given us life. \pDeep in frozen ponds, fish have been plentiful.\pIn the thickness of the forests, game populations have been steady.\pOur people have lived healthy lives, despite the seemingly harsh environment in which we reside."))
+    msgbox(format("For generations, the cold of our home has given us life. \pDeep in icy ponds, fish have been plentiful.\pIn the thickness of the forests, game populations have been steady.\pOur people have lived fruitful lives, despite the harsh environment in which we reside."))
     closemessage
     delay(30)
     applymovement(1, Common_Movement_WalkInPlaceRight)
@@ -366,7 +366,7 @@ script MeltingSnowTown_EventScript_MythBottom{
     fadenewbgm(MUS_DUMMY)
     fadescreenspeed(FADE_TO_BLACK, 8)
     delay(30)
-    msgbox(format("My grandmother once told me a story, passed down by her grandmother, and her grandmother before her.\pMany millenia ago, our world looked very different.\pThe forest, which has been frozen for as long as I can remember, began to defrost."))
+    msgbox(format("My grandmother told me a story, passed down by her grandmother, and her grandmother before her.\pMany millenia ago, our world looked very different.\pThe forest, which has been frozen for as long as I can remember, began to defrost."))
     closemessage
     delay(60)
     warpcontinuescript(MAP_MELTING_SNOW_FOREST_FLASHBACK, 9, 30, SnowForestFlashbackBottom_EventScript)
@@ -392,7 +392,7 @@ script SnowForestFlashbackBottom_EventScript{
     fadescreen(FADE_TO_BLACK)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_CAMERA, FirstOffScreenCamForest)
-    msgbox(format("Permafrost gave way to rivers and lakes, which carved gorges through the landscape."))
+    msgbox(format("Permafrost collapsed, giving way to rivers and lakes, which carved gorges through the landscape."))
     closemessage
     waitmovement(0)
     delay(15)
@@ -445,11 +445,11 @@ script SnowForestFlashbackBottom_EventScript{
     applymovement(8, StantlerLeft3)
     waitmovement(0)
     delay(15)
-    applymovement(8, Common_Movement_ShoveUp)
+    applymovement(8, Common_Movement_ShoveLeft)
     playse(SE_CONTEST_CONDITION_LOSE)
     waitmovement(0)
     delay(10)
-    applymovement(8, Common_Movement_ShoveDown)
+    applymovement(8, Common_Movement_ShoveRight)
     playse(SE_CONTEST_CONDITION_LOSE)
     waitmovement(0)
     delay(30)
@@ -522,7 +522,7 @@ script MeltingSnowTown_EventScript_MythBottomReturn{
     waitmovement(0)
     delay(30)
     applymovement(1, Common_Movement_WalkInPlaceLeft)
-    msgbox(format("However, this story is no mere myth. The warming of our planet has caused the permafrost to thaw once more.\pThe spores have reappeared."))
+    msgbox(format("However, this story is no mere myth. The anthropogenic warming of our planet has caused the permafrost to thaw once more.\pThe spores have reappeared."))
     closemessage
     applymovement(6, Common_Movement_FaceRight)
     waitmovement(0)
@@ -649,10 +649,10 @@ script MeltingSnowTown_EventScript_Fisherman{
 	lock
 	faceplayer
     if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
-	    msgbox(format("Whenever I wanted to fish, I had to drill a hole in the ice.\pFor some reason, the ice is gone!"))
+	    msgbox(format("Whenever I wanted to fish, I had to drill a hole in the ice to access water.\pFor some reason, the ice is gone!"))
     }
     if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
-        msgbox(format("After the water warmed up, I haven't had any success fishing. \pIt seems that aquatic Pokémon had adapted to their environment and couldn't survive the drastic change."))
+        msgbox(format("After the water warmed up, I haven't had any success fishing. \pIt seems that aquatic Pokémon couldn't survive the drastic change."))
     }
 	closemessage
 	applymovement(9, Common_Movement_FaceOriginalDirection)
@@ -665,7 +665,7 @@ script MeltingSnowTown_EventScript_Elder{
 	lock
 	faceplayer
     if(flag(FLAG_MYTH_EXPLAINED) == FALSE){
-	    msgbox(format("Hello, child, welcome to our wintry oasis.\pYou are just in time to see the green grass emerge from the cold, which we haven't witnessed for generations."))
+	    msgbox(format("Hello, child, welcome to our wintry abode.\pYou are just in time to witness the grass emerge from the cold, which we haven't seen for generations."))
     }
     if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
         msgbox(format("Please, for your own safety, do not enter the forest."))
@@ -700,7 +700,7 @@ script MeltingSnowTown_EventScript_Girl{
 	    msgbox(format("The grass and trees are shockingly green in contrast with the snow.\pI love the color!"))
     }
     if(flag(FLAG_MYTH_EXPLAINED) == TRUE){
-        msgbox(format("Although I like seeing the green, I wish the world wasn't warmer.\pI'd much prefer snow to cover everything."))
+        msgbox(format("Although I like seeing the green, I wish the world wasn't warming.\pI'd much prefer snow to blanket everything."))
     }
 	closemessage
 	applymovement(3, Common_Movement_FaceOriginalDirection)
@@ -788,7 +788,8 @@ script MeltingSnowTown_EventScript_HouseWoman{
     }
     if(flag(FLAG_SNOWY_ITEMS_GIVEN) == FALSE){
 	    msgbox(format("Hello, traveler! You seem to have packed light.\pHere, take these!"))
-        giveitem(ITEM_ULTRA_BALL, 30)
+        giveitem(ITEM_POTION, 10)
+        giveitem(ITEM_ETHER, 10)
         setflag(FLAG_SNOWY_ITEMS_GIVEN)
     }
 	closemessage

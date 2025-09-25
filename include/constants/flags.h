@@ -565,7 +565,7 @@
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON                 (FLAG_HIDDEN_ITEMS_START + 0x13) //melting forest
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x14) //melting forest
 #define FLAG_HIDDEN_ITEM_UNDERWATER_127_STAR_PIECE           (FLAG_HIDDEN_ITEMS_START + 0x15) //melting forest
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP                (FLAG_HIDDEN_ITEMS_START + 0x16)
+#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP                (FLAG_HIDDEN_ITEMS_START + 0x16) //melting forest
 #define FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE          (FLAG_HIDDEN_ITEMS_START + 0x17)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_127_RED_SHARD            (FLAG_HIDDEN_ITEMS_START + 0x18)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_128_PROTEIN              (FLAG_HIDDEN_ITEMS_START + 0x19)
@@ -1509,7 +1509,7 @@
 #define FLAG_MYTH_EXPLAINED                         (SYSTEM_FLAGS + 0x85) // Used for myth
 #define FLAG_SNOWY_ITEMS_GIVEN                      (SYSTEM_FLAGS + 0x86) // Used for giving items in snow
 #define FLAG_MELTING_SNOW_TOWN_NURSE                (SYSTEM_FLAGS + 0x87) // Used for melting snow town nurse
-#define FLAG_PARASECT_DOUBLE_BATTLE                 (SYSTEM_FLAGS + 0x88) // Used for double battle in melting snow forest
+#define FLAG_PARASECT_DOUBLE_BATTLE                 (SYSTEM_FLAGS + 0x88) // Used for double battle in melting snow forest 2280
 #define FLAG_HEAT_CUTSCENE                          (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_FIRE_FARMER                            (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_FIRE_HIKER                             (SYSTEM_FLAGS + 0x8B) // Unused Flag
@@ -1520,7 +1520,7 @@
 #define FLAG_GLALIE_FROSLASS_DOUBLE                 (SYSTEM_FLAGS + 0x90) // Unused Flag
 #define FLAG_WATER_WOMAN_TALKED                     (SYSTEM_FLAGS + 0x91) // Unused Flag
 #define FLAG_STANTLER_WATERED                       (SYSTEM_FLAGS + 0x92) // Unused Flag
-#define FLAG_CLEAR_STANTLERS                        (SYSTEM_FLAGS + 0x93) // Unused Flag
+#define FLAG_CLEAR_STANTLERS                        (SYSTEM_FLAGS + 0x93) // Unused Flag 2291
 #define FLAG_LAST_SCIENTIST_FIRST_TALK              (SYSTEM_FLAGS + 0x94) // Unused Flag
 #define FLAG_SNOW_GIRL                              (SYSTEM_FLAGS + 0x95) // Unused Flag
 #define FLAG_ORAN_BERRY_KEY                         (SYSTEM_FLAGS + 0x96) // Unused Flag
