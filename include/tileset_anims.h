@@ -40,5 +40,6 @@ void InitTilesetAnim_snowytrees(void);
 void InitTilesetAnim_snowytreesflashback(void);
 void InitTilesetAnim_desert(void);
 void InitTilesetAnim_ChaoticCherryCakeGeneral(void);
+void InitTilesetAnim_forestfireprimary(void);
 
 #endif // GUARD_TILESET_ANIMS_H

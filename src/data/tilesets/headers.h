@@ -1122,3 +1122,36 @@ const struct Tileset gTileset_newsnowyflashback =
     .metatileAttributes = gMetatileAttributes_newsnowyflashback,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_forestfire =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_forestfire,
+    .palettes = gTilesetPalettes_forestfire,
+    .metatiles = gMetatiles_forestfire,
+    .metatileAttributes = gMetatileAttributes_forestfire,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_forestfireprimary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_forestfireprimary,
+    .palettes = gTilesetPalettes_forestfireprimary,
+    .metatiles = gMetatiles_forestfireprimary,
+    .metatileAttributes = gMetatileAttributes_forestfireprimary,
+    .callback = InitTilesetAnim_forestfireprimary,
+};
+
+const struct Tileset gTileset_dam =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dam,
+    .palettes = gTilesetPalettes_dam,
+    .metatiles = gMetatiles_dam,
+    .metatileAttributes = gMetatileAttributes_dam,
+    .callback = NULL,
+};

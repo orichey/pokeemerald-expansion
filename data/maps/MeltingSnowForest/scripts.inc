@@ -3411,200 +3411,202 @@ MeltingSnowForest_EventScript_LittleGirl::
 # 1509 "data/maps/MeltingSnowForest/scripts.pory"
 	setflag FLAG_SNOW_GIRL
 # 1510 "data/maps/MeltingSnowForest/scripts.pory"
-	removeobject 60
+	setvar VAR_SNOW_FINAL_SCENE, 1
 # 1511 "data/maps/MeltingSnowForest/scripts.pory"
-	removeobject 61
+	removeobject 60
 # 1512 "data/maps/MeltingSnowForest/scripts.pory"
-	removeobject 50
+	removeobject 61
 # 1513 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
+	removeobject 50
 # 1514 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_JumpInPlaceLeft
+	waitmovement 0
 # 1515 "data/maps/MeltingSnowForest/scripts.pory"
-	playse SE_BIKE_HOP
+	applymovement 29, Common_Movement_JumpInPlaceLeft
 # 1516 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1517 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_5
-# 1518 "data/maps/MeltingSnowForest/scripts.pory"
-	closemessage
-# 1519 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 15
-# 1520 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_WalkLeft
-# 1521 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1522 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_6
-# 1523 "data/maps/MeltingSnowForest/scripts.pory"
-	closemessage
-# 1524 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 15
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MeltingSnowForest_EventScript_LittleGirl_Movement_9
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, MeltingSnowForest_EventScript_LittleGirl_Movement_10
-# 1527 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 1528 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 5
-# 1529 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_WalkInPlaceLeft
-# 1530 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1531 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_FaceLeft
-# 1532 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1533 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 5
-# 1534 "data/maps/MeltingSnowForest/scripts.pory"
-	playse SE_PIN
-# 1535 "data/maps/MeltingSnowForest/scripts.pory"
-	waitse
-# 1536 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 5
-# 1537 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 1538 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1539 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 15
-# 1540 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_7
-# 1541 "data/maps/MeltingSnowForest/scripts.pory"
-	closemessage
-# 1542 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 30
-# 1543 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_ShoveLeft
-# 1544 "data/maps/MeltingSnowForest/scripts.pory"
-	playse SE_CONTEST_CONDITION_LOSE
-# 1545 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1546 "data/maps/MeltingSnowForest/scripts.pory"
-	delay 15
-# 1547 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_ShoveRight
-# 1548 "data/maps/MeltingSnowForest/scripts.pory"
-	playse SE_CONTEST_CONDITION_LOSE
-# 1549 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
-# 1550 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_8
-# 1551 "data/maps/MeltingSnowForest/scripts.pory"
-	closemessage
-# 1552 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_JumpInPlaceRight
-# 1553 "data/maps/MeltingSnowForest/scripts.pory"
 	playse SE_BIKE_HOP
-# 1554 "data/maps/MeltingSnowForest/scripts.pory"
+# 1517 "data/maps/MeltingSnowForest/scripts.pory"
 	waitmovement 0
-# 1555 "data/maps/MeltingSnowForest/scripts.pory"
+# 1518 "data/maps/MeltingSnowForest/scripts.pory"
+	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_5
+# 1519 "data/maps/MeltingSnowForest/scripts.pory"
+	closemessage
+# 1520 "data/maps/MeltingSnowForest/scripts.pory"
 	delay 15
-# 1556 "data/maps/MeltingSnowForest/scripts.pory"
-	special SpawnCameraObject
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, MeltingSnowForest_EventScript_LittleGirl_Movement_11
-# 1558 "data/maps/MeltingSnowForest/scripts.pory"
+# 1521 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, Common_Movement_WalkLeft
+# 1522 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1523 "data/maps/MeltingSnowForest/scripts.pory"
+	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_6
+# 1524 "data/maps/MeltingSnowForest/scripts.pory"
+	closemessage
+# 1525 "data/maps/MeltingSnowForest/scripts.pory"
 	delay 15
-# 1559 "data/maps/MeltingSnowForest/scripts.pory"
-	fadenewbgm MUS_DUMMY
-# 1560 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 29, Common_Movement_FaceDown
-# 1561 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, MeltingSnowForest_EventScript_LittleGirl_Movement_9
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, MeltingSnowForest_EventScript_LittleGirl_Movement_10
+# 1528 "data/maps/MeltingSnowForest/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
-# 1562 "data/maps/MeltingSnowForest/scripts.pory"
+# 1529 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 5
+# 1530 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, Common_Movement_WalkInPlaceLeft
+# 1531 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1532 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, Common_Movement_FaceLeft
+# 1533 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1534 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 5
+# 1535 "data/maps/MeltingSnowForest/scripts.pory"
+	playse SE_PIN
+# 1536 "data/maps/MeltingSnowForest/scripts.pory"
+	waitse
+# 1537 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 5
+# 1538 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 1539 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1540 "data/maps/MeltingSnowForest/scripts.pory"
 	delay 15
-# 1563 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_9
-# 1564 "data/maps/MeltingSnowForest/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 6
-# 1565 "data/maps/MeltingSnowForest/scripts.pory"
+# 1541 "data/maps/MeltingSnowForest/scripts.pory"
+	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_7
+# 1542 "data/maps/MeltingSnowForest/scripts.pory"
+	closemessage
+# 1543 "data/maps/MeltingSnowForest/scripts.pory"
 	delay 30
+# 1544 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, Common_Movement_ShoveLeft
+# 1545 "data/maps/MeltingSnowForest/scripts.pory"
+	playse SE_CONTEST_CONDITION_LOSE
+# 1546 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1547 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 15
+# 1548 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, Common_Movement_ShoveRight
+# 1549 "data/maps/MeltingSnowForest/scripts.pory"
+	playse SE_CONTEST_CONDITION_LOSE
+# 1550 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1551 "data/maps/MeltingSnowForest/scripts.pory"
+	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_8
+# 1552 "data/maps/MeltingSnowForest/scripts.pory"
+	closemessage
+# 1553 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_JumpInPlaceRight
+# 1554 "data/maps/MeltingSnowForest/scripts.pory"
+	playse SE_BIKE_HOP
+# 1555 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement 0
+# 1556 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 15
+# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+	special SpawnCameraObject
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, MeltingSnowForest_EventScript_LittleGirl_Movement_11
+# 1559 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 15
+# 1560 "data/maps/MeltingSnowForest/scripts.pory"
+	fadenewbgm MUS_DUMMY
+# 1561 "data/maps/MeltingSnowForest/scripts.pory"
+	applymovement 29, Common_Movement_FaceDown
+# 1562 "data/maps/MeltingSnowForest/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 1563 "data/maps/MeltingSnowForest/scripts.pory"
+	delay 15
+# 1564 "data/maps/MeltingSnowForest/scripts.pory"
+	msgbox MeltingSnowForest_EventScript_LittleGirl_Text_9
+# 1565 "data/maps/MeltingSnowForest/scripts.pory"
+	fadescreenspeed FADE_TO_BLACK, 6
 # 1566 "data/maps/MeltingSnowForest/scripts.pory"
-	fadeoutbgm 0
+	delay 30
 # 1567 "data/maps/MeltingSnowForest/scripts.pory"
-	callnative StartCredits
+	fadeoutbgm 0
 # 1568 "data/maps/MeltingSnowForest/scripts.pory"
+	callnative StartCredits
+# 1569 "data/maps/MeltingSnowForest/scripts.pory"
 	release
 	end
 
 
-# 1572 "data/maps/MeltingSnowForest/scripts.pory"
+# 1573 "data/maps/MeltingSnowForest/scripts.pory"
 CameraToLittleGirl:
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1573 "data/maps/MeltingSnowForest/scripts.pory"
+# 1574 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
 	step_end
 
-# 1576 "data/maps/MeltingSnowForest/scripts.pory"
+# 1577 "data/maps/MeltingSnowForest/scripts.pory"
 PlayerToLittleGirl:
-# 1577 "data/maps/MeltingSnowForest/scripts.pory"
+# 1578 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1577 "data/maps/MeltingSnowForest/scripts.pory"
+# 1578 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1577 "data/maps/MeltingSnowForest/scripts.pory"
+# 1578 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1577 "data/maps/MeltingSnowForest/scripts.pory"
+# 1578 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1577 "data/maps/MeltingSnowForest/scripts.pory"
+# 1578 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
-# 1577 "data/maps/MeltingSnowForest/scripts.pory"
+# 1578 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_right
 	step_end
 
-# 1580 "data/maps/MeltingSnowForest/scripts.pory"
+# 1581 "data/maps/MeltingSnowForest/scripts.pory"
 CameraFromLittleGirl:
-# 1581 "data/maps/MeltingSnowForest/scripts.pory"
+# 1582 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1581 "data/maps/MeltingSnowForest/scripts.pory"
+# 1582 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
 	step_end
 
 MeltingSnowForest_EventScript_Chansey::
-# 1585 "data/maps/MeltingSnowForest/scripts.pory"
-	lock
 # 1586 "data/maps/MeltingSnowForest/scripts.pory"
-	faceplayer
+	lock
 # 1587 "data/maps/MeltingSnowForest/scripts.pory"
-	playmoncry SPECIES_CHANSEY, CRY_MODE_NORMAL
+	faceplayer
 # 1588 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_Chansey_Text_0
+	playmoncry SPECIES_CHANSEY, CRY_MODE_NORMAL
 # 1589 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmoncry
+	msgbox MeltingSnowForest_EventScript_Chansey_Text_0
 # 1590 "data/maps/MeltingSnowForest/scripts.pory"
-	closemessage
+	waitmoncry
 # 1591 "data/maps/MeltingSnowForest/scripts.pory"
-	special HealPlayerParty
+	closemessage
 # 1592 "data/maps/MeltingSnowForest/scripts.pory"
-	playfanfare MUS_HEAL
+	special HealPlayerParty
 # 1593 "data/maps/MeltingSnowForest/scripts.pory"
-	waitfanfare
+	playfanfare MUS_HEAL
 # 1594 "data/maps/MeltingSnowForest/scripts.pory"
-	msgbox MeltingSnowForest_EventScript_Chansey_Text_1
+	waitfanfare
 # 1595 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmessage
+	msgbox MeltingSnowForest_EventScript_Chansey_Text_1
 # 1596 "data/maps/MeltingSnowForest/scripts.pory"
-	applymovement 62, Common_Movement_FaceOriginalDirection
+	waitmessage
 # 1597 "data/maps/MeltingSnowForest/scripts.pory"
-	waitmovement 0
+	applymovement 62, Common_Movement_FaceOriginalDirection
 # 1598 "data/maps/MeltingSnowForest/scripts.pory"
-	callnative UpdateFollowingPokemon
+	waitmovement 0
 # 1599 "data/maps/MeltingSnowForest/scripts.pory"
+	callnative UpdateFollowingPokemon
+# 1600 "data/maps/MeltingSnowForest/scripts.pory"
 	release
 	end
 
@@ -3849,6 +3851,20 @@ MeltingSnowForest_EventScript_LittleGirl_Movement_6:
 	walk_fast_left
 # 1495 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_fast_left
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
+# 1495 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_fast_up
 	step_end
 
 # 1505 "data/maps/MeltingSnowForest/scripts.pory"
@@ -3881,59 +3897,63 @@ MeltingSnowForest_EventScript_LittleGirl_Movement_8:
 	walk_faster_left
 # 1506 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_left
+# 1506 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_faster_left
+# 1506 "data/maps/MeltingSnowForest/scripts.pory"
+	walk_faster_left
 	step_end
 
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 MeltingSnowForest_EventScript_LittleGirl_Movement_9:
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1525 "data/maps/MeltingSnowForest/scripts.pory"
+# 1526 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
 	step_end
 
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
 MeltingSnowForest_EventScript_LittleGirl_Movement_10:
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
-# 1526 "data/maps/MeltingSnowForest/scripts.pory"
+# 1527 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_left
 	step_end
 
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 MeltingSnowForest_EventScript_LittleGirl_Movement_11:
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_left
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_left
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
-# 1557 "data/maps/MeltingSnowForest/scripts.pory"
+# 1558 "data/maps/MeltingSnowForest/scripts.pory"
 	walk_faster_down
 	step_end
 
@@ -4314,33 +4334,33 @@ MeltingSnowForest_EventScript_LittleGirl_Text_4:
 	.string "Wh-what was that?$"
 
 MeltingSnowForest_EventScript_LittleGirl_Text_5:
-# 1517 "data/maps/MeltingSnowForest/scripts.pory"
+# 1518 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "They ran away!\p"
 	.string "Those Stantler were so scary!$"
 
 MeltingSnowForest_EventScript_LittleGirl_Text_6:
-# 1522 "data/maps/MeltingSnowForest/scripts.pory"
+# 1523 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "Let's go home!$"
 
 MeltingSnowForest_EventScript_LittleGirl_Text_7:
-# 1540 "data/maps/MeltingSnowForest/scripts.pory"
+# 1541 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "Wait, I don't feel so good...$"
 
 MeltingSnowForest_EventScript_LittleGirl_Text_8:
-# 1550 "data/maps/MeltingSnowForest/scripts.pory"
+# 1551 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "Cough, cough...$"
 
 MeltingSnowForest_EventScript_LittleGirl_Text_9:
-# 1563 "data/maps/MeltingSnowForest/scripts.pory"
+# 1564 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "Wait, please...\p"
 	.string "Don't leave me behind...$"
 
 MeltingSnowForest_EventScript_Chansey_Text_0:
-# 1588 "data/maps/MeltingSnowForest/scripts.pory"
+# 1589 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "Chan Chan!$"
 
 MeltingSnowForest_EventScript_Chansey_Text_1:
-# 1594 "data/maps/MeltingSnowForest/scripts.pory"
+# 1595 "data/maps/MeltingSnowForest/scripts.pory"
 	.string "The Chansey healed your team!$"
 
 Timmy_Intro::

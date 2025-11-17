@@ -425,6 +425,8 @@
 #define MAP_MELTING_SNOW_TOWN                        (119 | (24 << 8))
 #define MAP_MELTING_SNOW_FOREST                      (120 | (24 << 8))
 #define MAP_MELTING_SNOW_FOREST_FLASHBACK            (121 | (24 << 8))
+#define MAP_ROUTE108_CAVE1                           (122 | (24 << 8))
+#define MAP_ROUTE108_CAVE2                           (123 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

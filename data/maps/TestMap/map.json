@@ -5,7 +5,7 @@
   "music": "MUS_PMD_RESCUETEAM_GREAT_CANYON",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
-  "weather": "WEATHER_SANDSTORM",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,

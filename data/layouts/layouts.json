@@ -234,20 +234,20 @@
     {
       "id": "LAYOUT_ROUTE108",
       "name": "Route108_Layout",
-      "width": 60,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "width": 38,
+      "height": 37,
+      "primary_tileset": "gTileset_snowytrees",
+      "secondary_tileset": "gTileset_newsnowy",
       "border_filepath": "data/layouts/Route108/border.bin",
       "blockdata_filepath": "data/layouts/Route108/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE109",
       "name": "Route109_Layout",
-      "width": 40,
-      "height": 63,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_dam",
       "border_filepath": "data/layouts/Route109/border.bin",
       "blockdata_filepath": "data/layouts/Route109/map.bin"
     },
@@ -4524,10 +4524,10 @@
     {
       "id": "LAYOUT_TEST_MAP",
       "name": "TestMap_Layout",
-      "width": 80,
-      "height": 84,
-      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
-      "secondary_tileset": "gTileset_desert",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_forestfireprimary",
+      "secondary_tileset": "gTileset_forestfire",
       "border_filepath": "data/layouts/TestMap/border.bin",
       "blockdata_filepath": "data/layouts/TestMap/map.bin"
     },
@@ -4660,6 +4660,26 @@
       "secondary_tileset": "gTileset_newsnowyflashback",
       "border_filepath": "data/layouts/MeltingSnowForestFlashback/border.bin",
       "blockdata_filepath": "data/layouts/MeltingSnowForestFlashback/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE108_CAVE1",
+      "name": "Route108_Cave1_Layout",
+      "width": 58,
+      "height": 26,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_caves",
+      "border_filepath": "data/layouts/Route108_Cave1/border.bin",
+      "blockdata_filepath": "data/layouts/Route108_Cave1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE108_CAVE2",
+      "name": "Route108_Cave2_Layout",
+      "width": 32,
+      "height": 20,
+      "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
+      "secondary_tileset": "gTileset_caves",
+      "border_filepath": "data/layouts/Route108_Cave2/border.bin",
+      "blockdata_filepath": "data/layouts/Route108_Cave2/map.bin"
     }
   ]
 }

@@ -1201,3 +1201,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MeltingSnowForest/scripts.inc"
 
 	.include "data/maps/MeltingSnowForestFlashback/scripts.inc"
+
+	.include "data/maps/Route108_Cave1/scripts.inc"
+
+	.include "data/maps/Route108_Cave2/scripts.inc"

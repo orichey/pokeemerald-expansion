@@ -288,3 +288,12 @@ const u16 gMetatileAttributes_snowytreesflashback[] = INCBIN_U16("data/tilesets/
 
 const u16 gMetatiles_newsnowyflashback[] = INCBIN_U16("data/tilesets/secondary/newsnowyflashback/metatiles.bin");
 const u16 gMetatileAttributes_newsnowyflashback[] = INCBIN_U16("data/tilesets/secondary/newsnowyflashback/metatile_attributes.bin");
+
+const u16 gMetatiles_forestfire[] = INCBIN_U16("data/tilesets/secondary/forestfire/metatiles.bin");
+const u16 gMetatileAttributes_forestfire[] = INCBIN_U16("data/tilesets/secondary/forestfire/metatile_attributes.bin");
+
+const u16 gMetatiles_forestfireprimary[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/metatiles.bin");
+const u16 gMetatileAttributes_forestfireprimary[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/metatile_attributes.bin");
+
+const u16 gMetatiles_dam[] = INCBIN_U16("data/tilesets/secondary/dam/metatiles.bin");
+const u16 gMetatileAttributes_dam[] = INCBIN_U16("data/tilesets/secondary/dam/metatile_attributes.bin");

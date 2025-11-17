@@ -2175,3 +2175,50 @@ void InitTilesetAnim_snowytreesflashback(void)
     sPrimaryTilesetAnimCounterMax = 256;
     sPrimaryTilesetAnimCallback = TilesetAnim_snowytreesflashback;
 }
+
+
+
+
+
+
+
+
+
+
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/05.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame1_Frame6[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame1/06.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame1[] = {
+    gTilesetAnims_forestfireprimary_flame1_Frame0,
+    gTilesetAnims_forestfireprimary_flame1_Frame1,
+    gTilesetAnims_forestfireprimary_flame1_Frame2,
+    gTilesetAnims_forestfireprimary_flame1_Frame3,
+    gTilesetAnims_forestfireprimary_flame1_Frame4,
+    gTilesetAnims_forestfireprimary_flame1_Frame5,
+    gTilesetAnims_forestfireprimary_flame1_Frame6
+};
+
+static void QueueAnimTiles_forestfireprimary_flame1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_forestfireprimary(u16 timer)
+{
+    if (timer % 16 == 0) {
+        QueueAnimTiles_forestfireprimary_flame1(timer / 16);
+    }
+}
+
+void InitTilesetAnim_forestfireprimary(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_forestfireprimary;
+}

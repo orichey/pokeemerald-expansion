@@ -271,7 +271,7 @@
 #define VAR_RANCH_MORALITY_SYSTEM                        0x40FB // Used in Ranch for Morality System
 #define VAR_RANCH_STATE                                  0x40FC
 #define VAR_SNOW_BERRY_WOMAN                             0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_SNOW_FINAL_SCENE                             0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

@@ -127,7 +127,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MELTING_SNOW_TOWN), MAP_NUM(MELTING_SNOW_TOWN), WARP_ID_NONE, 35, 14);
+    SetWarpDestination(MAP_GROUP(TEST_MAP), MAP_NUM(TEST_MAP), WARP_ID_NONE, 10, 15);
     WarpIntoMap();
 }
 
