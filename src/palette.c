@@ -29,6 +29,7 @@ EWRAM_DATA struct PaletteFadeControl gPaletteFade = {0};
 static EWRAM_DATA u32 sPlttBufferTransferPending = 0;
 EWRAM_DATA u8 ALIGNED(2) gPaletteDecompressionBuffer[PLTT_SIZE] = {0};
 
+
 static EWRAM_DATA u32 sPlttPreviousUpdateResult = 0; // Fast Battle Speed
 
 static const u8 sRoundedDownGrayscaleMap[] = {

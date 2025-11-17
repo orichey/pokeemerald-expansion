@@ -45,6 +45,7 @@
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/items.h"
+#include "event_data.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -128,6 +129,7 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     SetWarpDestination(MAP_GROUP(TEST_MAP), MAP_NUM(TEST_MAP), WARP_ID_NONE, 10, 15);
+    VarSet(VAR_BATTLE_SPEED, 1);
     WarpIntoMap();
 }
 
