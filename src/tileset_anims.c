@@ -2209,10 +2209,230 @@ static void QueueAnimTiles_forestfireprimary_flame1(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);
 }
 
+
+const u16 gTilesetAnims_forestfireprimary_flame2_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame2/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame2_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame2/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame2_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame2/02.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame2[] = {
+    gTilesetAnims_forestfireprimary_flame2_Frame0,
+    gTilesetAnims_forestfireprimary_flame2_Frame1,
+    gTilesetAnims_forestfireprimary_flame2_Frame2
+};
+
+static void QueueAnimTiles_forestfireprimary_flame2(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(29)), 4 * TILE_SIZE_4BPP);
+}
+
+
+const u16 gTilesetAnims_forestfireprimary_flame3_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame3/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame3_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame3/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame3_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame3/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame3_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame3/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame3_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame3/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame3_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame3/05.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame3[] = {
+    gTilesetAnims_forestfireprimary_flame3_Frame0,
+    gTilesetAnims_forestfireprimary_flame3_Frame1,
+    gTilesetAnims_forestfireprimary_flame3_Frame2,
+    gTilesetAnims_forestfireprimary_flame3_Frame3,
+    gTilesetAnims_forestfireprimary_flame3_Frame4,
+    gTilesetAnims_forestfireprimary_flame3_Frame5
+};
+
+static void QueueAnimTiles_forestfireprimary_flame3(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame3);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame3[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(33)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame4_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame4/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame4_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame4/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame4_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame4/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame4_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame4/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame4_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame4/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame4_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame4/05.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame4[] = {
+    gTilesetAnims_forestfireprimary_flame4_Frame0,
+    gTilesetAnims_forestfireprimary_flame4_Frame1,
+    gTilesetAnims_forestfireprimary_flame4_Frame2,
+    gTilesetAnims_forestfireprimary_flame4_Frame3,
+    gTilesetAnims_forestfireprimary_flame4_Frame4,
+    gTilesetAnims_forestfireprimary_flame4_Frame5
+};
+
+static void QueueAnimTiles_forestfireprimary_flame4(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame4);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame4[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(37)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame5_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame5/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame5_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame5/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame5_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame5/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame5_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame5/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame5_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame5/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame5_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame5/05.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame5[] = {
+    gTilesetAnims_forestfireprimary_flame5_Frame0,
+    gTilesetAnims_forestfireprimary_flame5_Frame1,
+    gTilesetAnims_forestfireprimary_flame5_Frame2,
+    gTilesetAnims_forestfireprimary_flame5_Frame3,
+    gTilesetAnims_forestfireprimary_flame5_Frame4,
+    gTilesetAnims_forestfireprimary_flame5_Frame5
+};
+
+static void QueueAnimTiles_forestfireprimary_flame5(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame5);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame5[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(41)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame6_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame6/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame6_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame6/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame6_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame6/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame6_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame6/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame6_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame6/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame6_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame6/05.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame6[] = {
+    gTilesetAnims_forestfireprimary_flame6_Frame0,
+    gTilesetAnims_forestfireprimary_flame6_Frame1,
+    gTilesetAnims_forestfireprimary_flame6_Frame2,
+    gTilesetAnims_forestfireprimary_flame6_Frame3,
+    gTilesetAnims_forestfireprimary_flame6_Frame4,
+    gTilesetAnims_forestfireprimary_flame6_Frame5
+};
+
+static void QueueAnimTiles_forestfireprimary_flame6(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame6);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame6[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(45)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/05.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame7_Frame6[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame7/06.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame7[] = {
+    gTilesetAnims_forestfireprimary_flame7_Frame0,
+    gTilesetAnims_forestfireprimary_flame7_Frame1,
+    gTilesetAnims_forestfireprimary_flame7_Frame2,
+    gTilesetAnims_forestfireprimary_flame7_Frame3,
+    gTilesetAnims_forestfireprimary_flame7_Frame4,
+    gTilesetAnims_forestfireprimary_flame7_Frame5,
+    gTilesetAnims_forestfireprimary_flame7_Frame6
+};
+
+static void QueueAnimTiles_forestfireprimary_flame7(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame7);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame7[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(49)), 4 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame8_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame8/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame8_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame8/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame8_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame8/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame8_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame8/03.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame8[] = {
+    gTilesetAnims_forestfireprimary_flame8_Frame0,
+    gTilesetAnims_forestfireprimary_flame8_Frame1,
+    gTilesetAnims_forestfireprimary_flame8_Frame2,
+    gTilesetAnims_forestfireprimary_flame8_Frame3
+};
+
+static void QueueAnimTiles_forestfireprimary_flame8(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame8);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame8[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(53)), 6 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame9_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame9/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame9_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame9/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame9_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame9/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame9_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame9/03.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame9[] = {
+    gTilesetAnims_forestfireprimary_flame9_Frame0,
+    gTilesetAnims_forestfireprimary_flame9_Frame1,
+    gTilesetAnims_forestfireprimary_flame9_Frame2,
+    gTilesetAnims_forestfireprimary_flame9_Frame3
+};
+
+static void QueueAnimTiles_forestfireprimary_flame9(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame9);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame9[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(59)), 6 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/02.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame3[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/03.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame4[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/04.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame5[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/05.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame6[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/06.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame7[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/07.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame10_Frame8[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame10/08.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame10[] = {
+    gTilesetAnims_forestfireprimary_flame10_Frame0,
+    gTilesetAnims_forestfireprimary_flame10_Frame1,
+    gTilesetAnims_forestfireprimary_flame10_Frame2,
+    gTilesetAnims_forestfireprimary_flame10_Frame3,
+    gTilesetAnims_forestfireprimary_flame10_Frame4,
+    gTilesetAnims_forestfireprimary_flame10_Frame5,
+    gTilesetAnims_forestfireprimary_flame10_Frame6,
+    gTilesetAnims_forestfireprimary_flame10_Frame7,
+    gTilesetAnims_forestfireprimary_flame10_Frame8
+};
+
+static void QueueAnimTiles_forestfireprimary_flame10(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame10);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame10[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(5)), 8 * TILE_SIZE_4BPP);
+}
+
+const u16 gTilesetAnims_forestfireprimary_flame11_Frame0[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame11/00.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame11_Frame1[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame11/01.4bpp");
+const u16 gTilesetAnims_forestfireprimary_flame11_Frame2[] = INCBIN_U16("data/tilesets/primary/forestfireprimary/anim/flame11/02.4bpp");
+
+const u16 *const gTilesetAnims_forestfireprimary_flame11[] = {
+    gTilesetAnims_forestfireprimary_flame11_Frame0,
+    gTilesetAnims_forestfireprimary_flame11_Frame1,
+    gTilesetAnims_forestfireprimary_flame11_Frame2
+};
+
+static void QueueAnimTiles_forestfireprimary_flame11(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_forestfireprimary_flame11);
+    AppendTilesetAnimToBuffer(gTilesetAnims_forestfireprimary_flame11[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(13)), 16 * TILE_SIZE_4BPP);
+}
+
 static void TilesetAnim_forestfireprimary(u16 timer)
 {
     if (timer % 16 == 0) {
         QueueAnimTiles_forestfireprimary_flame1(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame2(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame3(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame4(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame5(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame6(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame7(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame8(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame9(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame10(timer / 16);
+        QueueAnimTiles_forestfireprimary_flame11(timer / 16);
     }
 }
 

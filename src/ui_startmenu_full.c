@@ -85,11 +85,11 @@ enum WindowIds
 
 enum StartMenuBoxes
 {
-    START_MENU_POKEDEX,
     START_MENU_PARTY,
     START_MENU_BAG,
-    START_MENU_CARD,
+    START_MENU_POKEDEX,
     START_MENU_MAP,
+    START_MENU_CARD,
     START_MENU_OPTIONS,
 };
 
@@ -145,7 +145,7 @@ static const struct WindowTemplate sStartMenuWindowTemplates[] =
         .tilemapTop = 3,    // position from top (per 8 pixels)
         .width = 9,        // width (per 8 pixels)
         .height = 15,        // height (per 8 pixels)
-        .paletteNum = 2,   // palette index to use for text
+        .paletteNum = 2,   // palette index to use for text, it was 2 before I made it black and white
         .baseBlock = 1,     // tile start in VRAM
     },
 
@@ -179,13 +179,13 @@ static const struct WindowTemplate sStartMenuWindowTemplates[] =
 //
 
 // Main Background
-static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tiles.4bpp.lz");
+static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tilesNEW.4bpp.lz");
 static const u16 sStartMenuPalette[] = INCBIN_U16("graphics/ui_startmenu_full/menu.gbapal");
 
 //#if (FLAG_CLOCK_MODE != 0)
 //static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tilemap_alt.bin.lz");
 //#else
-static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tilemap.bin.lz");
+static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/menu_tilemapNEW.bin.lz");
 //#endif
 
 // Alternate Main Background for Female Player
@@ -193,9 +193,9 @@ static const u32 sStartMenuTilesAlt[] = INCBIN_U32("graphics/ui_startmenu_full/m
 static const u16 sStartMenuPaletteAlt[] = INCBIN_U16("graphics/ui_startmenu_full/menu_alt.gbapal");
 
 // Scrolling Background
-static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_startmenu_full/scroll_tiles.4bpp.lz");
-static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/scroll_tilemap.bin.lz");
-static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_startmenu_full/scroll_tiles.gbapal");
+static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_startmenu_full/scroll_tilesNEW.4bpp.lz");
+static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_startmenu_full/scroll_tilemapNEW.bin.lz");
+static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_startmenu_full/scroll_tilesNEW.gbapal");
 
 // Cursor and IconBox
 static const u16 sCursor_Pal[] = INCBIN_U16("graphics/ui_startmenu_full/cursor.gbapal");
@@ -509,11 +509,12 @@ static const struct SpriteTemplate sSpriteTemplate_GreyMenuButtonParty =
 //
 //      Cursor Creation and Callback 
 //
-#define CURSOR_LEFT_COL_X 128
+#define CURSOR_LEFT_COL_X 40
 #define CURSOR_RIGHT_COL_X 128 + 64 + 8
+#define CURSOR_MID_COL_X 120
 #define CURSOR_TOP_ROW_Y 40
-#define CURSOR_MID_ROW_Y 40 + 40
-#define CURSOR_BTM_ROW_Y 40 + 80
+//#define CURSOR_MID_ROW_Y 40 + 40
+#define CURSOR_BTM_ROW_Y 72
 
 static void CreateCursor()
 {
@@ -541,13 +542,12 @@ struct SpriteCordsStruct {
 
 static void CursorCallback(struct Sprite *sprite) // Sprite callback for the cursor that updates the position every frame when the input control code updates
 {
-    struct SpriteCordsStruct spriteCords[3][2] = {
-        {{CURSOR_LEFT_COL_X, CURSOR_TOP_ROW_Y}, {CURSOR_RIGHT_COL_X, CURSOR_TOP_ROW_Y}},
-        {{CURSOR_LEFT_COL_X, CURSOR_MID_ROW_Y}, {CURSOR_RIGHT_COL_X, CURSOR_MID_ROW_Y}},
-        {{CURSOR_LEFT_COL_X, CURSOR_BTM_ROW_Y}, {CURSOR_RIGHT_COL_X, CURSOR_BTM_ROW_Y}},
+    struct SpriteCordsStruct spriteCords[2][3] = {
+        {{CURSOR_LEFT_COL_X, CURSOR_TOP_ROW_Y}, {CURSOR_MID_COL_X, CURSOR_TOP_ROW_Y}, {CURSOR_RIGHT_COL_X, CURSOR_TOP_ROW_Y}},
+        {{CURSOR_LEFT_COL_X, CURSOR_BTM_ROW_Y}, {CURSOR_MID_COL_X, CURSOR_BTM_ROW_Y}, {CURSOR_RIGHT_COL_X, CURSOR_BTM_ROW_Y}},
     };
 
-    gSelectedMenu = sStartMenuDataPtr->selector_x + (sStartMenuDataPtr->selector_y * 2);
+    gSelectedMenu = sStartMenuDataPtr->selector_x * 2 + (sStartMenuDataPtr->selector_y); //I switched the *2, idk what this is tbh
 
     sprite->x = spriteCords[sStartMenuDataPtr->selector_y][sStartMenuDataPtr->selector_x].x;
     sprite->y = spriteCords[sStartMenuDataPtr->selector_y][sStartMenuDataPtr->selector_x].y;
@@ -558,26 +558,26 @@ static void CursorCallback(struct Sprite *sprite) // Sprite callback for the cur
 static void InitCursorInPlace()
 {
     if(gSelectedMenu % 2)
-        sStartMenuDataPtr->selector_x = 1;
-    else
-        sStartMenuDataPtr->selector_x = 0;
-
-    if(gSelectedMenu <= 1)
-        sStartMenuDataPtr->selector_y = 0;
-    else if (gSelectedMenu > 1 && gSelectedMenu <= 3)
         sStartMenuDataPtr->selector_y = 1;
     else
-        sStartMenuDataPtr->selector_y = 2;
+        sStartMenuDataPtr->selector_y = 0;
+
+    if(gSelectedMenu <= 1)
+        sStartMenuDataPtr->selector_x = 0;
+    else if (gSelectedMenu > 1 && gSelectedMenu <= 3)
+        sStartMenuDataPtr->selector_x = 1;
+    else
+        sStartMenuDataPtr->selector_x = 2;
 }
 
 
 //
 //  Create Icon Box Sprites Behin the Icons
 //
-#define ICON_BOX_1_START_X          24
-#define ICON_BOX_1_START_Y          40
+#define ICON_BOX_1_START_X          20
+#define ICON_BOX_1_START_Y          128
 #define ICON_BOX_X_DIFFERENCE       40
-#define ICON_BOX_Y_DIFFERENCE       40
+#define ICON_BOX_Y_DIFFERENCE       0
 static void CreateIconBox()
 {
     u8 i = 0;
@@ -585,11 +585,11 @@ static void CreateIconBox()
     sStartMenuDataPtr->iconBoxSpriteIds[0] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X, ICON_BOX_1_START_Y, 2);
     sStartMenuDataPtr->iconBoxSpriteIds[1] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE, ICON_BOX_1_START_Y, 2);
 
-    sStartMenuDataPtr->iconBoxSpriteIds[2] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X, ICON_BOX_1_START_Y + (ICON_BOX_X_DIFFERENCE * 1), 2);
-    sStartMenuDataPtr->iconBoxSpriteIds[3] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE, ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1), 2);
+    sStartMenuDataPtr->iconBoxSpriteIds[2] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 2, ICON_BOX_1_START_Y, 2);
+    sStartMenuDataPtr->iconBoxSpriteIds[3] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 3, ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1), 2);
 
-    sStartMenuDataPtr->iconBoxSpriteIds[4] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X, ICON_BOX_1_START_Y + (ICON_BOX_X_DIFFERENCE * 2), 2);
-    sStartMenuDataPtr->iconBoxSpriteIds[5] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE, ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 2), 2);
+    sStartMenuDataPtr->iconBoxSpriteIds[4] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 4, ICON_BOX_1_START_Y, 2);
+    sStartMenuDataPtr->iconBoxSpriteIds[5] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 5, ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 2), 2);
 
     for(i = 0; i < 6; i++)
     {
@@ -635,19 +635,19 @@ static void CreatePartyMonIcons()
                 y = ICON_BOX_1_START_Y;
                 break;
             case 2:
-                x = ICON_BOX_1_START_X;
+                x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 2;
                 y = ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1);
                 break;
             case 3:
-                x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE;
+                x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 3;
                 y = ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1);
                 break;
             case 4:
-                x = ICON_BOX_1_START_X;
-                y = ICON_BOX_1_START_Y + (ICON_BOX_X_DIFFERENCE * 2);
+                x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 4;
+                y = ICON_BOX_1_START_Y;
                 break;
             case 5:
-                x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE;
+                x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE * 5;
                 y = ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 2);
                 break;
         }
@@ -724,7 +724,7 @@ static u32 GetHPEggCyclePercent(u32 partyIndex)
 }
 
 #define HP_BAR_X_START  0
-#define HP_BAR_Y_START  30
+#define HP_BAR_Y_START  30 // was 30 HERE, can't get it to fit right
 
 static void StartMenu_DisplayHP(void)
 {
@@ -782,7 +782,7 @@ static void CreateGreyedMenuBoxes()
     if(!FlagGet(FLAG_SYS_POKEDEX_GET))
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[0] == SPRITE_NONE)
-            sStartMenuDataPtr->greyMenuBoxIds[0] = CreateSprite(&sSpriteTemplate_GreyMenuButtonDex, CURSOR_LEFT_COL_X, CURSOR_TOP_ROW_Y, 1);
+            sStartMenuDataPtr->greyMenuBoxIds[0] = CreateSprite(&sSpriteTemplate_GreyMenuButtonDex, CURSOR_MID_COL_X, CURSOR_TOP_ROW_Y, 1);
         gSprites[sStartMenuDataPtr->greyMenuBoxIds[0]].invisible = FALSE;
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[0]], 0);
     }
@@ -790,7 +790,7 @@ static void CreateGreyedMenuBoxes()
     if(!FlagGet(FLAG_SYS_POKEMON_GET))
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[1] == SPRITE_NONE)
-            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_RIGHT_COL_X, CURSOR_TOP_ROW_Y, 1);
+            sStartMenuDataPtr->greyMenuBoxIds[1] = CreateSprite(&sSpriteTemplate_GreyMenuButtonParty, CURSOR_LEFT_COL_X, CURSOR_TOP_ROW_Y, 1);
         gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]].invisible = FALSE;
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[1]], 0);
     }
@@ -798,7 +798,7 @@ static void CreateGreyedMenuBoxes()
     if(!FlagGet(FLAG_SYS_POKENAV_GET))
     {
         if (sStartMenuDataPtr->greyMenuBoxIds[2] == SPRITE_NONE)
-            sStartMenuDataPtr->greyMenuBoxIds[2] = CreateSprite(&sSpriteTemplate_GreyMenuButtonMap, CURSOR_LEFT_COL_X, CURSOR_BTM_ROW_Y, 1);
+            sStartMenuDataPtr->greyMenuBoxIds[2] = CreateSprite(&sSpriteTemplate_GreyMenuButtonMap, CURSOR_MID_COL_X, CURSOR_BTM_ROW_Y, 1);
         gSprites[sStartMenuDataPtr->greyMenuBoxIds[2]].invisible = FALSE;
         StartSpriteAnim(&gSprites[sStartMenuDataPtr->greyMenuBoxIds[2]], 0);
     }
@@ -829,8 +829,8 @@ static void DestroyGreyMenuBoxes()
 #define AILMENT_PKRS  6
 #define AILMENT_FNT   7
 
-#define ICON_STATUS_1_START_X  24
-#define ICON_STATUS_1_START_Y  29
+#define ICON_STATUS_1_START_X  20 // was 24
+#define ICON_STATUS_1_START_Y  117 // was 29
 
 static void CreatePartyMonStatuses()
 {
@@ -852,19 +852,19 @@ static void CreatePartyMonStatuses()
                 y = ICON_STATUS_1_START_Y;
                 break;
             case 2:
-                x = ICON_STATUS_1_START_X;
+                x = ICON_STATUS_1_START_X + ICON_BOX_X_DIFFERENCE * 2;
                 y = ICON_STATUS_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1);
                 break;
             case 3:
-                x = ICON_STATUS_1_START_X + ICON_BOX_X_DIFFERENCE;
+                x = ICON_STATUS_1_START_X + ICON_BOX_X_DIFFERENCE * 3;
                 y = ICON_STATUS_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1);
                 break;
             case 4:
-                x = ICON_STATUS_1_START_X;
-                y = ICON_STATUS_1_START_Y + (ICON_BOX_X_DIFFERENCE * 2);
+                x = ICON_STATUS_1_START_X + ICON_BOX_X_DIFFERENCE * 4;
+                y = ICON_STATUS_1_START_Y;
                 break;
             case 5:
-                x = ICON_STATUS_1_START_X + ICON_BOX_X_DIFFERENCE;
+                x = ICON_STATUS_1_START_X + ICON_BOX_X_DIFFERENCE * 5;
                 y = ICON_STATUS_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 2);
                 break;
         }
@@ -902,7 +902,7 @@ static void DestroyStatusSprites()
 // These next few functions are from the Ghoulslash UI Shell, they are the basic functions to init a brand new UI
 void Task_OpenStartMenuFullScreen(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
+    // s16 *data = gTasks[taskId].data;
     if (!gPaletteFade.active)
     {
         CleanupOverworldWindowsAndTilemaps();
@@ -1013,7 +1013,7 @@ static bool8 StartMenuFull_DoGfxSetup(void) // base UI loader from Ghouls UI She
         CreateIconBox();
         CreateCursor();
         CreatePartyMonIcons();
-        StartMenu_DisplayHP();
+        // StartMenu_DisplayHP();
         CreatePartyMonStatuses();
         gMain.state++;
         break;
@@ -1203,19 +1203,19 @@ static void StartMenuFull_InitWindows(void)
 //
 static const u8 sText_ConfirmSave[] = _("Confirm Save and Return to Overworld?");
 static const u8 sA_ButtonGfx[]         = INCBIN_U8("graphics/ui_startmenu_full/a_button.4bpp");
-static void PrintSaveConfirmToWindow()
-{
-    const u8 *str = sText_ConfirmSave;
-    u8 sConfirmTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
-    u8 x = 24;
-    u8 y = 0;
+// static void PrintSaveConfirmToWindow()
+// {
+//     const u8 *str = sText_ConfirmSave;
+//     u8 sConfirmTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
+//     u8 x = 24;
+//     u8 y = 0;
     
-    FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(5));
-    BlitBitmapToWindow(WINDOW_BOTTOM_BAR, sA_ButtonGfx, 12, 5, 8, 8);
-    AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, 1, x, y, 0, 0, sConfirmTextColors, 0xFF, str);
-    PutWindowTilemap(WINDOW_BOTTOM_BAR);
-    CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
-}
+//     FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(5));
+//     BlitBitmapToWindow(WINDOW_BOTTOM_BAR, sA_ButtonGfx, 12, 5, 8, 8);
+//     AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, 1, x, y, 0, 0, sConfirmTextColors, 0xFF, str);
+//     PutWindowTilemap(WINDOW_BOTTOM_BAR);
+//     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
+// }
 
 
 //
@@ -1264,7 +1264,7 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, x + 152, 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
+    AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, x + 152, 1, TEXT_SKIP_DRAW, NULL); // Print Map Name, the number was 152 initially
 
     RtcCalcLocalTime();
 
@@ -1312,14 +1312,14 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
 
     str = sDayOfWeekStrings[dayOfWeek];
 
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, str); //print dayof week
-    ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //these three print the time, you can put the colon to only print half the time to flash it if you want
-    x += 18;
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);
-    x += width;
-    ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    // AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, str); //print dayof week
+    // ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    // AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //these three print the time, you can put the colon to only print half the time to flash it if you want
+    // x += 18;
+    // AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);
+    // x += width;
+    // ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    // AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
 
 #if (FLAG_CLOCK_MODE != 0)
     if (suffix != NULL)
@@ -1440,15 +1440,15 @@ void Task_HandleSaveConfirmation(u8 taskId)
         gFieldCallback = SaveStartCallback_FullStartMenu;
         return;
     }
-    if(JOY_NEW(B_BUTTON)) // back to normal Menu Control
-    {
-        PlaySE(SE_SELECT);
-        FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
-        PutWindowTilemap(WINDOW_BOTTOM_BAR);
-        CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
-        gTasks[taskId].func = Task_StartMenuFullMain;
-        return;
-    }
+    // if(JOY_NEW(B_BUTTON)) // back to normal Menu Control
+    // {
+    //     PlaySE(SE_SELECT);
+    //     FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    //     PutWindowTilemap(WINDOW_BOTTOM_BAR);
+    //     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
+    //     gTasks[taskId].func = Task_StartMenuFullMain;
+    //     return;
+    // }
     if(gTasks[taskId].sFrameToSecondTimer >= 60) // every 60 frames update the time
     {
         PrintMapNameAndTime();
@@ -1470,26 +1470,26 @@ static void Task_StartMenuFullMain(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_StartMenuFullTurnOff;
     }
-    if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT)) // these change the position of the selector, the actual x/y of the sprite is handled in its callback CursorCallback
+    if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN)) // these change the position of the selector, the actual x/y of the sprite is handled in its callback CursorCallback
     {
-        if(sStartMenuDataPtr->selector_x == 0)
-            sStartMenuDataPtr->selector_x = 1;
+        if(sStartMenuDataPtr->selector_y == 0)
+            sStartMenuDataPtr->selector_y = 1;
         else
-            sStartMenuDataPtr->selector_x = 0; 
+            sStartMenuDataPtr->selector_y = 0; 
     }
-    if (JOY_NEW(DPAD_UP))
+    if (JOY_NEW(DPAD_LEFT))
     {
-        if (sStartMenuDataPtr->selector_y == 0)
-            sStartMenuDataPtr->selector_y = 2;
+        if (sStartMenuDataPtr->selector_x == 0)
+            sStartMenuDataPtr->selector_x = 2;
         else
-            sStartMenuDataPtr->selector_y--;
+            sStartMenuDataPtr->selector_x--;
     }
-    if (JOY_NEW(DPAD_DOWN))
+    if (JOY_NEW(DPAD_RIGHT))
     {
-        if (sStartMenuDataPtr->selector_y == 2)
-            sStartMenuDataPtr->selector_y = 0;
+        if (sStartMenuDataPtr->selector_x == 2)
+            sStartMenuDataPtr->selector_x = 0;
         else
-            sStartMenuDataPtr->selector_y++;
+            sStartMenuDataPtr->selector_x++;
     }
     if (JOY_NEW(A_BUTTON)) //when A is pressed, load the Task for the Menu the cursor is on, for some they require a flag to be set
     {
@@ -1550,8 +1550,13 @@ static void Task_StartMenuFullMain(u8 taskId)
 
     if(JOY_NEW(START_BUTTON)) // If start button pressed go to Save Confirmation Control Task
     {
-        PrintSaveConfirmToWindow();
-        gTasks[taskId].func = Task_HandleSaveConfirmation;
+        // PrintSaveConfirmToWindow();
+        // gTasks[taskId].func = Task_HandleSaveConfirmation;
+        PlaySE(SE_SELECT);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_ReturnToFieldOnSave;
+        gFieldCallback = SaveStartCallback_FullStartMenu;
+        return;
     }
 
 #if (FLAG_CLOCK_MODE != 0)
