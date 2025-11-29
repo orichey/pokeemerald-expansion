@@ -4524,8 +4524,8 @@
     {
       "id": "LAYOUT_TEST_MAP",
       "name": "TestMap_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 40,
       "primary_tileset": "gTileset_forestfireprimary",
       "secondary_tileset": "gTileset_forestfire",
       "border_filepath": "data/layouts/TestMap/border.bin",
