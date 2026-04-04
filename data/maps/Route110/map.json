@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MAUVILLE_CITY",
+      "map": "MAP_ROUTE108",
       "offset": 0,
       "direction": "up"
     }
@@ -491,11 +491,11 @@
   ],
   "warp_events": [
     {
-      "x": 35,
-      "y": 24,
+      "x": 27,
+      "y": 12,
       "elevation": 3,
-      "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ROUTE108_CAVE3",
+      "dest_warp_id": "1"
     },
     {
       "x": 11,
@@ -531,6 +531,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 23,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE108_CAVE4",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

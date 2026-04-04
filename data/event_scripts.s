@@ -1205,3 +1205,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route108_Cave1/scripts.inc"
 
 	.include "data/maps/Route108_Cave2/scripts.inc"
+
+	.include "data/maps/Route108_Cave3/scripts.inc"
+
+	.include "data/maps/Route108_Cave4/scripts.inc"
+
+	.include "data/maps/Route106_Cave3/scripts.inc"

@@ -14,9 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_MELTING_SNOW_TOWN",
+      "offset": -10,
+      "direction": "up"
+    },
+    {
       "map": "MAP_ROUTE114",
-      "offset": -40,
-      "direction": "right"
+      "offset": 0,
+      "direction": "down"
     }
   ],
   "object_events": [

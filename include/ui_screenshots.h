@@ -12,6 +12,7 @@ enum Screenshots
 {
     SCREENSHOT_TABLET,
     SCREENSHOT_MAY_GOODBYE,
+    SCREENSHOT_HAMTARO,
 };
 
 

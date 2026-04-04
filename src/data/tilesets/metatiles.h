@@ -297,3 +297,9 @@ const u16 gMetatileAttributes_forestfireprimary[] = INCBIN_U16("data/tilesets/pr
 
 const u16 gMetatiles_dam[] = INCBIN_U16("data/tilesets/secondary/dam/metatiles.bin");
 const u16 gMetatileAttributes_dam[] = INCBIN_U16("data/tilesets/secondary/dam/metatile_attributes.bin");
+
+const u16 gMetatiles_bigcity[] = INCBIN_U16("data/tilesets/secondary/bigcity/metatiles.bin");
+const u16 gMetatileAttributes_bigcity[] = INCBIN_U16("data/tilesets/secondary/bigcity/metatile_attributes.bin");
+
+const u16 gMetatiles_newfire[] = INCBIN_U16("data/tilesets/secondary/newfire/metatiles.bin");
+const u16 gMetatileAttributes_newfire[] = INCBIN_U16("data/tilesets/secondary/newfire/metatile_attributes.bin");

@@ -10,13 +10,23 @@
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": false,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
       "map": "MAP_OLDALE_TOWN",
       "offset": 10,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE107",
+      "offset": 77,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_FORTREE_CITY",
+      "offset": 9,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -88,10 +98,17 @@
   ],
   "warp_events": [
     {
-      "x": 6,
+      "x": 89,
       "y": 13,
       "elevation": 5,
       "dest_map": "MAP_ROUTE106_CAVE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 48,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE106_CAVE3",
       "dest_warp_id": "0"
     }
   ],

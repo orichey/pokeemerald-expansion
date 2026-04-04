@@ -9569,12 +9569,12 @@ static const u8 sElevationToSubpriority[] = {
 };
 
 static const u8 sElevationToPriority[] = {
-    2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 0, 0, 2
-};
+    2, 2, 2, 2, 1, 2, 3, 2, 1, 2, 1, 2, 1, 0, 0, 2
+};  //3 was a 1
 
 static const u8 sElevationToSubspriteTableNum[] = {
-    1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 0, 1,
-};
+    1, 1, 1, 1, 2, 1, 0, 1, 2, 1, 2, 1, 2, 0, 0, 1,
+};  //first 0 was a 2
 
 static void UpdateObjectEventElevationAndPriority(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {

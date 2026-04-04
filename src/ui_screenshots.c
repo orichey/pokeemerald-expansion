@@ -35,7 +35,7 @@
 #include "constants/songs.h"
 #include "constants/rgb.h"
 #include "constants/event_objects.h"
-#include "comfy_anim.h"
+//#include "comfy_anim.h"
 #include "random.h"
 
 /*
@@ -113,14 +113,19 @@ static const struct WindowTemplate sScreenshotsWindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
+// In Tilemap Studio, need to make it a 32x32. Save both .bin and .png
 
-static const u32 sTabletScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/seacrown_tablet_tiles.8bpp.smol");
-static const u32 sTabletScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/seacrown_tablet_tiles.bin.smolTM");
+static const u32 sTabletScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/seacrown_tablet_tiles.8bpp.lz");
+static const u32 sTabletScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/seacrown_tablet_tiles.bin.lz");
 static const u16 sTabletScreenshotsPalette[] = INCBIN_U16("graphics/ui_screenshots/seacrown_tablet_tiles.gbapal");
 
-static const u32 sMayScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/may_goodbye_tiles.8bpp.smol");
-static const u32 sMayScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/may_goodbye_tiles.bin.smolTM");
+static const u32 sMayScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/may_goodbye_tiles.8bpp.lz");
+static const u32 sMayScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/may_goodbye_tiles.bin.lz");
 static const u16 sMayScreenshotsPalette[] = INCBIN_U16("graphics/ui_screenshots/may_goodbye_tiles.gbapal");
+
+static const u32 sHamtaroScreenshotsTiles[] = INCBIN_U32("graphics/ui_screenshots/annemarie_tiles.8bpp.lz");
+static const u32 sHamtaroScreenshotsTilemap[] = INCBIN_U32("graphics/ui_screenshots/annemarie_tiles.bin.lz");
+static const u16 sHamtaroScreenshotsPalette[] = INCBIN_U16("graphics/ui_screenshots/annemarie_tiles.gbapal");
 
 struct Screenshot {
 	const u32 *screenshotTiles;
@@ -139,6 +144,12 @@ static const struct Screenshot sScreenshotData[] = {
 		.screenshotTiles = sMayScreenshotsTiles,
 		.screenshotTilemap = sMayScreenshotsTilemap,
 		.screenshotPalette = sMayScreenshotsPalette,
+	},
+
+    [SCREENSHOT_HAMTARO] = {
+		.screenshotTiles = sHamtaroScreenshotsTiles,
+		.screenshotTilemap = sHamtaroScreenshotsTilemap,
+		.screenshotPalette = sHamtaroScreenshotsPalette,
 	},
 };
 
@@ -205,7 +216,7 @@ static void Screenshots_RunSetup(void)
 static void Screenshots_MainCB(void)
 {
     RunTasks();
-    AdvanceComfyAnimations();
+    //AdvanceComfyAnimations();
     AnimateSprites();
     BuildOamBuffer();
     DoScheduledBgTilemapCopiesToVram();
@@ -288,7 +299,7 @@ static void Screenshots_FreeResources(void)
     try_free(sScreenshotsDataPtr);
     try_free(sBg1TilemapBuffer);
     try_free(sBg2TilemapBuffer);
-    ReleaseComfyAnims();
+    //ReleaseComfyAnims();
     FreeAllWindowBuffers();
 }
 
@@ -346,7 +357,7 @@ static bool8 Screenshots_LoadGraphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            DecompressDataWithHeaderWram(sScreenshotData[gSpecialVar_0x8000].screenshotTilemap, sBg1TilemapBuffer);
+            LZDecompressWram(sScreenshotData[gSpecialVar_0x8000].screenshotTilemap, sBg1TilemapBuffer);
             sScreenshotsDataPtr->gfxLoadState++;
         }
         break;

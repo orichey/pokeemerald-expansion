@@ -456,7 +456,10 @@
     "MeltingSnowForest",
     "MeltingSnowForestFlashback",
     "Route108_Cave1",
-    "Route108_Cave2"
+    "Route108_Cave2",
+    "Route108_Cave3",
+    "Route108_Cave4",
+    "Route106_Cave3"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

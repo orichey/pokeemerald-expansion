@@ -1,0 +1,23 @@
+raw`
+TestMap_MapScripts::
+    .byte 0
+`
+
+script Test_EventScript_FullArt{
+    lock
+    applymovement(0, Common_Movement_FacePlayer)
+    waitmovement(0)
+    dynmultichoice(0,0,TRUE,3,0,DYN_MULTICHOICE_CB_NONE,"Mountain!","Fire!","Hamtaro!")
+    if (var(VAR_RESULT) == 0){  //Mountain
+        setvar(VAR_0x8000, 0)
+    }
+    elif (var(VAR_RESULT) == 1){
+        setvar(VAR_0x8000, 1) 
+    }
+    elif (var(VAR_RESULT) == 2){
+        setvar(VAR_0x8000, 2) 
+    }
+    callnative(OpenScreenshotsFromScript)
+    release
+    end
+}
