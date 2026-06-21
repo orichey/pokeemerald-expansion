@@ -557,3 +557,4 @@ gSpecials::
 	def_special ReturnCameraToPlayer
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special SetObjectMovementType
+	def_special DoSlidingPuzzle
