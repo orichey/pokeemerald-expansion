@@ -27,6 +27,10 @@ Test_EventScript_FullArt_1:
 # 20 "data/maps/TestMap/scripts.pory"
 	callnative OpenScreenshotsFromScript
 # 21 "data/maps/TestMap/scripts.pory"
+	delay 30
+# 22 "data/maps/TestMap/scripts.pory"
+	msgbox Test_EventScript_FullArt_Text_3
+# 23 "data/maps/TestMap/scripts.pory"
 	release
 	end
 
@@ -57,3 +61,7 @@ Test_EventScript_FullArt_Text_1:
 Test_EventScript_FullArt_Text_2:
 # 10 "data/maps/TestMap/scripts.pory"
 	.string "Hamtaro!$"
+
+Test_EventScript_FullArt_Text_3:
+# 22 "data/maps/TestMap/scripts.pory"
+	.string "Yowza!$"

@@ -1164,7 +1164,7 @@ const struct Tileset gTileset_bigcity =
     .palettes = gTilesetPalettes_bigcity,
     .metatiles = gMetatiles_bigcity,
     .metatileAttributes = gMetatileAttributes_bigcity,
-    .callback = NULL,
+    .callback = InitTilesetAnim_bigcity,
 };
 
 const struct Tileset gTileset_newfire =
@@ -1175,5 +1175,16 @@ const struct Tileset gTileset_newfire =
     .palettes = gTilesetPalettes_newfire,
     .metatiles = gMetatiles_newfire,
     .metatileAttributes = gMetatileAttributes_newfire,
+    .callback = InitTilesetAnim_newfire,
+};
+
+const struct Tileset gTileset_oil =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_oil,
+    .palettes = gTilesetPalettes_oil,
+    .metatiles = gMetatiles_oil,
+    .metatileAttributes = gMetatileAttributes_oil,
     .callback = NULL,
 };

@@ -28,9 +28,15 @@ const u8 gWeatherBubbleTiles[] = INCBIN_U8("graphics/weather/bubble.4bpp");
 const u8 gWeatherAshTiles[] = INCBIN_U8("graphics/weather/ash.4bpp");
 const u8 gWeatherRainTiles[] = INCBIN_U8("graphics/weather/rain.4bpp");
 const u8 gWeatherSandstormTiles[] = INCBIN_U8("graphics/weather/sandstorm.4bpp");
+const u8 gWeatherPinkLeavesTiles[] = INCBIN_U8("graphics/weather/pink_leaves.4bpp");
+const u16 gPinkLeavesWeatherPalette[] = INCBIN_U16("graphics/weather/pink_leaves.gbapal");
+const u8 gWeatherSmokeTiles[] = INCBIN_U8("graphics/weather/smoke.4bpp");
+const u16 gSmokeWeatherPalette[] = INCBIN_U16("graphics/weather/smoke.gbapal");
 
 const struct SpritePalette sFogSpritePalette = {gFogPalette, 0x1201};
 const struct SpritePalette sCloudsSpritePalette = {gCloudsWeatherPalette, 0x1207};
+const struct SpritePalette sPinkLeavesSpritePalette = {gPinkLeavesWeatherPalette, GFXTAG_PINK_LEAVES};
+const struct SpritePalette sSmokeSpritePalette = {gSmokeWeatherPalette, GFXTAG_SMOKE};
 const struct SpritePalette sSandstormSpritePalette = {gSandstormWeatherPalette, 0x1204};
 
 //------------------------------------------------------------------------------
@@ -758,6 +764,598 @@ static void DestroyRainSprites(void)
 #undef tState
 #undef tActive
 #undef tWaiting
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+// Pink Leaves
+//------------------------------------------------------------------------------
+
+static void UpdatePinkLeavesSprite(struct Sprite *);
+static bool8 UpdateVisiblePinkLeavesSprites(const u16 *palette);
+static bool8 CreatePinkLeavesSprite(void);
+static bool8 DestroyPinkLeavesSprite(void);
+static void InitPinkLeavesSpriteMovement(struct Sprite *);
+
+static const struct SpriteSheet sPinkLeavesSpriteSheet =
+{
+    .data = gWeatherPinkLeavesTiles,
+    .size = sizeof(gWeatherPinkLeavesTiles),
+    .tag = GFXTAG_PINK_LEAVES,
+};
+
+static void LoadPinkLeavesSpriteSheet(void)
+{
+    LoadSpriteSheet(&sPinkLeavesSpriteSheet);
+}
+
+void PinkLeaves_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->targetPinkLeavesSpriteCount = NUM_SNOWFLAKE_SPRITES;
+    gWeatherPtr->pinkLeavesVisibleCounter = 0;
+}
+
+void PinkLeaves_InitAll(void)
+{
+    u16 i;
+
+    PinkLeaves_InitVars();
+    LoadSpriteSheet(&sPinkLeavesSpriteSheet);
+
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+    {
+        PinkLeaves_Main();
+        for (i = 0; i < gWeatherPtr->pinkLeavesSpriteCount; i++)
+            UpdatePinkLeavesSprite(gWeatherPtr->sprites.s1.rainSprites[i]);
+    }
+}
+
+void PinkLeaves_Main(void)
+{
+    switch (gWeatherPtr->initStep) {
+        case 0:
+            LoadPinkLeavesSpriteSheet();
+            gWeatherPtr->initStep++;
+            break;
+
+        case 1:
+            if (!UpdateVisiblePinkLeavesSprites(gPinkLeavesWeatherPalette)) {
+                gWeatherPtr->weatherGfxLoaded = TRUE;
+                gWeatherPtr->initStep++;
+            }
+            break;
+    }
+}
+
+bool8 PinkLeaves_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->targetPinkLeavesSpriteCount = 0;
+        gWeatherPtr->pinkLeavesVisibleCounter = 0;
+        gWeatherPtr->finishStep++;
+        DebugPrintf("Finishing Pink Leaves");
+        // fall through
+    case 1:
+        if (!UpdateVisiblePinkLeavesSprites(gPinkLeavesWeatherPalette))
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        DebugPrintf("Pink Leaves Finished");
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 UpdateVisiblePinkLeavesSprites(const u16 *palette)
+{
+    LoadCustomWeatherSpritePalette(&sPinkLeavesSpritePalette);
+
+    if (gWeatherPtr->pinkLeavesSpriteCount == gWeatherPtr->targetPinkLeavesSpriteCount)
+        return FALSE;
+
+    if (++gWeatherPtr->pinkLeavesVisibleCounter > 36)
+    {
+        gWeatherPtr->pinkLeavesVisibleCounter = 0;
+        if (gWeatherPtr->pinkLeavesSpriteCount < gWeatherPtr->targetPinkLeavesSpriteCount)
+            CreatePinkLeavesSprite();
+        else
+            DestroyPinkLeavesSprite();
+    }
+
+    return gWeatherPtr->pinkLeavesSpriteCount != gWeatherPtr->targetPinkLeavesSpriteCount;
+}
+
+static const struct OamData sPinkLeavesSpriteOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(16x16),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(16x16),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const union AnimCmd sPinkLeavesAnimCmd0[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sPinkLeavesAnimCmd1[] =
+{
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(24, 16),
+    ANIMCMD_FRAME(20, 12),
+    ANIMCMD_FRAME(16, 12),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sPinkLeavesAnimCmd3[] =
+{
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(24, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(24, 16),
+    ANIMCMD_FRAME(20, 12),
+    ANIMCMD_FRAME(16, 12),
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sPinkLeavesAnimCmds[] =
+{
+   sPinkLeavesAnimCmd0,
+    sPinkLeavesAnimCmd1,
+    sPinkLeavesAnimCmd3,
+};
+
+static const struct SpriteTemplate sPinkLeavesSpriteTemplate =
+{
+    .tileTag = GFXTAG_PINK_LEAVES,
+    .paletteTag = GFXTAG_PINK_LEAVES,
+    .oam = &sPinkLeavesSpriteOamData,
+    .anims = sPinkLeavesAnimCmds,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdatePinkLeavesSprite,
+};
+
+#define tPosY         data[0]
+#define tDeltaY       data[1]
+#define tWaveDelta    data[2]
+#define tWaveIndex    data[3]
+#define tPinkLeavesId  data[4]
+#define tCounter  data[5]
+#define tFallDuration data[6]
+#define tDeltaX      data[7]
+
+static bool8 CreatePinkLeavesSprite(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sPinkLeavesSpriteTemplate, 0, 0, 78);
+    if (spriteId == MAX_SPRITES)
+        return FALSE;
+
+    gSprites[spriteId].tPinkLeavesId = gWeatherPtr->pinkLeavesSpriteCount;
+    InitPinkLeavesSpriteMovement(&gSprites[spriteId]);
+    gSprites[spriteId].coordOffsetEnabled = TRUE;
+    gWeatherPtr->sprites.s1.rainSprites[gWeatherPtr->pinkLeavesSpriteCount++] = &gSprites[spriteId];
+    return TRUE;
+}
+
+static bool8 DestroyPinkLeavesSprite(void)
+{
+    if (gWeatherPtr->pinkLeavesSpriteCount)
+    {
+        DestroySprite(gWeatherPtr->sprites.s1.rainSprites[--gWeatherPtr->pinkLeavesSpriteCount]);
+        return TRUE;
+    }
+
+    FreeSpriteTilesByTag(GFXTAG_PINK_LEAVES);
+    return FALSE;
+}
+
+static void InitPinkLeavesSpriteMovement(struct Sprite *sprite)
+{
+    u16 rand;
+    u16 x = ((sprite->tPinkLeavesId * 5) & 7) * 30 + (Random() % 30);
+
+    sprite->y = -3 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
+    sprite->x = x - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    sprite->tPosY = sprite->y * 128;
+    sprite->x2 = 0;
+    rand = Random();
+    sprite->tDeltaY = (rand & 3) * 5 + 64;
+    sprite->tDeltaX = -((Random() % 3) + 1);
+    StartSpriteAnim(sprite, (Random() % 3));
+    sprite->tWaveIndex = 0;
+    sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
+    sprite->tFallDuration = (rand & 0x1F) + 210;
+    sprite->tCounter = 0;
+}
+
+static void UpdatePinkLeavesSprite(struct Sprite *sprite)
+{
+    s16 x;
+
+    sprite->tPosY += sprite->tDeltaY;
+    sprite->y = sprite->tPosY >> 7;
+    sprite->tWaveIndex += sprite->tWaveDelta;
+    sprite->tWaveIndex &= 0xFF;
+    sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
+
+    if (sprite->tDeltaX == -1)
+    {
+        if (sprite->tCounter < 2)
+            sprite->tCounter++;
+        else
+        {
+            sprite->x += sprite->tDeltaX;
+            sprite->tCounter = 0;
+        }
+    }
+    else if (sprite->tDeltaX == -2)
+    {
+        if (sprite->tCounter < 1)
+            sprite->tCounter++;
+        else
+        {
+            sprite->x += -1;
+            sprite->tCounter = 0;
+        }
+    }
+    else if (sprite->tDeltaX == -3)
+    {
+        sprite->x += -1;
+    }    
+
+    x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
+    if (x & 0x100)
+        x |= -0x100;
+
+    if (x < -12)
+        sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    else if (x > 242)
+        sprite->x = -12 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+
+}
+
+#undef tPosY
+#undef tDeltaY
+#undef tWaveDelta
+#undef tWaveIndex
+#undef tPinkLeavesId
+#undef tFallCounter
+#undef tFallDuration
+#undef tDeltaY2
+
+
+
+
+//------------------------------------------------------------------------------
+// Smoke
+//------------------------------------------------------------------------------
+
+static void UpdateSmokeSprite(struct Sprite *);
+static bool8 UpdateVisibleSmokeSprites(const u16 *palette);
+static bool8 CreateSmokeSprite(void);
+static bool8 DestroySmokeSprite(void);
+static void InitSmokeSpriteMovement(struct Sprite *);
+
+static const struct SpriteSheet sSmokeSpriteSheet =
+{
+    .data = gWeatherSmokeTiles,
+    .size = sizeof(gWeatherSmokeTiles),
+    .tag = GFXTAG_SMOKE,
+};
+
+static void LoadSmokeSpriteSheet(void)
+{
+    LoadSpriteSheet(&sSmokeSpriteSheet);
+}
+
+void Smoke_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->targetSmokeSpriteCount = NUM_SNOWFLAKE_SPRITES;
+    gWeatherPtr->smokeVisibleCounter = 0;
+}
+
+void Smoke_InitAll(void)
+{
+    u16 i;
+
+    Smoke_InitVars();
+    LoadSpriteSheet(&sSmokeSpriteSheet);
+
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+    {
+        Smoke_Main();
+        for (i = 0; i < gWeatherPtr->smokeSpriteCount; i++)
+            UpdateSmokeSprite(gWeatherPtr->sprites.s1.rainSprites[i]);
+    }
+}
+
+void Smoke_Main(void)
+{
+    switch (gWeatherPtr->initStep) {
+        case 0:
+            LoadSmokeSpriteSheet();
+            gWeatherPtr->initStep++;
+            break;
+
+        case 1:
+            if (!UpdateVisibleSmokeSprites(gSmokeWeatherPalette)) {
+                gWeatherPtr->weatherGfxLoaded = TRUE;
+                gWeatherPtr->initStep++;
+            }
+            break;
+    }
+}
+
+bool8 Smoke_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->targetSmokeSpriteCount = 0;
+        gWeatherPtr->smokeVisibleCounter = 0;
+        gWeatherPtr->finishStep++;
+        DebugPrintf("Finishing Smoke");
+        // fall through
+    case 1:
+        if (!UpdateVisibleSmokeSprites(gSmokeWeatherPalette))
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        DebugPrintf("Smoke Finished");
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 UpdateVisibleSmokeSprites(const u16 *palette)
+{
+    LoadCustomWeatherSpritePalette(&sSmokeSpritePalette);
+
+    if (gWeatherPtr->smokeSpriteCount == gWeatherPtr->targetSmokeSpriteCount)
+        return FALSE;
+
+    if (++gWeatherPtr->smokeVisibleCounter > 36)
+    {
+        gWeatherPtr->smokeVisibleCounter = 0;
+        if (gWeatherPtr->smokeSpriteCount < gWeatherPtr->targetSmokeSpriteCount)
+            CreateSmokeSprite();
+        else
+            DestroySmokeSprite();
+    }
+
+    return gWeatherPtr->smokeSpriteCount != gWeatherPtr->targetSmokeSpriteCount;
+}
+
+static const struct OamData sSmokeSpriteOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(16x16),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(16x16),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const union AnimCmd sSmokeAnimCmd0[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(16, 16),
+    ANIMCMD_FRAME(20, 16),
+    ANIMCMD_FRAME(24, 16),
+    ANIMCMD_FRAME(20, 16),
+    ANIMCMD_FRAME(16, 16),
+    ANIMCMD_FRAME(12, 16),
+    ANIMCMD_FRAME(8, 16),
+    ANIMCMD_FRAME(4, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sSmokeAnimCmd1[] =
+{
+    ANIMCMD_FRAME(16, 16),
+    ANIMCMD_FRAME(20, 16),
+    ANIMCMD_FRAME(24, 16),
+    ANIMCMD_FRAME(20, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sSmokeAnimCmd3[] =
+{
+    ANIMCMD_FRAME(0, 32),
+    ANIMCMD_FRAME(4, 32),
+    ANIMCMD_FRAME(8, 32),
+    ANIMCMD_FRAME(12, 32),
+    ANIMCMD_FRAME(8, 32),
+    ANIMCMD_FRAME(4, 32),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sSmokeAnimCmds[] =
+{
+   sSmokeAnimCmd0,
+    sSmokeAnimCmd1,
+    sSmokeAnimCmd3,
+};
+
+static const struct SpriteTemplate sSmokeSpriteTemplate =
+{
+    .tileTag = GFXTAG_SMOKE,
+    .paletteTag = GFXTAG_SMOKE,
+    .oam = &sSmokeSpriteOamData,
+    .anims = sSmokeAnimCmds,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateSmokeSprite,
+};
+
+#define tPosY         data[0]
+#define tDeltaY       data[1]
+#define tWaveDelta    data[2]
+#define tWaveIndex    data[3]
+#define tSmokeId  data[4]
+#define tCounter  data[5]
+#define tFallDuration data[6]
+#define tDeltaX      data[7]
+
+static bool8 CreateSmokeSprite(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSmokeSpriteTemplate, 0, 0, 78);
+    if (spriteId == MAX_SPRITES)
+        return FALSE;
+
+    gSprites[spriteId].tSmokeId = gWeatherPtr->smokeSpriteCount;
+    InitSmokeSpriteMovement(&gSprites[spriteId]);
+    gSprites[spriteId].coordOffsetEnabled = TRUE;
+    gWeatherPtr->sprites.s1.rainSprites[gWeatherPtr->smokeSpriteCount++] = &gSprites[spriteId];
+    return TRUE;
+}
+
+static bool8 DestroySmokeSprite(void)
+{
+    if (gWeatherPtr->smokeSpriteCount)
+    {
+        DestroySprite(gWeatherPtr->sprites.s1.rainSprites[--gWeatherPtr->smokeSpriteCount]);
+        return TRUE;
+    }
+
+    FreeSpriteTilesByTag(GFXTAG_SMOKE);
+    return FALSE;
+}
+
+static void InitSmokeSpriteMovement(struct Sprite *sprite)
+{
+    u16 rand;
+    u16 x = ((sprite->tSmokeId * 5) & 7) * 30 + (Random() % 30);
+
+    sprite->y = 40 + (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
+    sprite->x = x - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    sprite->tPosY = -sprite->y * 128;
+    sprite->x2 = 0;
+    rand = Random();
+    sprite->tDeltaY = -(rand & 3) * 4 - 64;
+    sprite->tDeltaX = 0;
+    StartSpriteAnim(sprite, (Random() % 3));
+    sprite->tWaveIndex = 0;
+    sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
+    sprite->tFallDuration = (rand & 0x1F) + 210;
+    sprite->tCounter = 0;
+}
+
+static void UpdateSmokeSprite(struct Sprite *sprite)
+{
+    s16 x;
+
+    sprite->tPosY += sprite->tDeltaY;
+    sprite->y = sprite->tPosY >> 7;
+    sprite->tWaveIndex += sprite->tWaveDelta;
+    sprite->tWaveIndex &= 0xFF;
+    sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
+
+    if (sprite->tDeltaX == -1)
+    {
+        if (sprite->tCounter < 2)
+            sprite->tCounter++;
+        else
+        {
+            sprite->x += sprite->tDeltaX;
+            sprite->tCounter = 0;
+        }
+    }
+    else if (sprite->tDeltaX == -2)
+    {
+        if (sprite->tCounter < 1)
+            sprite->tCounter++;
+        else
+        {
+            sprite->x += -1;
+            sprite->tCounter = 0;
+        }
+    }
+    else if (sprite->tDeltaX == -3)
+    {
+        sprite->x += -1;
+    }
+    else if (sprite->tDeltaX == 0)
+    {
+        sprite->x == 0;
+    }    
+
+    x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
+    if (x & 0x100)
+        x |= -0x100;
+
+    if (x < -12)
+        sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    else if (x > 242)
+        sprite->x = -12 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+
+}
+
+#undef tPosY
+#undef tDeltaY
+#undef tWaveDelta
+#undef tWaveIndex
+#undef tSmokeId
+#undef tFallCounter
+#undef tFallDuration
+#undef tDeltaY2
+
+
 
 //------------------------------------------------------------------------------
 // Snow
@@ -2582,6 +3180,8 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_SUNNY:              return WEATHER_SUNNY;
     case WEATHER_RAIN:               return WEATHER_RAIN;
     case WEATHER_SNOW:               return WEATHER_SNOW;
+    case WEATHER_PINK_LEAVES:        return WEATHER_PINK_LEAVES;
+    case WEATHER_SMOKE:              return WEATHER_SMOKE;
     case WEATHER_RAIN_THUNDERSTORM:  return WEATHER_RAIN_THUNDERSTORM;
     case WEATHER_FOG_HORIZONTAL:     return WEATHER_FOG_HORIZONTAL;
     case WEATHER_VOLCANIC_ASH:       return WEATHER_VOLCANIC_ASH;

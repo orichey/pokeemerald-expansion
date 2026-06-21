@@ -13,6 +13,8 @@ enum {
     GFXTAG_SANDSTORM,
     GFXTAG_BUBBLE,
     GFXTAG_RAIN,
+    GFXTAG_PINK_LEAVES,
+    GFXTAG_SMOKE,
 };
 enum {
     PALTAG_WEATHER = TAG_WEATHER_START,
@@ -132,6 +134,14 @@ struct Weather
     u8 droughtUnused[9];
     u8 loadDroughtPalsIndex;
     u8 loadDroughtPalsOffset;
+    // Pink Leaves
+    u8 targetPinkLeavesSpriteCount;
+    u8 pinkLeavesVisibleCounter;
+    u8 pinkLeavesSpriteCount;
+    // Smoke
+    u8 targetSmokeSpriteCount;
+    u8 smokeVisibleCounter;
+    u8 smokeSpriteCount;
 };
 
 // field_weather.c
@@ -196,6 +206,14 @@ void Snow_InitVars(void);
 void Snow_Main(void);
 void Snow_InitAll(void);
 bool8 Snow_Finish(void);
+void PinkLeaves_InitVars(void);
+void PinkLeaves_Main(void);
+void PinkLeaves_InitAll(void);
+bool8 PinkLeaves_Finish(void);
+void Smoke_InitVars(void);
+void Smoke_Main(void);
+void Smoke_InitAll(void);
+bool8 Smoke_Finish(void);
 void Thunderstorm_InitVars(void);
 void Thunderstorm_Main(void);
 void Thunderstorm_InitAll(void);

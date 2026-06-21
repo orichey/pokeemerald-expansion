@@ -2242,3 +2242,22 @@ const u16 gTilesetPalettes_newfire[][16] =
 };
 
 const u32 gTilesetTiles_newfire[] = INCBIN_U32("data/tilesets/secondary/newfire/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_oil[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/oil/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_oil[] = INCBIN_U32("data/tilesets/secondary/oil/tiles.4bpp.lz");

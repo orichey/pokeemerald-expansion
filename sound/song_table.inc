@@ -556,6 +556,7 @@ gSongTable::
 	song mus_pmd_rescueteam_great_canyon, 0, 0
 	song mus_stardew_overture, 0, 0
 	song mus_pmd_rescueteam_escapethroughsnow, 0, 0
+	song mus_pmd_rescueteam_mt_blaze, 0, 0
 
 	.align 2
 dummy_song_header:

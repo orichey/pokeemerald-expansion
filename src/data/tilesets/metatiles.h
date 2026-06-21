@@ -303,3 +303,6 @@ const u16 gMetatileAttributes_bigcity[] = INCBIN_U16("data/tilesets/secondary/bi
 
 const u16 gMetatiles_newfire[] = INCBIN_U16("data/tilesets/secondary/newfire/metatiles.bin");
 const u16 gMetatileAttributes_newfire[] = INCBIN_U16("data/tilesets/secondary/newfire/metatile_attributes.bin");
+
+const u16 gMetatiles_oil[] = INCBIN_U16("data/tilesets/secondary/oil/metatiles.bin");
+const u16 gMetatileAttributes_oil[] = INCBIN_U16("data/tilesets/secondary/oil/metatile_attributes.bin");

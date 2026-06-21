@@ -18,6 +18,8 @@ script Test_EventScript_FullArt{
         setvar(VAR_0x8000, 2) 
     }
     callnative(OpenScreenshotsFromScript)
+    delay(30)
+    msgbox("Yowza!")
     release
     end
 }

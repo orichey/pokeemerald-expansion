@@ -1315,6 +1315,7 @@ SECTIONS {
         sound/songs/midi/mus_pmd_rescueteam_great_canyon.o(.rodata);
         sound/songs/midi/mus_stardew_overture.o(.rodata);
         sound/songs/midi/mus_pmd_rescueteam_escapethroughsnow.o(.rodata);
+        sound/songs/midi/mus_pmd_rescueteam_mt_blaze.o(.rodata);
     } > ROM =0
 
     lib_rodata :
