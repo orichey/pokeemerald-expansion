@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE117",
-      "offset": 28,
-      "direction": "down"
-    },
-    {
       "map": "MAP_LILYCOVE_CITY",
       "offset": -14,
       "direction": "up"

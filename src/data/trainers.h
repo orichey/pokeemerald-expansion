@@ -1544,11 +1544,11 @@ F_TRAINER_FEMALE |
     [TRAINER_LEAH] =
     {
 #line 687
-        .trainerName = _("LEAH"),
+        .trainerName = _("Kyle"),
 #line 688
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
+        .trainerClass = TRAINER_CLASS_WORKER,
 #line 689
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerPic = TRAINER_PIC_WORKER,
         .encounterMusic_gender = 
 #line 690
 F_TRAINER_FEMALE | 

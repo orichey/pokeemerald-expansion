@@ -515,6 +515,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Farmer,            OBJ_EVENT_PAL_FARMER},
     {gObjectEventPalette_StantlerFlashback, OBJ_EVENT_PAL_STANTLERFLASHBACK},
     {gObjectEventPalette_OldWomanSnow,      OBJ_EVENT_PAL_OLDWOMANSNOW},
+    {gObjectEventPalette_Worker,            OBJ_EVENT_PAL_WORKER},
 
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
@@ -9495,9 +9496,9 @@ static u8 ObjectEventGetNearbyReflectionType(struct ObjectEvent *objEvent)
 
 static u8 GetReflectionTypeByMetatileBehavior(u32 behavior)
 {
-    if (MetatileBehavior_IsIce(behavior))
-        return REFL_TYPE_ICE;
-    else if (MetatileBehavior_IsReflective(behavior))
+    // if (MetatileBehavior_IsIce(behavior))
+    //     return REFL_TYPE_ICE;
+    if (MetatileBehavior_IsReflective(behavior))
         return REFL_TYPE_WATER;
     else
         return REFL_TYPE_NONE;

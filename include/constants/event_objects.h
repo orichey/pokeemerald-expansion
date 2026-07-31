@@ -245,6 +245,7 @@
 #define OBJ_EVENT_GFX_FARMER                     241
 #define OBJ_EVENT_GFX_STANTLERFLASHBACK          242
 #define OBJ_EVENT_GFX_OLDWOMANSNOW               243
+#define OBJ_EVENT_GFX_WORKER                     244
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -255,13 +256,13 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define OBJ_EVENT_GFX_POKE_BALL                  244
-#define OBJ_EVENT_GFX_OW_MON                     245
+#define OBJ_EVENT_GFX_POKE_BALL                  245
+#define OBJ_EVENT_GFX_OW_MON                     246
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        246
+#define NUM_OBJ_EVENT_GFX                        247
 
 
 // These are dynamic object gfx ids.
@@ -402,6 +403,7 @@
 #define OBJ_EVENT_PAL_FARMER                      0x112A
 #define OBJ_EVENT_PAL_STANTLERFLASHBACK           0x112B
 #define OBJ_EVENT_PAL_OLDWOMANSNOW                0x112C
+#define OBJ_EVENT_PAL_WORKER                      0x112D
 
 
 

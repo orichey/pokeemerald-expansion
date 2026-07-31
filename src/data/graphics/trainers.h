@@ -290,6 +290,9 @@ const u32 gTrainerPalette_JSOGirl[] = INCBIN_U32("graphics/trainers/front_pics/j
 const u32 gTrainerFrontPic_Farmer[] = INCBIN_U32("graphics/trainers/front_pics/farmer.4bpp.lz");
 const u32 gTrainerPalette_Farmer[] = INCBIN_U32("graphics/trainers/front_pics/farmer.gbapal.lz");
 
+const u32 gTrainerFrontPic_Worker[] = INCBIN_U32("graphics/trainers/front_pics/worker.4bpp.lz");
+const u32 gTrainerPalette_Worker[] = INCBIN_U32("graphics/trainers/front_pics/worker.gbapal.lz");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -414,6 +417,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_JSOBOY, gTrainerFrontPic_JSOBoy, gTrainerPalette_JSOBoy),
     TRAINER_SPRITE(TRAINER_PIC_JSOGIRL, gTrainerFrontPic_JSOGirl, gTrainerPalette_JSOGirl),
     TRAINER_SPRITE(TRAINER_PIC_FARMER, gTrainerFrontPic_Farmer, gTrainerPalette_Farmer),
+    TRAINER_SPRITE(TRAINER_PIC_WORKER, gTrainerFrontPic_Worker, gTrainerPalette_Worker),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

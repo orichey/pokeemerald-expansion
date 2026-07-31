@@ -67,4 +67,5 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_RS_PROTAG] = _("{PKMN} Trainer"),
     [TRAINER_CLASS_JSOBOY] = _("Protestor"),
     [TRAINER_CLASS_FARMER] = _("Farmer"),
+    [TRAINER_CLASS_WORKER] = _("Worker"),
 };

@@ -4789,6 +4789,9 @@ $(OBJEVENTGFXDIR)/pokemon/stantlerflashback.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/old_woman_snow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/worker.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(SLIDINGPUZZLESDIR)/kabuto/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

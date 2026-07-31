@@ -1391,3 +1391,7 @@ const struct SpriteFrameImage gObjectEventPicTable_StantlerFlashback[] = {
 const struct SpriteFrameImage gObjectEventPicTable_OldWomanSnow[] = {
     overworld_ascending_frames(gObjectEventPic_OldWomanSnow, 2, 4),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Worker[] = {
+    overworld_ascending_frames(gObjectEventPic_Worker, 2, 4),
+};

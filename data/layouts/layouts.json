@@ -324,8 +324,8 @@
     {
       "id": "LAYOUT_ROUTE117",
       "name": "Route117_Layout",
-      "width": 40,
-      "height": 150,
+      "width": 102,
+      "height": 73,
       "primary_tileset": "gTileset_ChaoticCherryCakeGeneral",
       "secondary_tileset": "gTileset_oil",
       "border_filepath": "data/layouts/Route117/border.bin",

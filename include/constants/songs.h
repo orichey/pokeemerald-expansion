@@ -592,8 +592,9 @@
 #define MUS_STARDEW_OVERTURE              553 // Stardew Overture
 #define MUS_PMD_RESCUETEAM_ESCAPETHROUGHSNOW    554 // Escape Through the Snow
 #define MUS_PMD_RESCUETEAM_MTBLAZE        555 // Mt. Blaze Peak
+#define MUS_ZELDA_GERUDO                  556 // Gerudo Valley (or town?)
 
-#define EXTRA_MUSIC_END                   MUS_PMD_RESCUETEAM_MTBLAZE
+#define EXTRA_MUSIC_END                   MUS_ZELDA_GERUDO
 
 #define SONGS_END                         EXTRA_MUSIC_END
 #define END_MUS                           SONGS_END

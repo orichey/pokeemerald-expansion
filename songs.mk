@@ -1310,3 +1310,6 @@ $(MID_SUBDIR)/mus_pmd_rescueteam_escapethroughsnow.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_pmd_rescueteam_mt_blaze.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V090
+
+$(MID_SUBDIR)/mus_zelda_gerudo.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V090

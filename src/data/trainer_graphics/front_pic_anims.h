@@ -476,4 +476,5 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_JSOBOY] = sAnims_JSOBoy,
     [TRAINER_PIC_JSOGIRL] = sAnims_JSOGirl,
     [TRAINER_PIC_FARMER] = sAnims_Farmer,
+    [TRAINER_PIC_WORKER] = sAnims_Worker,
 };
